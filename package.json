@@ -1,0 +1,23 @@
+{
+  "name": "grupo_10_crearla",
+  "version": "1.0.0",
+  "description": "DESCRIPCION DEL ECOMMERSE, SERVICIOS, PUBLICO, EQUIPO Y PAGINAS DE REFERENCIA.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HerreraA/grupo_10_CrearLa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HerreraA/grupo_10_CrearLa/issues"
+  },
+  "homepage": "https://github.com/HerreraA/grupo_10_CrearLa#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
