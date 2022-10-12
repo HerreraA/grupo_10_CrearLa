@@ -7,6 +7,10 @@ app.listen (3500, () => console.log('Alta de servidor: http://localhost:3500'));
 app.use(express.static('public'));
 
 app.get ('/', (req, res) => {
-    let htmlPath = path.resolve(__dirname, './views/index.html');
+    let htmlPath = path.resolve(__dirname, './views/home.html');
     res.sendFile (htmlPath)
+})
+
+app.get('/register', (req,res)=> {
+    res.sendFile(path.join(__dirname, './views/register.html'))
 })

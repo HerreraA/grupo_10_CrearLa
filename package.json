@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/HerreraA/grupo_10_CrearLa#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.2"
   }
 }
