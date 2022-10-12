@@ -1,4 +1,5 @@
 const express = require ('express');
+const { get } = require('http');
 const app = express();
 const path = require('path');
 
@@ -9,4 +10,9 @@ app.use(express.static('public'));
 app.get ('/', (req, res) => {
     let htmlPath = path.resolve(__dirname, './views/index.html');
     res.sendFile (htmlPath)
+})
+
+app.get('/carrito.html',(rew, res) => {
+    let htmlPath = path.resolve(__dirname, './views/carrito.html')
+    res.sendFile(htmlPath)
 })
