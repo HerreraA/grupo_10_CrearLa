@@ -12,12 +12,16 @@ app.get ('/', (req, res) => {
     res.sendFile (htmlPath)
 })
 
-<<<<<<< HEAD
-app.get('/register', (req,res)=> {
-    res.sendFile(path.join(__dirname, './views/register.html'))
-=======
-app.get('/carrito.html',(rew, res) => {
+app.get ('/register.html', (req,res)=> {
+    res.sendFile(path.join(__dirname, './views/register.html')) })
+ 
+app.get('/carrito.html',(req, res) => {
     let htmlPath = path.resolve(__dirname, './views/carrito.html')
-    res.sendFile(htmlPath)
->>>>>>> 803a3ad265dc6ad73d602f4e108b24adb1c433d0
-})
+    res.sendFile(htmlPath) })
+
+    
+app.get ('/product.html', (req,res)=> {
+        res.sendFile(path.join(__dirname, './views/product.html')) })
+
+app.get ('/contact.html', (req,res)=> {
+            res.sendFile(path.join(__dirname, './views/contact.html')) })
