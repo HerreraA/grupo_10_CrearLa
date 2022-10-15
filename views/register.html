@@ -4,29 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="/css/styles-register.css" rel="stylesheet" >
+    <script src="https://kit.fontawesome.com/2bb5f709fe.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    rel="stylesheet" />
+<link rel="stylesheet" href="/css/normalize.css"> 
+  
 </head>
 <body>
-    <header> ACA VA EL HEADER </header>
+    <header> 
+        <div><img src="/images/header-logo.png" alt="logo-empresa"> </div>
+        <input class="input" type="text" placeholder="Busca tu desarrollo">
+                <i id="lupa" class="fa-solid fa-magnifying-glass"></i>
+        <nav>
+            <ul>
+                <li><a href="#">Mi cuenta</a></li>
+                <li><a href="#">Registrarme</a></li>
+                <li><a href="#">Ver Carrito</a></li>
+                
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="#">inicio</a></li>
+                <li><a href="#">Nuestros Servicios</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-       <h1>Formulario de registro</h1>
+        <h1 class="titulo-form">Formulario de registro</h1>
+        <div class="registro-form-img">
+       <div  class="formulario-registro">
+        
         <form name="registro" method="get" action="/" class="create-form">
          <div class="control-form">
-            <h2>Nombre y Apellido</h2>
+            <h2>Datos personales</h2> 
             <label for="nombre"></label>
             <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
          </div>
          <div class="control-form">
+            <label for="date"></label>
+            <input type="date" id="date" name="date" min="1950-01-01" max="" required>
+        </div>
+        <div class="control-form">
+            <label for="domicilio"></label>
+            <input type="text" id="domicilio" name="domicilio" placeholder="Domicilio" required>
+        </div>
+         <div class="control-form">
             <label for="email"></label>
             <input type="email" id="email" name="email" placeholder="E-mail" required>
         </div> 
-        <h2>Usuario</h2>
+
+        <h2>Crear usuario</h2>
          <div class="control-form">
             <label for="usuario"></label>
             <input type="usuario" id="usuario" name="usuario" placeholder="Nombre de usuario" required>
         </div> 
-        <h2>Contraseña</h2>
+    
         <div class="control-form">
             <label for="pass"></label>
             <input type="password" name="pass" id="pass" placeholder="Contraseña"required>
@@ -36,16 +74,6 @@
             <input type="password" name="confirmar-pass" id="confirmar-pass"  placeholder="Confirmar contraseña"required>
         </div>
         
-        <h2> Fecha de Nacimiento</h2>
-            <div class="control-form">
-            <label for="date"></label>
-            <input type="date" id="date" name="date" min="1950-01-01" max="" required>
-        </div>
-        <h2>Domicilio</h2>
-        <div class="control-form">
-            <label for="domicilio"></label>
-            <input type="text" id="domicilio" name="domicilio" placeholder="Domicilio" required>
-        </div>
         
         <h2>Seleccionar foto de usuario</h2>
             <div class="control-form">
@@ -57,8 +85,14 @@
             <button type="reset" class="button-form">Borrar</button>
     
         </form>
-
+       </div>  
+    <div class="formulario-registro">
+     
+        <i class="fa-solid fa-address-card" ></i>
         
+       
+    </div>
+     </div>
     </main>
 
     <footer>

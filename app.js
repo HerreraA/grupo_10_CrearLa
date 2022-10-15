@@ -3,10 +3,11 @@ const { get } = require('http');
 const app = express();
 const path = require('path');
 
+
+const publicPath= path.resolve(__dirname, "./public")
+app.use(express.static(publicPath))
+
 app.listen (3500, () => console.log('Alta de servidor: http://localhost:3500'));
-
-app.use(express.static('public'));
-
 app.get ('/', (req, res) => {
     let htmlPath = path.resolve(__dirname, './views/home.html');
     res.sendFile (htmlPath)
