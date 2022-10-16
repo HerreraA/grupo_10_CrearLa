@@ -8,26 +8,40 @@ body {
         font-family: 'Roboto', sans-serif; 
         font-size: 12px;
         margin: 0%;
-        background-color: #ebebeb;
+        background-color: #012E40;
     } 
 
 /* Aquí empieza el CSS del MAIN*/
 
 header{
-    background-image: url("/images/header-bg.jpg");
-    width: 100%;
-    padding: 20px;
+
 }
 
+.main-header {
+    margin:auto;
+    background-image: url("/images/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.main-header-container {
+    padding-top: 30px;
+
+}
 .lineaUno{
     display: flex;
     justify-content: space-between;
+    width:100%;
+
 } /* esta clase contiene el DIV del logo y la barra de busqueda*/
 
 .logo{
     width: 40%;
     margin: auto;
     padding: 5px;
+}
+.logo img {
+    width:100%;
 }
 
 .buscador{
@@ -71,6 +85,7 @@ header{
 
 .barNavIndex{
     display: none;
+    margin:auto;
 }/* esta clase contiene el NAV del menú de navegación*/
 .barNavIndex a{
     text-decoration: none;
@@ -80,11 +95,13 @@ header{
     font-size: 17px;
 }
 
+main {
+    background-color: #fff;
+}
 
 /* Aquí empieza el CSS del FOOTER*/
 
 .main-footer{
-    background-color: #012E40;
     display: flex;
     flex-wrap: wrap;
 }
@@ -122,7 +139,9 @@ header{
 }
 
 @media (min-width: 481px){
+    .main-header {
 
+    }
     .main-footer{
         flex-wrap: nowrap;
         justify-content: space-between;
@@ -178,7 +197,8 @@ header{
     .barNavIndex{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
+        margin:auto;
     }
     .barNavIndex ul li{
         text-decoration: none;
@@ -186,6 +206,20 @@ header{
         display: inline-block;
         padding: 5px 0;
         margin: 0 15px;
-        font-size: 17px;
+        font-size: 18px;
+    }
+}
+@media(min-width:1200px){
+    
+    .main-header {
+        max-width: 1600px;
+        height: 316px;
+        background-size: 1600px;
+    }
+    .main-header-container {
+        max-width: 1200px;
+    }
+    .logo img {
+        max-width: 433px;
     }
 }

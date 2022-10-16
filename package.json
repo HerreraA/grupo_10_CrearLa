@@ -1,7 +1,7 @@
 {
   "name": "grupo_10_crearla",
   "version": "1.0.0",
-  "description": "DESCRIPCION DEL ECOMMERSE, SERVICIOS, PUBLICO, EQUIPO Y PAGINAS DE REFERENCIA.",
+  "description": "DESCRIPCION DEL ECOMMERCE, SERVICIOS, PUBLICO, EQUIPO Y PAGINAS DE REFERENCIA.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
