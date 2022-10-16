@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="/css/styles-register.css" rel="stylesheet" >
+    <script src="https://kit.fontawesome.com/2bb5f709fe.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    rel="stylesheet" />
+<link rel="stylesheet" href="/css/normalize.css"> 
+  
 </head>
 <body>
     <header> ACA VA EL HEADER </header>
 
     <main>
-       <h1>Formulario de contacto</h1>
 
 
-<form name="registro2" method="get" action="/" class="create-form">
-    <div class="control-form">
-        <h2>Nombre y Apellido</h2>
+<div class="formulario-contacto-texto">
+    <div class="tenes-duda">
+<h3>¿Tenés alguna duda?</h3>
+
+    <p>Envianos tu consulta y te responderemos a la brevedad</p>
+</div>
+<form name="registro2" method="get" action="/" class="create-form-contact">
+    <h3>Datos de contacto</h3><i class="fa-regular fa-user"></i>
+    <div class="formulario-contacto">
+    <div class="control-form"> 
         <label for="nombre"></label>
         <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
      </div>
@@ -27,19 +39,26 @@
         <label for="telefono"></label>
         <input type="tel" id="tel" name="tel" placeholder="Telefono" required>
     </div>
+     <h3>Mensaje</h3> <i class="fa-regular fa-envelope"></i>
     <div class="control-form">
         <label for="asunto"></label>
         <input type="text" id="asunto" name="asunto" placeholder="Asunto del Mensaje">
-    </div>  
+    </div> 
+   
     <div>
-        <label for="mensaje">Mensaje</label>
-        <textarea name="mensaje" id="mensaje" cols="30" rows="10">Deja tu mensaje</textarea>
+        
+        <label for="mensaje"></label>
+        <textarea name="mensaje" id="mensaje" cols="35" rows="10" placeholder="Dejanos tu mensaje"></textarea>
     </div>
+
+</div>
+
+</div>
 </form> 
 </main>
 
 <footer>
-    ACA VA EK FOOTER
+
 </footer>
 </body>
 </html>
