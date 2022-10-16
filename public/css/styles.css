@@ -1,0 +1,191 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    }
+
+body {
+        font-family: 'Roboto', sans-serif; 
+        font-size: 12px;
+        margin: 0%;
+        background-color: #ebebeb;
+    } 
+
+/* Aquí empieza el CSS del MAIN*/
+
+header{
+    background-image: url("/images/header-bg.jpg");
+    width: 100%;
+    padding: 20px;
+}
+
+.lineaUno{
+    display: flex;
+    justify-content: space-between;
+} /* esta clase contiene el DIV del logo y la barra de busqueda*/
+
+.logo{
+    width: 40%;
+    margin: auto;
+    padding: 5px;
+}
+
+.buscador{
+    display: flex;
+    margin: auto;
+    padding: 8px 0;
+} /* esta clase contiene el FORM de la barra de busqueda y el botón buscar*/
+
+.input{
+    width: 40%;
+    margin-left: 5%;
+}
+
+.boton{
+    width: 30%;
+    background-color: #3CA6A6;
+    
+}
+
+.barNav1{
+    display: none;
+    width: 22%;
+    margin: auto;
+    padding: 5%;
+}/* esta clase contiene el NAV de los links "registrarme" y "Mi cuenta, reemplazada en vista de movil por .menú-button"*/
+
+.barNav1 li a {
+    color: white;
+}
+
+.menu-button{
+    display: block;
+    color: white;
+    max-width: 50px;
+    padding: 15px 0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+} 
+
+.barNavIndex{
+    display: none;
+}/* esta clase contiene el NAV del menú de navegación*/
+.barNavIndex a{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 17px;
+}
+
+
+/* Aquí empieza el CSS del FOOTER*/
+
+.main-footer{
+    background-color: #012E40;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.module-footer{
+    color: white;
+    margin: auto;
+    padding: 5%;
+    border-bottom: #ebebeb 1px solid;
+}
+
+.module-footer ul li{
+    margin: 5px;
+}
+
+.module-footer .logo{
+    justify-content: center;
+    display: flex;
+    width: 50%;
+}
+
+.module-footer h2{
+    text-align: center;
+    margin-bottom: 10px;
+    color: #F2E3D5;
+}
+
+.module-footer p{
+    text-align: center;
+    margin: 5px;
+}
+.icono img{
+    padding: 10px;
+    margin: auto;
+}
+
+@media (min-width: 481px){
+
+    .main-footer{
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .module-footer{
+        border-bottom: 0;
+    }
+
+    .module-footer ul li{
+        margin: 10px auto;
+    }
+
+    .box-logo{
+        display: none;
+    }
+
+    .module-footer p{
+        margin: 10px auto;
+    }
+
+    .icono img{
+        padding: 5px;
+        margin: auto;
+    }
+
+}
+
+@media(min-width:769px){
+
+    .input{
+        width: 70%;
+        margin-left: 5%;
+    }
+
+    .menu-button{
+        display: none;
+    }
+
+    .barNav1{
+        display: flex;
+        width: 22%;
+        margin: auto;
+        padding: 0px;
+
+    }
+
+    .barNav1 li a{
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .barNavIndex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .barNavIndex ul li{
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        padding: 5px 0;
+        margin: 0 15px;
+        font-size: 17px;
+    }
+}

@@ -3,33 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Carrito de compras</title>
 </head>
 <body>
-    <header>
-            <logo-crear-la class="design/logo-crear-la.jpg"></logo-crear-la>
-            <div class="logo" src="design/"></div>
-
-            <input class="input" type="text" placeholder="Busca tu desarrollo">
-                <i id="lupa" class="fa-solid fa-magnifying-glass"></i>
-
-            <nav>
-                <ul>
-                <li><a href="#">inicio</a>Mi cuenta</li>
-                <li><a href="#">inicio</a>Registrarme</li>
+    <header class="main-header">
+        <div class="lineaUno" >
+            <img class="logo" src="/images/header-logo.png" alt="logo">
+            
+            <form class="buscador" action="/" method="get">
+                <input class="input" type="text" placeholder="Busca tu desarrollo">
+                <button class="boton" type="submit">Buscar</button>
+            </form>
+                
+            
+            <nav class="barNav1">
+                <ul style="list-style:none;">
+                <li><a href="#"> <i class="fa-regular fa-address-card  "></i>       Mi cuenta </a></li>
+                <li> <a href="#"> <i class="fa-solid fa-arrow-right-to-bracket  "></i>     Registrarme</a></li>
+                <li> <a href="#"> <i class="fa-solid fa-bag-shopping  "></i>     Ver carrito</a></li>
                 </ul>
             </nav>    
+            <a href="#" class="menu-button">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+        </div>
 
-            <nav>
-                <ul>
-                    <li><a href="#">inicio</a></li>
-                    <li><a href="#">Nuestros Servicios</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </nav>
+        <nav class="barNavIndex">
+            <ul style="list-style:none;">
+                <li><a href="/">inicio</a></li>
+                <li><a href="#">Nuestros Servicios</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -74,10 +83,10 @@
     </main>
 
     <footer>
-        <section>
-            <div>
-                <h2>Servicio</h2>
-                <ul>
+        <section class="main-footer">
+            <div class="module-footer">
+                <h2>Servicios</h2>
+                <ul style="list-style:none;">
                     <li>Desarrollo de Apps</li>
                     <li>Desarrollo web</li>
                     <li>Diseño Web Profesional</li>
@@ -87,17 +96,21 @@
                 </ul>
             </div>
 
-            <div>
-                <logo-crear-la class="design/logo-crear-la.jpg"></logo-crear-la>
+            <div class="module-footer">
+                <img class="logo" src="/images/header-logo.png" alt="logo">
                 <p>Agencia de diseño web, desarrollo de aplicaciones y software</p>
+                <p>Argentina | Colombia | Panamá</p>
             </div>
 
-            <div>
+            <div class="module-footer">
                 <h2>Contacto</h2>
-                <form action="/" method="POST">
-                    <input type="email" name="email">
-                    <input type="tel" name="telefono">
-                </form>
+                <p>info@crear.la</p>
+                <p>+54 11 3029-2341</p>
+
+                <a class="icono" href="#"><img src="/images/footer-facebook.png">
+                <a class="icono" href="#"><img src="/images/footer-instagram.png">
+                <a class="icono" href="#"><img src="/images/footer-twitter.png">
+                <a class="icono" href="#"><img src="/images/footer-linkedin.png">
             </div>
         </section>
     </footer>
