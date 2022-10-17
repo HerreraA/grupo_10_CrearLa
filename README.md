@@ -49,4 +49,5 @@ Buen diseño, y funcionalidades de la página.
 
 
 
-
+LINK DE TABLERO DE TRABAJO TRELLO
+https://trello.com/b/HOpKaYY4/2-sprint-17-10
