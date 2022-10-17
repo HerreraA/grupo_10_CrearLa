@@ -43,17 +43,17 @@
     </header>
 
     <main>
-        <div>
-            <h1>COTIZA TU PRESUPUESTO</h1>
-            <H2>Aquí podrás cotizar el alcance de tu App, software, e-comerce y/0 sitio web</H2>
-        </div>
-
-        <section>
-            <div>
-                <h2>E-comerce</h2>
+        <div class="encabezado">
+            <h1>COTIZA TU PRESUPUESTO </h1>
+            <h2>Aquí podrás cotizar el alcance de tu App, software, e-comerce y/o sitio web</h2>
+        </div>    
+        <section class="cuerpo de carrito1">
+            <div class="titulos">
+                <h2>¿Que servicio necesitás?</h2>
             </div>
-            <article>
-                <form action="/" method="get">
+            <article class="seleccion-menu">
+                <p>Elegí los detalles para el servicio que necesitás.</p>
+                <form action="/" method="get" class="seleccion-buscador">
                     <label>Tipo de servicio</label>
                     <select>
                         <option>App</option>
@@ -63,22 +63,54 @@
                     </select>
                 </form>
             </article>
-            <div><h2>Adicionales</h2></div>
-            <article>
+            <div class="titulos">
+                <h2>Utilidades para el proyecto</h2>
+            </div>
+            <article class="seleccion-check">
                 <ul>
-                        <form action="/" method="post">
-                        <input type="checkbox" name="adicionales" value="pago por pse">
-                        <input type="checkbox" name="adicionales" value="chat por Whats App">
-                        <input type="checkbox" name="adicionales" value="otra cosa">
-                        <input type="checkbox" name="adicionales" value="otra cosa">
-
-                        <button type="submit">Agregar servicio</button>
+                    <form action="/" method="post">
+                        <div class="selector">
+                            <label for="pago por pse">Pago por pse</label>
+                            <input type="checkbox" name="adicionales" id="pago por pse">
+                            
+                        </div>
+                        <div class="selector">
+                            <label for="chat por WhatsApp">Chat por WhatsApp</label>
+                            <input type="checkbox" name="adicionales" id="chat por WhatsApp" >
+                            
+                        </div>
+                        <div class="selector">
+                            <label for="links a redes sociales">Links a redes sociales</label>
+                            <input type="checkbox" name="adicionales" id="links a redes sociales">
+                            
+                        </div>
+                        <div class="selector">
+                            <label for="registro de usuarios">Registro de usuarios</label>
+                            <input type="checkbox" name="adicionales" id="registro de usuarios">
+                        </div>
+                        <div class="titulos">
+                            <h2>Adicionales</h2>
+                        </div> 
+                        <div class="selector">
+                            <label for="Diseño de logo">Diseño de logo</label>
+                            <input type="checkbox" name="adicionales" id="Diseño de logo">
+                        </div>
+                        <div class="selector">
+                            <label for="WhatsApp business">WhatsApp business</label>
+                            <input type="checkbox" name="adicionales" id="WhatsApp business">
+                        </div> 
+                        <div class="selector">
+                            <label for="Diseño de redes sociales">Diseño de redes sociales</label>
+                            <input type="checkbox" name="adicionales" id="Diseño de redes sociales">
+                        </div> 
+                        <div class="boton-carrito">
+                            <button type="submit">Agregar servicio</button>
+                        </div>    
                     </form>
                 </ul>
-                <div><h2>TOTAL</h2></div>
-            </article>
-            <article>
-            
+                    <div class="valor-total">
+                        <h2>TOTAL $0,00</h2>
+                    </div>
             </article>
         </section>
     </main>
