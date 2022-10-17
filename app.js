@@ -26,3 +26,6 @@ app.get ('/product.html', (req,res)=> {
 
 app.get ('/contact.html', (req,res)=> {
             res.sendFile(path.join(__dirname, './views/contact.html')) })
+
+app.get ('/login.html', (req,res)=> {
+                res.sendFile(path.join(__dirname, './views/login.html')) })
