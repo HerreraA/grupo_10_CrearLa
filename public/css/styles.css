@@ -2,13 +2,15 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    
     }
 
 body {
-        font-family: 'Roboto', sans-serif; 
+        
         font-size: 12px;
         margin: 0%;
         background-color: #ebebeb;
+        font-family: 'Roboto', sans-serif; 
     } 
 
 /* Aquí empieza el CSS del MAIN*/
@@ -26,6 +28,7 @@ header{
 
 .logo{
     width: 40%;
+    max-width: 350px;
     margin: auto;
     padding: 5px;
 }
@@ -37,14 +40,17 @@ header{
 } /* esta clase contiene el FORM de la barra de busqueda y el botón buscar*/
 
 .input{
-    width: 40%;
+    width: 50%;
     margin-left: 5%;
 }
 
 .boton{
+<<<<<<< HEAD
     width: 40%;
+=======
+>>>>>>> 39bc6dbbd6220b1143d3933445099b7cb22aabb5
     background-color: #3CA6A6;
-    
+    padding: 5px 10px;
 }
 
 .barNav1{
@@ -54,8 +60,17 @@ header{
     padding: 5%;
 }/* esta clase contiene el NAV de los links "registrarme" y "Mi cuenta, reemplazada en vista de movil por .menú-button"*/
 
+nav ul {
+    list-style: none;
+}
+
+.barNav1 li {
+    padding-bottom: 10px;
+}
+
 .barNav1 li a {
     color: white;
+    text-decoration: none;
 }
 
 .menu-button{
@@ -79,7 +94,6 @@ header{
     padding: 5px 0;
     font-size: 17px;
 }
-
 
 /* Aquí empieza el CSS del FOOTER*/
 
@@ -154,7 +168,7 @@ header{
 @media(min-width:769px){
 
     .input{
-        width: 70%;
+        width: 100%;
         margin-left: 5%;
     }
 
@@ -178,17 +192,18 @@ header{
     .barNavIndex{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
     }
     .barNavIndex ul li{
         text-decoration: none;
         color: white;
         display: inline-block;
-        padding: 5px 0;
+        padding: 5px 35px;
         margin: 0 15px;
         font-size: 17px;
     }
 }
+<<<<<<< HEAD
 
 /*---------------------------------------CSS DE CARRITO DE COMPRAS--------------------------------------------------*/
 
@@ -371,3 +386,372 @@ border-top: #012E40 1px solid;
 
 
 
+=======
+/*-------------------------------------------Detalle del producto------------------------------------------------------*/
+/*HEADER*/
+header{
+    background-image: url("/images/header-bg.jpg");
+    width: 100%;
+    padding: 20px;
+}
+
+.lineaUno{
+    display: flex;
+    justify-content: space-between;
+} /* esta clase contiene el DIV del logo y la barra de busqueda*/
+
+.buscador{
+    display: flex;
+    margin: auto;
+    padding: 8px 0;
+} /* esta clase contiene el FORM de la barra de busqueda y el botón buscar*/
+
+.barNav1{
+    display: none;
+    width: 22%;
+    margin: auto;
+    padding: 5%;
+}/* esta clase contiene el NAV de los links "registrarme" y "Mi cuenta, reemplazada en vista de movil por .menú-button"*/
+
+.barNav1 li a {
+    color: white;
+}
+
+.menu-button{
+    display: block;
+    color: white;
+    max-width: 50px;
+    padding: 15px 0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+} 
+
+.barNavIndex{
+    display: none;
+}/* esta clase contiene el NAV del menú de navegación*/
+.barNavIndex a{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 17px;
+}
+
+main{
+    background-color: #012e40;
+    color: #f2e3d5;
+}
+
+.detalleDeProducto{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row
+}
+.detalle-producto{
+    width: 45%;
+}
+
+.fa-solid.fa-image {
+    font-weight: 100;
+    font-size: 300px;
+    padding: 21px;
+    margin: -14px;
+     }
+.create-form{
+    padding: 21px;
+    margin: -14px;
+}
+.create-form-contact{
+    text-align: center;
+    width: 50%;
+    margin:auto
+}
+.control-form{
+    margin-bottom: 15px;
+
+}
+.control-form label{
+    margin-bottom: 5px;
+    display: block;
+}
+.control-form input{
+    width: 80%;
+    padding: 8px;
+
+}
+.control-form-interes{
+    display:grid;
+    margin-bottom: 5px;
+}
+.button-form{
+    font-size: 15px;
+    padding: 5px 10px;
+    width: 40%;
+    color: #f2e3d5;
+    background-color: #3ca6a6;
+    border: hidden;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.button-form:hover{
+    background-color: #f2e3d5;
+    color: #012e40;
+}
+
+.titulo-form {
+    text-align: center;
+    border: solid 1px #024959;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px;
+    background-color: #3ca6a6;
+    color: white;
+}
+
+h3{
+    display: inline-block;
+    padding: 10px;
+
+}
+
+.formulario-contacto-texto{
+    display: flex;
+}
+
+.tenes-duda{
+    align-self: center;
+    margin-left: 30px;
+}
+/*FOOTER*/
+.main-footer{
+    background-color: #012E40;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.module-footer{
+    color: white;
+    margin: auto;
+    padding: 5%;
+    border-bottom: #ebebeb 1px solid;
+}
+
+.module-footer ul li{
+    margin: 5px;
+}
+
+.module-footer .logo{
+    justify-content: center;
+    display: flex;
+    width: 50%;
+}
+
+.module-footer h2{
+    text-align: center;
+    margin-bottom: 10px;
+    color: #F2E3D5;
+}
+
+.module-footer p{
+    text-align: center;
+    margin: 5px;
+}
+.icono img{
+    padding: 10px;
+    margin: auto;
+}
+
+@media (min-width: 481px){
+
+    .main-footer{
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .module-footer{
+        border-bottom: 0;
+    }
+
+    .module-footer ul li{
+        margin: 10px auto;
+    }
+
+    .box-logo{
+        display: none;
+    }
+
+    .module-footer p{
+        margin: 10px auto;
+    }
+
+    .icono img{
+        padding: 5px;
+        margin: auto;
+    }
+
+}
+
+@media(min-width:769px){
+
+    .menu-button{
+        display: none;
+    }
+
+    .barNav1{
+        display: flex;
+        width: 22%;
+        margin: auto;
+        padding: 0px;
+
+    }
+
+    .barNav1 li a{
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .barNavIndex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .barNavIndex ul li{
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        padding: 5px 35px;
+        margin: 0 15px;
+        font-size: 17px;
+    }
+}
+
+/*aca va CSS de register y contact*/
+
+
+main{
+    background-color: #012e40;
+    color: #f2e3d5;
+    margin-top: 20px;
+     margin-bottom: 30px;
+    
+}
+.registro-form-img{
+    display: block;
+    
+}
+
+.fa-solid.fa-address-card{
+    display: none;
+}
+.formulario-registro{
+    width: 90%;
+    text-align: center;
+}
+
+.fa-solid.fa-address-card {
+    font-weight: 100;
+    font-size: 300px;
+}
+
+.create-form{
+    padding: 21px;
+    margin: -14px;
+}
+.create-form-contact{
+    text-align: center;
+    width: 50%;
+    margin:auto
+}
+.control-form{
+    margin-bottom: 15px;
+
+}
+.control-form label{
+    margin-bottom: 5px;
+    display: block;
+}
+.control-form input{
+    width: 80%;
+    padding: 8px;
+
+}
+
+.button-form{
+    font-size: 15px;
+    padding: 5px 10px;
+    width: 40%;
+    color: #f2e3d5;
+    background-color: #3ca6a6;
+    border: hidden;
+    border-radius: 7px;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+
+.button-form:hover{
+    background-color: #f2e3d5;
+    color: #012e40;
+}
+
+.titulo-form {
+    text-align: center;
+    border: solid 1px #024959;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px;
+    background-color: #3ca6a6;
+    color: white;
+    font-size: 20px;
+}
+
+    
+  
+    
+
+h3{
+    display: inline-block;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+
+.formulario-contacto-texto{
+    display: flex;
+}
+
+.tenes-duda{
+    text-align: center;
+    margin-left: 30px;
+    font-size: 15px;
+}
+.formulario-contacto-texto{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    display: block;
+}
+
+@media(min-width:769px){
+.formulario-contacto-texto{
+    display: flex;
+}
+.registro-form-img{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.formulario-registro{
+    width: 50%;
+}
+.fa-solid.fa-address-card{
+    display:contents ;
+}
+}
+>>>>>>> 39bc6dbbd6220b1143d3933445099b7cb22aabb5
