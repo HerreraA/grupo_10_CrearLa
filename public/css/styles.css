@@ -45,10 +45,7 @@ header{
 }
 
 .boton{
-<<<<<<< HEAD
     width: 40%;
-=======
->>>>>>> 39bc6dbbd6220b1143d3933445099b7cb22aabb5
     background-color: #3CA6A6;
     padding: 5px 10px;
 }
@@ -203,12 +200,14 @@ nav ul {
         font-size: 17px;
     }
 }
-<<<<<<< HEAD
 
 /*---------------------------------------CSS DE CARRITO DE COMPRAS--------------------------------------------------*/
 
 main{
     width: 100%;
+}
+.main-carrito{
+    background-color: #ebebeb;
 }
 .encabezado{
     background-color: #024959;
@@ -243,6 +242,7 @@ main{
     padding: 2%;
     margin-top: 5%;
     text-align: center;
+    color: #012E40;
 }
 
 .seleccion-buscador{
@@ -257,6 +257,7 @@ main{
     margin-top: 3%;
     padding: 1%;
     padding-left: 20px;
+    color: #012e40;
 }
 .seleccion-buscador select{
     width: 90%;
@@ -281,6 +282,7 @@ main{
     text-align: left;
     display: flex;
     justify-content: space-between;
+    color: black;
 }
 .selector input{
     top: 1px;
@@ -314,6 +316,7 @@ border-top: #012E40 1px solid;
 .valor-total h2{
     font-size: 50px;
     margin-top: 20px;
+    color: #012E40;
 }
 
 @media(min-width: 769px){
@@ -380,13 +383,6 @@ border-top: #012E40 1px solid;
 /*---------------------------------------------------------------------------------------------------------------*/
 
 
-
-
-
-
-
-
-=======
 /*-------------------------------------------Detalle del producto------------------------------------------------------*/
 /*HEADER*/
 header{
