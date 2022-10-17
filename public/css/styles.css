@@ -442,19 +442,26 @@ h3{
 }
 
 /*aca va CSS de register y contact*/
+
+
 main{
     background-color: #012e40;
     color: #f2e3d5;
+    margin-top: 20px;
+     margin-bottom: 30px;
+    
+}
+.registro-form-img{
+    display: block;
+    
 }
 
-.registro-form-img{
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    flex-direction: row
+.fa-solid.fa-address-card{
+    display: none;
 }
 .formulario-registro{
-    width: 45%;
+    width: 90%;
+    text-align: center;
 }
 
 .fa-solid.fa-address-card {
@@ -511,11 +518,17 @@ main{
     margin: 30px;
     background-color: #3ca6a6;
     color: white;
+    font-size: 20px;
 }
+
+    
+  
+    
 
 h3{
     display: inline-block;
     padding: 10px;
+    margin-top: 20px;
 
 }
 
@@ -524,9 +537,32 @@ h3{
 }
 
 .tenes-duda{
-    align-self: center;
+    text-align: center;
     margin-left: 30px;
+    font-size: 15px;
 }
 .formulario-contacto-texto{
     margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    display: block;
+}
+
+@media(min-width:769px){
+.formulario-contacto-texto{
+    display: flex;
+}
+.registro-form-img{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.formulario-registro{
+    width: 50%;
+}
+.fa-solid.fa-address-card{
+    display:contents ;
+}
 }
