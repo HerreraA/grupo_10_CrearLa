@@ -3,8 +3,8 @@
     margin: 0px;
     padding: 0px;
     font-family: "roboto";
-    ;
 }
+
 main{
     background-color: #012e40;
     color: #f2e3d5;
@@ -23,7 +23,8 @@ main{
 .fa-solid.fa-address-card {
     font-weight: 100;
     font-size: 300px;
-     }
+}
+
 .create-form{
     padding: 21px;
     margin: -14px;
