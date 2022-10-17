@@ -47,10 +47,7 @@ main{
     padding: 8px;
 
 }
-.control-form-interes{
-    display:grid;
-    margin-bottom: 5px;
-}
+
 .button-form{
     font-size: 15px;
     padding: 5px 10px;
