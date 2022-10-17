@@ -1,19 +1,114 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle del producto</title>
+    <link href="/css/stylesProduct.css" rel="stylesheet" >
+    <script src="https://kit.fontawesome.com/2bb5f709fe.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    rel="stylesheet" />
+<link rel="stylesheet" href="/css/normalize.css"> 
   
-</head> 
+</head>
+<header>
+    <body>
+        <header class="main-header">
+            <div class="lineaUno" >
+                <img class="logo" src="/images/header-logo.png" alt="logo">
+                
+                <form class="buscador" action="/" method="get">
+                    <input class="input" type="text" placeholder="Busca tu desarrollo">
+                    <button class="boton" type="submit">Buscar</button>
+                </form>
+                    
+                
+                <nav class="barNav1">
+                    <ul style="list-style:none;">
+                    <li><a href="#"> <i class="fa-regular fa-address-card  "></i>       Mi cuenta </a></li>
+                    <li> <a href="#"> <i class="fa-solid fa-arrow-right-to-bracket  "></i>     Registrarme</a></li>
+                    <li> <a href="#"> <i class="fa-solid fa-bag-shopping  "></i>     Ver carrito</a></li>
+                    </ul>
+                </nav>    
+                <a href="#" class="menu-button">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+    
+            <nav class="barNavIndex">
+                <ul style="list-style:none;">
+                    <li><a href="/">inicio</a></li>
+                    <li><a href="#">Nuestros Servicios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
 
 <body>
-    <section class = "body">
-        <img class= "imagenDeProducto" src="productos.jpg" alt="Imagen producto/servicio">
-        <h2 class="tituloDeProducto"> Título producto </h2>
-        <p class="relleno">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum porro accusamus officiis ipsam saepe voluptatem. Delectus, aliquid eum eligendi quos suscipit minus repellendus exercitationem eveniet non, incidunt magni hic consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum porro accusamus officiis ipsam saepe voluptatem. Delectus, aliquid eum eligendi quos suscipit minus repellendus exercitationem eveniet non, incidunt magni hic consequuntur.</p>
-        <button class="boton" type="submit" class="Comprar">Comprar</button>
-    </section>    
+    <main>
+        <h1 class="titulo-form">Detalle de producto</h1>
+        <div class="detalleDeProducto">
+       <div  class="detalle-producto">
+        
+        <form name="registro" method="get" action="/" class="create-form">
+         <div class="control-form">
+            <h2>Título del producto</h2> 
+            <p class="relleno">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum porro accusamus officiis ipsam saepe voluptatem. Delectus, aliquid eum eligendi quos suscipit minus repellendus exercitationem eveniet non, incidunt magni hic consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum porro accusamus officiis ipsam saepe voluptatem. Delectus, aliquid eum eligendi quos suscipit minus repellendus exercitationem eveniet non, incidunt magni hic consequuntur.</p>
+         </div>
+         
+        
+            <button type="submit" class="button-form">Añadir al carrito</button>
+            
+    
+        </form>
+       </div>  
+    <div class="detalle-producto">
+     
+        <i class="fa-solid fa-image"></i>
+
+        
+       
+    </div>
+     </div>
+    </main>
+
+    <footer>
+        <section class="main-footer">
+            <div class="module-footer">
+                <h2>Servicios</h2>
+                <ul style="list-style:none;">
+                    <li>Desarrollo de Apps</li>
+                    <li>Desarrollo web</li>
+                    <li>Diseño Web Profesional</li>
+                    <li>Desarrollo de software</li>
+                    <li>Desarrollo de tiendas</li>
+                    <li>Diseño de tiendas online</li>
+                </ul>
+            </div>
+    
+            <div class="module-footer">
+                <img class="logo" src="/images/header-logo.png" alt="logo">
+                <p>Agencia de diseño web, desarrollo de aplicaciones y software</p>
+                <p>Argentina | Colombia | Panamá</p>
+            </div>
+    
+            <div class="module-footer">
+                <h2>Contacto</h2>
+                <p>info@crear.la</p>
+                <p>+54 11 3029-2341</p>
+    
+                <a class="icono" href="#"><img src="/images/footer-facebook.png">
+                <a class="icono" href="#"><img src="/images/footer-instagram.png">
+                <a class="icono" href="#"><img src="/images/footer-twitter.png">
+                <a class="icono" href="#"><img src="/images/footer-linkedin.png">
+            </div>
+        </section>
+    </footer>
+    
+    </body>
+    </html>
+    </footer>
 </body>
 </html>
