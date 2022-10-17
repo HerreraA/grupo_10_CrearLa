@@ -26,6 +26,7 @@ header{
 
 .logo{
     width: 40%;
+    max-width: 350px;
     margin: auto;
     padding: 5px;
 }
@@ -37,14 +38,13 @@ header{
 } /* esta clase contiene el FORM de la barra de busqueda y el botón buscar*/
 
 .input{
-    width: 40%;
+    width: 50%;
     margin-left: 5%;
 }
 
 .boton{
-    width: 30%;
     background-color: #3CA6A6;
-    
+    padding: 5px 10px;
 }
 
 .barNav1{
@@ -54,8 +54,17 @@ header{
     padding: 5%;
 }/* esta clase contiene el NAV de los links "registrarme" y "Mi cuenta, reemplazada en vista de movil por .menú-button"*/
 
+nav ul {
+    list-style: none;
+}
+
+.barNav1 li {
+    padding-bottom: 10px;
+}
+
 .barNav1 li a {
     color: white;
+    text-decoration: none;
 }
 
 .menu-button{
@@ -79,7 +88,6 @@ header{
     padding: 5px 0;
     font-size: 17px;
 }
-
 
 /* Aquí empieza el CSS del FOOTER*/
 
@@ -154,7 +162,7 @@ header{
 @media(min-width:769px){
 
     .input{
-        width: 70%;
+        width: 100%;
         margin-left: 5%;
     }
 
@@ -178,13 +186,13 @@ header{
     .barNavIndex{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
     }
     .barNavIndex ul li{
         text-decoration: none;
         color: white;
         display: inline-block;
-        padding: 5px 0;
+        padding: 5px 35px;
         margin: 0 15px;
         font-size: 17px;
     }
