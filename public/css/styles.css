@@ -210,28 +210,11 @@ header{
     justify-content: space-between;
 } /* esta clase contiene el DIV del logo y la barra de busqueda*/
 
-.logo{
-    width: 40%;
-    margin: auto;
-    padding: 5px;
-}
-
 .buscador{
     display: flex;
     margin: auto;
     padding: 8px 0;
 } /* esta clase contiene el FORM de la barra de busqueda y el botón buscar*/
-
-.input{
-    width: 40%;
-    margin-left: 5%;
-}
-
-.boton{
-    width: 30%;
-    background-color: #3CA6A6;
-    
-}
 
 .barNav1{
     display: none;
@@ -323,7 +306,6 @@ main{
     border-radius: 10px;
     padding: 8px;
 }
-
 
 .button-form:hover{
     background-color: #f2e3d5;
@@ -425,11 +407,6 @@ h3{
 
 @media(min-width:769px){
 
-    .input{
-        width: 70%;
-        margin-left: 5%;
-    }
-
     .menu-button{
         display: none;
     }
@@ -450,13 +427,13 @@ h3{
     .barNavIndex{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
     }
     .barNavIndex ul li{
         text-decoration: none;
         color: white;
         display: inline-block;
-        padding: 5px 0;
+        padding: 5px 35px;
         margin: 0 15px;
         font-size: 17px;
     }
