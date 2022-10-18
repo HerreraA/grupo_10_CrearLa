@@ -750,31 +750,53 @@ h3{
     display:contents ;
 }
 }
->>>>>>> 39bc6dbbd6220b1143d3933445099b7cb22aabb5
+
 
 
 /*********** ESTILOS HOME *************/
 
-.home-products {
+.home-slider{
+    display: none;
+}
+.home-products{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    align-content: center;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .home-products-box {
-    width: 30%;
+    
     background-color: #3ca6a6;
     color: white;
     padding: 20px;
+    margin: 20px;
+    width: 50%;
 }
 .home-solutions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     padding: 0 5%;
+ 
 }
 .home-solutions-box {
-    width: 33%;
+    width: 50%;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+}
+.img-solutions{
+    width: 90%;
+}
+@media(min-width:769px){
+    .home-products-box{
+        width: 40%;
+    }
+
+   .home-products{
+
+   }
+   .home-slider{
+    display: contents;
+   }
 }
