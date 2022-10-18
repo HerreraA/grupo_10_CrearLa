@@ -751,3 +751,30 @@ h3{
 }
 }
 >>>>>>> 39bc6dbbd6220b1143d3933445099b7cb22aabb5
+
+
+/*********** ESTILOS HOME *************/
+
+.home-products {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.home-products-box {
+    width: 30%;
+    background-color: #3ca6a6;
+    color: white;
+    padding: 20px;
+}
+.home-solutions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 5%;
+}
+.home-solutions-box {
+    width: 33%;
+}
