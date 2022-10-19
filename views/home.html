@@ -13,59 +13,63 @@
   
 </head>
 <body>
-    <header class="main-header">
-        <div class="lineaUno" >
-            <img class="logo" src="/images/header-logo.png" alt="logo">
-            
-            <form class="buscador" action="/" method="get">
-                <input class="input" type="text" placeholder="Busca tu desarrollo">
-                <button class="boton" type="submit">Buscar</button>
-            </form>
-                
-            
-            <nav class="barNav1">
+    <header>
+        <div class="header">
+            <div class="header-container">
+                <div class="lineaUno">
+                    <div class="header-logo">
+                        <a href="/"><img src="/images/header-logo.png" alt="Crear.La"></a>
+                    </div>
+                    <div class="header-search">
+                     <form action="/" method="get">
+                            <input type="text" placeholder="Busca tu desarrollo">
+                            <button type="submit">Buscar</button>
+                       </form>
+                    </div>
+                     <nav class="header-right-menu">
+                        <ul style="list-style:none;">
+                            <li><a href="login.html"> <i class="fa-regular fa-address-card  "></i>       Mi cuenta </a></li>
+                            <li> <a href="register.html"> <i class="fa-solid fa-arrow-right-to-bracket  "></i>     Registrarme</a></li>
+                            <li> <a href="carrito.html"> <i class="fa-solid fa-bag-shopping  "></i>     Ver carrito</a></li>
+                        </ul>
+                    </nav>    
+                    <a href="#" class="menu-button">
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
+                </div>
 
-                <ul style="list-style:none;">
-                <li><a href="register.html"> <i class="fa-regular fa-address-card  "></i>       Crea tu cuenta </a></li>
-                <li> <a href="login.html"> <i class="fa-solid fa-arrow-right-to-bracket  "></i>     Ingresa</a></li>
-                <li> <a href="/carrito.html"> <i class="fa-solid fa-bag-shopping  "></i>     Ver carrito</a></li>
-                </ul>
-
-            </nav>    
-            <a href="#" class="menu-button">
-                <i class="fa-solid fa-bars"></i>
-            </a>
+                <nav class="header-bottom-menu">
+                    <ul style="list-style:none;">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="#">Nuestros Servicios</a></li>
+                         <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-
-        <nav class="barNavIndex">
-            <ul style="list-style:none;">
-                <li><a href="/">inicio</a></li>
-                <li><a href="product.html">Nuestros Servicios</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
+    <div class="main-home">
        <div class="home-slider">
-            <img width="700" height="auto" src="/images/home-slider.jpg" alt="Desarrollo de Sitios Web">
+            <img class="home-slider-img" src="/images/home-slider.jpg" alt="Desarrollo de Sitios Web">
        </div>
             <div class="home-products">
-                <div class="home-products-box">
-                    <h3>Software Factory</h3>
+                <div class="home-products-box-software">
+                    <h2>Software Factory</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, adipisci. Ipsa quos neque.</p>
                 </div>
-                <div class="home-products-box">
-                    <h3>Desarrollo de Apps</h3>
+                <div class="home-products-box-apps">
+                    <h2>Desarrollo de Apps</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, adipisci. Ipsa quos neque.</p>
                 </div>
-                <div class="home-products-box">
-                    <h3>Diseño UX/UI</h3>
+                <div class="home-products-box-uxui">
+                    <h2>Diseño UX/UI</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, adipisci. Ipsa quos neque.</p>                    
                 </div>
-                <div class="home-products-box">
-                    <h3>E-commerce</h3>
+                <div class="home-products-box-ecommerce">
+                    <h2>E-commerce</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, adipisci. Ipsa quos neque.</p>                    
                 </div>
             </div>
@@ -100,6 +104,7 @@
                     <h4>E-Learning</h4>
                 </article>                                                                                
             </div>
+    </div>
     </main>
 
     <footer>
@@ -117,9 +122,11 @@
             </div>
 
             <div class="module-footer">
-                <img class="logo" src="/images/header-logo.png" alt="logo">
-                <p>Agencia de diseño web, desarrollo de aplicaciones y software</p>
-                <p>Argentina | Colombia | Panamá</p>
+                <div class="footer-logo">
+                    <img class="footer-logo-img" src="/images/header-logo.png" alt="logo">
+                    <p>Agencia de diseño web, desarrollo de aplicaciones y software</p>
+                    <p>Argentina | Colombia | Panamá</p>
+                </div>
             </div>
 
             <div class="module-footer">

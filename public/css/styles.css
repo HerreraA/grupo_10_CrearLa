@@ -1,71 +1,96 @@
 *{
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
-    
+    box-sizing: border-box; 
     }
 
-body {
-        
+body { 
         font-size: 12px;
         margin: 0%;
         background-color: #ebebeb;
         font-family: 'Roboto', sans-serif; 
     } 
 
-/* Aquí empieza el CSS del MAIN*/
 
-header{
-    background-image: url("/images/header-bg.jpg");
+/********************************************************************************/
+/*********************************  HEADER **************************************/
+
+header {
     width: 100%;
-    padding: 20px;
+    background-color: #012E40;
+}
+
+.header {
+    background-image: url("/images/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 1600px;
+    max-height: 316px;
+    margin:auto;
+}
+
+.header-container {
+    padding-top: 60px;
+
 }
 
 .lineaUno{
     display: flex;
     justify-content: space-between;
-} /* esta clase contiene el DIV del logo y la barra de busqueda*/
-
-.logo{
-    width: 40%;
-    max-width: 350px;
-    margin: auto;
-    padding: 5px;
+    width:100%;
+    align-items: center;
 }
 
-.buscador{
-    display: flex;
-    margin: auto;
-    padding: 8px 0;
-} /* esta clase contiene el FORM de la barra de busqueda y el botón buscar*/
+.header-logo{
+    width: 30%;
+    text-align: right;
+    margin-right: 100px;
+}
 
-.input{
+.header-logo img {
+    width:100%;
+    max-width: 433px;
+}
+
+.header-search {
+    width: 35%;
+    margin:0;
+    padding:0;
+}
+.header-search input {
     width: 50%;
-    margin-left: 5%;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    margin:0;
+    padding-left:15px;
 }
 
-.boton{
-    width: 40%;
+.header-search button {
+    width: 15%;
     background-color: #3CA6A6;
-    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
 }
 
-.barNav1{
+.header-right-menu {
     display: none;
-    width: 22%;
-    margin: auto;
-    padding: 5%;
-}/* esta clase contiene el NAV de los links "registrarme" y "Mi cuenta, reemplazada en vista de movil por .menú-button"*/
-
-nav ul {
-    list-style: none;
+    width: 40%;
+    justify-content: flex-end;
 }
 
-.barNav1 li {
+.header-right-menu li {
+    margin: 15px;
+    color: white;
+    font-size: 18px;
     padding-bottom: 10px;
 }
 
-.barNav1 li a {
+.header-right-menu i {
+    margin-right: 10px;
+}
+
+.header-right-menu li a {
     color: white;
     text-decoration: none;
 }
@@ -81,18 +106,40 @@ nav ul {
     margin: auto;
 } 
 
-.barNavIndex{
+.header-bottom-menu{
     display: none;
-}/* esta clase contiene el NAV del menú de navegación*/
-.barNavIndex a{
+    margin:auto;   
+}
+
+.header-bottom-menu a {
     text-decoration: none;
     color: white;
     display: inline-block;
     padding: 5px 0;
-    font-size: 17px;
+    font-size: 25px;
 }
 
-/* Aquí empieza el CSS del FOOTER*/
+/******************** HEADER --> MEDIA QUERIES *******************/
+@media (min-width: 769px){
+    .main-footer{
+        flex-wrap: nowrap;
+        justify-content: space-between;
+}
+
+
+/********************************************************************************/
+/***********************  ESTILOS GENERALES DEL MAIN ****************************/
+
+main {
+    background-color: #FFFF;
+    margin-bottom: 30px;
+    margin:auto;
+    text-align: center;
+}
+
+
+/********************************************************************************/
+/**********************  ESTILOS GENERALES DEL FOOTER ***************************/
 
 .main-footer{
     background-color: #012E40;
@@ -111,10 +158,13 @@ nav ul {
     margin: 5px;
 }
 
-.module-footer .logo{
-    justify-content: center;
-    display: flex;
-    width: 50%;
+.footer-logo {
+    width: 100%;
+    text-align: center;
+}
+
+.footer-logo-img {
+    width: 70%;
 }
 
 .module-footer h2{
@@ -129,11 +179,11 @@ nav ul {
 }
 .icono img{
     padding: 10px;
-    margin: auto;
+    margin-top: 80px;
 }
 
+/****************** FOOTER --> MEDIA QUERIES *****************/
 @media (min-width: 481px){
-
     .main-footer{
         flex-wrap: nowrap;
         justify-content: space-between;
@@ -159,7 +209,6 @@ nav ul {
         padding: 5px;
         margin: auto;
     }
-
 }
 
 @media(min-width:769px){
@@ -173,7 +222,7 @@ nav ul {
         display: none;
     }
 
-    .barNav1{
+    .header-right-menu{
         display: flex;
         width: 22%;
         margin: auto;
@@ -181,17 +230,17 @@ nav ul {
 
     }
 
-    .barNav1 li a{
+    .header-right-menu li a{
         margin: 10px auto;
         padding: 10px;
     }
 
-    .barNavIndex{
+    .header-bottom-menu{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .barNavIndex ul li{
+    .header-bottom-menu ul li{
         text-decoration: none;
         color: white;
         display: inline-block;
@@ -201,34 +250,127 @@ nav ul {
     }
 }
 
-/*---------------------------------------CSS DE CARRITO DE COMPRAS--------------------------------------------------*/
+/*
+/*
+/*
+/*
+/*
+/********************************************************************************/
+/********************************  HOME *****************************************/
 
-main{
-    width: 100%;
+.main-home {
+    
 }
+
+.home-slider{
+    display: none;
+}
+
+.home-products{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.home-products p {
+    margin-top: 15px;
+    text-align: left;
+    line-height: 18px;
+}
+
+.home-products h2 {
+    text-align: right;
+}
+
+.home-products-box-software,
+.home-products-box-ecommerce,
+.home-products-box-uxui,
+.home-products-box-apps { 
+    background-color: #3ca6a6;
+    color: white;
+    padding: 10px 20px;
+    margin: 15px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.home-products-box-software {
+    background-image: url(/images/home-services-software.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.home-solutions {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5%;
+ 
+}
+
+.home-solutions-box {
+    width: 50%;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+}
+
+.img-solutions{
+    width: 90%;
+}
+
+
+
+@media(min-width:769px){
+    .home-products-box{
+        width: 40%;
+    }
+   .home-products{
+
+   }
+   .home-slider{
+    display: contents;
+   }
+   .home-slider-img {
+    width: 100%;
+   }
+}
+
+
+/*
+/*
+/*
+/*
+/*
+/********************************************************************************/
+/***************************  CARRITO DE COMPRAS ********************************/
+
 .main-carrito{
     background-color: #ebebeb;
 }
+
 .encabezado{
     background-color: #024959;
-} /* esta etiqueta contiene el encabezado del carrito de compras H1 y H2*/
+}
+
 .encabezado h1{
     font-size: 30px;
     padding: 2%;
     color: #F2E3D5;
 }
+
 .encabezado h2{
     color: white;
     text-align:start;
     padding: 2%;
     font-size: 20px;
-    
 } 
 
 .titulos{
     border-bottom: gray double 1px;
     margin-top: 30px;   
-} /* esta etiqueta contiene a los titulos de cada seccion del carrito*/
+}
+
 .titulos h2{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
@@ -250,6 +392,7 @@ main{
     display: flex;  
     flex-wrap: wrap;
 }
+
 .seleccion-buscador label{
     font-size: 17px;
     width: 80%;
@@ -259,6 +402,7 @@ main{
     padding-left: 20px;
     color: #012e40;
 }
+
 .seleccion-buscador select{
     width: 90%;
     padding: 5%;
@@ -272,8 +416,8 @@ main{
     display: flex;
     flex-direction: column;
     padding: 5%;
-    
 }
+
 .seleccion-check .selector{
     width: 100%;
     padding-top: 15px;
@@ -284,17 +428,20 @@ main{
     justify-content: space-between;
     color: black;
 }
+
 .selector input{
     top: 1px;
     width: 20px;
     height: 20px;
     margin-left: 30px;
 }
+
 .boton-carrito{
   margin-left: 50%;
   width: 50%;
   padding: 5%;
 }
+
 button{
   background-color: #3ca6a6;
   width: 150px;
@@ -319,6 +466,7 @@ border-top: #012E40 1px solid;
     color: #012E40;
 }
 
+/****************** CARRITO --> MEDIA QUERIES *****************/
 @media(min-width: 769px){
 
     .titulos h2{
@@ -380,65 +528,14 @@ border-top: #012E40 1px solid;
     }
 
 }
-/*---------------------------------------------------------------------------------------------------------------*/
 
-
-/*-------------------------------------------Detalle del producto------------------------------------------------------*/
-/*HEADER*/
-header{
-    background-image: url("/images/header-bg.jpg");
-    width: 100%;
-    padding: 20px;
-}
-
-.lineaUno{
-    display: flex;
-    justify-content: space-between;
-} /* esta clase contiene el DIV del logo y la barra de busqueda*/
-
-.buscador{
-    display: flex;
-    margin: auto;
-    padding: 8px 0;
-} /* esta clase contiene el FORM de la barra de busqueda y el botón buscar*/
-
-.barNav1{
-    display: none;
-    width: 22%;
-    margin: auto;
-    padding: 5%;
-}/* esta clase contiene el NAV de los links "registrarme" y "Mi cuenta, reemplazada en vista de movil por .menú-button"*/
-
-.barNav1 li a {
-    color: white;
-}
-
-.menu-button{
-    display: block;
-    color: white;
-    max-width: 50px;
-    padding: 15px 0;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 18px;
-    margin: auto;
-} 
-
-.barNavIndex{
-    display: none;
-}/* esta clase contiene el NAV del menú de navegación*/
-.barNavIndex a{
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-    padding: 5px 0;
-    font-size: 17px;
-}
-
-main{
-    background-color: #012e40;
-    color: #f2e3d5;
-}
+/*
+/*
+/*
+/*
+/*
+/********************************************************************************/
+/******************************  PRODUCTOS **************************************/
 
 .detalleDeProducto{
     display: flex;
@@ -455,33 +552,39 @@ main{
     font-size: 300px;
     padding: 21px;
     margin: -14px;
-     }
+}
+
 .create-form{
     padding: 21px;
     margin: -14px;
 }
+
 .create-form-contact{
     text-align: center;
     width: 50%;
     margin:auto
 }
+
 .control-form{
     margin-bottom: 15px;
 
 }
+
 .control-form label{
     margin-bottom: 5px;
     display: block;
 }
+
 .control-form input{
     width: 80%;
     padding: 8px;
-
 }
+
 .control-form-interes{
     display:grid;
     margin-bottom: 5px;
 }
+
 .button-form{
     font-size: 15px;
     padding: 5px 10px;
@@ -511,7 +614,6 @@ main{
 h3{
     display: inline-block;
     padding: 10px;
-
 }
 
 .formulario-contacto-texto{
@@ -522,74 +624,8 @@ h3{
     align-self: center;
     margin-left: 30px;
 }
-/*FOOTER*/
-.main-footer{
-    background-color: #012E40;
-    display: flex;
-    flex-wrap: wrap;
-}
 
-.module-footer{
-    color: white;
-    margin: auto;
-    padding: 5%;
-    border-bottom: #ebebeb 1px solid;
-}
 
-.module-footer ul li{
-    margin: 5px;
-}
-
-.module-footer .logo{
-    justify-content: center;
-    display: flex;
-    width: 50%;
-}
-
-.module-footer h2{
-    text-align: center;
-    margin-bottom: 10px;
-    color: #F2E3D5;
-}
-
-.module-footer p{
-    text-align: center;
-    margin: 5px;
-}
-.icono img{
-    padding: 10px;
-    margin: auto;
-}
-
-@media (min-width: 481px){
-
-    .main-footer{
-        flex-wrap: nowrap;
-        justify-content: space-between;
-    }
-
-    .module-footer{
-        border-bottom: 0;
-    }
-
-    .module-footer ul li{
-        margin: 10px auto;
-    }
-
-    .box-logo{
-        display: none;
-    }
-
-    .module-footer p{
-        margin: 10px auto;
-    }
-
-    .icono img{
-        padding: 5px;
-        margin: auto;
-    }
-
-}
 
 @media(min-width:769px){
 
@@ -597,7 +633,7 @@ h3{
         display: none;
     }
 
-    .barNav1{
+    .header-right-menu{
         display: flex;
         width: 22%;
         margin: auto;
@@ -605,17 +641,17 @@ h3{
 
     }
 
-    .barNav1 li a{
+    .header-right-menu li a{
         margin: 10px auto;
         padding: 10px;
     }
 
-    .barNavIndex{
+    .header-bottom-menu{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .barNavIndex ul li{
+    .header-bottom-menu ul li{
         text-decoration: none;
         color: white;
         display: inline-block;
@@ -628,13 +664,7 @@ h3{
 /*aca va CSS de register y contact*/
 
 
-main{
-    background-color: #012e40;
-    color: #f2e3d5;
-    margin-top: 20px;
-     margin-bottom: 30px;
-    
-}
+
 .registro-form-img{
     display: block;
     
@@ -751,52 +781,3 @@ h3{
 }
 }
 
-
-
-/*********** ESTILOS HOME *************/
-
-.home-slider{
-    display: none;
-}
-.home-products{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.home-products-box {
-    
-    background-color: #3ca6a6;
-    color: white;
-    padding: 20px;
-    margin: 20px;
-    width: 50%;
-}
-.home-solutions {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 5%;
- 
-}
-.home-solutions-box {
-    width: 50%;
-    text-align: center;
-    justify-content: space-evenly;
-    margin-bottom: 5%;
-}
-.img-solutions{
-    width: 90%;
-}
-@media(min-width:769px){
-    .home-products-box{
-        width: 40%;
-    }
-
-   .home-products{
-
-   }
-   .home-slider{
-    display: contents;
-   }
-}
