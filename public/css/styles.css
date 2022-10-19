@@ -283,10 +283,8 @@ display: none;
     text-align: right;
 }
 
-.home-products-box-software,
-.home-products-box-ecommerce,
-.home-products-box-uxui,
-.home-products-box-apps { 
+
+.home-products-box { 
     background-color: #3ca6a6;
     color: white;
     padding: 10px 20px;
@@ -295,26 +293,32 @@ display: none;
     border-radius: 10px;
 }
 
-.home-products-box-software,
-.home-products-box-ecommerce,
-.home-products-box-uxui,
-.home-products-box-apps {
+
+.home-products-box:hover{
     background-image: url(/images/home-services-software.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
+.home-title {
+    margin-left: 40px;
+}
+
+.home-title h3{
+    margin-top: 0%;
+    padding: 0%;
+}
 .home-solutions {
     display: flex;
     flex-wrap: wrap;
     padding: 0 5%;
- 
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .home-solutions-box {
-    width: 33%;
+    width: 40%;
     text-align: center;
-    justify-content: space-evenly;
     margin-bottom: 5%;
 }
 
@@ -344,10 +348,8 @@ display: none;
     text-align: right;
 }
 
-.home-products-box-software,
-.home-products-box-ecommerce,
-.home-products-box-uxui,
-.home-products-box-apps { 
+
+.home-products-box { 
     background-color: #3ca6a6;
     color: white;
     padding: 79px 40px;
@@ -356,10 +358,8 @@ display: none;
     border-radius: 5px;
 }
 
-.home-products-box-software,
-.home-products-box-ecommerce,
-.home-products-box-uxui,
-.home-products-box-apps {
+
+.home-products-box :hover{
     background-image: url(/images/home-services-software.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -639,11 +639,10 @@ border-top: #012E40 1px solid;
 
 .titulo-form {
     text-align: center;
-    border: solid 1px #024959;
-    border-radius: 10px;
+    
     padding: 20px;
     margin: 30px;
-    background-color: #3ca6a6;
+ 
     color: white;
 }
 
@@ -762,13 +761,11 @@ h3{
 
 .titulo-form {
     text-align: center;
-    border: solid 1px #024959;
-    border-radius: 10px;
     padding: 20px;
     margin: 30px;
-    background-color: #3ca6a6;
-    color: white;
-    font-size: 20px;
+    color: #012E40;
+    font-size: 40px;
+   
 }
 
     
