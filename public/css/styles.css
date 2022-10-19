@@ -295,7 +295,10 @@ main {
     border-radius: 10px;
 }
 
-.home-products-box-software {
+.home-products-box-software,
+.home-products-box-ecommerce,
+.home-products-box-uxui,
+.home-products-box-apps {
     background-image: url(/images/home-services-software.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -309,7 +312,7 @@ main {
 }
 
 .home-solutions-box {
-    width: 50%;
+    width: 33%;
     text-align: center;
     justify-content: space-evenly;
     margin-bottom: 5%;
@@ -322,12 +325,45 @@ main {
 
 
 @media(min-width:769px){
-    .home-products-box{
+.home-products-box{
         width: 40%;
-    }
-   .home-products{
+}
+.home-products{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
-   }
+.home-products p {
+    margin-top: 15px;
+    text-align: left;
+    line-height: 18px;
+}
+
+.home-products h2 {
+    text-align: right;
+}
+
+.home-products-box-software,
+.home-products-box-ecommerce,
+.home-products-box-uxui,
+.home-products-box-apps { 
+    background-color: #3ca6a6;
+    color: white;
+    padding: 79px 40px;
+    margin: 14px;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.home-products-box-software,
+.home-products-box-ecommerce,
+.home-products-box-uxui,
+.home-products-box-apps {
+    background-image: url(/images/home-services-software.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
    .home-slider{
     display: contents;
    }
