@@ -249,7 +249,7 @@ main {
         font-size: 17px;
     }
 }
-
+ }
 /*
 /*
 /*
@@ -262,8 +262,8 @@ main {
     
 }
 
-.home-slider{
-    display: none;
+.home-slider {
+display: none;  
 }
 
 .home-products{
