@@ -814,3 +814,72 @@ h3{
 }
 }
 
+/*--------------------------------------------LOGIN---------------------------------------------------------*/
+
+
+.login-box {
+    margin: auto;
+    width: 40%;
+    padding: 5px;
+    background: white;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 70px 30px;
+  }
+
+  .login-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+    color: #012E40;
+  }
+
+  .login-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    color:#024959;
+  }
+
+  .login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+    color: #012E40;
+  }
+  .login-box input[type="text"], .login-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #012E40;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color:#024959;
+    font-size: 16px;
+  }
+
+  .login-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #026773;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+
+  .login-box input[type="submit"]:hover {
+    cursor: pointer;
+    background: #3CA6A6;
+    color: #000;
+  }
+  .login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
+
+  .login-box a:hover {
+    color: #012E40; 
+  }
