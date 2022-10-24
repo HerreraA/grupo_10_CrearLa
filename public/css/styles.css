@@ -5,9 +5,9 @@
     }
 
 body { 
-        font-size: 12px;
+        font-size: 14px;
         margin: 0%;
-        background-color: #ebebeb;
+        background-color: #012E40;
         font-family: 'Roboto', sans-serif; 
     } 
 
@@ -17,60 +17,75 @@ body {
 
 header {
     width: 100%;
-    background-color: #012E40;
 }
 
 .header {
     background-image: url("/images/header-bg.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    max-width: 1600px;
-    max-height: 316px;
     margin:auto;
 }
 
 .header-container {
-    padding-top: 60px;
-
+    padding-top: 20px;
 }
 
 .lineaUno{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     width:100%;
     align-items: center;
+    margin:auto;
 }
 
-.header-logo{
-    width: 30%;
-    text-align: right;
-    margin-right: 100px;
+.header-logo {
+    width: 100%;
+    margin:auto;
+    text-align: center;
 }
 
 .header-logo img {
-    width:100%;
+    width:95%;
+    padding: 15px;
     max-width: 433px;
+
 }
 
 .header-search {
-    width: 35%;
     margin:0;
-    padding:0;
+    padding:10px;
+    width: 100%;
+    text-align: center;
 }
+
+.header-search-input {
+    display: block;
+    margin:auto;
+    max-width: 250px;
+}
+
 .header-search input {
-    width: 50%;
-    height: 35px;
+    width:80%;
     border-radius: 5px;
     border: none;
+    height: 35px;
     margin:0;
     padding-left:15px;
 }
 
+.header-search-button {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
 .header-search button {
-    width: 15%;
     background-color: #3CA6A6;
     border: none;
     border-radius: 5px;
+    margin-top: 15px;
+    font-size: 14px;
+    width: 100px;
 }
 
 .header-right-menu {
@@ -102,7 +117,7 @@ header {
     padding: 15px 0;
     border-radius: 8px;
     text-align: center;
-    font-size: 18px;
+    font-size: 25px;
     margin: auto;
 } 
 
@@ -121,9 +136,39 @@ header {
 
 /******************** HEADER --> MEDIA QUERIES *******************/
 @media (min-width: 769px){
-    .main-footer{
-        flex-wrap: nowrap;
-        justify-content: space-between;
+.lineaUno {
+    justify-content: space-between;
+    flex-direction: row;
+}
+.header-logo{
+    max-width: 433px;
+    text-align: right;
+    margin-right: 100px;
+}
+.header-search {
+    width: 35%;
+}
+}
+
+@media (min-width: 1200px){
+    .header{
+        max-width: 1600px;
+        max-height: 316px;
+    }
+    .header-search input {
+        width: 50%;
+        height: 35px;
+        border-radius: 5px;
+        border: none;
+        margin:0;
+        padding-left:15px;
+    }
+    .header-search button {
+        width: 15%;
+        background-color: #3CA6A6;
+        border: none;
+        border-radius: 5px;
+    }
 }
 
 
@@ -131,10 +176,14 @@ header {
 /***********************  ESTILOS GENERALES DEL MAIN ****************************/
 
 main {
+
+}
+
+.main-home {
     background-color: #FFFF;
-    margin-bottom: 30px;
     margin:auto;
     text-align: center;
+    padding-bottom: 25px;
 }
 
 
@@ -145,13 +194,15 @@ main {
     background-color: #012E40;
     display: flex;
     flex-wrap: wrap;
+    padding: 20px 20px;
 }
 
 .module-footer{
     color: white;
     margin: auto;
-    padding: 5%;
-    border-bottom: #ebebeb 1px solid;
+    text-align: center;
+    line-height: 20px;
+    margin-top: 10px;
 }
 
 .module-footer ul li{
@@ -159,27 +210,31 @@ main {
 }
 
 .footer-logo {
-    width: 100%;
+    width: 80%;
     text-align: center;
+    margin:auto;
 }
 
-.footer-logo-img {
-    width: 70%;
+.footer-logo img {
+    width: 100%;
+}
+
+.footer-logo p {
+    padding: 10px 0;
 }
 
 .module-footer h2{
-    text-align: center;
     margin-bottom: 10px;
     color: #F2E3D5;
 }
 
 .module-footer p{
-    text-align: center;
     margin: 5px;
 }
-.icono img{
-    padding: 10px;
-    margin-top: 80px;
+
+.module-footer img  {
+    margin-top: 25px;
+    padding: 0 10px;
 }
 
 /****************** FOOTER --> MEDIA QUERIES *****************/
@@ -249,7 +304,7 @@ main {
         font-size: 17px;
     }
 }
- }
+
 /*
 /*
 /*
@@ -257,10 +312,6 @@ main {
 /*
 /********************************************************************************/
 /********************************  HOME *****************************************/
-
-.main-home {
-    
-}
 
 .home-slider {
 display: none;  
@@ -283,31 +334,39 @@ display: none;
     text-align: right;
 }
 
-
 .home-products-box { 
     background-color: #3ca6a6;
     color: white;
-    padding: 10px 20px;
+    padding: 20px 20px;
     margin: 15px;
-    width: 50%;
+    width: 80%;
+    height:100%;
     border-radius: 10px;
+    max-width: 300px;
 }
 
-
 .home-products-box:hover{
-    background-image: url(/images/home-services-software.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-color: #012E40;;
 }
 
 .home-title {
-    margin-left: 40px;
+    margin: 25px auto;
+    width: 70%;
 }
 
-.home-title h3{
-    margin-top: 0%;
-    padding: 0%;
+.home-title-left {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align:left;
+    color:#012E40;
 }
+
+.home-title-right {
+    font-size: 17px;
+    text-align: right;
+}
+
 .home-solutions {
     display: flex;
     flex-wrap: wrap;
@@ -768,15 +827,10 @@ h3{
    
 }
 
-    
-  
-    
-
 h3{
     display: inline-block;
     padding: 10px;
     margin-top: 20px;
-
 }
 
 .formulario-contacto-texto{

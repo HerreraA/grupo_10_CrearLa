@@ -15,27 +15,27 @@ app.get ('/', (req, res) => {
     res.sendFile (htmlPath)
 })
 
-app.get ('/register.html', (req, res) => {
-    let htmlPath = path.resolve(__dirname, './views/register.html');
+app.get ('/register', (req, res) => {
+    let htmlPath = path.resolve(__dirname, './views/users/register.html');
     res.sendFile (htmlPath)
 })
 
-app.get('/carrito.html',(req, res) => {
+app.get('/carrito',(req, res) => {
     let htmlPath = path.resolve(__dirname, './views/carrito.html')
     res.sendFile(htmlPath) })
 
     
-app.get ('/product.html', (req, res) => {
+app.get ('/product', (req, res) => {
     let htmlPath = path.resolve(__dirname, './views/product.html');
     res.sendFile (htmlPath)
 })
 
-app.get ('/contact.html', (req, res) => {
+app.get ('/contact', (req, res) => {
     let htmlPath = path.resolve(__dirname, './views/contact.html');
      res.sendFile (htmlPath)
 })
 
-app.get ('/login.html', (req, res) => {
-    let htmlPath = path.resolve(__dirname, './views/login.html');
+app.get ('/login', (req, res) => {
+    let htmlPath = path.resolve(__dirname, './views/users/login.html');
      res.sendFile (htmlPath)
 })

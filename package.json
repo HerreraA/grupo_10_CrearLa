@@ -20,7 +20,9 @@
   "homepage": "https://github.com/HerreraA/grupo_10_CrearLa#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "normalize": "^0.3.1"
+    "http": "^0.0.1-security",
+    "normalize": "^0.3.1",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
