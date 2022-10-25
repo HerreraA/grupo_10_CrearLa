@@ -6,6 +6,8 @@ const path = require('path');
 
 const publicPath= path.resolve(__dirname, "./public");
 
+app.set("view engine", "ejs");
+
 app.use(express.static(publicPath))
 
 app.listen (3500, () => console.log('Alta de servidor: http://localhost:3500'));
