@@ -126,49 +126,106 @@ header {
     margin:auto;   
 }
 
-.header-bottom-menu a {
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-    padding: 5px 0;
-    font-size: 25px;
-}
-
 /******************** HEADER --> MEDIA QUERIES *******************/
 @media (min-width: 769px){
+.header {
+    height: 300px;
+}
+.header-container {
+    
+}
+.menu-button{
+        display: none;
+    }
 .lineaUno {
     justify-content: space-between;
     flex-direction: row;
+    width: 100%;
+    padding: 20px 0;
 }
 .header-logo{
-    max-width: 433px;
-    text-align: right;
-    margin-right: 100px;
+    width:50%;
+    margin:20px;
+    padding:0;
+}
+.header-logo img {
+    width: 100%;
+    padding:0;
+    margin:0;
 }
 .header-search {
+    width: 50%;
+}
+.header-search-form {
+    width: 100%;
+    display: flex;
+    justify-content:left;
+    align-items: center;
+}
+.header-search-input {
+    width:100%;
+    margin-right: 10px;
+}
+.header-search-input input {
+    width: 100%;
+}
+.header-search-button {
+    width: 100px;
+    margin:0;
+    padding:0;
+}
+.header-search-button button {
+    width: 70px;
+    height: 36px;
+    margin:0;
+    padding:0;
+}
+.header-right-menu{
+    display: flex;
     width: 35%;
+    margin: auto;
+    padding: 0px;
+}
+
+.header-right-menu li a{
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.header-bottom-menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:100%;
+    padding: 20px 0;
+}
+
+.header-bottom-menu ul li{
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 20px;
+    margin: 0 15px;
+}
+.header-bottom-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
 }
 }
+
 
 @media (min-width: 1200px){
     .header{
         max-width: 1600px;
         max-height: 316px;
     }
-    .header-search input {
-        width: 50%;
-        height: 35px;
-        border-radius: 5px;
-        border: none;
-        margin:0;
-        padding-left:15px;
+    .header-logo {
+        margin-left: 100px;
     }
-    .header-search button {
-        width: 15%;
-        background-color: #3CA6A6;
-        border: none;
-        border-radius: 5px;
+    .header-right-menu{
+        margin-right: 120px;
     }
+
 }
 
 
@@ -266,44 +323,6 @@ main {
     }
 }
 
-@media(min-width:769px){
-
-    .input{
-        width: 100%;
-        margin-left: 5%;
-    }
-
-    .menu-button{
-        display: none;
-    }
-
-    .header-right-menu{
-        display: flex;
-        width: 22%;
-        margin: auto;
-        padding: 0px;
-
-    }
-
-    .header-right-menu li a{
-        margin: 10px auto;
-        padding: 10px;
-    }
-
-    .header-bottom-menu{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .header-bottom-menu ul li{
-        text-decoration: none;
-        color: white;
-        display: inline-block;
-        padding: 5px 35px;
-        margin: 0 15px;
-        font-size: 17px;
-    }
-}
 
 /*
 /*
@@ -407,7 +426,6 @@ display: none;
     text-align: right;
 }
 
-
 .home-products-box { 
     background-color: #3ca6a6;
     color: white;
@@ -417,18 +435,22 @@ display: none;
     border-radius: 5px;
 }
 
-
 .home-products-box :hover{
     background-image: url(/images/home-services-software.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
 }
-   .home-slider{
-    display: contents;
-   }
-   .home-slider-img {
+   .home-slider {
+    display: block;
     width: 100%;
+    background-color: #012e41;
    }
+
+}
+
+@media(min-width:1200px){
+
+
 }
 
 
@@ -719,41 +741,6 @@ h3{
     margin-left: 30px;
 }
 
-
-
-@media(min-width:769px){
-
-    .menu-button{
-        display: none;
-    }
-
-    .header-right-menu{
-        display: flex;
-        width: 22%;
-        margin: auto;
-        padding: 0px;
-
-    }
-
-    .header-right-menu li a{
-        margin: 10px auto;
-        padding: 10px;
-    }
-
-    .header-bottom-menu{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .header-bottom-menu ul li{
-        text-decoration: none;
-        color: white;
-        display: inline-block;
-        padding: 5px 35px;
-        margin: 0 15px;
-        font-size: 17px;
-    }
-}
 
 /*aca va CSS de register y contact*/
 
