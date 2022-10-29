@@ -28,7 +28,7 @@ app.get('/carrito',(req, res) => {
 
     
 app.get ('/product', (req, res) => {
-    let htmlPath = path.resolve(__dirname, './views/product.ejs');
+    let htmlPath = path.resolve(__dirname, './views/products/product.ejs');
     res.render (htmlPath)
 })
 
