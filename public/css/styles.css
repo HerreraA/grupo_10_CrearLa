@@ -462,25 +462,24 @@ display: none;
 /********************************************************************************/
 /***************************  CARRITO DE COMPRAS ********************************/
 
-.main-carrito{
+.main-carrito {
     background-color: #ebebeb;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
 }
 
-.encabezado{
-    background-color: #024959;
+.main-carrito h1{
+    padding: 15px 25px;
+    text-align: center;
 }
 
-.encabezado h1{
-    font-size: 30px;
-    padding: 2%;
-    color: #F2E3D5;
-}
-
-.encabezado h2{
-    color: white;
-    text-align:start;
-    padding: 2%;
-    font-size: 20px;
+.main-carrito h2{
+    padding: 10px 15px;
+    text-align: center;
 } 
 
 .titulos{
@@ -490,18 +489,21 @@ display: none;
 
 .titulos h2{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
     color: #012E40;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .seleccion-menu p{
-    font-size: 25px;
     padding: 2%;
     margin-top: 5%;
     text-align: center;
     color: #012E40;
+}
+
+.seleccion-menu label {
+    display: block;
+    width: 100%;
 }
 
 .seleccion-buscador{
@@ -511,7 +513,6 @@ display: none;
 }
 
 .seleccion-buscador label{
-    font-size: 17px;
     width: 80%;
     text-align: left;
     margin-top: 3%;
@@ -523,10 +524,9 @@ display: none;
 .seleccion-buscador select{
     width: 90%;
     padding: 5%;
-    border-radius: 20px;
+    border-radius: 16px;
     margin: auto;
     text-align: left;
-    font-size: 24px;
 }
 
 .seleccion-check{
@@ -539,7 +539,6 @@ display: none;
     width: 100%;
     padding-top: 15px;
     margin-bottom: 12px;
-    font-size: 25px;
     text-align: left;
     display: flex;
     justify-content: space-between;
@@ -554,14 +553,12 @@ display: none;
 }
 
 .boton-carrito{
-  margin-left: 50%;
   padding: 5%;
 }
 
 button{
   background-color: #3ca6a6;
   width: 150px;
-  font-size: 20px;
   padding: 5px;
   border-radius: 5px;
   border: 3px solid #F2E3D5;
@@ -577,47 +574,21 @@ border-top: #012E40 1px solid;
 }
 
 .valor-total h2{
-    font-size: 50px;
     margin-top: 20px;
     color: #012E40;
 }
 
 /****************** CARRITO --> MEDIA QUERIES *****************/
 @media(min-width: 769px){
-
-    .titulos h2{
-        font-size: 45px;
-    }
-
     .seleccion-menu p{
-        font-size: 30px;
         padding: 2%;
         margin-top: 5%;
         text-align: center;
     }
-
-    .seleccion-buscador select{
-        width: 90%;
-        padding: 2%;
-        border-radius: 20px;
-        margin: 20px;
-        text-align: left;
-        font-size: 40px;
-    }
-
-    .selector input{
-        width: 40px;
-        height: 40px;
-    }
-
-    .boton-carrito{
-        margin-left: 70%;
-      }
 }
 
 @media(min-width:1200px){
     .seleccion-menu p{
-        font-size: 40px;
         text-align: left;
     }
     .seleccion-buscador{
@@ -628,21 +599,11 @@ border-top: #012E40 1px solid;
     }
 
     .seleccion-buscador label{
-        font-size: 25px;
         width: 20%;
         text-align: center;
         padding: 20px;
         margin: auto;
     }
-    .seleccion-buscador select{
-        width: 60%;
-        padding: 2%;
-        border-radius: 20px;
-        margin: auto;
-        text-align: left;
-        font-size: 24px;
-    }
-
 }
 
 /*
