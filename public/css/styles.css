@@ -468,7 +468,7 @@ display: none;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
+    
     padding: 15px;
 }
 
@@ -513,6 +513,7 @@ display: none;
 }
 
 .seleccion-buscador label{
+    font-size: 20px;
     width: 80%;
     text-align: left;
     margin-top: 3%;
@@ -523,10 +524,11 @@ display: none;
 
 .seleccion-buscador select{
     width: 90%;
-    padding: 5%;
+    padding: 3%;
     border-radius: 16px;
     margin: auto;
     text-align: left;
+    font-size: 20px;
 }
 
 .seleccion-check{
@@ -543,6 +545,7 @@ display: none;
     display: flex;
     justify-content: space-between;
     color: black;
+    font-size: 20px;
 }
 
 .selector input{
@@ -554,6 +557,7 @@ display: none;
 
 .boton-carrito{
   padding: 5%;
+  text-align: end;
 }
 
 button{
@@ -561,7 +565,6 @@ button{
   width: 150px;
   padding: 5px;
   border-radius: 5px;
-  border: 3px solid #F2E3D5;
   color: white;
   cursor: pointer;
   margin: auto;
@@ -580,17 +583,40 @@ border-top: #012E40 1px solid;
 
 /****************** CARRITO --> MEDIA QUERIES *****************/
 @media(min-width: 769px){
+    .titulos h2{
+        font-size: 24px;
+    }
     .seleccion-menu p{
         padding: 2%;
         margin-top: 5%;
         text-align: center;
+        font-size: 17px;
     }
+
+    .seleccion-buscador label {
+        font-size: 24px;
+    }
+
+    .seleccion-buscador select {
+        font-size: 30px;
+    }
+
+    .seleccion-check .selector {
+        font-size: 27px;
+    }
+
+    button{
+        padding: 12px;
+        width: 200px;
+    }
+
 }
 
 @media(min-width:1200px){
     .seleccion-menu p{
         text-align: left;
     }
+
     .seleccion-buscador{
         width: 80%;
         display: flex;  
