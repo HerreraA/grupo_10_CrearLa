@@ -438,7 +438,7 @@ display: none;
 .home-products-box:hover{
     background-image: url(/images/home-services-software.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
    .home-slider {
     display: block;
