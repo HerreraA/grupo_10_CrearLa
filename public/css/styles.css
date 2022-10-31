@@ -641,16 +641,16 @@ border-top: #012E40 1px solid;
 /******************************  PRODUCTOS **************************************/
 
 .detalleDeProducto{
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    flex-direction: row
+   
 }
 .detalle-producto{
-    width: 45%;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
 }
 
 .fa-solid.fa-image {
+    display: none;
     font-weight: 100;
     font-size: 300px;
     padding: 21px;
@@ -850,6 +850,22 @@ h3{
 }
 .fa-solid.fa-address-card{
     display:contents ;
+}
+.fa-solid.fa-image {
+    display: none;
+    font-weight: 100;
+    font-size: 300px;
+    padding: 21px;
+    margin: -14px;
+}
+.detalleDeProducto{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row
+}
+.detalle-producto{
+    width: 45%;
 }
 }
 
