@@ -910,3 +910,12 @@ h3{
   .login-box a:hover {
     color: #012E40; 
   }
+
+  /*--------------------------------------------FOLDER--------------------------------------------------------*/
+  .create-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
