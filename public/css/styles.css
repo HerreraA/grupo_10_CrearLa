@@ -727,7 +727,11 @@ h3{
     margin-left: 30px;
 }
 
-
+.main-product{
+    background-color: #ebebeb;
+    margin: 40px;
+    padding: 20px;
+}
 /*aca va CSS de register y contact*/
 
 
@@ -822,6 +826,14 @@ h3{
     display: block;
 }
 
+.main-register{
+    background-color: #ebebeb;
+    margin: 30px;
+}
+.main-contact{
+    background-color: #ebebeb;
+    margin: 30px;
+}
 @media(min-width:769px){
 .formulario-contacto-texto{
     display: flex;
