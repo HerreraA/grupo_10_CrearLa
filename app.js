@@ -41,3 +41,8 @@ app.get ('/login', (req, res) => {
     let htmlPath = path.resolve(__dirname, './views/users/login.ejs');
      res.render (htmlPath)
 })
+
+app.get ('/portafolio', (req, res) => {
+    let htmlPath = path.resolve(__dirname, './views/portafolio.ejs');
+     res.render (htmlPath)
+})

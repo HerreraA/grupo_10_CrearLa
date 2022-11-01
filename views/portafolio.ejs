@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+    <body>
+        <%- include('./partials/header') %> 
+    <main>
+    <div class="create-box">
+        <h1>Agregar producto</h1>
+        <form>
+          <label for="name">Nombre del producto</label>
+          <input type="text" placeholder="">
+    <div class="select">Tipo de producto</div>
+          <select name ="format" id="format">
+            <option select disabled>Selecciona el tipo de producto a subir</option>
+            <option value="sitioweb">Sitio Web</option>
+            <option value="app">APP</option>
+            <option value="ecommerce">E-Commerce</option>
+            <option value="software">Software Factory</option>
+            <option value="diseño">Diseño UX/UI</option>
+          </select>
+    <div>
+        
+            <label for="description"></label>
+            <textarea name="description" id="description" cols="35" rows="10" placeholder="Descipción del producto"></textarea>
+        </div>
+        
+        <div class="control-form">Seleccionar fotos del producto
+            <label for="foto"></label>
+            <input type="file" name="foto" id="foto" accept=".jpg, .png">
+        </div>
+
+
+        <button type="submit" class="button-form">Crear</button>
+        <button type="reset" class="button-form">Borrar</button>
+        </div>
+          
+    </main>
+
+    <%- include('./partials/footer') %>
+</body>
+</html>
