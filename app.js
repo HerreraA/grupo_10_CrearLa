@@ -46,3 +46,8 @@ app.get ('/portafolio', (req, res) => {
     let htmlPath = path.resolve(__dirname, './views/portafolio.ejs');
      res.render (htmlPath)
 })
+
+app.get ('/diseno-web', (req, res) => {
+    let htmlPath = path.resolve(__dirname, './views/products/diseno-web.ejs');
+     res.render (htmlPath)
+})

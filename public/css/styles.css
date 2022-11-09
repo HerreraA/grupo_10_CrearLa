@@ -233,7 +233,7 @@ header {
 /***********************  ESTILOS GENERALES DEL MAIN ****************************/
 
 main {
-
+ background-color: #EBEBEB;
 }
 
 .main-home {
@@ -640,9 +640,78 @@ border-top: #012E40 1px solid;
 /********************************************************************************/
 /******************************  PRODUCTOS **************************************/
 
-.detalleDeProducto{
-   
+.products-h1 {
+    text-align:center;
+    padding: 15px 0;
+    font-size:35px;
 }
+
+.products-p {
+    margin: 15px auto;
+    width: 80%;
+    text-align: center;
+}
+
+.box-product {
+    border-bottom: 10px solid #ededed;
+    margin: auto;
+    display: flex;
+    justify-content:center;
+    width:auto;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+
+.box-product-left {
+    padding: 30px;
+}
+
+.box-product-number {
+    font-size:45px;
+    font-weight: bold;
+    color: #f3e3d4;
+    text-shadow: 1px 1px 3px #595959;
+    margin-bottom: 15px;
+}
+
+.box-product-txt p {
+    margin: 15px 0;
+    line-height: 25px;
+}
+
+.box-product-right {
+    padding: 20px;
+    max-width: 300px;
+}
+
+.box-product-right img {
+    width: 100%;
+}
+
+.box-product-button {
+    border: 4px solid #979797;
+    border-radius: 30px;
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+    color: #979797;
+    text-align: center;
+    max-width: 200px;
+    background-color: #fff;
+}
+
+.box-product-button a {
+    text-decoration: none;
+    color: #979797;
+}
+
+.box-product-button a:hover {
+}
+
+
+
+
 .detalle-producto{
     width: 100%;
     text-align: center;
@@ -834,7 +903,25 @@ h3{
     background-color: #ebebeb;
     margin: 30px;
 }
+
+
 @media(min-width:769px){
+    .products-h1 {
+        padding: 35px 0 15px 0;
+    }
+    
+    .products-p {
+        margin: 25px auto;
+        width: 50%;
+    }
+    .box-product {
+        flex-wrap: nowrap;
+        max-width: 900px;
+        text-align: left;
+    }
+    .box-product-button {
+        font-size: 18px;
+    }
 .formulario-contacto-texto{
     display: flex;
 }
@@ -869,6 +956,9 @@ h3{
 }
 }
 
+@media(min-width:1200px){
+
+}
 /*--------------------------------------------LOGIN---------------------------------------------------------*/
 
 
