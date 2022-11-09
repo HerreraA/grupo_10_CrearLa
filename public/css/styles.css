@@ -653,7 +653,7 @@ border-top: #012E40 1px solid;
 }
 
 .box-product {
-    border-bottom: 10px solid #ededed;
+    border-bottom: 20px solid #f1f1f1;
     margin: auto;
     display: flex;
     justify-content:center;
@@ -664,7 +664,7 @@ border-top: #012E40 1px solid;
 }
 
 .box-product-left {
-    padding: 30px;
+    padding: 10px 30px;
 }
 
 .box-product-number {
@@ -681,7 +681,7 @@ border-top: #012E40 1px solid;
 }
 
 .box-product-right {
-    padding: 20px;
+    padding: 10px 20px;
     max-width: 300px;
 }
 
@@ -922,6 +922,14 @@ h3{
     .box-product-button {
         font-size: 18px;
     }
+    .box-product-left {
+        padding: 30px;
+    }
+    .box-product-right {
+        padding: 20px;
+    }
+
+
 .formulario-contacto-texto{
     display: flex;
 }
