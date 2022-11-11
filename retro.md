@@ -28,3 +28,5 @@ No hay nada especifico.
 En resumen y conrespecto  a lo expuesto por el equipo, coincidimos en que debemos mejorar la comunicación y la organización para lograr la misma. Mantener lo que tenemos y sobre esa base mejorar, tanto a nivel equipo como a novel proyecto.
 Debemos mantenernos actualizados y al día, utilizar mas discord para los avances y comentarios acerca del proyecto para poder mantener al tanto a los profesores.
 Por último seguir entregando y trabajando!
+
+
