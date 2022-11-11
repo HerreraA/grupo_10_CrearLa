@@ -126,14 +126,14 @@ header {
     margin:auto;   
 }
 
+
+
 /******************** HEADER --> MEDIA QUERIES *******************/
 @media (min-width: 769px){
 .header {
     height: 300px;
 }
-.header-container {
-    
-}
+
 .menu-button{
         display: none;
     }
@@ -198,6 +198,7 @@ header {
     justify-content: center;
     width:100%;
     padding: 20px 0;
+    position: relative;
 }
 
 .header-bottom-menu ul li{
@@ -207,10 +208,46 @@ header {
     margin: 0 15px;
 }
 .header-bottom-menu a {
+    width: 100%;
     text-decoration: none;
     color: white;
     font-size: 23px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 300ms ease;
+    
 }
+
+.header-bottom-menu a:hover{
+transform: scale(1.1);
+border-radius: 5%;
+box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+}
+
+/*SUB-MENU*/
+
+nav ul li ul {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background:#012E40;
+    position: absolute;
+    top:60px;
+    padding: 10px 0px;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0px,0px,10px,0px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: all 300ms ease;
+}
+
+nav ul li:hover ul{
+    visibility: visible;
+    opacity: 1;
+    top: 70px;
 }
 
 
