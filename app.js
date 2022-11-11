@@ -2,6 +2,7 @@ const express = require ('express');
 const { get } = require('http');
 const app = express();
 const path = require('path');
+const productsRouter= require('./routes/products');
 
 
 const publicPath= path.resolve(__dirname, "./public");
@@ -27,10 +28,7 @@ app.get('/carrito',(req, res) => {
     res.render(htmlPath) })
 
     
-app.get ('/product', (req, res) => {
-    let htmlPath = path.resolve(__dirname, './views/products/product.ejs');
-    res.render (htmlPath)
-})
+app.get ('/product', productsRouter)
 
 app.get ('/contact', (req, res) => {
     let htmlPath = path.resolve(__dirname, './views/contact.ejs');
@@ -48,6 +46,6 @@ app.get ('/portafolio', (req, res) => {
 })
 
 app.get ('/diseno-web', (req, res) => {
-    let htmlPath = path.resolve(__dirname, './views/products/diseno-web.ejs');
+    let htmlPath = path.resolve(__dirname, './views/products/diseno-web/diseno-web.ejs');
      res.render (htmlPath)
 })
