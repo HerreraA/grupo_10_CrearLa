@@ -2,7 +2,7 @@
 const express = require ('express');
 const { get } = require('http');
 const path = require('path');
-const productsRouter= require('./routes/products');
+
 
 // ************ express() - (don't touch) ************
 const app = express();
@@ -15,12 +15,11 @@ app.use(express.static(publicPath))
 app.set("view engine", "ejs");
 const publicPath= path.resolve(__dirname, "./public");
 
-// ************ Sistema de Rutas ************
-//const main = require('./routes/main');
-//const products = require('./routes/products');
+app.set("view engine", "ejs");
 
-//app.use('/', main);
-//app.use('/products', products)
+app.use(express.static(publicPath))
+
+app.listen (3500, () => console.log('Alta de servidor: http://localhost:3500'));
 
 app.get ('/', (req, res) => {
     let htmlPath = path.resolve(__dirname, './views/home.ejs');
@@ -55,6 +54,3 @@ app.get ('/diseno-web', (req, res) => {
     let htmlPath = path.resolve(__dirname, './views/products/diseno-web/diseno-web.ejs');
      res.render (htmlPath)
 })
-
-// ************ Creando servidor ************
-app.listen (3500, () => console.log('Alta de servidor: http://localhost:3500'));
