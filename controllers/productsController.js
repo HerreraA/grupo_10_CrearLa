@@ -8,4 +8,4 @@ const productsController = {
     }
 }
 
-module.exports = controller;
+module.exports = productsController ;

@@ -14,7 +14,7 @@ app.use(express.static(publicPath))
 app.set("view engine", "ejs");
 const productsRouter= require('./routes/products');
 
-app.use('/products', products);
+app.use('/products', productsRouter);
 
 app.get ('/', (req, res) => {
     let htmlPath = path.resolve(__dirname, './views/home.ejs');
