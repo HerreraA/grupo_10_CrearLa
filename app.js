@@ -2,10 +2,12 @@
 const express = require ('express');
 const { get } = require('http');
 const path = require('path');
-
+const productsRouter = require ("./routes/products")
+const productsController = require ("./controllers/productsController")
 
 // ************ express() - (don't touch) ************
 const app = express();
+const publicPath= path.resolve(__dirname, "./public");
 
 // ************ Middlewares - (don't touch) ************
 app.use(express.static(publicPath))
@@ -13,11 +15,7 @@ app.use(express.static(publicPath))
 
 // ************ Template Engine - (don't touch) ************
 app.set("view engine", "ejs");
-const publicPath= path.resolve(__dirname, "./public");
 
-app.set("view engine", "ejs");
-
-app.use(express.static(publicPath))
 
 app.listen (3500, () => console.log('Alta de servidor: http://localhost:3500'));
 
