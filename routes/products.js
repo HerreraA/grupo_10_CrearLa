@@ -12,7 +12,7 @@ router.get('/desarrolloWeb', productsController.desarrolloWeb);
 
 router.get('/disenoWeb', productsController.disenoWeb);
 
-router.get('/ecommercer', productsController.ecommerce);
+router.get('/ecommerce', productsController.ecommerce);
 
 
 module.exports = router;
