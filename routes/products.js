@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const productsController = require('../controllers/productsController');
-
-router.get('/products', productsController.index);
+const path = require("path");
 
 
 //*** GET ALL PRODUCTS *** 
-router.get('/', productsController.index); 
+router.get('/products', productsController.index); 
 
 //*** CREATE ONE PRODUCT *** 
 router.get('/create', productsController.create); 
