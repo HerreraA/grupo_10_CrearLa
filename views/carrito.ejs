@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+    <body>
+       
+     <%- include('./partials/header') %>  
+    <main class="main-carrito">
+            <h1>COTIZA TU PRESUPUESTO </h1>
+            <h2>Aquí podrás cotizar el alcance de tu App, software, e-comerce y/o sitio web</h2>
+        <section>
+            <div class="titulos">
+                <h2>¿Que servicio necesitás?</h2>
+            </div>
+            <article class="seleccion-menu">
+                <p>Elegí los detalles para el servicio que necesitás.</p>
+                <form action="/" method="get" class="seleccion-buscador">
+                    <label>Tipo de servicio</label>
+                    <select>
+                        <option>App</option>
+                        <option>Software</option>
+                        <option>e-comerce</option>
+                        <option>sitio web</option>
+                    </select>
+                </form>
+            </article>
+            <div class="titulos">
+                <h2>Utilidades para el proyecto</h2>
+            </div>
+            <article class="seleccion-check">
+                    <form action="/" method="post">
+                        <div class="selector">
+                            <label for="pse">Pago por pse</label>
+                            <input type="checkbox" name="adicionales" id="pse">
+                        </div>
+                        <div class="selector">
+                            <label for="whatsapp">Chat por WhatsApp</label>
+                            <input type="checkbox" name="adicionales" id="whatsapp">
+                        </div>
+                        <div class="selector">
+                            <label for="redes">Links a redes sociales</label>
+                            <input type="checkbox" name="adicionales" id="redes">
+                        </div>
+                        <div class="selector">
+                            <label for="registro">Registro de usuarios</label>
+                            <input type="checkbox" name="adicionales" id="registro">
+                        </div>
+                        <div class="titulos">
+                            <h2>Adicionales</h2>
+                        </div> 
+                        <div class="selector">
+                            <label for="logo-design">Diseño de logo</label>
+                            <input type="checkbox" name="adicionales" id="logo-design">
+                        </div>
+                        <div class="selector">
+                            <label for="whatsapp-business">WhatsApp business</label>
+                            <input type="checkbox" name="adicionales" id="whatsapp-business">
+                        </div> 
+                        <div class="selector">
+                            <label for="social-media">Diseño de redes sociales</label>
+                            <input type="checkbox" name="adicionales" id="social-media">
+                        </div> 
+                        <div class="boton-carrito">
+                            <button type="submit">Agregar servicio</button>
+                        </div>    
+                    </form>
+                    <div class="valor-total">
+                        <h2>TOTAL $0,00</h2>
+                    </div>
+            </article>
+        </section>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

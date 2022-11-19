@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+    <body>
+        <%- include('../partials/header') %> 
+    <main class="main-register">
+        <h1 class="titulo-form">Formulario de registro</h1>
+        <div class="registro-form-img">
+       <div  class="formulario-registro">
+        
+        <form name="registro" method="get" action="/" class="create-form">
+         <div class="control-form">
+            <h2>Datos personales</h2> 
+            <label for="nombre"></label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
+         </div>
+         <div class="control-form">
+            <label for="date"></label>
+            <input type="date" id="date" name="date" min="1950-01-01" max="" required>
+        </div>
+        <div class="control-form">
+            <label for="domicilio"></label>
+            <input type="text" id="domicilio" name="domicilio" placeholder="Domicilio" required>
+        </div>
+         <div class="control-form">
+            <label for="email"></label>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+        </div> 
+
+        <h2>Crear usuario</h2>
+         <div class="control-form">
+            <label for="usuario"></label>
+            <input type="usuario" id="usuario" name="usuario" placeholder="Nombre de usuario" required>
+        </div> 
+    
+        <div class="control-form">
+            <label for="pass"></label>
+            <input type="password" name="pass" id="pass" placeholder="Contraseña"required>
+        </div>
+        <div class="control-form">
+            <label for="confirmar-pass"></label>
+            <input type="password" name="confirmar-pass" id="confirmar-pass"  placeholder="Confirmar contraseña"required>
+        </div>
+        
+        
+        <h2>Seleccionar foto de usuario</h2>
+            <div class="control-form">
+            <label for="foto"></label>
+            <input type="file" name="foto" id="foto" accept=".jpg, .png">
+        </div>
+        
+            <button type="submit" class="button-form">Enviar</button>
+            <button type="reset" class="button-form">Borrar</button>
+    
+        </form>
+       </div>  
+    <div class="formulario-registro">
+     
+        <i class="fa-solid fa-address-card" ></i>
+        
+       
+    </div>
+     </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
