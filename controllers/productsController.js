@@ -35,6 +35,21 @@ const productsController = {
     create: (req, res)=>{
         res.render("products/portafolio.ejs")
     },
+    store: (req, res)=>{
+        // guardamos el producto//
+        let newProduct = {
+            id: products[products.length - 1].id + 1,
+			nombre: req.body.nombre,
+			descripcion: req.body.description,
+			categoria: req.body.categoria,
+			imagen: req.file.filename,
+			precio: req.body.precio
+		}
+		products.push(newProduct);
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, "  "));
+		res.redirect("/products")
+    },
+    
 
 }
 

@@ -7,17 +7,19 @@
     <div class="create-box">
         <h1>Agregar producto</h1>
         <form method="post"  action="/products/detail" enctype="multipart/form-data">
-          <label for="name">Nombre del producto</label>
-          <input type="text" placeholder="">
-    <div class="select">Tipo de producto</div>
-          <select name ="format" id="format">
-            <option select disabled>Selecciona el tipo de producto a subir</option>
-            <option value="sitioweb">Sitio Web</option>
-            <option value="app">APP</option>
-            <option value="ecommerce">E-Commerce</option>
-            <option value="software">Software Factory</option>
-            <option value="diseño">Diseño UX/UI</option>
-          </select>
+          <label for="nombre">Nombre del producto</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Desarrollo de apps" class="form-input">
+    
+          <div class="select">Tipo de producto</div>
+          <label for="categoria" class="form-label">Categoría:</label>
+						<select name="categoria" id="categoria" class="form-input">
+							<option value="">Elegí</option>
+							<option value="in-sale">Desarrollo de Apps</option>
+							<option value="visited">Diseño web</option>
+                            <option value="visited">Desarrollo Web</option>
+                            <option value="visited">Tiendas Online</option>
+                            <option value="visited">Desarrollo de software</option>
+						</select>
     <div>
         
             <label for="description"></label>
@@ -28,7 +30,10 @@
             <label for="foto"></label>
             <input type="file" name="foto" id="foto" accept=".jpg, .png">
         </div>
-
+        <div class="control-form">
+            <label for="precio" >Precio:</label>
+            <input type="text" id="precio" name="precio" placeholder="Ej: 5678" >
+        </div>
 
         <button type="submit" class="button-form">Crear</button>
         <button type="reset" class="button-form">Borrar</button>
