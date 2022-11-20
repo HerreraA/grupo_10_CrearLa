@@ -8,38 +8,38 @@
         <div class="registro-form-img">
        <div  class="formulario-registro">
         
-        <form name="registro" method="get" action="/" class="create-form">
+        <form name="registro" method="post" action="/user/register" class="create-form" enctype="multipart/form-data">
          <div class="control-form">
             <h2>Datos personales</h2> 
             <label for="nombre"></label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" >
          </div>
          <div class="control-form">
             <label for="date"></label>
-            <input type="date" id="date" name="date" min="1950-01-01" max="" required>
+            <input type="date" id="date" name="date" min="1950-01-01" max="" >
         </div>
         <div class="control-form">
             <label for="domicilio"></label>
-            <input type="text" id="domicilio" name="domicilio" placeholder="Domicilio" required>
+            <input type="text" id="domicilio" name="domicilio" placeholder="Domicilio" >
         </div>
          <div class="control-form">
             <label for="email"></label>
-            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <input type="email" id="email" name="email" placeholder="E-mail" >
         </div> 
 
         <h2>Crear usuario</h2>
          <div class="control-form">
             <label for="usuario"></label>
-            <input type="usuario" id="usuario" name="usuario" placeholder="Nombre de usuario" required>
+            <input type="usuario" id="usuario" name="usuario" placeholder="Nombre de usuario" >
         </div> 
     
         <div class="control-form">
             <label for="pass"></label>
-            <input type="password" name="pass" id="pass" placeholder="Contraseña"required>
+            <input type="password" name="pass" id="pass" placeholder="Contraseña">
         </div>
         <div class="control-form">
             <label for="confirmar-pass"></label>
-            <input type="password" name="confirmar-pass" id="confirmar-pass"  placeholder="Confirmar contraseña"required>
+            <input type="password" name="confirmar-pass" id="confirmar-pass"  placeholder="Confirmar contraseña">
         </div>
         
         
