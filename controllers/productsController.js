@@ -23,6 +23,7 @@ const productsController = {
     ecommerce: (req, res) => {
         res.render('./products/ecommerce.ejs')
     }
-}
+    
+    }
 
 module.exports = productsController ;
