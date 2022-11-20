@@ -13,11 +13,6 @@ const productsController = {
         products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         res.render('./products/product.ejs', {products})
     }, 
-
-    carrito: (req, res) => {
-        res.render('carrito.ejs')
-    },
-
     desarrolloApp: (req, res) => {
         res.render ('./products/desarrollo-app.ejs')
     },
@@ -36,7 +31,10 @@ const productsController = {
 
     ecommerce: (req, res) => {
         res.render('./products/ecommerce.ejs')
-    }
+    },
+    create: (req, res)=>{
+        res.render("products/portafolio.ejs")
+    },
 
 }
 

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head') %>
+    <%- include('../partials/head') %>
     <body>
-        <%- include('./partials/header') %> 
+        <%- include('../partials/header') %> 
     <main>
     <div class="create-box">
         <h1>Agregar producto</h1>
-        <form>
+        <form method="post"  action="/products/detail" enctype="multipart/form-data">
           <label for="name">Nombre del producto</label>
           <input type="text" placeholder="">
     <div class="select">Tipo de producto</div>
@@ -36,6 +36,6 @@
           
     </main>
 
-    <%- include('./partials/footer') %>
+    <%- include('../partials/footer') %>
 </body>
 </html>

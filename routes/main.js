@@ -8,4 +8,6 @@ router.get('/contact', mainController.contact);
 
 router.get('/portafolio', mainController.portfolio);
 
+router.get('/carrito', mainController.carrito);
+
 module.exports = router;

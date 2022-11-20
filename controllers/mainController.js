@@ -10,7 +10,10 @@ const mainController = {
 
     portfolio: (req, res) => {
         res.render ('portafolio.ejs')
-    }
+    },
+    carrito: (req, res) => {
+        res.render('carrito.ejs')
+    },
 
 }
 
