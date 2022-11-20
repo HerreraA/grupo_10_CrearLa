@@ -8,7 +8,7 @@
         <div class="registro-form-img">
        <div  class="formulario-registro">
         
-        <form name="registro" method="post" action="/user/register" class="create-form" enctype="multipart/form-data">
+        <form class="create-form" name="registro" method="POST" action="/user/register"  enctype="multipart/form-data">
          <div class="control-form">
             <h2>Datos personales</h2> 
             <label for="nombre"></label>
@@ -16,7 +16,7 @@
          </div>
          <div class="control-form">
             <label for="date"></label>
-            <input type="date" id="date" name="date" min="1950-01-01" max="" >
+            <input type="date" id="date" name="fechaDeNacimiento" min="1950-01-01" max="" >
         </div>
         <div class="control-form">
             <label for="domicilio"></label>
@@ -35,7 +35,7 @@
     
         <div class="control-form">
             <label for="pass"></label>
-            <input type="password" name="pass" id="pass" placeholder="Contraseña">
+            <input type="password" name="password" id="pass" placeholder="Contraseña">
         </div>
         <div class="control-form">
             <label for="confirmar-pass"></label>

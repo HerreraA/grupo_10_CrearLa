@@ -717,6 +717,11 @@ border-top: #012E40 1px solid;
     line-height: 25px;
 }
 
+.box-product-txt .price {
+    color: #026773;
+    font-size: 25px;
+}
+
 .box-product-right {
     padding: 10px 20px;
     max-width: 300px;

@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 const productsController = require('../controllers/productsController');
 
+//* Enseña la cantidad de productos disponibles */
 router.get('', productsController.index);
+
+
 
 router.get('/carrito', productsController.carrito);
 
