@@ -6,6 +6,9 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 const productsController = {
+
+    //* Enseña la cantidad de productos disponibles */
+
     index: (req, res) => {
         products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         res.render('./products/product.ejs', {products})
