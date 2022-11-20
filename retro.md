@@ -29,4 +29,17 @@ En resumen y conrespecto  a lo expuesto por el equipo, coincidimos en que debemo
 Debemos mantenernos actualizados y al día, utilizar mas discord para los avances y comentarios acerca del proyecto para poder mantener al tanto a los profesores.
 Por último seguir entregando y trabajando!
 
+RETROSPECTIVA SPRINT 3
+Comenzar a hacer: comenzar a comunicar mas seguido lo realizado, aumentar la cantidad de reportes. Tambien hay que empezar a definir los servicios/productos que prestara la pagina.
+Hacer más: mantener actualizado y al día el proyecto con lo visto en clase. Mejorar la comunicación y reporte de los avances. Y utilizar más las herramientas de git para el trabajo del proyecto.
+Continuar haciendo: continuar hablando regularmente y dividiendo los temas como venimos haciendo. Seguir entregando y trabajando en equipo.
+Hacer menos: usar menos whatsapp y más discord. Y hacer menos reuniones donde no estemos todos.
+Dejar de hacer: nada por el momento
 
+RETROSPECTIVA SPRINT 4
+Comenzar a hacer: más reuniones para organizar, comunicar lo realizado y también para trabajar todos juntos en el código.
+Hacer más: más reportes del trabajo realizado weekly/daily, y dedicar más tiempo y compromiso al proyecto.
+Continuar haciendo: continuar con la comunicación y buscando ideas y soluciones en equipo.
+Dejar de hacer: dejar de usar WhatsApp para informarnos pushs, merges o tareas realizadas y subidas al repositorio, pero sí usarlo para lo cotidiano (consultas, resoluciones de problemas, etc.), por su practicidad.
+Hacer menos: trabajar de manera individual, quizás es mejor en algunas actividades del sprint como la del "CRUD" realizarlas en conjunto. 
+Dejar de hacer: por ahora nada, hay que sumar.
