@@ -1,6 +1,6 @@
 const express = require('express');
-const userController = require('../controllers/usersController');
 const router = express.Router();
+const userController = require('../controllers/usersController');
 
 
 //* Formulario de Login */

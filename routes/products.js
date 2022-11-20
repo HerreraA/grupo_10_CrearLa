@@ -4,6 +4,8 @@ const productsController = require('../controllers/productsController');
 
 router.get('', productsController.index);
 
+router.get('/carrito', productsController.carrito);
+
 router.get('/desarrolloApp', productsController.desarrolloApp);
 
 router.get('/desarrolloSoftware', productsController.desarrolloSoftware);

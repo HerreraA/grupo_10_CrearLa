@@ -4,6 +4,10 @@ const productsController = {
         res.render ('./products/product.ejs')
     },
 
+    carrito: (req, res) => {
+        res.render('carrito.ejs')
+    },
+
     desarrolloApp: (req, res) => {
         res.render ('./products/desarrollo-app.ejs')
     },

@@ -4,10 +4,6 @@ const mainController = {
         res.render('home.ejs')
     },
 
-    carrito: (req, res) => {
-        res.render('carrito.ejs')
-    },
-
     contact: (req, res) => {
         res.render ('contact.ejs')
     },
