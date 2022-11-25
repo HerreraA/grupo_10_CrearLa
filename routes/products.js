@@ -31,6 +31,8 @@ router.get('/desarrolloWeb', productsController.desarrolloWeb);
 router.get('/disenoWeb', productsController.disenoWeb);
 
 router.get('/ecommerce', productsController.ecommerce);
+
+
 // ***********************************//
 router.get("/detail/create", productsController.create) //muestra el form//
 router.post("/detail", uploadFile.single("foto"), productsController.store); //guarda lo que cargan en el form//
