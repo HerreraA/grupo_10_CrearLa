@@ -33,7 +33,7 @@ const productsController = {
         res.render('./products/ecommerce.ejs')
     },
     create: (req, res)=>{
-        res.render("products/portafolio.ejs")
+        res.render("./products/portafolio.ejs")
     },
     store: (req, res)=>{
         // guardamos el producto//

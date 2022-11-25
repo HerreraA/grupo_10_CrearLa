@@ -9,7 +9,7 @@ const mainController = {
     },
 
     portfolio: (req, res) => {
-        res.render ('portafolio.ejs')
+        res.render ('/products/portafolio.ejs')
     },
     carrito: (req, res) => {
         res.render('carrito.ejs')
