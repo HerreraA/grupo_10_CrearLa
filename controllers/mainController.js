@@ -14,6 +14,10 @@ const mainController = {
     carrito: (req, res) => {
         res.render('carrito.ejs')
     },
+    nosotros: (req, res) => {
+        res.render('./products/nosotros.ejs')
+    },
+
 
 }
 
