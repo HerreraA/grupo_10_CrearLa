@@ -6,10 +6,11 @@
     <main>
     <div class="create-box">
         <h1>Actualizar producto</h1>
+        <h2><%=productos.nombre %></h2>
         <form method="post"  action="/products/detail/edit/:id ?_method=PUT" enctype="multipart/form-data">
          
           <label for="nombre">Nombre del producto</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Ej: Desarrollo de apps" class="form-input">
+          <input type="text" id="nombre" name="nombre"  value="<%=productos.nombre %>" class="form-input">
     
           <div class="select">Tipo de producto</div>
           <label for="categoria" class="form-label">Categoría:</label>
@@ -24,7 +25,7 @@
     <div>
         
             <label for="description"></label>
-            <textarea name="description" id="description" cols="35" rows="10" placeholder="Descipción del producto"></textarea>
+            <textarea name="description" id="description" cols="35" rows="10" value="<%=productos.descripcion %>"></textarea>
         </div>
         
         <div class="control-form">Seleccionar fotos del producto
