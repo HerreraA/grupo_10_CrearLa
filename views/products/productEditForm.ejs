@@ -6,11 +6,11 @@
     <main>
     <div class="create-box">
         <h1>Actualizar producto</h1>
-        <h2><%=productos.nombre %></h2>
-        <form method="post"  action="/products/detail/edit/:id ?_method=PUT" enctype="multipart/form-data">
-         
+        <form method="post"  action="/products/detail/edit/<%= productos.id %>?_method=PUT" enctype="multipart/form-data">
+            
+            <h2><%=productos.nombre %></h2>
           <label for="nombre">Nombre del producto</label>
-          <input type="text" id="nombre" name="nombre"  value="<%=productos.nombre %>" class="form-input">
+          <input type="text" id="nombre" name="nombre"   class="form-input" value="<%=productos.nombre %>">
     
           <div class="select">Tipo de producto</div>
           <label for="categoria" class="form-label">Categoría:</label>
@@ -28,13 +28,13 @@
             <textarea name="description" id="description" cols="35" rows="10" value="<%=productos.descripcion %>"></textarea>
         </div>
         
-        <div class="control-form">Seleccionar fotos del producto
+        <div class="control-form">Seleccionar fotos 
             <label for="imagen"></label>
             <input type="file" name="imagen" id="imagen" accept=".jpg, .png">
         </div>
         <div class="control-form">
             <label for="precio" >Precio:</label>
-            <input type="text" id="precio" name="precio" placeholder="Ej: 5678" >
+            <input type="text" id="precio" name="precio" value="<%=productos.precio %>" >
         </div>
 
         <button type="submit" class="button-form">Editar</button>

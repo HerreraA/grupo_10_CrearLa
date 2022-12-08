@@ -41,7 +41,7 @@ const productsController = {
     edit: (req, res) => {
         const id = req.params.id;
         const productos = products.find(product => product.id == id);
-         res.render('products/productEditForm', {productos:productos})
+         res.render('products/productEditForm', {productos})
      },
      update: (req, res)=> {
         //editamos el producto/heroe que lelgo por params.id
