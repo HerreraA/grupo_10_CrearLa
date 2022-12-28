@@ -370,7 +370,36 @@ main {
 /********************************  HOME *****************************************/
 
 .home-slider {
-display: none;  
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+.home-slider ul {
+    display: flex;
+    padding: 0;
+    width: 500%;
+
+    animation: cambio 20s infinite;
+}
+.home-slider li {
+    width: 20%;
+    list-style: none;
+}
+.home-slider img {
+    width: 60%;
+}
+@keyframes cambio {
+    0% {margin-left: 0; }
+    20% {margin-left: 0; }
+
+    25% {margin-left: -100%; }
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%; }
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%; }
+    100% {margin-left: -300%;}
 }
 
 .home-products{
