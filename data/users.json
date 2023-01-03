@@ -307,5 +307,14 @@
   "email": "andres@correo",
   "usuario": "and21",
   "password": "12345"
+ },
+ {
+  "id": 32,
+  "nombre": "barack ",
+  "fechaDeNacimiento": "2022-10-31",
+  "domicilio": "cale 123",
+  "email": "barack@correo",
+  "usuario": "barack_o",
+  "password": "12345"
  }
 ]
