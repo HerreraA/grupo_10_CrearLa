@@ -1,10 +1,10 @@
 <mxfile host="65bd71144e">
     <diagram id="1P73BQ_fvb2XG8aVwVsJ" name="Página-1">
-        <mxGraphModel dx="519" dy="430" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="650" dy="478" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="USERS" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;labelBackgroundColor=none;fontColor=#ffffff;fillColor=#6d8764;strokeColor=#3A5431;sketch=0;shadow=1;strokeWidth=4;" parent="1" vertex="1">
+                <mxCell id="2" value="USUARIOS" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;labelBackgroundColor=none;fontColor=#ffffff;fillColor=#6d8764;strokeColor=#3A5431;sketch=0;shadow=1;strokeWidth=4;" parent="1" vertex="1">
                     <mxGeometry x="20" y="40" width="180" height="300" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=#647687;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;fontColor=#ffffff;strokeColor=none;sketch=0;shadow=1;strokeWidth=4;" parent="2" vertex="1">
@@ -124,7 +124,7 @@
                         <mxRectangle width="150" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="41" value="CATEGORY" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;labelBackgroundColor=none;fontColor=#ffffff;fillColor=#6d8764;strokeColor=#3A5431;sketch=0;shadow=1;strokeWidth=4;" parent="1" vertex="1">
+                <mxCell id="41" value="CATEGORIA" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;labelBackgroundColor=none;fontColor=#ffffff;fillColor=#6d8764;strokeColor=#3A5431;sketch=0;shadow=1;strokeWidth=4;" parent="1" vertex="1">
                     <mxGeometry x="360" y="10" width="180" height="210" as="geometry"/>
                 </mxCell>
                 <mxCell id="42" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=#647687;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;fontColor=#ffffff;strokeColor=none;sketch=0;shadow=1;strokeWidth=4;" parent="41" vertex="1">
