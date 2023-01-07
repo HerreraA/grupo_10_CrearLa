@@ -70,5 +70,29 @@
     "categoria": "visited",
     "imagen": "1668960542824_user.jpg",
     "precio": "125862"
+  },
+  {
+    "id": 10,
+    "nombre": "inteligencia artificial",
+    "descripcion": "sdasdasd",
+    "categoria": "visited",
+    "imagen": "1670377179407_user.jpg",
+    "precio": "125862"
+  },
+  {
+    "id": 11,
+    "nombre": "tania",
+    "descripcion": "dsdsvdvds",
+    "categoria": "visited",
+    "imagen": "1670377892001_user.jpg",
+    "precio": "541"
+  },
+  {
+    "id": 12,
+    "nombre": "jajandb",
+    "descripcion": "sksjjsjs",
+    "categoria": "visited",
+    "imagen": "1670382207888_user.jpg",
+    "precio": "adasdasd"
   }
 ]
