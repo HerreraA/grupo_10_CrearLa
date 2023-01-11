@@ -31,6 +31,7 @@ router.get("/detail/edit/:id", productsController.edit)
 router.put("/detail/edit/:id", uploadFile.single("imgFile"), productsController.update)
 
 // *** ELIMINAR un producti **//
-router.delete("/detail/delete/:id", productsController.destroy)
+router.get('/products/delete/:id', productsController.delete);
+router.post('/products/delete/:id', productsController.destroy);
 
 module.exports = router;
