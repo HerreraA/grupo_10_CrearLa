@@ -16,6 +16,9 @@ module.exports= (sequelize, dataTypes) => {
         descripcion:{
             type: dataTypes.STRING,
         },
+        imagen:{
+            type: dataTypes.STRING,
+        }
 
     };
     let config = {
