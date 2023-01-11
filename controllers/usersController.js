@@ -29,20 +29,6 @@ const usersController = {
 
         res.redirect('/')
 
-
-        /*let newRegister = {
-            id: users[users.length - 1].id + 1  ,
-            nombre: req.body.nombre,
-            fechaDeNacimiento: req.body.fechaDeNacimiento ,
-            domicilio: req.body.domicilio ,
-            email: req.body.email,
-            usuario: req.body.usuario,
-            password: req.body.password,
-            foto: req.file.foto
-        }
-        users.push(newRegister);
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-        res.redirect('/');*/
     }
 }
 
