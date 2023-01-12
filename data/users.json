@@ -316,5 +316,14 @@
   "email": "barack@correo",
   "usuario": "barack_o",
   "password": "12345"
+ },
+ {
+  "id": 33,
+  "nombre": "pepito",
+  "fechaDeNacimiento": "2023-01-01",
+  "domicilio": "cale falsa",
+  "email": "andres@correo",
+  "usuario": "pepito1",
+  "password": "12345"
  }
 ]
