@@ -20,7 +20,7 @@ const usersController = {
     processRegister: (req, res) => {
         db.Usuarios.create({
             nombre: req.body.nombre,
-            fecha_de_nacimiento:req.body.fechaDeNacimiento,
+            fechaDeNacimiento:req.body.fechaDeNacimiento,
             domicilio:req.body.domicilio,
             email:req.body.email,
             usuario:req.body.usuario,

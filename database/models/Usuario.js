@@ -9,7 +9,7 @@ module.exports= (sequelize, dataTypes) => {
         nombre:{
             type: dataTypes.STRING,
         },
-        fecha_de_nacimiento:{
+        fechaDeNacimiento:{
             type: dataTypes.DATE,
         },
         domicilio: {

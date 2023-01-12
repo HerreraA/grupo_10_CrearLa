@@ -3,7 +3,7 @@
 //const { config } = require("process")
 
 module.exports= (sequelize, dataTypes) => {
-    let alias = "Categorias";
+    let alias = "Categoria";
     let cols = {
         id:{
             type: dataTypes.INTEGER,
@@ -19,7 +19,7 @@ module.exports= (sequelize, dataTypes) => {
 
     };
     let config = {
-        tableName: 'movies',
+        tableName: 'categorias',
         timestamps: false
     };
     
@@ -28,8 +28,8 @@ module.exports= (sequelize, dataTypes) => {
 
     Categoria.associate = function (models) {
         Categoria.hasMany(models.Servicio, {
-            as: "serivicios",
-            foreignKey: "categorias_id"
+            as: "servicios",
+            foreignKey: "category_id"
         })
        
     }
