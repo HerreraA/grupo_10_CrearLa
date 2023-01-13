@@ -4,6 +4,7 @@ const { use } = require('../routes/products');
 const User = require('../models/User');
 const bcryptjs = require ('bcryptjs');
 const { validationResult } = require('express-validator');
+let db = require('../database/models');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -11,7 +12,7 @@ let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const usersController = {
     register: (req, res) => {
-        res.render('./users/register.ejs')
+        res.render('./users/register')
     },
 
     //* Se guarda el registro */
@@ -69,6 +70,17 @@ const usersController = {
     },
     profile: (req, res) => {
         return res.render('userProfile')
+        db.Usuarios.create({
+            nombre: req.body.nombre,
+            fechaDeNacimiento:req.body.fechaDeNacimiento,
+            domicilio:req.body.domicilio,
+            email:req.body.email,
+            usuario:req.body.usuario,
+            password: req.body.password
+        })
+
+        res.redirect('/')
+
     }
 }
 
