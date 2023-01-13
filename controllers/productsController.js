@@ -5,11 +5,7 @@ const { validationResult } = require('express-validator');
 const sequelize = db.sequelize;
 
 const productsController = {
-
-
-
-
-    edit: async function(req, res) {
+  edit: async function(req, res) {
         try{
             const Servicio = await Servicios.findByPk(req.params.id)
             res.render('productEditForm', {Servicio})
