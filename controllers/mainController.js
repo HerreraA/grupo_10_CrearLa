@@ -1,24 +1,20 @@
 
 const mainController = {
     home: (req, res) => {
-        res.render('home.ejs')
+        res.render('./home/home')
     },
-
     contact: (req, res) => {
-        res.render ('contact.ejs')
+        res.render ('contact')
     },
-
     portfolio: (req, res) => {
-        res.render ('./products/portafolio.ejs')
+        res.render ('./portfolio/portfolio')
     },
     carrito: (req, res) => {
         res.render('carrito.ejs')
     },
     nosotros: (req, res) => {
-        res.render('./products/nosotros.ejs')
+        res.render('./products/nosotros')
     },
-
-
 }
 
 module.exports = mainController; 

@@ -23,16 +23,22 @@ app.set('views', path.join(__dirname, '/views'))
 
 
 //** Rutas */
-const productsRouter = require ("./routes/products")
 const mainRouter = require ('./routes/main')
+const categoriesRouter = require ("./routes/categories")
+const productsRouter = require ("./routes/products")
 const usersRouter = require ('./routes/users')
 
 app.use ('/', mainRouter);
-
-app.use ('/products/', productsRouter);
-
+app.use ('/categories', categoriesRouter);
+app.use ('/products', productsRouter);
 app.use ('/user', usersRouter);
 
+// Página no encontrada
+app.use(async(req, res, next) => {
+    res.status(404).render('notfound/notFound');
+})
 
+// ********* Creando servidor ***********
+const port = process.env.PORT || 3500;
+app.listen (port, () => { console.log('Alta de servidor: http://localhost:$ {port}');})
 
-app.listen (3500, () => console.log('Alta de servidor: http://localhost:3500'));

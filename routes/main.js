@@ -1,8 +1,11 @@
+// ******** Require's ********* 
 const express = require('express');
 const router = express.Router();
+
+// ******* Controller require: el que van a utilizar todas las ruta dentro de este archivo ********
 const mainController = require('../controllers/mainController')
 
-router.get('', mainController.home);
+router.get('/', mainController.home);
 
 router.get('/contact', mainController.contact);
 

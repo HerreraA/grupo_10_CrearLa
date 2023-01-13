@@ -307,5 +307,114 @@
   "email": "andres@correo",
   "usuario": "and21",
   "password": "12345"
+ },
+ {
+  "id": 32,
+  "nombre": "Juan Perez",
+  "fechaDeNacimiento": "1980-02-01",
+  "domicilio": "Nuevao 123",
+  "email": "hola@hola.com",
+  "usuario": "nuevo123",
+  "password": "hola123",
+  "confirmar-pass": "hola123"
+ },
+ {
+  "id": 33,
+  "nombre": "Nuevo nombre",
+  "fechaDeNacimiento": "1970-12-12",
+  "domicilio": "Constituyentes 320",
+  "email": "hola@hola.com",
+  "usuario": "nuevous",
+  "password": "hola321",
+  "confirmar-pass": "hola321",
+  "avatar": "1670513106626_user.jpeg"
+ },
+ {
+  "id": 34,
+  "nombre": "Jorge Lopez",
+  "fechaDeNacimiento": "1980-02-09",
+  "domicilio": "Independencia 210",
+  "email": "jlopez@hola.com",
+  "usuario": "jlopea12",
+  "password": "$2a$10$.SmwKsSiXLY6evK9RYRP5OvcpvKQcyaFybCn/4jGElQehl1F3aePK",
+  "confirmar-pass": "hola123",
+  "avatar": "1670513708026_user.png"
+ },
+ {
+  "id": 35,
+  "nombre": "Juan Lopez",
+  "fechaDeNacimiento": "",
+  "domicilio": "cerro nose",
+  "email": "saondas@gmail.com",
+  "usuario": "nuevo223",
+  "password": "$2a$10$29H0kMcAsyAzFV0SMSjvEuj8o2jjaNZqtK.eJ9DXrTpbxtsd0h7HK",
+  "confirmar-pass": "nueva1",
+  "avatar": "1671757423111_user.jpeg"
+ },
+ {
+  "id": 36,
+  "nombre": "saasdasd",
+  "fechaDeNacimiento": "2022-12-07",
+  "domicilio": "adsads",
+  "email": "asdasd@gmail.com",
+  "usuario": "asdads",
+  "password": "$2a$10$DuW2ONTiOV2hFSTiUbewsu99BG5OyybZPuxaVVPr74nUi4td5sreG",
+  "confirmar-pass": "asdasd",
+  "avatar": "1671759498360_user.png"
+ },
+ {
+  "id": 37,
+  "nombre": "saasdasd",
+  "fechaDeNacimiento": "2022-12-07",
+  "domicilio": "adsads",
+  "email": "12324124@gmail.com",
+  "usuario": "asdads",
+  "password": "$2a$10$TW0O0ax9Ym4EWRgA2a8doO21jPwWSHMqzOVXSDDVq326KQOz9072C",
+  "confirmar-pass": "asd123",
+  "imagen": "1671759751713_user.png"
+ },
+ {
+  "id": 38,
+  "nombre": "Juan Lopez",
+  "fechaDeNacimiento": "2022-12-14",
+  "domicilio": "Calle 123",
+  "email": "asdasdsad@gmail.com",
+  "usuario": "asdasd",
+  "password": "$2a$10$ws05.3zgVx03eugpUcnqsuiENdtLql/ysxTcNyoHjj.eTdilkwwiS",
+  "confirmar-pass": "asd123",
+  "imagen": "1671760135717_user.png"
+ },
+ {
+  "id": 39,
+  "nombre": "Juan Lopez",
+  "fechaDeNacimiento": "2022-12-14",
+  "domicilio": "Calle 123",
+  "email": "sadasd@gmail.com",
+  "usuario": "asdasd",
+  "password": "$2a$10$cnoMb8EO.EUa0VGM9OVo6uAbxFbxiS1N3MgDwBwfqhFLqVJyIufqm",
+  "confirmar-pass": "asd123",
+  "imagen": "1671760194368_user.png"
+ },
+ {
+  "id": 40,
+  "nombre": "Juan Lopez",
+  "fechaDeNacimiento": "2022-12-08",
+  "domicilio": "Calle 123",
+  "email": "nueva123@gmail.com",
+  "usuario": "hola1123",
+  "password": "$2a$10$gPBTRpxJO1sdduCTxMCwV.jQB3EPgSoJQjK19z3KNNm8QPV3FBMgm",
+  "confirmar-pass": "asd123",
+  "imagen": "1671760446275_user.png"
+ },
+ {
+  "id": 41,
+  "nombre": "Juan Lopez",
+  "fechaDeNacimiento": "2022-12-01",
+  "domicilio": "Calle 123",
+  "email": "gols@gmail.com",
+  "usuario": "asdasd",
+  "password": "$2a$10$ifdW4jO9q8UHou8Aow.rtefpCDbpFq.ua6Yki3trIzAVJoz7aTFsu",
+  "confirmar-pass": "asd123",
+  "imagen": "1671760951252_user.png"
  }
 ]

@@ -14,13 +14,19 @@ const productsController = require('../controllers/productsController');
 // })
 
 // const upload = multer({ storage });
-    const uploadFile= require("../middlewares/multerMiddleware")
+const uploadFile= require("../middlewares/multerMiddleware")
+
 
 //* Enseña la cantidad de productos disponibles */
-router.get('', productsController.index);
+//router.get('/productsList', productsController.index);
+router.get('/', productsController.index);
+router.get('/productCreate', productsController.index);
+
 
 //* estas rutas en realizad deberian ser para cuando buscamos por id pero hay que hacer una vista que lo permita//
 // osea esta router.get("/detail/:id", heroesCotroller.detail)
+
+
 
 router.get('/desarrolloApp', productsController.desarrolloApp);
 
@@ -34,8 +40,8 @@ router.get('/ecommerce', productsController.ecommerce);
 
 
 // ***********************************//
-router.get("/detail/create", productsController.create) //muestra el form//
-router.post("/detail", uploadFile.single("foto"), productsController.store); //guarda lo que cargan en el form//
+router.get('/productCreate', productsController.productCreate); //muestra el form que crea servicios//
+router.post('/detail', uploadFile.single("foto"), productsController.store); //guarda lo que cargan en el form//
 
 
 

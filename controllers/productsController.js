@@ -1,39 +1,35 @@
 const fs = require('fs');
 const path = require('path');  
 
-const productsFilePath = path.join(__dirname, '../data/product.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+// Defino variable para base Json de Productos (servicios)
+const productsFilePath = path.join(__dirname, '../data/products.json');
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
 
     //* Enseña la cantidad de productos disponibles */
-
     index: (req, res) => {
         products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render('./products/product.ejs', {products})
+        res.render('./products/product', {products})
     }, 
     desarrolloApp: (req, res) => {
-        res.render ('./products/desarrollo-app.ejs')
+        res.render ('./products/desarrollo-app')
     },
-
     desarrolloSoftware: (req, res) => {
-        res.render('./products/desarrollo-software.ejs')
+        res.render('./products/desarrollo-software')
     },
-
     desarrolloWeb: (req, res) => {
-        res.render('./products/desarrollo-web.ejs')
+        res.render('./products/desarrollo-web')
     },
-
     disenoWeb: (req, res) => {
-        res.render('./products/diseno-web.ejs')
+        res.render('./products/diseno-web')
     },
-
     ecommerce: (req, res) => {
-        res.render('./products/ecommerce.ejs')
+        res.render('./products/ecommerce')
     },
-    create: (req, res)=>{
-        res.render("./products/portafolio.ejs")
+    productCreate: (req, res) => {
+        res.render('./products/productCreate')
     },
     store: (req, res)=>{
         // guardamos el producto//
@@ -47,10 +43,8 @@ const productsController = {
 		}
 		products.push(newProduct);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, "  "));
-		res.redirect("/products")
+		res.redirect("/product")
     },
-    
-
 }
 
 module.exports = productsController ;
