@@ -16,6 +16,9 @@ module.exports= (sequelize, dataTypes) => {
         descripcion:{
             type: dataTypes.STRING,
         },
+        imagen:{
+            type: dataTypes.STRING,
+        }
 
     };
     let config = {
@@ -29,6 +32,7 @@ module.exports= (sequelize, dataTypes) => {
     Categoria.associate = function (models) {
         Categoria.hasMany(models.Servicio, {
             as: "servicios",
+
             foreignKey: "category_id"
         })
        

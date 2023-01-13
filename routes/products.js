@@ -40,12 +40,12 @@ router.post('/detail', uploadFile.single("foto"), productsController.store); //g
 
 // ** muestra detalle de un producto **//
 router.get("/detail/:id", productsController.detail)
-// ** editar un producto/heroe **
+// ** editar un producto **
 
-router.get("/detail/edit/:id", productsController.edit)
-router.put("/detail/edit/:id", uploadFile.single("imgFile"), productsController.update)
-
+router.get('/products/edit/:id', productsController.edit);
+router.post('/products/update/:id', productsController.update);
 // *** ELIMINAR un producti **//
-router.delete("/detail/delete/:id", productsController.destroy)
+router.get('/products/delete/:id', productsController.delete);
+router.post('/products/delete/:id', productsController.destroy);
 
 module.exports = router;
