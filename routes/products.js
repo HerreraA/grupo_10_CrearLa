@@ -5,23 +5,38 @@ const multer = require('multer')
 
 // ************ Configuración de multer ************
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, './public/images/products')
-    },
-    filename: (req, file, cb) => {
-        const newFileName = 'product_img_' + Date.now() + file.originalname
-        cb(null, newFileName)
+    destination: function (req, file, cb) {
+    cb(null, './public/img')
+},
+   filename: function (req, file, cb) {
+         cb(null, Date.now() + '-' + file.originalname)
     }
-})
-const upload = multer({ storage })
-    const uploadFile= require('../middlewares/multerMiddleware')
+ })
+
+const upload = multer({ storage });
+const uploadFile= require("../middlewares/multerMiddleware")
 
 //* Enseña la cantidad de productos disponibles */
+//router.get('/productsList', productsController.index);
 router.get('/', productsController.index);
 
+//* estas rutas en realizad deberian ser para cuando buscamos por id pero hay que hacer una vista que lo permita//
+// osea esta router.get("/detail/:id", heroesCotroller.detail)
+
+router.get('/desarrolloApp', productsController.desarrolloApp);
+
+router.get('/desarrolloSoftware', productsController.desarrolloSoftware);
+
+router.get('/desarrolloWeb', productsController.desarrolloWeb);
+
+router.get('/disenoWeb', productsController.disenoWeb);
+
+router.get('/ecommerce', productsController.ecommerce);
+
+
 // ***********************************//
-router.get("/detail/create", productsController.create) //muestra el form//
-router.post("/detail", uploadFile.single("foto"), productsController.store); //guarda lo que cargan en el form//
+router.get('/productCreate', productsController.productCreate); //muestra el form que crea servicios//
+router.post('/detail', uploadFile.single("foto"), productsController.store); //guarda lo que cargan en el form//
 
 // ** muestra detalle de un producto **//
 router.get("/detail/:id", productsController.detail)
