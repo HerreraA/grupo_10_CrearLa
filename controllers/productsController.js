@@ -6,9 +6,7 @@ const sequelize = db.sequelize;
 const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
  
-// Defino variable para base Json de Categorías
-const categoryFilePath = path.join(__dirname, '../data/categories.json');
-let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
+
 
 const productsController = {
 
@@ -21,10 +19,15 @@ const productsController = {
     productCreate: (req, res) => {
         res.render('./products/productCreate')
     },
-
+    detail: (req, res) => {
+        db.Servicio.findByPk(req.params.id)
+            .then(servicio => {
+                res.render('product-noborrar.ejs', {product});
+            });
+    },
   edit: async function(req, res) {
         try{
-            const Servicio = await Servicios.findByPk(req.params.id)
+            const Servicio = await Servicio.findByPk(req.params.id)
             res.render('productEditForm', {Servicio})
         }
         catch (e) {
