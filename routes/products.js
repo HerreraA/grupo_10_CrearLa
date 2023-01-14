@@ -35,17 +35,17 @@ router.get('/ecommerce', productsController.ecommerce);
 
 
 // ***********************************//
-router.get('/products/productCreate', productsController.productCreate); //muestra el form que crea servicios//
-router.post('/products/detail', uploadFile.single("foto"), productsController.store); //guarda lo que cargan en el form//
+router.get('/productCreate', productsController.productCreate); //muestra el form que crea servicios//
+router.post('/detail', uploadFile.single("foto"), productsController.store); //guarda lo que cargan en el form//
 
 // ** muestra detalle de un producto **//
-router.get("/products/detail/:id", productsController.detail)
+router.get("/detail/:id", productsController.detail)
 // ** editar un producto **
 
-router.get('/products/edit/:id', productsController.edit);
-router.post('/products/update/:id', productsController.update);
+router.get('/edit/:id', productsController.edit);
+router.post('/update/:id', productsController.update);
 // *** ELIMINAR un producti **//
-router.get('/products/delete/:id', productsController.delete);
-router.post('/products/delete/:id', productsController.destroy);
+router.get('/delete/:id', productsController.delete);
+router.post('/delete/:id', productsController.destroy);
 
 module.exports = router;
