@@ -28,6 +28,11 @@ const categoriesRouter = require ("./routes/categories")
 const productsRouter = require ("./routes/products")
 const usersRouter = require ('./routes/users')
 
+//URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
+app.use(express.urlencoded({ extended: false }));
+
+
+
 app.use ('/', mainRouter);
 app.use ('/categories', categoriesRouter);
 app.use ('/products', productsRouter);

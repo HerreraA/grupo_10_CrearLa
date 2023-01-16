@@ -5,7 +5,7 @@ const { validationResult } = require('express-validator');
 const sequelize = db.sequelize;
 const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
- 
+const Products = db.Product;
 
 
 const productsController = {
@@ -20,15 +20,15 @@ const productsController = {
         res.render('./products/productCreate')
     },
     detail: (req, res) => {
-        db.Servicio.findByPk(req.params.id)
-            .then(servicio => {
+        db.Product.findByPk(req.params.id)
+            .then(product => {
                 res.render('product-noborrar.ejs', {product});
             });
     },
   edit: async function(req, res) {
         try{
-            const Servicio = await Servicio.findByPk(req.params.id)
-            res.render('productEditForm', {Servicio})
+            const Product = await Products.findByPk(req.params.id)
+            res.render('productEditForm', {Product})
         }
         catch (e) {
             console.log(e)
@@ -36,11 +36,11 @@ const productsController = {
     },
     update: async function (req,res) {
         try {
-            const updated = await Servicios.update(
+            const updated = await Products.update(
                 {
                     nombre: req.body.nombre,
                     descripcion: req.body.descripcion,
-                    imagen: req.body.imagen, //debo poner el if por si tenia? BUSCAR!
+                    //imagen: req.body.imagen, //debo poner el if por si tenia? BUSCAR!
                     precio: req.body.precio,
                    
                 },
@@ -57,8 +57,8 @@ const productsController = {
 
     delete: async function (req, res) {
         try{
-            const Servicio = await Servicios.findByPk(req.params.id)
-            res.render('serviciosDelete', {Servicio})
+            const Product = await Products.findByPk(req.params.id)
+            res.render('productsDelete', {Product})
         }
         catch (e) {
             console.log(e)
@@ -67,7 +67,7 @@ const productsController = {
 
     destroy: async function (req, res) {
         try {
-            const deleted = await Servicios.destroy({where: {id:req.params.id}, force: true})
+            const deleted = await Products.destroy({where: {id:req.params.id}, force: true})
             res.redirect('/products')
         }
         catch(e) {

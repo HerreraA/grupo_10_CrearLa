@@ -23,7 +23,7 @@ router.get('/', productsController.index);
 //* estas rutas en realizad deberian ser para cuando buscamos por id pero hay que hacer una vista que lo permita//
 // osea esta router.get("/detail/:id", heroesCotroller.detail)
 
-router.get('/desarrolloApp', productsController.desarrolloApp);
+/*router.get('/desarrolloApp', productsController.desarrolloApp);
 
 router.get('/desarrolloSoftware', productsController.desarrolloSoftware);
 
@@ -31,7 +31,7 @@ router.get('/desarrolloWeb', productsController.desarrolloWeb);
 
 router.get('/disenoWeb', productsController.disenoWeb);
 
-router.get('/ecommerce', productsController.ecommerce);
+router.get('/ecommerce', productsController.ecommerce); */
 
 
 // ***********************************//
