@@ -3,32 +3,32 @@ const path = require('path');
 let db = require('../database/models');
 const { validationResult } = require('express-validator');
 const sequelize = db.sequelize;
-const productsFilePath = path.join(__dirname, '../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const Products = db.Product;
+const serviciosFilePath = path.join(__dirname, '../data/servicios.json');
+let servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
+const Servicios = db.Servicio;
 
 
-const productsController = {
+const serviciosController = {
 
     //* Enseña la cantidad de productos disponibles */
     index: (req, res) => {
-        products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render('./products/product', {products})
+        servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
+        res.render('./servicios/servicio', {servicios})
     }, 
    
-    productCreate: (req, res) => {
-        res.render('./products/productCreate')
+    servicioCreate: (req, res) => {
+        res.render('./servicios/servicioCreate')
     },
     detail: (req, res) => {
-        db.Product.findByPk(req.params.id)
-            .then(product => {
-                res.render('product-noborrar.ejs', {product});
+        db.Servicio.findByPk(req.params.id)
+            .then(servicio => {
+                res.render('servicio-noborrar.ejs', {servicio});
             });
     },
   edit: async function(req, res) {
         try{
-            const Product = await Products.findByPk(req.params.id)
-            res.render('productEditForm', {Product})
+            const Servicio = await Servicios.findByPk(req.params.id)
+            res.render('servicioEditForm', {Servicio})
         }
         catch (e) {
             console.log(e)
@@ -36,7 +36,7 @@ const productsController = {
     },
     update: async function (req,res) {
         try {
-            const updated = await Products.update(
+            const updated = await Servicio.update(
                 {
                     nombre: req.body.nombre,
                     descripcion: req.body.descripcion,
@@ -48,7 +48,7 @@ const productsController = {
                     where: {id:req.params.id}
                 }
             )
-            res.redirect('/products/detail/' + updated.id)
+            res.redirect('/servicios/detail/' + updated.id)
         }
         catch (e) {
             console.log(e)
@@ -57,8 +57,8 @@ const productsController = {
 
     delete: async function (req, res) {
         try{
-            const Product = await Products.findByPk(req.params.id)
-            res.render('productsDelete', {Product})
+            const Servicio = await Servicios.findByPk(req.params.id)
+            res.render('serviciosDelete', {Servicio})
         }
         catch (e) {
             console.log(e)
@@ -67,8 +67,8 @@ const productsController = {
 
     destroy: async function (req, res) {
         try {
-            const deleted = await Products.destroy({where: {id:req.params.id}, force: true})
-            res.redirect('/products')
+            const deleted = await Servicios.destroy({where: {id:req.params.id}, force: true})
+            res.redirect('/servicios')
         }
         catch(e) {
             console.log(e)
@@ -77,4 +77,4 @@ const productsController = {
 
 }
 
-module.exports = productsController ;
+module.exports = serviciosController ;

@@ -7,15 +7,15 @@
 	<%- include('../partials/header') %>
 	<!-- /Header -->
 
-	<div class="container products-wrapper">
+	<div class="container servicios-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Formulario de creación de productos</h2>
+				<h2 class="servicios-title">Formulario de creación de servicios</h2>
 			</div>
 		</div>
 		<div class="col-12">
-			<form action="/products/" method="POST">
-				<div class="row product-detail">
+			<form action="/servicios/" method="POST">
+				<div class="row servicio-detail">
 					<div class="col-12 col-md-6">
 						<label for="nombre" class="form-label">Nombre del servicio:</label>
 						<input type="text" id="nombre" name="nombre" placeholder="Ej: Desarrollo de apps" class="form-input">
@@ -40,14 +40,14 @@
 						<textarea name="descripcion" id="descripcion" class="form-input"></textarea>
 					</div>
 					<div class="col-12">
-						<button type="submit" class="buy-now-button">Guardar producto</button>
+						<button type="submit" class="buy-now-button">Guardar servicio</button>
 					</div>
 				</div>
 			</form>
 		</div>
 
 	</div>
-	<!-- /todos los productos -->
+	<!-- /todos los servicios -->
 
 	<!-- footer -->
 	<%- include('../partials/footer') %>

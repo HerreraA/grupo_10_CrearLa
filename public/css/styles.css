@@ -439,24 +439,24 @@ main {
     }
 }
 
-.home-products {
+.home-servicios {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-.home-products p {
+.home-servicios p {
     margin-top: 15px;
     text-align: left;
     line-height: 18px;
 }
 
-.home-products h2 {
+.home-servicios h2 {
     text-align: right;
 }
 
-.home-products-box {
+.home-servicios-box {
     background-color: #3ca6a6;
     color: white;
     padding: 20px 20px;
@@ -467,7 +467,7 @@ main {
     max-width: 300px;
 }
 
-.home-products-box:hover {
+.home-servicios-box:hover {
     background-color: #012E40;
     ;
 }
@@ -511,27 +511,27 @@ main {
 
 
 @media(min-width:769px) {
-    .home-products-box {
+    .home-servicios-box {
         width: 40%;
     }
 
-    .home-products {
+    .home-servicios {
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
-    .home-products p {
+    .home-servicios p {
         margin-top: 15px;
         text-align: left;
         line-height: 18px;
     }
 
-    .home-products h2 {
+    .home-servicios h2 {
         text-align: right;
     }
 
-    .home-products-box {
+    .home-servicios-box {
         background-color: #3ca6a6;
         color: white;
         padding: 79px 40px;
@@ -540,7 +540,7 @@ main {
         border-radius: 5px;
     }
 
-    .home-products-box:hover {
+    .home-servicios-box:hover {
         background-image: url(/images/home-services-software.jpg);
         background-repeat: no-repeat;
         background-size: cover;
@@ -742,21 +742,21 @@ button {
 /*
 /*
 /********************************************************************************/
-/******************************  PRODUCTOS **************************************/
+/******************************  SERVICIOS **************************************/
 
-.products-h1 {
+.servicios-h1 {
     text-align: center;
     padding: 15px 0;
     font-size: 35px;
 }
 
-.products-p {
+.servicios-p {
     margin: 15px auto;
     width: 80%;
     text-align: center;
 }
 
-.box-product {
+.box-servicio {
     border-bottom: 20px solid #f1f1f1;
     margin: auto;
     display: flex;
@@ -767,11 +767,11 @@ button {
     text-align: center;
 }
 
-.box-product-left {
+.box-servicio-left {
     padding: 10px 30px;
 }
 
-.box-product-number {
+.box-servicio-number {
     font-size: 45px;
     font-weight: bold;
     color: #f3e3d4;
@@ -779,26 +779,26 @@ button {
     margin-bottom: 15px;
 }
 
-.box-product-txt p {
+.box-servicio-txt p {
     margin: 15px 0;
     line-height: 25px;
 }
 
-.box-product-txt .price {
+.box-servicio-txt .price {
     color: #026773;
     font-size: 25px;
 }
 
-.box-product-right {
+.box-servicio-right {
     padding: 10px 20px;
     max-width: 300px;
 }
 
-.box-product-right img {
+.box-servicio-right img {
     width: 100%;
 }
 
-.box-product-button {
+.box-servicio-button {
     border: 4px solid #979797;
     border-radius: 30px;
     padding: 10px;
@@ -810,17 +810,17 @@ button {
     background-color: #fff;
 }
 
-.box-product-button a {
+.box-servicio-button a {
     text-decoration: none;
     color: #979797;
 }
 
-.box-product-button a:hover {}
+.box-servicio-button a:hover {}
 
 
 
 
-.detalle-producto {
+.detalle-servicio {
     width: 100%;
     text-align: center;
     padding: 20px;
@@ -904,7 +904,7 @@ h3 {
     margin-left: 30px;
 }
 
-.main-product {
+.main-servicio {
     background-color: #ebebeb;
     margin: 40px;
     padding: 20px;
@@ -1022,30 +1022,30 @@ h3 {
 
 
 @media(min-width:769px) {
-    .products-h1 {
+    .servicios-h1 {
         padding: 35px 0 15px 0;
     }
 
-    .products-p {
+    .servicios-p {
         margin: 25px auto;
         width: 50%;
     }
 
-    .box-product {
+    .box-servicio {
         flex-wrap: nowrap;
         max-width: 900px;
         text-align: left;
     }
 
-    .box-product-button {
+    .box-servicio-button {
         font-size: 18px;
     }
 
-    .box-product-left {
+    .box-servicio-left {
         padding: 30px;
     }
 
-    .box-product-right {
+    .box-servicio-right {
         padding: 20px;
     }
 
@@ -1078,14 +1078,14 @@ h3 {
         margin: -14px;
     }
 
-    .detalleDeProducto {
+    .detalleDeServicio {
         display: flex;
         justify-content: flex-end;
         flex-wrap: nowrap;
         flex-direction: row
     }
 
-    .detalle-producto {
+    .detalle-servicio {
         width: 45%;
     }
 }

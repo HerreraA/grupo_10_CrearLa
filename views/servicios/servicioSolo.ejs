@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+    <body>
+        <%- include('../partials/header') %> 
+        <main>
+            <h1 class="servicios-h1"><%=servicios.nombre %></h1>
+            <div class="servicios-p">
+                <p>Omnis voluptate alias magni iste asperiores et nulla, modi molestiae aliquid perspiciatis eum vel similique doloribus, provident totam.</p>
+            </div>
+            <div class="box-servicio">
+                
+                <div class="box-servicio-left">
+                    <div class="box-servicio-number"><%= servicios.id %></div>
+                    <div class="box-servicio-txt">
+                        <h2><%= servicios.nombre %></h2>
+                        <p><%= servicios.descripcion %></p>
+                        <p class="price"><%= servicios.precio %></p>
+                    </div>
+                    <div>
+                        <button class="box-servicio-button">
+                            <a href="/">VER DETALLES</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-servicio-right">
+                    <img src="<%= servicios.imagen %>" alt="Desarrollo Wordpress">
+                </div>
+            </div>
+         
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -10,25 +10,25 @@ const categoriesController = {
     //* Enseña la cantidad de categorías disponibles */
     index: (req, res) => {
         categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
-        res.render('./products/categories', {categories})
+        res.render('./servicios/categories', {categories})
     }, 
     desarrolloApp: (req, res) => {
-        res.render ('./products/desarrollo-app')
+        res.render ('./servicios/desarrollo-app')
     },
     desarrolloSoftware: (req, res) => {
-        res.render('./products/desarrollo-software')
+        res.render('./servicios/desarrollo-software')
     },
     desarrolloWeb: (req, res) => {
-        res.render('./products/desarrollo-web')
+        res.render('./servicios/desarrollo-web')
     },
     disenoWeb: (req, res) => {
-        res.render('./products/diseno-web')
+        res.render('./servicios/diseno-web')
     },
     ecommerce: (req, res) => {
-        res.render('./products/ecommerce')
+        res.render('./servicios/ecommerce')
     },
     categoryCreate: (req, res) => {
-        res.render('./products/categoryCreate')
+        res.render('./servicios/categoryCreate')
     },
     store: (req, res)=>{
         // guardamos el producto//

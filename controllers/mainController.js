@@ -13,7 +13,7 @@ const mainController = {
         res.render('carrito.ejs')
     },
     nosotros: (req, res) => {
-        res.render('./products/nosotros')
+        res.render('./servicios/nosotros')
     },
 }
 
