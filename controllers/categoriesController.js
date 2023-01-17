@@ -1,9 +1,16 @@
 const fs = require('fs');
 const path = require('path');  
+let db = require('../database/models');
+const { validationResult } = require('express-validator');
+const sequelize = db.sequelize;
 
 // Defino variable para base Json de Categorías
 const categoryFilePath = path.join(__dirname, '../data/categories.json');
 let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
+
+const productsFilePath = path.join(__dirname, '../data/products.json');
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 const categoriesController = {
 
@@ -31,7 +38,7 @@ const categoriesController = {
         res.render('./servicios/categoryCreate')
     },
     store: (req, res)=>{
-        // guardamos el producto//
+        // guardamos la categoría//
         let newCategory = {
             id: categories[categories.length - 1].id + 1,
 			nombre: req.body.nombre,
@@ -44,4 +51,4 @@ const categoriesController = {
     }
 }
 
-module.exports = categoriesController ;
+module.exports = categoriesController;

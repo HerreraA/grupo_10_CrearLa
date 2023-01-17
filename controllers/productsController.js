@@ -3,29 +3,43 @@ const path = require('path');
 let db = require('../database/models');
 const { validationResult } = require('express-validator');
 const sequelize = db.sequelize;
-const serviciosFilePath = path.join(__dirname, '../data/servicios.json');
-let servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
-const Servicios = db.Servicio;
+
+const productsFilePath = path.join(__dirname, '../data/products.json');
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+// Defino variable para base Json de Categorías
+const categoryFilePath = path.join(__dirname, '../data/categories.json');
+let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
 
 
-const serviciosController = {
-
-    //* Enseña la cantidad de productos disponibles */
-    index: (req, res) => {
-        servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
-        res.render('./servicios/servicio', {servicios})
-    }, 
-   
-    servicioCreate: (req, res) => {
-        res.render('./servicios/servicioCreate')
+const productsController = {
+    //* Muestra todos los productos */
+    all: (req, res) => {
+        products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        res.render('./products/product', {products})
+    },
+    store: (req, res)=>{
+        // guardamos el producto//
+        let newProduct= {
+            id: products[products.length - 1].id + 1,
+			nombre: req.body.nombre,
+			descripcion: req.body.description,            
+            categoria: req.body.categoria,
+			imagen: req.file.filename,
+            precio: req.body.precio
+		}
+		products.push(newProduct);
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, "  "));
+		res.redirect("/categories")
+    },
+    productCreate: (req, res) => {
+        res.render('./products/productCreate', {categories})
     },
     detail: (req, res) => {
-        db.Servicio.findByPk(req.params.id)
-            .then(servicio => {
-                res.render('servicio-noborrar.ejs', {servicio});
-            });
+        let categoryId = req.params.id;
+        res.render('./products/product', {categoryId, products});
     },
-  edit: async function(req, res) {
+    edit: async function(req, res) {
         try{
             const Servicio = await Servicios.findByPk(req.params.id)
             res.render('servicioEditForm', {Servicio})
@@ -42,7 +56,6 @@ const serviciosController = {
                     descripcion: req.body.descripcion,
                     //imagen: req.body.imagen, //debo poner el if por si tenia? BUSCAR!
                     precio: req.body.precio,
-                   
                 },
                 {
                     where: {id:req.params.id}
@@ -54,7 +67,6 @@ const serviciosController = {
             console.log(e)
         }
     },
-
     delete: async function (req, res) {
         try{
             const Servicio = await Servicios.findByPk(req.params.id)
@@ -64,7 +76,6 @@ const serviciosController = {
             console.log(e)
         }
     },
-
     destroy: async function (req, res) {
         try {
             const deleted = await Servicios.destroy({where: {id:req.params.id}, force: true})
@@ -74,7 +85,6 @@ const serviciosController = {
             console.log(e)
         }
     }
-
 }
 
 module.exports = serviciosController ;

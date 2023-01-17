@@ -19,7 +19,6 @@ module.exports= (sequelize, dataTypes) => {
         imagen:{
             type: dataTypes.STRING,
         }
-
     };
     let config = {
         tableName: 'categorias',

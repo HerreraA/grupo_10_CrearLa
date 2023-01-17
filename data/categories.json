@@ -3,104 +3,48 @@
     "id": 1,
     "nombre": "Desarrollo de Apps",
     "descripcion": " El desarrollo de aplicaciones es el conjunto de procesos y procedimientos involucrados en la escritura de software",
-    "categoria": "Android",
-    "imagen": "https://www.rd.com/wp-content/uploads/2021/01/iphone-with-app-deletion-selection-on-screen-GettyImages-909472776.jpg",
-    "precio": "$42254.93"
+    "imagen": "https://www.rd.com/wp-content/uploads/2021/01/iphone-with-app-deletion-selection-on-screen-GettyImages-909472776.jpg"
   },
   {
     "id": 2,
     "nombre": "Diseño web",
     "descripcion": "El diseño web es un área enfocada en el desarrollo de interfaces digitales, como el diseño de sitios y aplicaciones para web",
-    "categoria": "diseño UX UI",
-    "imagen": "https://thumbs.dreamstime.com/b/escritorio-de-dise%C3%B1o-web-creativo-estudio-con-diferentes-equipos-y-concepto-p%C3%A1gina-receptiva-en-pantallas-dispositivos-moderno-194387522.jpg",
-    "precio": "$2818.83"
+    "imagen": "https://thumbs.dreamstime.com/b/escritorio-de-dise%C3%B1o-web-creativo-estudio-con-diferentes-equipos-y-concepto-p%C3%A1gina-receptiva-en-pantallas-dispositivos-moderno-194387522.jpg"
   },
   {
     "id": 3,
     "nombre": "Tiendas online (E-commerce)",
     "descripcion": "Tienda online que ofrece el software que necesitas para tu empresa!",
-    "categoria": "Magento",
-    "imagen": "https://www.business2community.com/wp-content/uploads/2020/05/Ecommerce-marketing-trends.jpeg",
-    "precio": "$323643.97"
+    "imagen": "https://www.business2community.com/wp-content/uploads/2020/05/Ecommerce-marketing-trends.jpeg"
   },
   {
     "id": 4,
     "nombre": "Desarrollo web",
     "descripcion": "Desarrollo web significa construir y mantener sitios web; es el trabajo que tiene lugar en un segundo plano y que permite que una web tenga una apariencia impecable, un funcionamiento rápido y un buen desempeño para permitir la mejor experiencia de usuario",
-    "categoria": "node js",
-    "imagen": "https://www.yeeply.com/wp-content/uploads/2016/08/photo-1498050108023-c5249f4df085-compressor.jpg",
-    "precio": "$398164.92"
+    "imagen": "https://www.yeeply.com/wp-content/uploads/2016/08/photo-1498050108023-c5249f4df085-compressor.jpg"
   },
   {
     "id": 5,
     "nombre": "Desarrollo de software",
     "descripcion": "El desarrollo de software se refiere a un conjunto de actividades informáticas dedicadas al proceso de creación, diseño, despliegue y compatibilidad de software",
-    "categoria": "Infractustura en la Nube",
-    "imagen": "https://www.software-mantenimiento.com/wp-content/uploads/2021/01/la-diferencia-entre-el-desarrollo-de-software-5.jpg",
-    "precio": "$498428.13"
+    "imagen": "https://www.software-mantenimiento.com/wp-content/uploads/2021/01/la-diferencia-entre-el-desarrollo-de-software-5.jpg"
   },
   {
     "id": 6,
     "nombre": "Diseño web",
     "descripcion": "El diseño web es un área enfocada en el desarrollo de interfaces digitales, como el diseño de sitios y aplicaciones para web",
-    "categoria": "desarrollo wordpress",
-    "imagen": "https://thumbs.dreamstime.com/b/escritorio-de-dise%C3%B1o-web-creativo-estudio-con-diferentes-equipos-y-concepto-p%C3%A1gina-receptiva-en-pantallas-dispositivos-moderno-194387522.jpg",
-    "precio": "$468089.23"
+    "imagen": "https://thumbs.dreamstime.com/b/escritorio-de-dise%C3%B1o-web-creativo-estudio-con-diferentes-equipos-y-concepto-p%C3%A1gina-receptiva-en-pantallas-dispositivos-moderno-194387522.jpg"
   },
   {
     "id": 7,
-    "nombre": "Desarrollo de Apps",
-    "descripcion": " El desarrollo de aplicaciones es el conjunto de procesos y procedimientos involucrados en la escritura de software",
-    "categoria": "Multiplataforma",
-    "imagen": "https://www.rd.com/wp-content/uploads/2021/01/iphone-with-app-deletion-selection-on-screen-GettyImages-909472776.jpg",
-    "precio": "$42254.93"
+    "nombre": "asasd",
+    "descripcion": "asdasdas",
+    "imagen": "1673916236965_user.jpeg"
   },
   {
     "id": 8,
-    "nombre": "inteligencia artificial",
-    "descripcion": "aca se hacen cositas",
-    "categoria": "visited",
-    "imagen": "1668960502861_user.jpg",
-    "precio": "125862"
-  },
-  {
-    "id": 9,
-    "nombre": "inteligencia artificial",
-    "descripcion": "esto hace cositas",
-    "categoria": "visited",
-    "imagen": "1668960542824_user.jpg",
-    "precio": "125862"
-  },
-  {
-    "id": 10,
-    "nombre": "inteligencia artificial",
-    "descripcion": "sdasdasd",
-    "categoria": "visited",
-    "imagen": "1670377179407_user.jpg",
-    "precio": "125862"
-  },
-  {
-    "id": 11,
-    "nombre": "tania",
-    "descripcion": "dsdsvdvds",
-    "categoria": "visited",
-    "imagen": "1670377892001_user.jpg",
-    "precio": "541"
-  },
-  {
-    "id": 12,
-    "nombre": "jajandb",
-    "descripcion": "sksjjsjs",
-    "categoria": "visited",
-    "imagen": "1670382207888_user.jpg",
-    "precio": "adasdasd"
-  },
-  {
-    "id": 13,
-    "nombre": "desarrollo_ejemplo",
-    "descripcion": "este es un desarrollo de prueba",
-    "categoria": "in-sale",
-    "imagen": "1673402104885_user.png",
-    "precio": "1000"
+    "nombre": "Wordpress",
+    "descripcion": "Descripción de wordpress",
+    "imagen": "1673923998092_user.png"
   }
 ]
