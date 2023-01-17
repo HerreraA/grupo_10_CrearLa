@@ -4,40 +4,40 @@ let db = require('../database/models');
 const { validationResult } = require('express-validator');
 const sequelize = db.sequelize;
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const serviciosFilePath = path.join(__dirname, '../data/servicios.json');
+let servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
 
 // Defino variable para base Json de Categorías
 const categoryFilePath = path.join(__dirname, '../data/categories.json');
 let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
 
 
-const productsController = {
-    //* Muestra todos los productos */
+const serviciosController = {
+    //* Muestra todos los servicios */
     all: (req, res) => {
-        products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render('./products/product', {products})
+        servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
+        res.render('./servicios/servicio', {servicios})
     },
     store: (req, res)=>{
-        // guardamos el producto//
-        let newProduct= {
-            id: products[products.length - 1].id + 1,
+        // guardamos el servicio//
+        let newServicio= {
+            id: servicios[servicios.length - 1].id + 1,
 			nombre: req.body.nombre,
 			descripcion: req.body.description,            
             categoria: req.body.categoria,
 			imagen: req.file.filename,
             precio: req.body.precio
 		}
-		products.push(newProduct);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, "  "));
+		servicios.push(newServicio);
+		fs.writeFileSync(serviciosFilePath, JSON.stringify(servicios, null, "  "));
 		res.redirect("/categories")
     },
-    productCreate: (req, res) => {
-        res.render('./products/productCreate', {categories})
+    servicioCreate: (req, res) => {
+        res.render('./servicios/servicioCreate', {categories})
     },
     detail: (req, res) => {
         let categoryId = req.params.id;
-        res.render('./products/product', {categoryId, products});
+        res.render('./servicios/servicio', {categoryId, servicios});
     },
     edit: async function(req, res) {
         try{

@@ -16,35 +16,25 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 const uploadFile= require("../middlewares/multerMiddleware")
 
-//* Enseña la cantidad de productos disponibles */
-//router.get('/serviciosList', serviciosController.index);
-router.get('/', serviciosController.index);
-
-//* estas rutas en realizad deberian ser para cuando buscamos por id pero hay que hacer una vista que lo permita//
-// osea esta router.get("/detail/:id", heroesCotroller.detail)
-
-/*router.get('/desarrolloApp', serviciosController.desarrolloApp);
-
-router.get('/desarrolloSoftware', serviciosController.desarrolloSoftware);
-
-router.get('/desarrolloWeb', serviciosController.desarrolloWeb);
-
-router.get('/disenoWeb', serviciosController.disenoWeb);
-
-router.get('/ecommerce', serviciosController.ecommerce); */
+//* Muestra todos los servicios */
+router.get('/all', serviciosController.all);
 
 
-// ***********************************//
-router.get('/productCreate', serviciosController.productCreate); //muestra el form que crea servicios//
+
+// Crear un servicio //
+router.get('/servicioCreate', serviciosController.servicioCreate); //muestra el form que crea servicios//
 router.post('/detail', uploadFile.single("foto"), serviciosController.store); //guarda lo que cargan en el form//
 
-// ** muestra detalle de un producto **//
-router.get("/detail/:id", serviciosController.detail)
-// ** editar un producto **
 
+
+// ** muestra detalle de un servicioo **//
+router.get("/detail/:id", serviciosController.detail)
+
+// ** editar un servicioo **
 router.get('/edit/:id', serviciosController.edit);
 router.post('/update/:id', serviciosController.update);
-// *** ELIMINAR un producti **//
+
+// *** ELIMINAR un servicioo **//
 router.get('/delete/:id', serviciosController.delete);
 router.post('/delete/:id', serviciosController.destroy);
 

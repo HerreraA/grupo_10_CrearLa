@@ -1,24 +1,24 @@
 [
   {
     "id": 1,
-    "nombre": "Producto 1",
-    "descripcion": "Descripción de producto 1",
+    "nombre": "servicio 1",
+    "descripcion": "Descripción de servicio 1",
     "category_id": 1,
     "imagen": "https://www.rd.com/wp-content/uploads/2021/01/iphone-with-app-deletion-selection-on-screen-GettyImages-909472776.jpg",
     "precio": "$42254.93"
   },
   {
     "id": 2,
-    "nombre": "Producto 2",
-    "descripcion": "Descripción del producto 2",
+    "nombre": "servicio 2",
+    "descripcion": "Descripción del servicio 2",
     "category_id": 2,
     "imagen": "https://thumbs.dreamstime.com/b/escritorio-de-dise%C3%B1o-web-creativo-estudio-con-diferentes-equipos-y-concepto-p%C3%A1gina-receptiva-en-pantallas-dispositivos-moderno-194387522.jpg",
     "precio": "$2818.83"
   },
   {
     "id": 3,
-    "nombre": "Producto 3",
-    "descripcion": "Descripción del producto 3",
+    "nombre": "servicio 3",
+    "descripcion": "Descripción del servicio 3",
     "category_id": 1,
     "imagen": "https://thumbs.dreamstime.com/b/escritorio-de-dise%C3%B1o-web-creativo-estudio-con-diferentes-equipos-y-concepto-p%C3%A1gina-receptiva-en-pantallas-dispositivos-moderno-194387522.jpg",
     "precio": "$2818.83"

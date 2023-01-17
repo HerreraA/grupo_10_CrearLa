@@ -8,8 +8,8 @@ const sequelize = db.sequelize;
 const categoryFilePath = path.join(__dirname, '../data/categories.json');
 let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const serviciosFilePath = path.join(__dirname, '../data/servicios.json');
+let servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
 
 
 const categoriesController = {
