@@ -20,7 +20,6 @@ const uploadFile= require("../middlewares/multerMiddleware")
 router.get('/all', productsController.all);
 
 
-
 // Crear un servicio //
 router.get('/productCreate', productsController.productCreate); //muestra el form que crea servicios//
 router.post('/detail', uploadFile.single("foto"), productsController.store); //guarda lo que cargan en el form//

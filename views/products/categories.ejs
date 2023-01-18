@@ -8,14 +8,13 @@
             <div class="products-p">
                 <p>Omnis voluptate alias magni iste asperiores et nulla, modi molestiae aliquid perspiciatis eum vel similique doloribus, provident totam.</p>
             </div>
+            <% categories.forEach(category => { %>
             <div class="box-product">
-                <% categories.forEach(category => { %>
                 <div class="box-product-left">
                     <div class="box-product-number"><%= category.id %></div>
                     <div class="box-product-txt">
                         <h2><%= category.nombre %></h2>
                         <p><%= category.descripcion %></p>
-                        <p><%= category.imagen %></p>
                         <p class="price"><%= category.precio %></p>
                     </div>
                     <div>
