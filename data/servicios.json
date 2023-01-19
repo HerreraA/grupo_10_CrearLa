@@ -180,5 +180,61 @@
     "category_id": "1",
     "imagen": "1674086383076_user.png",
     "precio": "23213123"
+  },
+  {
+    "id": 24,
+    "nombre": "Juan Lopez",
+    "descripcion": "sadasd",
+    "category_id": "8",
+    "imagen": "1674097295272_user.png",
+    "precio": "321321"
+  },
+  {
+    "id": 25,
+    "nombre": "Gabriel",
+    "descripcion": "sdasdadsasd",
+    "category_id": "3",
+    "imagen": "1674097582181_user.png",
+    "precio": "1233"
+  },
+  {
+    "id": 26,
+    "nombre": "Gabriel",
+    "descripcion": "sdasdadsasd",
+    "category_id": "3",
+    "imagen": "1674097597572_user.png",
+    "precio": "1233"
+  },
+  {
+    "id": 27,
+    "nombre": "Gabriel",
+    "descripcion": "sdasdadsasd",
+    "category_id": "3",
+    "imagen": "1674098176490_user.png",
+    "precio": "1233"
+  },
+  {
+    "id": 28,
+    "nombre": "Nuevo servicio",
+    "descripcion": "sada",
+    "category_id": "7",
+    "imagen": "1674098514160_user.png",
+    "precio": "44545"
+  },
+  {
+    "id": 29,
+    "nombre": "Juan Lopez",
+    "descripcion": "sadasd",
+    "category_id": "3",
+    "imagen": "1674098610273_user.png",
+    "precio": "21323"
+  },
+  {
+    "id": 30,
+    "nombre": "Nuevo",
+    "descripcion": "sadasdas",
+    "category_id": "2",
+    "imagen": "1674098674914_user.png",
+    "precio": "452342"
   }
 ]

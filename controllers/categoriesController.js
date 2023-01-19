@@ -36,7 +36,7 @@ const categoriesController = {
 		}
 		categories.push(newCategory);
 		fs.writeFileSync(categoryFilePath, JSON.stringify(categories, null, "  "));
-		res.redirect("/categories")
+		res.redirect("/categories/all")
     }
 }
 

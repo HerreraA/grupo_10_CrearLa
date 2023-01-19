@@ -30,7 +30,7 @@ const serviciosController = {
 		}
 		servicios.push(newServicio);
 		fs.writeFileSync(serviciosFilePath, JSON.stringify(servicios, null, "  "));
-		res.redirect("/")
+		res.redirect('/servicios/detailCategory/' + newServicio.category_id)
     },
     //* Formulario para crear un servicio */    
     servicioCreate: (req, res) => {

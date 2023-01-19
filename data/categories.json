@@ -34,5 +34,23 @@
     "nombre": "Diseño web",
     "descripcion": "El diseño web es un área enfocada en el desarrollo de interfaces digitales, como el diseño de sitios y aplicaciones para web",
     "imagen": "https://thumbs.dreamstime.com/b/escritorio-de-dise%C3%B1o-web-creativo-estudio-con-diferentes-equipos-y-concepto-p%C3%A1gina-receptiva-en-pantallas-dispositivos-moderno-194387522.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "DEsarrollo nuevo",
+    "descripcion": "Desceripcion",
+    "imagen": "1674096842550_user.jpeg"
+  },
+  {
+    "id": 8,
+    "nombre": "Juan Lopez",
+    "descripcion": "sadasdas",
+    "imagen": "1674096959930_user.png"
+  },
+  {
+    "id": 9,
+    "nombre": "Uno mas",
+    "descripcion": "uno mas",
+    "imagen": "1674097015809_user.png"
   }
 ]
