@@ -1,19 +1,25 @@
+const fs = require('fs');
+const path = require('path');  
+
+// Defino variable para base Json de Categorías
+const categoryFilePath = path.join(__dirname, '../data/categories.json');
+let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
 
 const mainController = {
     home: (req, res) => {
-        res.render('./home/home')
+        res.render('./home/home', {categories})
     },
     contact: (req, res) => {
-        res.render ('contact')
+        res.render ('./contact/contact', {categories})
     },
     portfolio: (req, res) => {
-        res.render ('./portfolio/portfolio')
+        res.render ('./portfolio/portfolio', {categories})
     },
     carrito: (req, res) => {
-        res.render('carrito.ejs')
+        res.render('./carrito/carrito', {categories})
     },
     nosotros: (req, res) => {
-        res.render('./products/nosotros')
+        res.render('./nosotros/nosotros', {categories})
     },
 }
 

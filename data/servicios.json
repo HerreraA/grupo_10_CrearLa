@@ -1,0 +1,184 @@
+[
+  {
+    "id": 1,
+    "nombre": "servicio 1",
+    "descripcion": "Descripción de servicio 1",
+    "category_id": 1,
+    "imagen": "https://www.rd.com/wp-content/uploads/2021/01/iphone-with-app-deletion-selection-on-screen-GettyImages-909472776.jpg",
+    "precio": "$42254.93"
+  },
+  {
+    "id": 2,
+    "nombre": "servicio 2",
+    "descripcion": "Descripción del servicio 2",
+    "category_id": 2,
+    "imagen": "https://thumbs.dreamstime.com/b/escritorio-de-dise%C3%B1o-web-creativo-estudio-con-diferentes-equipos-y-concepto-p%C3%A1gina-receptiva-en-pantallas-dispositivos-moderno-194387522.jpg",
+    "precio": "$2818.83"
+  },
+  {
+    "id": 3,
+    "nombre": "servicio 3",
+    "descripcion": "Descripción del servicio 3",
+    "category_id": 1,
+    "imagen": "https://thumbs.dreamstime.com/b/escritorio-de-dise%C3%B1o-web-creativo-estudio-con-diferentes-equipos-y-concepto-p%C3%A1gina-receptiva-en-pantallas-dispositivos-moderno-194387522.jpg",
+    "precio": "$2818.83"
+  },
+  {
+    "id": 4,
+    "nombre": "Nuevo nombre",
+    "descripcion": "saadasd",
+    "imagen": "1673916783042_user.png",
+    "precio": "1234"
+  },
+  {
+    "id": 5,
+    "nombre": "asdas",
+    "descripcion": "asdasdas",
+    "imagen": "1673916908027_user.png",
+    "precio": "231321"
+  },
+  {
+    "id": 6,
+    "nombre": "asdasd",
+    "descripcion": "asdasd",
+    "category_id": "in-sale",
+    "imagen": "1673917000409_user.png",
+    "precio": "21312"
+  },
+  {
+    "id": 7,
+    "nombre": "adadas",
+    "descripcion": "asdadsa",
+    "category_id": "3",
+    "imagen": "1673917041929_user.png",
+    "precio": "21321"
+  },
+  {
+    "id": 8,
+    "nombre": "adadas",
+    "descripcion": "asdadsa",
+    "category_id": "6",
+    "imagen": "1673917075195_user.png",
+    "precio": "21321"
+  },
+  {
+    "id": 9,
+    "nombre": "Wordpress 1",
+    "descripcion": "Descripción wordpress 1",
+    "category_id": "8",
+    "imagen": "1673924066104_user.jpeg",
+    "precio": "123"
+  },
+  {
+    "id": 10,
+    "nombre": "Nuevo servicio",
+    "descripcion": "Esro es una nueva descripcion",
+    "category_id": "1",
+    "imagen": "1674085858834_user.jpeg",
+    "precio": "21321"
+  },
+  {
+    "id": 11,
+    "nombre": "Nuevo nombre",
+    "descripcion": "asdadsa",
+    "category_id": "1",
+    "imagen": "1674086010474_user.jpeg",
+    "precio": "111111"
+  },
+  {
+    "id": 12,
+    "nombre": "Nuevo nombre",
+    "descripcion": "asdadsa",
+    "category_id": "1",
+    "imagen": "1674086047841_user.jpeg",
+    "precio": "111111"
+  },
+  {
+    "id": 13,
+    "nombre": "Nuevo nombre",
+    "descripcion": "asdadsa",
+    "category_id": "1",
+    "imagen": "1674086065348_user.jpeg",
+    "precio": "111111"
+  },
+  {
+    "id": 14,
+    "nombre": "Nuevo nombre",
+    "descripcion": "asdadsa",
+    "category_id": "1",
+    "imagen": "1674086081941_user.jpeg",
+    "precio": "111111"
+  },
+  {
+    "id": 15,
+    "nombre": "Nuevo nombre",
+    "descripcion": "asdadsa",
+    "category_id": "1",
+    "imagen": "1674086085079_user.jpeg",
+    "precio": "111111"
+  },
+  {
+    "id": 16,
+    "nombre": "2131231",
+    "descripcion": "123123123",
+    "category_id": "1",
+    "imagen": "1674086175021_user.png",
+    "precio": "23213123"
+  },
+  {
+    "id": 17,
+    "nombre": "2131231",
+    "descripcion": "123123123",
+    "category_id": "1",
+    "imagen": "1674086194381_user.png",
+    "precio": "23213123"
+  },
+  {
+    "id": 18,
+    "nombre": "2131231",
+    "descripcion": "123123123",
+    "category_id": "1",
+    "imagen": "1674086202031_user.png",
+    "precio": "23213123"
+  },
+  {
+    "id": 19,
+    "nombre": "2131231",
+    "descripcion": "123123123",
+    "category_id": "1",
+    "imagen": "1674086223020_user.png",
+    "precio": "23213123"
+  },
+  {
+    "id": 20,
+    "nombre": "2131231",
+    "descripcion": "123123123",
+    "category_id": "1",
+    "imagen": "1674086231909_user.png",
+    "precio": "23213123"
+  },
+  {
+    "id": 21,
+    "nombre": "2131231",
+    "descripcion": "123123123",
+    "category_id": "1",
+    "imagen": "1674086338156_user.png",
+    "precio": "23213123"
+  },
+  {
+    "id": 22,
+    "nombre": "2131231",
+    "descripcion": "123123123",
+    "category_id": "1",
+    "imagen": "1674086355748_user.png",
+    "precio": "23213123"
+  },
+  {
+    "id": 23,
+    "nombre": "2131231",
+    "descripcion": "123123123",
+    "category_id": "1",
+    "imagen": "1674086383076_user.png",
+    "precio": "23213123"
+  }
+]

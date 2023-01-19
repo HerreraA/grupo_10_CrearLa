@@ -4,27 +4,26 @@
     <body>
         <%- include('../partials/header') %> 
         <main>
-            <h1 class="products-h1">SERVICIOS</h1>
-            <div class="products-p">
+            <h1 class="servicios-h1">Categorías de servicios</h1>
+            <div class="servicios-p">
                 <p>Omnis voluptate alias magni iste asperiores et nulla, modi molestiae aliquid perspiciatis eum vel similique doloribus, provident totam.</p>
             </div>
             <% categories.forEach(category => { %>
-            <div class="box-product">
-                <div class="box-product-left">
-                    <div class="box-product-number"><%= category.id %></div>
-                    <div class="box-product-txt">
+            <div class="box-servicio">
+                <div class="box-servicio-left">
+                    <div class="box-servicio-number"><%= category.id %></div>
+                    <div class="box-servicio-txt">
                         <h2><%= category.nombre %></h2>
                         <p><%= category.descripcion %></p>
-                        <p class="price"><%= category.precio %></p>
                     </div>
                     <div>
-                        <button class="box-product-button">
+                        <button class="box-servicio-button">
                             <a href="/">VER DETALLES</a>
                         </button>
                     </div>
                 </div>
-                <div class="box-product-right">
-                    <img src="<%= category.imagen %>" alt="Desarrollo Wordpress">
+                <div class="box-servicio-right">
+                    <img src="<%= category.imagen %>" alt="<%= category.nombre %>">
                 </div>
             </div>
             <% }) %>

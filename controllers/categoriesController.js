@@ -8,28 +8,26 @@ const sequelize = db.sequelize;
 const categoryFilePath = path.join(__dirname, '../data/categories.json');
 let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const serviciosFilePath = path.join(__dirname, '../data/servicios.json');
+let servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
 
 
 const categoriesController = {
-
     //* Enseña la cantidad de categorías disponibles */
     index: (req, res) => {
         categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
-        res.render('./products/categories', {categories})
+        res.render('./servicios/categories', {categories})
     },
-    /*category: (req, res) => {
-        db.Categoria.findByPk(req.params.id)
-            .then(servicio => {
-                res.render('./products/categories', {products});
-            });
-    },*/
+    detail: (req, res) => {
+        let categoryId = req.params.id;
+        res.render('./servicios/categorySolo', {categoryId, categories});
+    },
+    //* Formulario para crear una categoría */
     categoryCreate: (req, res) => {
-        res.render('./products/categoryCreate')
+        res.render('./servicios/categoryCreate', {categories})
     },
+    //* Guarda la categoría */    
     store: (req, res)=>{
-        // guardamos la categoría//
         let newCategory = {
             id: categories[categories.length - 1].id + 1,
 			nombre: req.body.nombre,

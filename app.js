@@ -25,12 +25,16 @@ app.set('views', path.join(__dirname, '/views'))
 //** Rutas */
 const mainRouter = require ('./routes/main')
 const categoriesRouter = require ("./routes/categories")
-const productsRouter = require ("./routes/products")
+const serviciosRouter = require ("./routes/servicios")
 const usersRouter = require ('./routes/users')
+
+//URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
+app.use(express.urlencoded({ extended: false }));
+
 
 app.use ('/', mainRouter);
 app.use ('/categories', categoriesRouter);
-app.use ('/products', productsRouter);
+app.use ('/servicios', serviciosRouter);
 app.use ('/user', usersRouter);
 
 // Página no encontrada

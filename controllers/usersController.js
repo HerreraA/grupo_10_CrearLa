@@ -1,10 +1,14 @@
 const fs = require('fs');
 const path = require('path'); 
-const { use } = require('../routes/products');
+const { use } = require('../routes/servicios');
 const User = require('../models/User');
 const bcryptjs = require ('bcryptjs');
 const { validationResult } = require('express-validator');
 let db = require('../database/models');
+
+// Defino variable para base Json de Categorías
+const categoryFilePath = path.join(__dirname, '../data/categories.json');
+let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -12,7 +16,7 @@ let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const usersController = {
     register: (req, res) => {
-        res.render('./users/register')
+        res.render('./users/register', {categories})
     },
 
     //* Se guarda el registro */
@@ -63,7 +67,7 @@ const usersController = {
         return res.redirect('/users/login');
     },
     login: (req, res) => {
-        return res.render('./users/login.ejs')
+        return res.render('./users/login.ejs', {categories})
     },
     loginProcess: (req, res) => {
         return res.send(req.body);
