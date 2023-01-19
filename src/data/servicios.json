@@ -236,5 +236,13 @@
     "category_id": "2",
     "imagen": "1674098674914_user.png",
     "precio": "452342"
+  },
+  {
+    "id": 31,
+    "nombre": "Juan Lopez",
+    "descripcion": "Nuevo dis web",
+    "category_id": "6",
+    "imagen": "1674100611346_user.png",
+    "precio": "23123"
   }
 ]

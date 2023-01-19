@@ -10,7 +10,7 @@ const app = express();
 
 
 // ************ Middlewares - (don't touch) ************
-const publicPath= path.resolve(__dirname, "./public");
+const publicPath= path.resolve(__dirname, "../public");
 app.use(express.static(publicPath))
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
