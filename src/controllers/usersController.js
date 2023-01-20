@@ -16,7 +16,7 @@ let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const usersController = {
     register: (req, res) => {
-        res.render('./users/register', {categories})
+        res.render('./users/register') // archivo de registro?//
     },
 
     //* Se guarda el registro */
@@ -59,21 +59,47 @@ const usersController = {
         let userToCreate = {
             ...req.body,
             password: bcryptjs.hashSync(req.body.password, 10),
-            imagen: req.file.filename
+            foto: req.file.filename
         }
 
         let userCreated = User.create(userToCreate);
 
-        return res.redirect('/users/login');
+        return res.redirect('./users/login');
     },
     login: (req, res) => {
-        return res.render('./users/login.ejs', {categories})
+        return res.render('login.ejs')  
     },
+
     loginProcess: (req, res) => {
-        return res.send(req.body);
+        let userToLogin= User.findByField("email", req.body.email);
+
+        if (userToLogin){
+            let passwordOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            if (passwordOk){
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                return res.redirect("./users/profile") // aca deberia dejarlo ingresar a la aprte de gente logeada
+            }
+            return  res.render('/users/login', {
+                errors: {
+                    email: {
+                        msg: "Las credenciale son invalidas "
+                    }
+                }
+            });
+        }  
+        return res.render('./users/login', {
+            errors: {
+                email: {
+                    msg: "No se encuentra dicho E-mail en la base de datos"
+                }
+            }
+        });
     },
     profile: (req, res) => {
-        return res.render('userProfile')
+        return res.render('userProfile', {
+            user: req.session.userLogged
+        })
         db.Usuarios.create({
             nombre: req.body.nombre,
             fechaDeNacimiento:req.body.fechaDeNacimiento,

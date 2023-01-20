@@ -3,11 +3,19 @@ const express = require ('express');
 const path = require('path');
 const { get } = require('http');
 const methodOverride = require ('method-override'); // para poder usar PUT y DELETE
-
+const session = require('express-session'); //**login */
 
 // ************ express() - (don't touch) ************
 const app = express();
 
+//** login  */
+app.use(session({
+secret: 'Crear.la',
+resave: false,
+saveUninitialized: true,
+}));
+
+//app.use(cookieParser())
 
 // ************ Middlewares - (don't touch) ************
 const publicPath= path.resolve(__dirname, "../public");
