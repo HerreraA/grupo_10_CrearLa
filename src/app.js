@@ -4,10 +4,11 @@ const path = require('path');
 const { get } = require('http');
 const methodOverride = require ('method-override'); // para poder usar PUT y DELETE
 const session = require('express-session'); //**login */
-
+const userLoggedMiddleware = require ("./middlewares/userLoggedMiddleware")
 // ************ express() - (don't touch) ************
 const app = express();
 
+app.use(userLoggedMiddleware)
 //** login  */
 app.use(session({
 secret: 'Crear.la',

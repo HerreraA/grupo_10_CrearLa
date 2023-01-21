@@ -46,7 +46,7 @@ const usersController = {
         let userInDB = User.findByField('email', req.body.email);
 
         if(userInDB) {
-            return res.render('./users/register.ejs', {
+            return res.render('./users/register', {
                 errors: {
                     email: {
                         msg: 'Este email ya está registrado'
@@ -67,7 +67,7 @@ const usersController = {
         return res.redirect('./users/login');
     },
     login: (req, res) => {
-        return res.render('login.ejs')  
+        return res.render('./users/login')  
     },
 
     loginProcess: (req, res) => {
@@ -100,7 +100,7 @@ const usersController = {
         return res.render('userProfile', {
             user: req.session.userLogged
         })
-        db.Usuarios.create({
+        /*db.Usuarios.create({
             nombre: req.body.nombre,
             fechaDeNacimiento:req.body.fechaDeNacimiento,
             domicilio:req.body.domicilio,
@@ -109,9 +109,13 @@ const usersController = {
             password: req.body.password
         })
 
-        res.redirect('/')
+        res.redirect('/')*/
 
-    }
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect("/")
+    },
 }
 
 module.exports = usersController;
