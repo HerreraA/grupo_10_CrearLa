@@ -4,9 +4,8 @@ const router = express.Router();
 
 //* Controllers require */
 const userController = require('../controllers/usersController');
-
-
 const uploadFile = require('../middlewares/multerMiddleware');
+
 
 //* Formulario de Login */
 router.get('/login', userController.login);
