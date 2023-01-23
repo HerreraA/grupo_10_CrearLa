@@ -4,22 +4,22 @@
     <body>
         <%- include('../partials/header') %> 
         <main>
-            <% categories.forEach(category => { %>
-                <% if(category.id == categoryId) { %>
-            <h1 class="servicios-h1"><%= category.nombre %></h1>
-            <% }}) %>
+            <% for (let i = 0 ; i < categorias.length; i++ ) { %>
+                <% if(categorias[i].id == categoryId) { %>
+            <h1 class="servicios-h1"><%= categorias[i].nombre %></h1>
+            <% }} %>
             <div class="servicios-p">
                 <p></p>
             </div>
-            <% servicios.forEach(servicio => { %>
-                <% if(servicio.category_id == categoryId) { %>
+            <% for (let i = 0 ; i < servicios.length; i++ ) { %>
+                <% if(servicios[i].category_id == categoryId) { %>
             <div class="box-servicio">
                 <div class="box-servicio-left">
-                    <div class="box-servicio-number"><%= servicio.id %></div>
+                    <div class="box-servicio-number"><%= servicios[i].id %></div>
                     <div class="box-servicio-txt">
-                        <h2><%= servicio.nombre %></h2>
-                        <p><%= servicio.descripcion %></p>
-                        <p class="price"><%= servicio.precio %></p>
+                        <h2><%= servicios[i].nombre %></h2>
+                        <p><%= servicios[i].descripcion %></p>
+                        <p class="price"><%= servicios[i].precio %></p>
                     </div>
                     <div>
                         <button class="box-servicio-button">
@@ -28,10 +28,10 @@
                     </div>
                 </div>
                 <div class="box-servicio-right">
-                    <img src="<%= servicio.imagen %>" alt="<%= servicio.nombre %>">
+                    <img src="<%= servicios[i].imagen %>" alt="<%= servicios[i].nombre %>">
                 </div>
             </div>
-            <% }}) %>
+            <% }} %>
     </main>
     <%- include('../partials/footer') %>
 </body>

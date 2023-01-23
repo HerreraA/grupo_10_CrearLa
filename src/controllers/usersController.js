@@ -7,8 +7,11 @@ const { validationResult } = require('express-validator');
 let db = require('../database/models');
 
 // Defino variable para base Json de Categorías
-const categoryFilePath = path.join(__dirname, '../data/categories.json');
-let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
+//const categoryFilePath = path.join(__dirname, '../data/categories.json');
+//let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
+
+// Defino variable para base de datos
+let categorias = db.Categoria.findAll()
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -16,7 +19,7 @@ let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const usersController = {
     register: (req, res) => {
-        res.render('./users/register', {categories})
+        res.render('./users/register', {categorias})
     },
 
     //* Se guarda el registro */
@@ -34,7 +37,7 @@ const usersController = {
         
     },
     login: (req, res) => {
-        return res.render('./users/login.ejs', {categories})
+        return res.render('./users/login.ejs', {categorias})
     },
     loginProcess: (req, res) => {
         return res.send(req.body);

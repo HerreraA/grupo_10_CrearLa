@@ -4,19 +4,24 @@ let db = require('../database/models');
 const { validationResult } = require('express-validator');
 const sequelize = db.sequelize;
 
-const serviciosFilePath = path.join(__dirname, '../data/servicios.json');
-let servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
+//const serviciosFilePath = path.join(__dirname, '../data/servicios.json');
+//let servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
 
 // Defino variable para base Json de Categorías
-const categoryFilePath = path.join(__dirname, '../data/categories.json');
-let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
+//const categoryFilePath = path.join(__dirname, '../data/categories.json');
+//let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
 
+//defino variable para servicios
+let servicios = db.Servicio.findAll()
+
+// Defino variable para base de datos
+let categorias = db.Categoria.findAll()
 
 const serviciosController = {
     //* Muestra todos los servicios */
     all: (req, res) => {
         servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
-        res.render('./servicios/servicios', {servicios, categories})
+        res.render('./servicios/servicios', {servicios, categorias})
     },
     //* Guarda un servicio */
     store: (req, res)=>{
@@ -34,15 +39,19 @@ const serviciosController = {
     },
     //* Formulario para crear un servicio */    
     servicioCreate: (req, res) => {
-        res.render('./servicios/servicioCreate', {categories})
+        db.Categoria.findAll()
+            .then(function(categorias){
+                return  res.render('./servicios/servicioCreate', {categorias:categorias})
+            })
     },
     detail: (req, res) => {
         let servicioId = req.params.id;
-        res.render('./servicios/servicioSolo', {servicioId, servicios, categories});
+        res.render('./servicios/servicioSolo', {servicioId, servicios, categorias});
     },
     detailCategory: (req, res) => {
+
         let categoryId = req.params.id;
-        res.render('./servicios/serviciosCategoria', {categoryId, servicios, categories});
+        res.render('./servicios/serviciosCategoria', {categoryId, servicios, categorias});
     },
     edit: async function(req, res) {
         try{

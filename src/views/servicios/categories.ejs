@@ -8,13 +8,13 @@
             <div class="servicios-p">
                 <p>Omnis voluptate alias magni iste asperiores et nulla, modi molestiae aliquid perspiciatis eum vel similique doloribus, provident totam.</p>
             </div>
-            <% categories.forEach(category => { %>
+            <% categorias.forEach(categoria => { %>
             <div class="box-servicio">
                 <div class="box-servicio-left">
-                    <div class="box-servicio-number"><%= category.id %></div>
+                    <div class="box-servicio-number"><%= categoria.id %></div>
                     <div class="box-servicio-txt">
-                        <h2><%= category.nombre %></h2>
-                        <p><%= category.descripcion %></p>
+                        <h2><%= categoria.nombre %></h2>
+                        <p><%= categoria.descripcion %></p>
                     </div>
                     <div>
                         <button class="box-servicio-button">
@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="box-servicio-right">
-                    <img src="<%= category.imagen %>" alt="<%= category.nombre %>">
+                    <img src="<%= categoria.imagen %>" alt="<%= categoria.nombre %>">
                 </div>
             </div>
             <% }) %>

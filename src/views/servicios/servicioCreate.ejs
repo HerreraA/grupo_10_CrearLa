@@ -13,10 +13,11 @@
           <div class="select">Categoría del servicio</div>
           <label for="categoria" class="form-label">Categoría:</label>
 				<select name="categoria" id="categoria" class="form-input">
-					<option value="">Elegí</option>
-                    <% categories.forEach(category => { %>
-					<option value="<%= category.id %>" id="<%= category.id %>" name="<%= category.id %>"><%= category.nombre %></option>
-                    <% }) %>
+                    <% for (let i = 0 ; i < categorias.length; i++ ) { %>
+					    <option value="<%= categorias[i].id %>">
+                            <%= categorias[i].nombre %>
+                        </option>
+                    <% }%>
 				</select>
         <div>
             <label for="description"></label>
