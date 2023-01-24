@@ -22,16 +22,17 @@ const categoriesController = {
             .then(function(categorias){
                 return  res.render('./servicios/categories', {categorias:categorias})
             })
+
         //categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
         //res.render('./servicios/categories', {categories})
     },
     detail: (req, res) => {
         let categoryId = req.params.id;
-        res.render('./servicios/categorySolo', {categoryId, categorias});
+        res.render('./servicios/categorySolo', {categoryId, categorias:categorias});
     },
     //* Formulario para crear una categoría */
     categoryCreate: (req, res) => {
-        res.render('./servicios/categoryCreate', {categorias})
+        res.render('./servicios/categoryCreate', {categorias:categorias})
     },
     //* Guarda la categoría */    
     store: (req, res)=>{

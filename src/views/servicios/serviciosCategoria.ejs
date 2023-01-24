@@ -4,22 +4,17 @@
     <body>
         <%- include('../partials/header') %> 
         <main>
-            <% for (let i = 0 ; i < categorias.length; i++ ) { %>
-                <% if(categorias[i].id == categoryId) { %>
-            <h1 class="servicios-h1"><%= categorias[i].nombre %></h1>
-            <% }} %>
+            <h1 class="servicios-h1"><%= categorias.nombre %></h1> 
             <div class="servicios-p">
                 <p></p>
             </div>
-            <% for (let i = 0 ; i < servicios.length; i++ ) { %>
-                <% if(servicios[i].category_id == categoryId) { %>
             <div class="box-servicio">
                 <div class="box-servicio-left">
-                    <div class="box-servicio-number"><%= servicios[i].id %></div>
+                    <div class="box-servicio-number"><%= servicios.id %></div>
                     <div class="box-servicio-txt">
-                        <h2><%= servicios[i].nombre %></h2>
-                        <p><%= servicios[i].descripcion %></p>
-                        <p class="price"><%= servicios[i].precio %></p>
+                        <h2><%= servicios.nombre %></h2>
+                        <p><%= servicios.descripcion %></p>
+                        <p class="price"><%= servicios.precio %></p>
                     </div>
                     <div>
                         <button class="box-servicio-button">
@@ -28,11 +23,10 @@
                     </div>
                 </div>
                 <div class="box-servicio-right">
-                    <img src="<%= servicios[i].imagen %>" alt="<%= servicios[i].nombre %>">
+                    <img src="<%= servicios.imagen %>" alt="<%= servicios.nombre %>">
                 </div>
             </div>
-            <% }} %>
-    </main>
+        </main>
     <%- include('../partials/footer') %>
 </body>
 </html>

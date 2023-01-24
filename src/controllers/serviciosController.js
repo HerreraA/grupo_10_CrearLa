@@ -49,9 +49,14 @@ const serviciosController = {
         res.render('./servicios/servicioSolo', {servicioId, servicios, categorias});
     },
     detailCategory: (req, res) => {
-
-        let categoryId = req.params.id;
-        res.render('./servicios/serviciosCategoria', {categoryId, servicios, categorias});
+        db.Categoria.findByPk(req.params.id, {
+            include:[{association: "servicios"}]
+        })
+            .then(function(categorias){
+                res.render ('./servicios/serviciosCategoria', { servicios, categorias})
+            })
+        //let categoryId = req.params.id;
+        //res.render('./servicios/serviciosCategoria', {categoryId, servicios, categorias});
     },
     edit: async function(req, res) {
         try{

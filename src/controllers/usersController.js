@@ -19,7 +19,10 @@ let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const usersController = {
     register: (req, res) => {
+        categorias
+            .then(function(categorias){
         res.render('./users/register', {categorias})
+    })
     },
 
     //* Se guarda el registro */
@@ -37,8 +40,11 @@ const usersController = {
         
     },
     login: (req, res) => {
+        categorias
+            .then(function(categorias){
         return res.render('./users/login.ejs', {categorias})
-    },
+    })
+},
     loginProcess: (req, res) => {
         return res.send(req.body);
     }
