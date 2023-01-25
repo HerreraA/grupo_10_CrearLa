@@ -10,11 +10,12 @@
             </div>
             <div class="box-servicio">
                 <div class="box-servicio-left">
-                    <div class="box-servicio-number"><%= servicios.id %></div>
+                    
+                    <div class="box-servicio-number"><%= categorias.servicios.id %></div>
                     <div class="box-servicio-txt">
-                        <h2><%= servicios.nombre %></h2>
-                        <p><%= servicios.descripcion %></p>
-                        <p class="price"><%= servicios.precio %></p>
+                        <h2><%= categorias.servicios.nombre %></h2>
+                        <p><%= categorias.servicios.descripcion %></p>
+                        <p class="price"><%= categorias.servicios.precio %></p>
                     </div>
                     <div>
                         <button class="box-servicio-button">
@@ -23,7 +24,7 @@
                     </div>
                 </div>
                 <div class="box-servicio-right">
-                    <img src="<%= servicios.imagen %>" alt="<%= servicios.nombre %>">
+                    <img src="<%= categorias.servicios.imagen %>" alt="<%= categorias.servicios.nombre %>">
                 </div>
             </div>
         </main>

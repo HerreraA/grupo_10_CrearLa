@@ -12,7 +12,7 @@ const sequelize = db.sequelize;
 //let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
 
 //defino variable para servicios
-let servicios = db.Servicios.findAll()
+//let servicios = db.Servicios.findAll()
 
 // Defino variable para base de datos
 let categorias = db.Categoria.findAll()
@@ -64,7 +64,7 @@ const serviciosController = {
             include:[{association: "servicios"}]
         })
             .then(function(categorias){
-                res.render ('./servicios/serviciosCategoria', { servicios, categorias})
+                res.render ('./servicios/serviciosCategoria', {categorias})
             })
         //let categoryId = req.params.id;
         //res.render('./servicios/serviciosCategoria', {categoryId, servicios, categorias});

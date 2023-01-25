@@ -8,26 +8,32 @@
             <div class="servicios-p">
                 <p>Omnis voluptate alias magni iste asperiores et nulla, modi molestiae aliquid perspiciatis eum vel similique doloribus, provident totam.</p>
             </div>
-            <% categories.forEach(category => { %>
-                <% if(categoryId == category.id) { %>
-            <div class="box-servicio">
+            <% for (let i = 0 ; i < categorias.length; i++ ) { %>
+                <% if(categoryId == categorias[i].id) { %>  
+                <div class="box-servicio">
                 <div class="box-servicio-left">
-                    <div class="box-servicio-number"><%= category.id %></div>
+                    <div class="box-servicio-number"><%= categorias[i].id %></div>
                     <div class="box-servicio-txt">
-                        <h2><%= category.nombre %></h2>
-                        <p><%= category.descripcion %></p>
+                        <h2><%= categorias[i].nombre %></h2>
+                        <p><%= categorias[i].descripcion %></p>
                     </div>
                     <div>
                         <button class="box-servicio-button">
-                            <a href="/">VER DETALLES</a>
+                            <a href="/carrito">AGREGAR AL CARRITO</A></a>
+                        </button>
+                        <button class="box-servicio-button">
+                            <a href="/">EDITAR</A></a>
+                        </button>
+                        <button class="box-servicio-button">
+                            <a href="/">BORRAR</A></a>
                         </button>
                     </div>
                 </div>
                 <div class="box-servicio-right">
-                    <img src="<%= category.imagen %>" alt="<%= category.nombre %>">
+                    <img src="<%= categorias[i].imagen %>" alt="<%= categorias[i].nombre %>">
                 </div>
             </div>
-            <% }}) %>
+            <% }}%>
     </main>
     <%- include('../partials/footer') %>
 </body>
