@@ -12,7 +12,7 @@ const sequelize = db.sequelize;
 //let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
 
 //defino variable para servicios
-let servicios = db.Servicio.findAll()
+let servicios = db.Servicios.findAll()
 
 // Defino variable para base de datos
 let categorias = db.Categoria.findAll()
@@ -23,9 +23,27 @@ const serviciosController = {
         servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
         res.render('./servicios/servicios', {servicios, categorias})
     },
+    
+    //* Formulario para crear un servicio */    
+    servicioCreate: (req, res) => {
+        categorias
+            .then(function(categorias){
+                return  res.render('./servicios/servicioCreate', {categorias:categorias})
+            })
+    },
     //* Guarda un servicio */
     store: (req, res)=>{
-        let newServicio= {
+        db.Servicio.create({
+            nombre: req.body.nombre,
+            category_id: req.body.categoria,
+            descripcion: req.body.description,
+            precio: req.body.precio,
+            imagen: req.file.foto
+        })
+
+        res.redirect('/servicios/all')
+
+        /*let newServicio= {
             id: servicios[servicios.length - 1].id + 1,
 			nombre: req.body.nombre,
 			descripcion: req.body.description,            
@@ -35,14 +53,7 @@ const serviciosController = {
 		}
 		servicios.push(newServicio);
 		fs.writeFileSync(serviciosFilePath, JSON.stringify(servicios, null, "  "));
-		res.redirect('/servicios/detailCategory/' + newServicio.category_id)
-    },
-    //* Formulario para crear un servicio */    
-    servicioCreate: (req, res) => {
-        db.Categoria.findAll()
-            .then(function(categorias){
-                return  res.render('./servicios/servicioCreate', {categorias:categorias})
-            })
+		res.redirect('/servicios/detailCategory/' + newServicio.category_id)*/
     },
     detail: (req, res) => {
         let servicioId = req.params.id;

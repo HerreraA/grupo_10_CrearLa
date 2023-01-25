@@ -6,7 +6,7 @@ let db = require('../database/models');
 //const categoryFilePath = path.join(__dirname, '../data/categories.json');
 //let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
 let categorias = db.Categoria.findAll()
-let servicios = db.Servicio.findAll()
+let servicios = db.Servicios.findAll()
 
 const mainController = {
     home: (req, res) => {

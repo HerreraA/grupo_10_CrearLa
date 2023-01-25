@@ -6,6 +6,7 @@ const bcryptjs = require ('bcryptjs');
 const { validationResult } = require('express-validator');
 let db = require('../database/models');
 
+
 // Defino variable para base Json de Categorías
 //const categoryFilePath = path.join(__dirname, '../data/categories.json');
 //let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
