@@ -36,7 +36,16 @@ const categoriesController = {
     },
     //* Guarda la categoría */    
     store: (req, res)=>{
-        let newCategory = {
+            db.Categoria.create({
+                nombre: req.body.nombre,
+                descripcion: req.body.description,
+                imagen: req.body.foto
+            })
+
+        res.redirect('/categories/all')
+
+
+        /*let newCategory = {
             id: categories[categories.length - 1].id + 1,
 			nombre: req.body.nombre,
 			descripcion: req.body.description,
@@ -44,7 +53,7 @@ const categoriesController = {
 		}
 		categories.push(newCategory);
 		fs.writeFileSync(categoryFilePath, JSON.stringify(categorias, null, "  "));
-		res.redirect("/categories/all")
+		res.redirect("/categories/all")*/
     }
 }
 
