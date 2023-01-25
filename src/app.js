@@ -8,13 +8,13 @@ const userLoggedMiddleware = require ("./middlewares/userLoggedMiddleware")
 // ************ express() - (don't touch) ************
 const app = express();
 
-app.use(userLoggedMiddleware)
 //** login  */
 app.use(session({
-secret: 'Crear.la',
-resave: false,
-saveUninitialized: true,
+    secret: 'Crear.la',
+    resave: false,
+    saveUninitialized: true,
 }));
+app.use(userLoggedMiddleware)
 
 //app.use(cookieParser())
 

@@ -16,7 +16,7 @@ const categoriesController = {
     //* Enseña la cantidad de categorías disponibles */
     index: (req, res) => {
         categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
-        res.render('./servicios/categories', {categories})
+        res.render('./servicios/categories', {categories: categories})
     },
     detail: (req, res) => {
         let categoryId = req.params.id;

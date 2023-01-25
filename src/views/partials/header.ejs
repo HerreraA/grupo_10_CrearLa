@@ -17,8 +17,12 @@
             </div>
              <nav class="header-right-menu">
                 <ul style="list-style:none;">
+                    <% if (locals.isLogged){ %>
+                    <li><a href="/user/profile"> <i class="fa-regular fa-circle-user"></i>Hi User</a></li> 
+                    <% } else { %>
                     <li><a href="/user/login"> <i class="fa-regular fa-address-card  "></i>       Mi cuenta </a></li>
-                    <li> <a href="/user/register"> <i class="fa-solid fa-arrow-right-to-bracket  "></i>     Registrarme</a></li>
+                    <li> <a href="/user/register"> <i class="fa-solid fa-arrow-right-to-bracket "></i>     Registrarme</a></li>
+               <% } %>
                     <li> <a href="/carrito"> <i class="fa-solid fa-bag-shopping  "></i>     Ver carrito</a></li>
                 </ul>
             </nav>    

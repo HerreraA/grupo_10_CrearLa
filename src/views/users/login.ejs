@@ -6,15 +6,15 @@
     <main>
     <div class="login-box">
         <h1>Login Here</h1>
-        <form>
+        <form class="create-form" name="login" method="POST" action="/user/login"  enctype="multipart/form-data">
           <!-- USERNAME INPUT -->
-          <label for="username">Username</label>
-          <input type="text" placeholder="Enter Username">
-        <% if (locals.errors && errors.username{ &>
+          <label for="username">Email</label>
+          <input type="email" placeholder="Enter Username">
+        <% if (locals.errors && errors.email) { %>
             <div class="text-danger">
-                <%= errors.username.msg %>
+                <%= errors.email.msg %>
             </div>
-            <% }) %>
+            <% } %>
           <!-- PASSWORD INPUT -->
           <label for="password">Password</label>
           <input type="password" placeholder="Enter Password">

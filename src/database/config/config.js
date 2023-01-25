@@ -1,7 +1,7 @@
 module.exports= {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "julia0211",
     "database": "crearla",
     "host": "127.0.0.1",
     "dialect": "mysql",
