@@ -1,23 +1,24 @@
 module.exports= {
   "development": {
     "username": "root",
-    "password": "julia0211",
+    "password": "",
     "database": "crearla",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": false,
+    "port": 3306
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
+    "password": "",
+    "database": "crearla",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
+    "password": "",
+    "database": "crearla",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

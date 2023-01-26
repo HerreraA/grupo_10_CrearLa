@@ -77,14 +77,14 @@ const usersController = {
                      errors: { 
                        email:{
                        msg: 'Este Email ya esta registrado'} },
-                     old: req.body,categorias
+                     old: req.body.categorias
                   })
               }
               else{
                db.Usuario.create({
                 nombre: req.body.nombre,
                 fechaDeNacimiento: req.body.fechaDeNacimiento ,
-                domicilio: req.body.domicilio ,
+                domicilio: req.body.domicilio,
                 email: req.body.email,
                 usuario: req.body.usuario,
                 password: bcryptjs.hashSync(req.body.password,10),

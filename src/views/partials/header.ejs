@@ -36,7 +36,7 @@
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/categories/all">Servicios</a>
                     <ul>
-                        <% categories.forEach(category => { %>
+                        <% categorias.forEach(category => { %>
                         <li><a href="/servicios/detailCategory/<%= category.id %>"><%= category.nombre %></a></li>
                         <% }) %>
                     </ul>
