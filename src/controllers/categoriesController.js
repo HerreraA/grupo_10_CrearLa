@@ -65,6 +65,16 @@ const categoriesController = {
 		categories.push(newCategory);
 		fs.writeFileSync(categoryFilePath, JSON.stringify(categorias, null, "  "));
 		res.redirect("/categories/all")*/
+    },
+
+    edit: (req, res) =>{
+        let seleccionCategoria = db.Categoria.findByPk()
+        let seleccionServicio = db.Servicios.findAll()
+
+        promise.all([seleccionCategoria, seleccionServicio])
+            .then(function([categoria, servicios]){
+                res.render('',{categoria, servicios})
+            })
     }
 }
 

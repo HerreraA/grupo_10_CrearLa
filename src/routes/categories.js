@@ -28,5 +28,7 @@ router.get('/detail/:id/', categoriesController.detail);
 router.get('/categoryCreate', categoriesController.categoryCreate); //muestra el form que crea categorías//
 router.post('/detail', uploadFile.single("foto"), categoriesController.store); //guarda lo que cargan en el form//
 
+// Edita una categoria //
+router.get('/edit/:id/', categoriesController.edit)
 
 module.exports = router;

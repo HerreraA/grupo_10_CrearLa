@@ -16,12 +16,15 @@ const sequelize = db.sequelize;
 
 // Defino variable para base de datos
 let categorias = db.Categoria.findAll()
+let servicios = db.Servicios.findAll()
 
 const serviciosController = {
     //* Muestra todos los servicios */
     all: (req, res) => {
-        servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));
-        res.render('./servicios/servicios', {servicios, categorias})
+        servicios
+            .then(function(servicios){
+                return res.render('./servicios/servicios', {categorias, servicios})
+            })
     },
     
     //* Formulario para crear un servicio */    
@@ -33,12 +36,12 @@ const serviciosController = {
     },
     //* Guarda un servicio */
     store: (req, res)=>{
-        db.Servicio.create({
+        db.Servicios.create({
             nombre: req.body.nombre,
             category_id: req.body.categoria,
             descripcion: req.body.description,
             precio: req.body.precio,
-            imagen: req.file.foto
+            imagen: req.body.foto
         })
 
         res.redirect('/servicios/all')
