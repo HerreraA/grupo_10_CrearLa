@@ -8,8 +8,8 @@
         <h1>Login Here</h1>
         <form class="create-form" name="login" method="POST" action="/user/login"  enctype="multipart/form-data">
           <!-- USERNAME INPUT -->
-          <label for="username">Email</label>
-          <input type="email" placeholder="Enter Username">
+          <label for="email">Email</label>
+          <input type="email" id="email" name= "email" placeholder="Enter email">
         <% if (locals.errors && errors.email) { %>
             <div class="text-danger">
                 <%= errors.email.msg %>
@@ -17,7 +17,7 @@
             <% } %>
           <!-- PASSWORD INPUT -->
           <label for="password">Password</label>
-          <input type="password" placeholder="Enter Password">
+          <input type="password" id="email" name="password" placeholder="Enter Password">
           <input type="submit" value="Log In">
           <a href="#">Lost your Password?</a><br>
           <a href="register.html">Don't have An account?</a>

@@ -22,7 +22,7 @@ const usersController = {
     },
 
     loginProcess: async(req, res) => {
-        let userToLogin= await db.Usuario.findOne({where:{email:req.body.email}})
+        let userToLogin= await db.Usuarios.findOne({where:{email:req.body.email}})
 
         if (userToLogin){
             let passwordOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
@@ -67,43 +67,38 @@ const usersController = {
     },
 
     //* Se guarda el registro */
-    processRegister: async(req, res) => {
-        const errors = validationResult(req);
-       if (errors.isEmpty()) {
-         let userInDb =  await db.Usuario.findOne({ where: { email:req.body.email } });
-         if (userInDb) {
-           let categorias = await db.Categoria.findAll()
-                   return res.render('users/register', {
-                     errors: { 
-                       email:{
-                       msg: 'Este Email ya esta registrado'} },
-                     old: req.body.categorias
-                  })
-              }
-              else{
-               db.Usuario.create({
-                nombre: req.body.nombre,
-                fechaDeNacimiento: req.body.fechaDeNacimiento ,
-                domicilio: req.body.domicilio,
-                email: req.body.email,
-                usuario: req.body.usuario,
-                password: bcryptjs.hashSync(req.body.password,10),
-                foto: req.file.filename
-                       });
-                      res.redirect("/")
-              }
-     
-         }
-         else{
+    processRegister: async (req, res) => {
+        const resultValidation = validationResult(req)
+        if (resultValidation.errors.length > 0) {
+           res.render('./users/register', {
+              errors: resultValidation.mapped(),
+              oldData: req.body
+           })
+        } else {
+           // Se crea el usuario nuevo
+           const encrypted = bcryptjs.hashSync(req.body.password, 10)
            
-          let categorias = await db.Categoria.findAll()
-           res.render('users/register',{categorias:categorias,
-                  errors: errors.mapped(),
-                  old: req.body
-              })
-         }
-     
-       },
+           const newUser = {
+              nombre: req.body.nombre,
+              fechaDeNacimiento: req.body.fechaDeNacimiento,
+              direccion: req.body.direccion,
+              email: req.body.email,
+              password: encrypted,
+             
+           }
+           // Se incluye el usuario nuevo al array de usuarios y se reescribe el archivo JSON con nueva lista
+           try {
+              await db.Usuarios.create(newUser)
+           }
+           catch (error) {
+              console.error(error)
+           }
+  
+           // Se redirige el cliente a login para que pueda ingresar
+           res.redirect("/user/login")
+        }
+     },
+  
  }
     
 
