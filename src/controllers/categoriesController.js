@@ -66,15 +66,27 @@ const categoriesController = {
 		fs.writeFileSync(categoryFilePath, JSON.stringify(categorias, null, "  "));
 		res.redirect("/categories/all")*/
     },
+    
 
     edit: (req, res) =>{
-        let seleccionCategoria = db.Categoria.findByPk()
-        let seleccionServicio = db.Servicios.findAll()
-
-        promise.all([seleccionCategoria, seleccionServicio])
-            .then(function([categoria, servicios]){
-                res.render('',{categoria, servicios})
+        db.Categoria.findByPk(req.params.id)
+            .then(function(categorias){
+                res.render('./servicios/categoriesEdit',{categorias})
             })
+    },
+
+    toUpdate: (req,res) =>{
+        db.Categoria.update({
+            nombre: req.body.nombre,
+            descripcion: req.body.description,
+            imagen: req.body.foto
+        }, {
+            where:{
+                id: req.params.id
+            }
+        })
+
+        res.redirect("/categories/detail/" + req.params.id)
     }
 }
 

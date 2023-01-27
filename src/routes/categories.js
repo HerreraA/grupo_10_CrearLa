@@ -30,5 +30,6 @@ router.post('/detail', uploadFile.single("foto"), categoriesController.store); /
 
 // Edita una categoria //
 router.get('/edit/:id/', categoriesController.edit)
+router.post('/edit/:id/', categoriesController.toUpdate)
 
 module.exports = router;

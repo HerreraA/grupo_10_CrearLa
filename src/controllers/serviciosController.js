@@ -27,6 +27,7 @@ const serviciosController = {
             })
     },
     
+
     //* Formulario para crear un servicio */    
     servicioCreate: (req, res) => {
         categorias
@@ -34,6 +35,8 @@ const serviciosController = {
                 return  res.render('./servicios/servicioCreate', {categorias:categorias})
             })
     },
+
+
     //* Guarda un servicio */
     store: (req, res)=>{
         db.Servicios.create({
@@ -58,10 +61,14 @@ const serviciosController = {
 		fs.writeFileSync(serviciosFilePath, JSON.stringify(servicios, null, "  "));
 		res.redirect('/servicios/detailCategory/' + newServicio.category_id)*/
     },
+
+
     detail: (req, res) => {
         let servicioId = req.params.id;
         res.render('./servicios/servicioSolo', {servicioId, servicios, categorias});
     },
+
+
     detailCategory: (req, res) => {
         db.Categoria.findByPk(req.params.id, {
             include:[{association: "servicios"}]
@@ -72,6 +79,8 @@ const serviciosController = {
         //let categoryId = req.params.id;
         //res.render('./servicios/serviciosCategoria', {categoryId, servicios, categorias});
     },
+
+
     edit: async function(req, res) {
         try{
             const Servicio = await Servicios.findByPk(req.params.id)
@@ -81,6 +90,8 @@ const serviciosController = {
             console.log(e)
         }
     },
+
+
     update: async function (req,res) {
         try {
             const updated = await Servicio.update(
@@ -100,6 +111,8 @@ const serviciosController = {
             console.log(e)
         }
     },
+
+
     delete: async function (req, res) {
         try{
             const Servicio = await Servicios.findByPk(req.params.id)
@@ -109,6 +122,8 @@ const serviciosController = {
             console.log(e)
         }
     },
+
+    
     destroy: async function (req, res) {
         try {
             const deleted = await Servicios.destroy({where: {id:req.params.id}, force: true})
