@@ -21,6 +21,7 @@ const usersController = {
 
     //* Se guarda el registro */
     processRegister: (req, res) => {
+        return res.send ('Formulario enviado')
         /* let newRegister = {
             id: users[users.length - 1].id + 1  ,
             nombre: req.body.nombre,
