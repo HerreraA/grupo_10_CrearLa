@@ -12,14 +12,12 @@ let servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));*/
 
 
 // Defino variable para base de datos
-let categorias = db.Categoria.findAll()
-
-
+let categorias = db.Categoria
 
 const categoriesController = {
     //* Enseña la cantidad de categorías disponibles */
     index: (req, res) => {
-        categorias
+        categorias.findAll()
             .then(function(categorias){
                 return  res.render('./servicios/categories', {categorias:categorias})
             })
@@ -31,7 +29,7 @@ const categoriesController = {
 
     detail: (req, res) => {
        let categoryId= req.params.id
-                        db.Categoria.findAll()
+                        categorias.findAll()
             .then(function(categorias){
                 res.render('./servicios/categorySolo', {categoryId, categorias})
             })
@@ -41,7 +39,10 @@ const categoriesController = {
 
     //* Formulario para crear una categoría */
     categoryCreate: (req, res) => {
-        res.render('./servicios/categoryCreate', {categorias:categorias})
+        categorias.findAll()
+        .then(function(categorias){
+            res.render('./servicios/categoryCreate', {categorias:categorias})
+        })
     },
 
 
@@ -51,11 +52,10 @@ const categoriesController = {
                 nombre: req.body.nombre,
                 descripcion: req.body.description,
                 imagen: req.body.foto
+            }).then(productoCreado =>{
+                res.redirect('/categories/all')
             })
-
-        res.redirect('/categories/all')
-
-
+    
         /*let newCategory = {
             id: categories[categories.length - 1].id + 1,
 			nombre: req.body.nombre,
@@ -76,6 +76,8 @@ const categoriesController = {
     },
 
     toUpdate: (req,res) =>{
+        console.log("id: "+req.params.id);
+        console.log("nombre: "+req.body.nombre);
         db.Categoria.update({
             nombre: req.body.nombre,
             descripcion: req.body.description,
@@ -85,8 +87,17 @@ const categoriesController = {
                 id: req.params.id
             }
         })
-
+          
         res.redirect("/categories/detail/" + req.params.id)
+    },
+
+    delete: (req, res) =>{
+        db.Categoria.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect('/categories/all')
     }
 }
 

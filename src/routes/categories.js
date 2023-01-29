@@ -29,7 +29,10 @@ router.get('/categoryCreate', categoriesController.categoryCreate); //muestra el
 router.post('/detail', uploadFile.single("foto"), categoriesController.store); //guarda lo que cargan en el form//
 
 // Edita una categoria //
-router.get('/edit/:id/', categoriesController.edit)
-router.post('/edit/:id/', categoriesController.toUpdate)
+router.get('/edit/:id', categoriesController.edit)
+router.put('/edit/:id', categoriesController.toUpdate)
+
+// Borrar una categoria //
+router.post('/delete/:id', categoriesController.delete)
 
 module.exports = router;

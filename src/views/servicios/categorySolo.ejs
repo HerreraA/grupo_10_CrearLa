@@ -24,9 +24,10 @@
                         <button class="box-servicio-button">
                             <a href="/categories/edit/<%= categorias[i].id %>">EDITAR</A></a>
                         </button>
-                        <button class="box-servicio-button">
-                            <a href="/">BORRAR</A></a>
-                        </button>
+
+                        <form action="/categories/delete/<%= categorias[i].id %>" method="POST">
+                            <button type="submit" class="box-servicio-button">BORRAR</button>
+                        </form>
                     </div>
                 </div>
                 <div class="box-servicio-right">
