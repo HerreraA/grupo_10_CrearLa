@@ -1,20 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head') %>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <body>
         <%- include('../partials/header') %>  
     <main>
-    <div class="main-home">
-       <div class="home-slider">
-            <ul>
-                <li><img src="/images/slider0!.jpg" alt="Desarrollo de Sitios Web"></li>
-                <li><img src="/images/slider1!.jpg" alt="Desarrollo de Apps"></li>
-                <li><img src="/images/slider2!.jpg" alt="Desarrollo de Softwares"></li>
-                <li><img src="/images/slider3!.jpg" alt="Diseño Web"></li>
-                <li><img src="/images/slider4!.jpg" alt="E-commerce"></li>
-                
-            </ul>    
-       </div>
+    <!-- Slider main container -->
+    <div class="swiper swiper-nuevo">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="/images/slider-1.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/images/slider-2.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/images/slider-3.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/images/slider-4.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/images/slider-5.jpg" alt=""></div>
+          
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
+        
+    
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script>const swiper = new Swiper('.swiper-nuevo', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            /*effect: "cube",*/
+            autoplay: true,
+            
+            // If we need pagination
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+              dynamicBullets: true,
+            },
+          
+            // Navigation arrows
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+          
+            // And if we need scrollbar
+            scrollbar: {
+              el: '.swiper-scrollbar',
+              draggable: true,
+            },
+          });</script>
             <div class="home-servicios">
                 <div class="home-servicios-box">
                     <h2>Software Factory</h2>

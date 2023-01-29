@@ -405,39 +405,6 @@ main {
     width: 60%;
 }
 
-@keyframes cambio {
-    0% {
-        margin-left: 0;
-    }
-
-    20% {
-        margin-left: 0;
-    }
-
-    25% {
-        margin-left: -100%;
-    }
-
-    45% {
-        margin-left: -100%;
-    }
-
-    50% {
-        margin-left: -200%;
-    }
-
-    70% {
-        margin-left: -200%;
-    }
-
-    75% {
-        margin-left: -300%;
-    }
-
-    100% {
-        margin-left: -300%;
-    }
-}
 
 .home-servicios {
     display: flex;
@@ -558,8 +525,37 @@ main {
 }
 
 @media(min-width:1200px) {}
+/*---------------------------SLIDER DEL HOME------------------------------------------------*/
+.swiper-nuevo img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+.swiper-nuevo {
+    width: 100%;
+    max-width: 100%;
+}
+.swiper-nuevo .swiper-pagination {
+    --swiper-pagination-color: white;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-width: 8px;
+  --swiper-pagination-bullet-height: 8px;
+  --swiper-pagination-bullet-inactive-color: #000;
+  --swiper-pagination-bullet-inactive-opacity: 0.5;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+  --swiper-pagination-bullet-vertical-gap: 6px;
 
+}
+.swiper-nuevo .swiper-pagination-bullet{
+    box-shadow: inset 0 0 0 1px #fff;
+}
 
+@media (min-width: 1000px) {
+    .swiper-nuevo img{
+        height: 400px;
+    }
+}
 /*
 /*
 /*
