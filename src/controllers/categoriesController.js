@@ -1,10 +1,10 @@
 const fs = require('fs');
-const path = require('path');  
+const path = require('path');
 let db = require('../database/models');
 const { validationResult } = require('express-validator');
 const sequelize = db.sequelize;
 
-         /*Defino variable para base Json de Categorías***
+/*Defino variable para base Json de Categorías***
 const categoryFilePath = path.join(__dirname, '../data/categories.json');
 let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
 const serviciosFilePath = path.join(__dirname, '../data/servicios.json');
@@ -18,80 +18,80 @@ const categoriesController = {
     //* Enseña la cantidad de categorías disponibles */
     index: (req, res) => {
         categorias.findAll()
-            .then(function(categorias){
-                return  res.render('./servicios/categories', {categorias:categorias})
+            .then(function (categorias) {
+                return res.render('./servicios/categories', { categorias: categorias })
             })
 
-       /*categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
-        res.render('./servicios/categories', {categories})*/
+        /*categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
+         res.render('./servicios/categories', {categories})*/
     },
 
 
     detail: (req, res) => {
-       let categoryId= req.params.id
-                        categorias.findAll()
-            .then(function(categorias){
-                res.render('./servicios/categorySolo', {categoryId, categorias})
+        let categoryId = req.params.id
+        categorias.findAll()
+            .then(function (categorias) {
+                res.render('./servicios/categorySolo', { categoryId, categorias })
             })
-        
+
     },
 
 
     //* Formulario para crear una categoría */
     categoryCreate: (req, res) => {
         categorias.findAll()
-        .then(function(categorias){
-            res.render('./servicios/categoryCreate', {categorias:categorias})
-        })
+            .then(function (categorias) {
+                res.render('./servicios/categoryCreate', { categorias: categorias })
+            })
     },
 
 
     //* Guarda la categoría */    
-    store: (req, res)=>{
-            db.Categoria.create({
-                nombre: req.body.nombre,
-                descripcion: req.body.description,
-                imagen: req.body.foto
-            }).then(productoCreado =>{
-                res.redirect('/categories/all')
-            })
-    
+    store: (req, res) => {
+        db.Categoria.create({
+            nombre: req.body.nombre,
+            descripcion: req.body.description,
+            imagen: req.body.foto
+        }).then(productoCreado => {
+            res.redirect('/categories/all')
+        })
+
         /*let newCategory = {
             id: categories[categories.length - 1].id + 1,
-			nombre: req.body.nombre,
-			descripcion: req.body.description,
-			imagen: req.file.filename,
-		}
-		categories.push(newCategory);
-		fs.writeFileSync(categoryFilePath, JSON.stringify(categorias, null, "  "));
-		res.redirect("/categories/all")*/
+            nombre: req.body.nombre,
+            descripcion: req.body.description,
+            imagen: req.file.filename,
+        }
+        categories.push(newCategory);
+        fs.writeFileSync(categoryFilePath, JSON.stringify(categorias, null, "  "));
+        res.redirect("/categories/all")*/
     },
-    
 
-    edit: (req, res) =>{
+
+    edit: (req, res) => {
         db.Categoria.findByPk(req.params.id)
-            .then(function(categorias){
-                res.render('./servicios/categoriesEdit',{categorias})
+            .then(function (categorias) {
+                res.render('./servicios/categoriesEdit', { categorias })
             })
     },
 
-    toUpdate: (req,res) =>{
-        console.log("id: "+req.params.id);
-        console.log("nombre: "+req.body.nombre);
+    toUpdate: (req, res) => {
+        console.log("id: " + req.params.id);
+        console.log("nombre: " + req.body.nombre);
         db.Categoria.update({
             nombre: req.body.nombre,
             descripcion: req.body.description,
             imagen: req.body.foto
         }, {
-            where:{
+            where: {
                 id: req.params.id
             }
         })
-          
+
         res.redirect("/categories/detail/" + req.params.id)
     },
 
-    delete: (req, res) =>{
+    delete: (req, res) => {
         db.Categoria.destroy({
             where: {
                 id: req.params.id

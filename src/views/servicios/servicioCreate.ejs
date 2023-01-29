@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %>
+<%- include('../partials/head') %>
+
     <body>
-        <%- include('../partials/header') %> 
-    <main>
-    <div class="create-box">
-        <h1>Agregar servicio</h1>
-        <form method="post"  action="/servicios/detail" enctype="multipart/form-data">
-          <label for="nombre">Nombre del servicio</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Ej: Desarrollo de apps" class="form-input">
-    
-          <div class="select">Categoría del servicio</div>
-          <label for="categoria" class="form-label">Categoría:</label>
-				<select name="categoria" id="categoria" class="form-input">
-                    <% for (let i = 0 ; i < categorias.length; i++ ) { %>
-					    <option value="<%= categorias[i].id %>">
-                            <%= categorias[i].nombre %>
-                        </option>
-                    <% }%>
-				</select>
-        <div>
-            <label for="description"></label>
-            <textarea name="description" id="description" cols="35" rows="10" placeholder="Descripción de la categoría"></textarea>
-        </div>
-        <div class="control-form">Seleccionar foto de la categoría
-             <label for="foto"></label>
-             <input type="file" name="foto" id="foto" accept=".jpg, .png">
-        </div>
-        <div class="control-form">
-            <label for="precio" >Precio:</label>
-            <input type="text" id="precio" name="precio" placeholder="Ej: 5678" >
-        </div>
+        <%- include('../partials/header') %>
+            <main>
+                <div class="create-box">
+                    <h1>Agregar servicio</h1>
+                    <form method="post" action="/servicios/detail" enctype="multipart/form-data">
+                        <label for="nombre">Nombre del servicio</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Desarrollo de apps"
+                            class="form-input">
 
-        <button type="submit" class="button-form">Crear</button>
-        <button type="reset" class="button-form">Borrar</button>
-        </div>
-          
-    </main>
+                        <div class="select">Categoría del servicio</div>
+                        <label for="categoria" class="form-label">Categoría:</label>
+                        <select name="categoria" id="categoria" class="form-input">
+                            <% for (let i=0 ; i < categorias.length; i++ ) { %>
+                                <option value="<%= categorias[i].id %>">
+                                    <%= categorias[i].nombre %>
+                                </option>
+                                <% }%>
+                        </select>
+                        <div>
+                            <label for="description"></label>
+                            <textarea name="description" id="description" cols="35" rows="10"
+                                placeholder="Descripción de la categoría"></textarea>
+                        </div>
+                        <div class="control-form">Seleccionar foto de la categoría
+                            <label for="foto"></label>
+                            <input type="file" name="foto" id="foto" accept=".jpg, .png">
+                        </div>
+                        <div class="control-form">
+                            <label for="precio">Precio:</label>
+                            <input type="text" id="precio" name="precio" placeholder="Ej: 5678">
+                        </div>
 
-    <%- include('../partials/footer') %>
-</body>
+                        <button type="submit" class="button-form">Crear</button>
+                        <button type="reset" class="button-form">Borrar</button>
+                </div>
+
+            </main>
+
+            <%- include('../partials/footer') %>
+    </body>
+
 </html>

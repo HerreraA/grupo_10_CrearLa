@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %>
+<%- include('../partials/head') %>
+
     <body>
-        <%- include('../partials/header') %> 
-        <main>
-            <h1 class="servicios-h1"><%= categorias.nombre %></h1> 
-            <div class="servicios-p">
-                <p></p>
-            </div>
-            <div class="box-servicio">
-                <div class="box-servicio-left">
-                    
-                    <div class="box-servicio-number"><%= categorias.servicios.id %></div>
-                    <div class="box-servicio-txt">
-                        <h2><%= categorias.servicios.nombre %></h2>
-                        <p><%= categorias.servicios.descripcion %></p>
-                        <p class="price"><%= categorias.servicios.precio %></p>
+        <%- include('../partials/header') %>
+            <main>
+                <h1 class="servicios-h1">
+                    <%= categorias.nombre %>
+                </h1>
+                <div class="servicios-p">
+                    <p></p>
+                </div>
+                <div class="box-servicio">
+                    <div class="box-servicio-left">
+
+                        <div class="box-servicio-number">
+                            <%= categorias.servicios.id %>
+                        </div>
+                        <div class="box-servicio-txt">
+                            <h2>
+                                <%= categorias.servicios.nombre %>
+                            </h2>
+                            <p>
+                                <%= categorias.servicios.descripcion %>
+                            </p>
+                            <p class="price">
+                                <%= categorias.servicios.precio %>
+                            </p>
+                        </div>
+                        <div>
+                            <button class="box-servicio-button">
+                                <a href="/">VER DETALLES</a>
+                            </button>
+                        </div>
                     </div>
-                    <div>
-                        <button class="box-servicio-button">
-                            <a href="/">VER DETALLES</a>
-                        </button>
+                    <div class="box-servicio-right">
+                        <img src="<%= categorias.servicios.imagen %>" alt="<%= categorias.servicios.nombre %>">
                     </div>
                 </div>
-                <div class="box-servicio-right">
-                    <img src="<%= categorias.servicios.imagen %>" alt="<%= categorias.servicios.nombre %>">
-                </div>
-            </div>
-        </main>
-    <%- include('../partials/footer') %>
-</body>
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
+
 </html>
