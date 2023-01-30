@@ -13,6 +13,7 @@ let servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));*/
 
 // Defino variable para base de datos
 let categorias = db.Categoria
+let servicios = db.Servicios
 
 const categoriesController = {
     //* Enseña la cantidad de categorías disponibles */
@@ -29,9 +30,11 @@ const categoriesController = {
 
     detail: (req, res) => {
         let categoryId = req.params.id
-        categorias.findAll()
-            .then(function (categorias) {
-                res.render('./servicios/categorySolo', { categoryId, categorias })
+        let listadoCategorias =categorias.findAll()
+        let listadoServicios = servicios.findByPk()
+        Promise.all([listadoCategorias,listadoServicios])
+            .then(function ([categorias, servicios]) {
+                res.render('./servicios/categorySolo', { categoryId, categorias, servicios })
             })
 
     },
@@ -52,9 +55,7 @@ const categoriesController = {
             nombre: req.body.nombre,
             descripcion: req.body.description,
             imagen: req.body.foto
-        }).then(productoCreado => {
-            res.redirect('/categories/all')
-        })
+        }).then(res.redirect('/categories/all'))
 
         /*let newCategory = {
             id: categories[categories.length - 1].id + 1,
@@ -86,9 +87,9 @@ const categoriesController = {
             where: {
                 id: req.params.id
             }
-        })
+        }) .then(res.redirect("/categories/detail/" + req.params.id))
 
-        res.redirect("/categories/detail/" + req.params.id)
+        
     },
 
     delete: (req, res) => {

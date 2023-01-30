@@ -39,7 +39,6 @@ router.post('/update/:id', serviciosController.update);
 
 
 // Elimina un servicio //
-router.get('/delete/:id', serviciosController.delete);
-router.post('/delete/:id', serviciosController.destroy);
+router.post('/delete/:id', serviciosController.delete);
 
 module.exports = router;

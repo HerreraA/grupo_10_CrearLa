@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = require('path');  
+const path = require('path');
 let db = require('../database/models');
 const { validationResult } = require('express-validator');
 const sequelize = db.sequelize;
@@ -15,124 +15,115 @@ const sequelize = db.sequelize;
 //let servicios = db.Servicios.findAll()
 
 // Defino variable para base de datos
-let categorias = db.Categoria.findAll()
-let servicios = db.Servicios.findAll()
+let categorias = db.Categoria
+let servicios = db.Servicios
 
 const serviciosController = {
     //* Muestra todos los servicios */
     all: (req, res) => {
-        servicios
-            .then(function(servicios){
-                return res.render('./servicios/servicios', {categorias, servicios})
-            })
+        let listadoCategorias = categorias.findAll()
+        let listadoServicios = servicios.findAll()  
+        Promise.all([listadoCategorias,listadoServicios])
+        .then(function ([categorias,servicios]) {
+            return res.render('./servicios/servicios', {categorias, servicios})
+        })
     },
     
 
+    detail: (req, res) => {
+        let servicioId = req.params.id;
+        let listadoCategorias = categorias.findAll()
+        let listadoServicios = servicios.findAll() 
+        Promise.all([listadoCategorias,listadoServicios])
+            .then(function([categorias,servicios]){
+                res.render('./servicios/servicioSolo', { servicioId, categorias, servicios});
+            })
+    },
+
+
     //* Formulario para crear un servicio */    
     servicioCreate: (req, res) => {
-        categorias
-            .then(function(categorias){
-                return  res.render('./servicios/servicioCreate', {categorias:categorias})
+        categorias.findAll()
+            .then(function (categorias) {
+                return res.render('./servicios/servicioCreate', { categorias: categorias })
             })
     },
 
 
     //* Guarda un servicio */
-    store: (req, res)=>{
+    store: (req, res) => {
         db.Servicios.create({
             nombre: req.body.nombre,
             category_id: req.body.categoria,
             descripcion: req.body.description,
             precio: req.body.precio,
             imagen: req.body.foto
-        })
-
-        res.redirect('/servicios/all')
+        }).then(res.redirect('/servicios/all'))
 
         /*let newServicio= {
             id: servicios[servicios.length - 1].id + 1,
-			nombre: req.body.nombre,
-			descripcion: req.body.description,            
+            nombre: req.body.nombre,
+            descripcion: req.body.description,            
             category_id: req.body.categoria,
-			imagen: req.file.filename,
+            imagen: req.file.filename,
             precio: req.body.precio
-		}
-		servicios.push(newServicio);
-		fs.writeFileSync(serviciosFilePath, JSON.stringify(servicios, null, "  "));
-		res.redirect('/servicios/detailCategory/' + newServicio.category_id)*/
-    },
-
-
-    detail: (req, res) => {
-        let servicioId = req.params.id;
-        res.render('./servicios/servicioSolo', {servicioId, servicios, categorias});
+        }
+        servicios.push(newServicio);
+        fs.writeFileSync(serviciosFilePath, JSON.stringify(servicios, null, "  "));
+        res.redirect('/servicios/detailCategory/' + newServicio.category_id)*/
     },
 
 
     detailCategory: (req, res) => {
-        db.Categoria.findByPk(req.params.id, {
-            include:[{association: "servicios"}]
+         let categoriaId = categorias.findByPk(req.params.id, {
+            include: [{ association: "servicios" }]
         })
-            .then(function(categorias){
-                res.render ('./servicios/serviciosCategoria', {categorias})
+        let listadoServicios = servicios.findAll()
+
+        Promise.all([categoriaId, listadoServicios])
+            .then(function ([categorias, servicios]) {
+                res.render('./servicios/serviciosCategoria', { categorias, servicios, categoriaId })
             })
         //let categoryId = req.params.id;
         //res.render('./servicios/serviciosCategoria', {categoryId, servicios, categorias});
     },
 
 
-    edit: async function(req, res) {
-        try{
-            const Servicio = await Servicios.findByPk(req.params.id)
-            res.render('servicioEditForm', {Servicio})
-        }
-        catch (e) {
-            console.log(e)
-        }
+    edit:(req, res) => {
+        let servicioId = req.params.id
+        let listadoCategorias = categorias.findAll( {
+            include: [{ association: "servicios" }]
+        })
+        let listadoServicios = servicios.findAll()
+        Promise.all([listadoCategorias, listadoServicios])
+            .then(function ([categorias, servicios]) {
+                res.render('./servicios/servicioEdit', { categorias, servicios, servicioId })
+            })
     },
 
 
-    update: async function (req,res) {
-        try {
-            const updated = await Servicio.update(
-                {
-                    nombre: req.body.nombre,
-                    descripcion: req.body.descripcion,
-                    //imagen: req.body.imagen, //debo poner el if por si tenia? BUSCAR!
-                    precio: req.body.precio,
-                },
-                {
-                    where: {id:req.params.id}
-                }
-            )
-            res.redirect('/servicios/detail/' + updated.id)
-        }
-        catch (e) {
-            console.log(e)
-        }
+   update: (req, res) => {
+        servicios.update({
+            nombre: req.body.nombre,
+            category_id: req.body.categoria,
+            descripcion: req.body.description,
+            precio: req.body.precio,
+            imagen: req.body.foto
+        }, {
+            where:{
+                id: req.params.id
+            }
+        }). then(res.redirect('servicios/detail/' + req.params.id))
     },
 
 
-    delete: async function (req, res) {
-        try{
-            const Servicio = await Servicios.findByPk(req.params.id)
-            res.render('serviciosDelete', {Servicio})
-        }
-        catch (e) {
-            console.log(e)
-        }
-    },
-
-    
-    destroy: async function (req, res) {
-        try {
-            const deleted = await Servicios.destroy({where: {id:req.params.id}, force: true})
-            res.redirect('/servicios')
-        }
-        catch(e) {
-            console.log(e)
-        }
+    delete: (req, res) => {
+        servicios.destroy({
+            where : {
+                id: req.params.id
+            }
+        }). then(res.redirect('/servicios/all'))
     }
 }
 
-module.exports = serviciosController ;
+module.exports = serviciosController;

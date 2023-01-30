@@ -10,34 +10,34 @@
                     <p>Omnis voluptate alias magni iste asperiores et nulla, modi molestiae aliquid perspiciatis eum vel
                         similique doloribus, provident totam.</p>
                 </div>
-                <% servicios.forEach(servicio=> { %>
+                <% for(i = 0; i < servicios.length; i++) {%>
                     <div class="box-servicio">
                         <div class="box-servicio-left">
                             <div class="box-servicio-number">
-                                <%= servicio.id %>
+                                <%= servicios[i].id %>
                             </div>
                             <div class="box-servicio-txt">
                                 <h2>
-                                    <%= servicio.nombre %>
+                                    <%= servicios[i].nombre %>
                                 </h2>
                                 <p>
-                                    <%= servicio.descripcion %>
+                                    <%= servicios[i].descripcion %>
                                 </p>
                                 <p class="price">
-                                    <%= servicio.precio %>
+                                    <%= servicios[i].precio %>
                                 </p>
                             </div>
                             <div>
                                 <button class="box-servicio-button">
-                                    <a href="/">VER DETALLES</a>
+                                    <a href="/servicios/detail/<%=servicios[i].id%>">VER DETALLES</a>
                                 </button>
                             </div>
                         </div>
                         <div class="box-servicio-right">
-                            <img src="<%= servicio.imagen %>" alt="<%= servicio.nombre %>">
+                            <img src="<%= servicios[i].imagen %>" alt="<%= servicios[i].nombre %>">
                         </div>
                     </div>
-                    <% }) %>
+                    <% } %>
             </main>
             <%- include('../partials/footer') %>
     </body>
