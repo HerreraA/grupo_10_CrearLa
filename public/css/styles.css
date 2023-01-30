@@ -434,10 +434,18 @@ main {
     max-width: 300px;
 }
 
-.home-servicios-box:hover {
+.home-servicios-box-img1:hover {
     background-color: #012E40;
-    ;
+    background-image: url(/images/home-services-software.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}.home-servicios-box-img2:hover {
+    background-color: #012E40;
+    background-image: url(/images/home-services-app.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 .home-title {
     margin: 25px auto;
@@ -445,7 +453,7 @@ main {
 }
 
 .home-title-left {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 5px;
     text-align: center;
@@ -453,10 +461,10 @@ main {
 }
 
 .home-title-right {
-    font-size: 24px;
+    font-size: 28px;
     text-align: center;
     color: #012E40;
-    font-weight: bold;
+    font-weight: 'Roboto';
     margin-bottom: 5px;
 }
 
@@ -469,7 +477,7 @@ main {
 }
 
 .home-solutions-box {
-    width: 40%;
+    width: 33%;
     text-align: center;
     margin-bottom: 5%;
 }
@@ -510,11 +518,29 @@ main {
         border-radius: 5px;
     }
 
-    .home-servicios-box:hover {
+.home-servicios-box-img1:hover {
         background-image: url(/images/home-services-software.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     }
+}.home-servicios-box-img2:hover {
+    background-color: #012E40;
+    background-image: url(/images/home-services-app.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home-servicios-box-img3:hover {
+    background-color: #012E40;
+    background-image: url(/images/home-services-uxui.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home-servicios-box-img4:hover {
+    background-color: #012E40;
+    background-image: url(/images/home-services-ecommerce.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
     .home-slider {
         display: block;
