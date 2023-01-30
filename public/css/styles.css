@@ -458,6 +458,7 @@ main {
     margin-bottom: 5px;
     text-align: center;
     color: #012E40;
+
 }
 
 .home-title-right {
@@ -467,6 +468,28 @@ main {
     font-weight: 'Roboto';
     margin-bottom: 5px;
 }
+.home-title .botonContacto {
+    display: block;
+    padding: 10px 20px;
+    background-color: #3ca6a6;
+    border: none;
+    border-radius: 20px;
+    margin-top: 35px;
+    cursor: pointer;
+    -webkit-box-shadow: 1px 3px 11px -5px rgba(102,231,200,0.69);
+    -moz-box-shadow: 1px 3px 11px -5px rgba(102,231,200,0.69);
+    box-shadow: 1px 3px 11px -5px rgba(102,231,200,0.69);
+  }
+  
+.botonContacto:hover {
+    background-color: #012E40;
+    box-shadow: none;
+  }
+.botonContacto a {
+    text-decoration: none;
+    color: #fff;
+  }
+
 
 .home-solutions {
     display: flex;
@@ -548,7 +571,7 @@ main {
         background-color: #012e41;
     }
 
-}
+
 
 @media(min-width:1200px) {}
 /*---------------------------SLIDER DEL HOME------------------------------------------------*/
