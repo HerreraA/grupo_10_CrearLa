@@ -38,7 +38,7 @@ const usersController = {
            delete(user.dataValues.password)
            req.session.userLogged = user.dataValues
   
-           req.body.recordar ? res.cookie("userLogged", user.dataValues.mail, { maxAge: 1000 * 60 * 5 }) : null // Cookie se guarda por 5 min
+           req.body.recordar ? res.cookie("userLogged", user.dataValues.email, { maxAge: 1000 * 60 * 5 }) : null // Cookie se guarda por 5 min
   
            res.redirect("/user/profile")
         }
@@ -54,10 +54,10 @@ const usersController = {
 
     },
     logout: (req, res) => {
-        res.clearCookie("emailUsuario")
-        req.session.destroy();
-        return res.redirect("/")
-    },
+      res.clearCookie("emailUsuario")
+      req.session.destroy();
+      res.redirect('/');
+      },
     
     register:  async (req, res) => {
         let categorias = await db.Categoria.findAll()
