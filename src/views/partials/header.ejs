@@ -16,13 +16,26 @@
                </form>
             </div>
              <nav class="header-right-menu">
+                
                 <ul style="list-style:none;">
-                  <!--  <% if (locals.isLogged){ %> -->
-                    <li><a href="/user/profile"> <i class="fa-regular fa-circle-user"></i>Hi User</a></li> 
-                  <!--   <% } else { %>  -->
+                    <% if (locals.isLogged) { %>
+                    <li>
+                        <a class="dropdown" href="/users/profile" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/public/images/users/<%= locals.userLogged.foto %>">
+                        Hi <%= locals.userLogged.name %>
+                    </a>
+                    <ul class="dropdownMenu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/users/profile" >Mi perfil</a>
+                        <li><hr class="dropdown-divider"></li>
+                        <a class="dropdown-item" href="/users/logout">Logout</a>
+                    </ul>
+                </li>
+                
+                 
+               <% } else { %>  
                     <li><a href="/user/login"> <i class="fa-regular fa-address-card  "></i>       Mi cuenta </a></li>
                     <li> <a href="/user/register"> <i class="fa-solid fa-arrow-right-to-bracket "></i>     Registrarme</a></li>
-             <!--  <% } %>  -->
+        <% } %>  
                     <li> <a href="/carrito"> <i class="fa-solid fa-bag-shopping  "></i>     Ver carrito</a></li>
                 </ul>
             </nav>    
@@ -49,3 +62,5 @@
     </div>
 </div>
 </header>
+
+

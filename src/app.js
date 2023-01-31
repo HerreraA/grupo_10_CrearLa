@@ -4,6 +4,7 @@ const path = require('path');
 const { get } = require('http');
 const methodOverride = require ('method-override'); // para poder usar PUT y DELETE
 const session = require('express-session'); //**login */
+const cookies = require ("cookie-parser");
 const userLoggedMiddleware = require ("./middlewares/userLoggedMiddleware")
 // ************ express() - (don't touch) ************
 const app = express();
@@ -14,9 +15,12 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
 }));
+
+app.use(cookies())
+
 app.use(userLoggedMiddleware)
 
-//app.use(cookieParser())
+
 
 // ************ Middlewares - (don't touch) ************
 const publicPath= path.resolve(__dirname, "../public");

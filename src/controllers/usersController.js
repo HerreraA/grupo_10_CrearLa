@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path'); 
 //const { use } = require('../routes/servicios');
-const User = require('../models/User');
+//const User = require('../models/userJson');
 const bcryptjs = require ('bcryptjs');
 const { validationResult } = require('express-validator');
 let db = require('../database/models');
-
+//const Usuario = require ('../database/models/Usuario.js')
 // Defino variable para base Json de Categorías
 //const categoryFilePath = path.join(__dirname, '../data/categories.json');
 //let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
@@ -21,34 +21,32 @@ const usersController = {
         // archivo de registro?//
     },
 
-    loginProcess: async(req, res) => {
-        let userToLogin= await db.Usuarios.findOne({where:{email:req.body.email}})
+    loginProcess:  async (req, res) => {
+        const resultValidation = validationResult(req)
+        if (resultValidation.errors.length > 0) {
+           res.render('./users/login', {
+              errors: resultValidation.mapped(),
+              oldData: req.body
+           })
+        } else {
+  
+           const user = await db.Usuarios.findOne({
+              where: {
+                 email: req.body.email
+              }
+           })
+           delete(user.dataValues.password)
+           req.session.userLogged = user.dataValues
+  
+           req.body.recordar ? res.cookie("userLogged", user.dataValues.mail, { maxAge: 1000 * 60 * 5 }) : null // Cookie se guarda por 5 min
+  
+           res.redirect("/user/profile")
+        }
+     },
+  
 
-        if (userToLogin){
-            let passwordOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
-            if (passwordOk){
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-
-                return res.redirect("./users/profile") // aca deberia dejarlo ingresar a la aprte de gente logeada
-            } else{
-            return  res.render('/users/login', {
-                errors: {
-                    email: {
-                        msg: "Las credenciale son invalidas "
-                    }
-                }
-            });
-        } } else { 
-        return res.render('./users/login', {
-            errors: {
-                email: {
-                    msg: "No se encuentra dicho E-mail en la base de datos"
-                }
-            } 
-        });
-   } },
     profile: (req, res) => {
+        console.log(req.cookies.emailUsuario)
         return res.render('./users/profile', {
             user: req.session.userLogged
         })
@@ -56,6 +54,7 @@ const usersController = {
 
     },
     logout: (req, res) => {
+        res.clearCookie("emailUsuario")
         req.session.destroy();
         return res.redirect("/")
     },

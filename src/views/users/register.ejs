@@ -24,7 +24,8 @@
         </div>
          <div class="control-form">
             <label for="email"></label>
-            <input type="email" id="email" name="email" placeholder="E-mail" >
+            <input type="email" id="email" name="email" placeholder="E-mail" 
+            value="<%= locals.oldData ? oldData.email : null  %>"> >
         </div> 
 
         <h2>Crear usuario</h2>
@@ -34,8 +35,8 @@
         </div> 
     
         <div class="control-form">
-            <label for="pass"></label>
-            <input type="password" name="password" id="pass" placeholder="Contraseña">
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="Contraseña">
         </div>
         <div class="control-form">
             <label for="confirmar-pass"></label>
