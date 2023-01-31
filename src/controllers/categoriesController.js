@@ -78,7 +78,7 @@ const categoriesController = {
 
     toUpdate: (req, res) => {
         console.log("id: " + req.params.id);
-        console.log("nombre: " + req.body.nombre);
+        console.log(req.body);
         db.Categoria.update({
             nombre: req.body.nombre,
             descripcion: req.body.description,
@@ -87,7 +87,9 @@ const categoriesController = {
             where: {
                 id: req.params.id
             }
-        }) .then(res.redirect("/categories/detail/" + req.params.id))
+        }) .then(function(){
+            res.redirect("/categories/detail/" + req.params.id)
+        })
 
         
     },

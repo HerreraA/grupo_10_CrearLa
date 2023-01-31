@@ -90,14 +90,13 @@ const serviciosController = {
 
 
     edit:(req, res) => {
-        let servicioId = req.params.id
         let listadoCategorias = categorias.findAll( {
             include: [{ association: "servicios" }]
         })
-        let listadoServicios = servicios.findAll()
+        let listadoServicios = servicios.findByPk(req.params.id)
         Promise.all([listadoCategorias, listadoServicios])
             .then(function ([categorias, servicios]) {
-                res.render('./servicios/servicioEdit', { categorias, servicios, servicioId })
+                res.render('./servicios/servicioEdit', { categorias, servicios })
             })
     },
 
