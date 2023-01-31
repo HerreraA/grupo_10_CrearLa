@@ -4,13 +4,6 @@ let db = require('../database/models');
 const { validationResult } = require('express-validator');
 const sequelize = db.sequelize;
 
-/*Defino variable para base Json de Categorías***
-const categoryFilePath = path.join(__dirname, '../data/categories.json');
-let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
-const serviciosFilePath = path.join(__dirname, '../data/servicios.json');
-let servicios = JSON.parse(fs.readFileSync(serviciosFilePath, 'utf-8'));*/
-
-
 // Defino variable para base de datos
 let categorias = db.Categoria
 let servicios = db.Servicios
@@ -22,9 +15,6 @@ const categoriesController = {
             .then(function (categorias) {
                 return res.render('./servicios/categories', { categorias: categorias })
             })
-
-        /*categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
-         res.render('./servicios/categories', {categories})*/
     },
 
 
@@ -54,18 +44,8 @@ const categoriesController = {
         db.Categoria.create({
             nombre: req.body.nombre,
             descripcion: req.body.description,
-            imagen: req.body.foto
+            foto: req.body.foto
         }).then(res.redirect('/categories/all'))
-
-        /*let newCategory = {
-            id: categories[categories.length - 1].id + 1,
-            nombre: req.body.nombre,
-            descripcion: req.body.description,
-            imagen: req.file.filename,
-        }
-        categories.push(newCategory);
-        fs.writeFileSync(categoryFilePath, JSON.stringify(categorias, null, "  "));
-        res.redirect("/categories/all")*/
     },
 
 
@@ -82,7 +62,7 @@ const categoriesController = {
         db.Categoria.update({
             nombre: req.body.nombre,
             descripcion: req.body.description,
-            imagen: req.body.foto
+            foto: req.body.foto
         }, {
             where: {
                 id: req.params.id

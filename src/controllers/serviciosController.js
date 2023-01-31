@@ -84,8 +84,7 @@ const serviciosController = {
             .then(function ([categorias, servicios]) {
                 res.render('./servicios/serviciosCategoria', { categorias, servicios, categoriaId })
             })
-        //let categoryId = req.params.id;
-        //res.render('./servicios/serviciosCategoria', {categoryId, servicios, categorias});
+        
     },
 
 
