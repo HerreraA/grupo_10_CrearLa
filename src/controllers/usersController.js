@@ -35,17 +35,19 @@ const usersController = {
             email:req.body.email,
             usuario:req.body.usuario,
             password: req.body.password
+        }) .then(function(){
+            res.redirect('/')
         })
-
-        res.redirect('/')
         
     },
+
     login: (req, res) => {
         categorias
             .then(function(categorias){
         return res.render('./users/login.ejs', {categorias})
     })
 },
+
     loginProcess: (req, res) => {
         return res.send(req.body);
     }

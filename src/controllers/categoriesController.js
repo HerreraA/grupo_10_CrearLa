@@ -45,7 +45,9 @@ const categoriesController = {
             nombre: req.body.nombre,
             descripcion: req.body.description,
             foto: req.body.foto
-        }).then(res.redirect('/categories/all'))
+        }).then(function(){
+            res.redirect('/categories/all')
+        })
     },
 
 
