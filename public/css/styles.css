@@ -305,7 +305,7 @@ main {
 }
 
 .module-footer {
-    color: white;
+    color: #E3E3D8;
     margin: auto;
     text-align: center;
     line-height: 20px;
@@ -405,39 +405,6 @@ main {
     width: 60%;
 }
 
-@keyframes cambio {
-    0% {
-        margin-left: 0;
-    }
-
-    20% {
-        margin-left: 0;
-    }
-
-    25% {
-        margin-left: -100%;
-    }
-
-    45% {
-        margin-left: -100%;
-    }
-
-    50% {
-        margin-left: -200%;
-    }
-
-    70% {
-        margin-left: -200%;
-    }
-
-    75% {
-        margin-left: -300%;
-    }
-
-    100% {
-        margin-left: -300%;
-    }
-}
 
 .home-servicios {
     display: flex;
@@ -458,7 +425,7 @@ main {
 
 .home-servicios-box {
     background-color: #3ca6a6;
-    color: white;
+    color: #E3E3D8;
     padding: 20px 20px;
     margin: 15px;
     width: 80%;
@@ -467,10 +434,18 @@ main {
     max-width: 300px;
 }
 
-.home-servicios-box:hover {
+.home-servicios-box-img1:hover {
     background-color: #012E40;
-    ;
+    background-image: url(/images/home-services-software.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}.home-servicios-box-img2:hover {
+    background-color: #012E40;
+    background-image: url(/images/home-services-app.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 .home-title {
     margin: 25px auto;
@@ -478,17 +453,43 @@ main {
 }
 
 .home-title-left {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 5px;
-    text-align: left;
+    text-align: center;
     color: #012E40;
+
 }
 
 .home-title-right {
-    font-size: 17px;
-    text-align: right;
+    font-size: 28px;
+    text-align: center;
+    color: #012E40;
+    font-weight: 'Roboto';
+    margin-bottom: 5px;
 }
+.home-title .botonContacto {
+    display: block;
+    padding: 10px 20px;
+    background-color: #3ca6a6;
+    border: none;
+    border-radius: 20px;
+    margin-top: 35px;
+    cursor: pointer;
+    -webkit-box-shadow: 1px 3px 11px -5px rgba(102,231,200,0.69);
+    -moz-box-shadow: 1px 3px 11px -5px rgba(102,231,200,0.69);
+    box-shadow: 1px 3px 11px -5px rgba(102,231,200,0.69);
+  }
+  
+.botonContacto:hover {
+    background-color: #012E40;
+    box-shadow: none;
+  }
+.botonContacto a {
+    text-decoration: none;
+    color: #fff;
+  }
+
 
 .home-solutions {
     display: flex;
@@ -499,7 +500,7 @@ main {
 }
 
 .home-solutions-box {
-    width: 40%;
+    width: 33%;
     text-align: center;
     margin-bottom: 5%;
 }
@@ -540,11 +541,29 @@ main {
         border-radius: 5px;
     }
 
-    .home-servicios-box:hover {
+.home-servicios-box-img1:hover {
         background-image: url(/images/home-services-software.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     }
+}.home-servicios-box-img2:hover {
+    background-color: #012E40;
+    background-image: url(/images/home-services-app.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home-servicios-box-img3:hover {
+    background-color: #012E40;
+    background-image: url(/images/home-services-uxui.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home-servicios-box-img4:hover {
+    background-color: #012E40;
+    background-image: url(/images/home-services-ecommerce.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
     .home-slider {
         display: block;
@@ -552,11 +571,40 @@ main {
         background-color: #012e41;
     }
 
-}
+
 
 @media(min-width:1200px) {}
+/*---------------------------SLIDER DEL HOME------------------------------------------------*/
+.swiper-nuevo img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+.swiper-nuevo {
+    width: 100%;
+    max-width: 100%;
+}
+.swiper-nuevo .swiper-pagination {
+    --swiper-pagination-color: white;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-width: 8px;
+  --swiper-pagination-bullet-height: 8px;
+  --swiper-pagination-bullet-inactive-color: #000;
+  --swiper-pagination-bullet-inactive-opacity: 0.5;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+  --swiper-pagination-bullet-vertical-gap: 6px;
 
+}
+.swiper-nuevo .swiper-pagination-bullet{
+    box-shadow: inset 0 0 0 1px #fff;
+}
 
+@media (min-width: 1000px) {
+    .swiper-nuevo img{
+        height: 400px;
+    }
+}
 /*
 /*
 /*
@@ -1172,4 +1220,214 @@ h3 {
     justify-content: center;
     align-items: center;
     padding: 40px 0 40px 0;
+}
+/*-------------------------------------------PAGE NOT FOUND--------------------------------------------------*/
+body404 {
+    background: #012E40;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-404 {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    line-height: 1.7;
+}
+.botonDeHome {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    background: #012E40;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* SECCION PORTFOLIO */
+.portfolio{
+    background-color: #E3E3D8;
+    color: #012E40;
+    padding: 50px 20px;
+}
+.portfolio .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+.portfolio h2{
+    font-size: 48px;
+    font-family:'Roboto', sans-serif;
+    text-align: center;
+    padding: 20px 0;
+}
+.portfolio h4{
+    font-size: 25px;
+    font-family:'Roboto', sans-serif;
+    text-align: center;
+    padding: 20px 0;
+}
+.portfolio .galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.portfolio .galeria .proyecto{
+    position: relative;
+    width: 340px;
+    height: 272px;
+    margin: 10px;
+    cursor: pointer;
+    
+}
+.portfolio .galeria .proyecto img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: fill;
+}
+.portfolio .galeria .proyecto .overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(rgba(12, 128, 156, 0.8), rgba(12, 128, 156, 0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: 0;
+}
+.portfolio .galeria .proyecto .overlay h3{
+    margin-bottom: 20px;
+    transition: 1s;
+}
+.portfolio .galeria .proyecto .overlay:hover{
+    opacity: 1;
+}
+.portfolio .galeria .proyecto .overlay:hover h3{
+   margin-bottom: 0px; 
+}
+/*---------------------------------------NOSOTROS----------------------------------------------------*/
+body1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #E3E3D8;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 2px rgba(73, 69, 50, 0.4);
+    margin: 50px;
+}
+
+.card .content {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;  
+    text-align: center;  
+    padding: 20px;
+    background: #fff;
+}
+
+.card .content .img {
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+.card .content .img img {
+   position: relative;
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   object-fit: cover;
+   box-shadow: 0 0 10 px rgba(0, 0, 0, 0.8);
+}
+
+.card .content span {
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    background: linear-gradient(to right, #044761, #044761);
+    transform: rotate(-35deg);
+    top: -50px;
+    left: -100px;
+}
+
+.card .content h4 {
+    font-size: 18px;
+    color: #1a1919;
+    margin-bottom: 5px;
+}
+
+.card .content h6 {
+    font-size: 13px;
+    color: #012E40;
+}
+
+.card .content p {
+    font-size: 13px;
+    color: #1a161f;
+    margin-top: 10px;
+}
+
+.card .links {
+    position: absolute;
+    z-index: 90;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+    padding: 20px;
+    align-items: center;
+    right: 10px;
+    top: 15px;
+    transition: .5s;
+}
+
+.card:hover .links {
+    right: -50px;
+    border-radius: 0 10px 10px 0;
+}
+
+.card .links a {
+    font-size: 20px;
+    color: #646069;
+}
+
+.card .links a:nth-child(1):hover {
+    color: #012E40;
+}
+.card .links a:nth-child(2):hover {
+    color: #012E40;
+}
+
+.card .links a:nth-child(3):hover {
+    color: #012E40;
+}
+
+.card .links a:nth-child(4):hover {
+    color: #012E40;
 }

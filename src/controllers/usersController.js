@@ -28,6 +28,7 @@ const usersController = {
 
     //* Se guarda el registro */
     processRegister: (req, res) => {
+
         db.Usuarios.create({
             nombre: req.body.nombre,
             fechaDeNacimiento:req.body.fechaDeNacimiento,

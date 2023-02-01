@@ -1,42 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head') %>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <body>
         <%- include('../partials/header') %>  
     <main>
-    <div class="main-home">
-       <div class="home-slider">
-            <ul>
-                <li><img src="/images/slider0!.jpg" alt="Desarrollo de Sitios Web"></li>
-                <li><img src="/images/slider1!.jpg" alt="Desarrollo de Apps"></li>
-                <li><img src="/images/slider2!.jpg" alt="Desarrollo de Softwares"></li>
-                <li><img src="/images/slider3!.jpg" alt="Diseño Web"></li>
-                <li><img src="/images/slider4!.jpg" alt="E-commerce"></li>
-                
-            </ul>    
-       </div>
+    <!-- Slider main container -->
+    <div class="swiper swiper-nuevo">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="/images/slider-1.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/images/slider-2.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/images/slider-3.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/images/slider-4.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/images/slider-5.jpg" alt=""></div>
+          
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
+        
+    
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script>const swiper = new Swiper('.swiper-nuevo', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            /*effect: "cube",*/
+            autoplay: true,
+            
+            // If we need pagination
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+              dynamicBullets: true,
+            },
+          
+            // Navigation arrows
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+          
+            // And if we need scrollbar
+            scrollbar: {
+              el: '.swiper-scrollbar',
+              draggable: true,
+            },
+          });</script>
             <div class="home-servicios">
-                <div class="home-servicios-box">
+                <div class="home-servicios-box home-servicios-box-img1">
                     <h2>Software Factory</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, adipisci. Ipsa quos neque.</p>
+                    <p>Desarrollamos soluciones tecnológicas capaces de dar respuesta de forma rápida y eficaz a las exigencias del cliente.</p>
                 </div>
-                <div class="home-servicios-box">
+                <div class="home-servicios-box home-servicios-box-img2">
                     <h2>Desarrollo de Apps</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, adipisci. Ipsa quos neque.</p>
+                    <p>Creamos diversas aplicaciones que puedan ser usadas en los distintos dispositivos que posea el usuario.</p>
                 </div>
-                <div class="home-servicios-box">
+                <div class="home-servicios-box home-servicios-box-img3">
                     <h2>Diseño UX/UI</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, adipisci. Ipsa quos neque.</p>                    
+                    <p>Supervisamos la experiencia del usuario, es decir, el modo con el que interactúa con la web y las apps.</p>                    
                 </div>
-                <div class="home-servicios-box">
+                <div class="home-servicios-box home-servicios-box-img4">
                     <h2>E-commerce</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, adipisci. Ipsa quos neque.</p>                    
+                    <p>Ofrecemos un servicio de distribución, venta, compra, y suministro de información de productos a través de Internet.</p>                    
                 </div>
             </div>
 
             <div class="home-title">
-                <div class="home-title-left">Desarrollamos soluciones</div>
-                <div class="home-title-right">para diferentes industrias y sectores</div>
+                <div class="home-title-left">Hola!</div>
+                <div class="home-title-right">Desarrollamos soluciones
+                     para diferentes industrias y sectores</div>
+                     <button class="homr-title botonContacto">
+                        <a href="/contact">
+                        Contactanos
+                        </a>
+                    </button>
             </div>
             <div class="home-solutions">
                 <article class="home-solutions-box">
