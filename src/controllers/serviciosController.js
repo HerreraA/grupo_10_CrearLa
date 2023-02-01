@@ -101,7 +101,7 @@ const serviciosController = {
 
 
    update: (req, res) => {
-        servicios.update({
+        db.Servicios.update({
             nombre: req.body.nombre,
             category_id: req.body.categoria,
             descripcion: req.body.description,
@@ -111,7 +111,9 @@ const serviciosController = {
             where:{
                 id: req.params.id
             }
-        }). then(res.redirect('servicios/detail/' + req.params.id))
+        }) .then( function(){
+            res.redirect('/servicios/detail/' + req.params.id)
+        })
     },
 
 

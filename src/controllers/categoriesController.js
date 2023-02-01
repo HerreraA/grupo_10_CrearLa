@@ -80,7 +80,9 @@ const categoriesController = {
                 id: req.params.id
             }
         })
-        res.redirect('/categories/all')
+        .then(function(){
+            res.redirect('/categories/all')
+        })
     }
 }
 

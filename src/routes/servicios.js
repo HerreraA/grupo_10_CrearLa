@@ -35,7 +35,7 @@ router.post('/detail', uploadFile.single("foto"), serviciosController.store); //
 
 // Edita un servicio //
 router.get('/edit/:id', serviciosController.edit);
-router.post('/update/:id', serviciosController.update);
+router.put('/update/:id', serviciosController.update);
 
 
 // Elimina un servicio //
