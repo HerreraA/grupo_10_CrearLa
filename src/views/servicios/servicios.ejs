@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %>
+<%- include('../partials/head') %>
+
     <body>
-        <%- include('../partials/header') %> 
-        <main>
-            <h1 class="servicios-h1">SERVICIOS</h1>
-            <div class="servicios-p">
-                <p>Omnis voluptate alias magni iste asperiores et nulla, modi molestiae aliquid perspiciatis eum vel similique doloribus, provident totam.</p>
-            </div>
-            <% servicios.forEach(servicio => { %>
-            <div class="box-servicio">
-                <div class="box-servicio-left">
-                    <div class="box-servicio-number"><%= servicio.id %></div>
-                    <div class="box-servicio-txt">
-                        <h2><%= servicio.nombre %></h2>
-                        <p><%= servicio.descripcion %></p>
-                        <p class="price"><%= servicio.precio %></p>
-                    </div>
-                    <div>
-                        <button class="box-servicio-button">
-                            <a href="/">VER DETALLES</a>
-                        </button>
-                    </div>
+        <%- include('../partials/header') %>
+            <main>
+                <h1 class="servicios-h1">SERVICIOS</h1>
+                <div class="servicios-p">
+                    <p>Omnis voluptate alias magni iste asperiores et nulla, modi molestiae aliquid perspiciatis eum vel
+                        similique doloribus, provident totam.</p>
                 </div>
-                <div class="box-servicio-right">
-                    <img src="<%= servicio.imagen %>" alt="<%= servicio.nombre %>">
-                </div>
-            </div>
-            <% }) %>
-    </main>
-    <%- include('../partials/footer') %>
-</body>
+                <% for(i = 0; i < servicios.length; i++) {%>
+                    <div class="box-servicio">
+                        <div class="box-servicio-left">
+                            <div class="box-servicio-number">
+                                <%= servicios[i].id %>
+                            </div>
+                            <div class="box-servicio-txt">
+                                <h2>
+                                    <%= servicios[i].nombre %>
+                                </h2>
+                                <p>
+                                    <%= servicios[i].descripcion %>
+                                </p>
+                                <p class="price">
+                                    <%= servicios[i].precio %>
+                                </p>
+                            </div>
+                            <div>
+                                <button class="box-servicio-button">
+                                    <a href="/servicios/detail/<%=servicios[i].id%>">VER DETALLES</a>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box-servicio-right">
+                            <img src="<%= servicios[i].imagen %>" alt="<%= servicios[i].nombre %>">
+                        </div>
+                    </div>
+                    <% } %>
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
+
 </html>

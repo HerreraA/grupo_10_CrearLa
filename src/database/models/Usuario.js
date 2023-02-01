@@ -24,11 +24,12 @@ module.exports= (sequelize, dataTypes) => {
         password: {
             type: dataTypes.STRING
         },
-        imagen:{
+        foto:{
             type: dataTypes.STRING,
         }
 
     };
+    
     let config = {
         tableName: 'usuarios',
         timestamps: false

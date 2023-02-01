@@ -6,15 +6,15 @@ const multer = require('multer')
 // ************ Configuración de multer ************
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-    cb(null, './public/img')
-},
-   filename: function (req, file, cb) {
-         cb(null, Date.now() + '-' + file.originalname)
+        cb(null, './public/img')
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + '-' + file.originalname)
     }
- })
+})
 
 const upload = multer({ storage });
-const uploadFile= require("../middlewares/multerMiddleware")
+const uploadFile = require("../middlewares/multerMiddleware")
 
 //* Muestra todos los servicios */
 router.get('/all', serviciosController.all);
@@ -35,11 +35,10 @@ router.post('/detail', uploadFile.single("foto"), serviciosController.store); //
 
 // Edita un servicio //
 router.get('/edit/:id', serviciosController.edit);
-router.post('/update/:id', serviciosController.update);
+router.put('/update/:id', serviciosController.update);
 
 
 // Elimina un servicio //
-router.get('/delete/:id', serviciosController.delete);
-router.post('/delete/:id', serviciosController.destroy);
+router.post('/delete/:id', serviciosController.delete);
 
 module.exports = router;
