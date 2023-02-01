@@ -13,9 +13,9 @@ const app = express();
 app.use(session({
     secret: 'Crear.la',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
 }));
-
+    
 app.use(cookies())
 
 app.use(userLoggedMiddleware)
@@ -48,7 +48,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use ('/', mainRouter);
 app.use ('/categories', categoriesRouter);
 app.use ('/servicios', serviciosRouter);
-app.use ('/user', usersRouter);
+app.use ('/users', usersRouter);
 
 // Página no encontrada
 app.use(async(req, res, next) => {

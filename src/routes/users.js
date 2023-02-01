@@ -24,7 +24,7 @@ router.post('/register', uploadFile.single('foto'), validations, userController.
 router.post('/login', userController.loginProcess);
 
 //* perfil usuario */
-router.get("/profile/", authMiddleware, userController.profile)
+router.get("/profile", authMiddleware, userController.profile)
 
-router.get("/logout/", userController.logout)
+router.get("/logout", userController.logout)
 module.exports = router

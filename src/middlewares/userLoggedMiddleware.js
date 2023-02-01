@@ -1,4 +1,4 @@
-const Usuario = require("../database/models/Usuario")
+const db = require("../database/models")
 
 
 async function userLoggedMiddleware(req, res, next) {
@@ -23,4 +23,4 @@ async function userLoggedMiddleware(req, res, next) {
 }
     
     
-module.exports = userLoggedMiddleware;
+module.exports = userLoggedMiddleware
