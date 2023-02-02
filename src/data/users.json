@@ -416,5 +416,32 @@
   "password": "$2a$10$ifdW4jO9q8UHou8Aow.rtefpCDbpFq.ua6Yki3trIzAVJoz7aTFsu",
   "confirmar-pass": "asd123",
   "imagen": "1671760951252_user.png"
+ },
+ {
+  "id": 42,
+  "nombre": "tania lopez",
+  "fechaDeNacimiento": "1993-12-27",
+  "domicilio": "la higuera 256",
+  "email": "taniamelisalopez@gmail.com",
+  "usuario": "tania",
+  "password": "123456"
+ },
+ {
+  "id": 43,
+  "nombre": "julia lopez",
+  "fechaDeNacimiento": "2021-11-02",
+  "domicilio": "nose 123",
+  "email": "julia@gmail.com",
+  "usuario": "julia",
+  "password": "123456"
+ },
+ {
+  "id": 44,
+  "nombre": "tania",
+  "fechaDeNacimiento": "5545-12-02",
+  "domicilio": "noeedssdf",
+  "email": "julia@gmail.com",
+  "usuario": "asdasd",
+  "password": "123456"
  }
 ]

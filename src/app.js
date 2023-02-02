@@ -3,10 +3,23 @@ const express = require ('express');
 const path = require('path');
 const { get } = require('http');
 const methodOverride = require ('method-override'); // para poder usar PUT y DELETE
-
-
+const session = require('express-session'); //**login */
+const cookies = require ("cookie-parser");
+const userLoggedMiddleware = require ("./middlewares/userLoggedMiddleware")
 // ************ express() - (don't touch) ************
 const app = express();
+
+//** login  */
+app.use(session({
+    secret: 'Crear.la',
+    resave: false,
+    saveUninitialized: false,
+}));
+    
+app.use(cookies())
+
+app.use(userLoggedMiddleware)
+
 
 
 // ************ Middlewares - (don't touch) ************
@@ -35,7 +48,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use ('/', mainRouter);
 app.use ('/categories', categoriesRouter);
 app.use ('/servicios', serviciosRouter);
-app.use ('/user', usersRouter);
+app.use ('/users', usersRouter);
 
 // Página no encontrada
 app.use(async(req, res, next) => {

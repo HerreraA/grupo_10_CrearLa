@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');  
 let db = require('../database/models');
 
+
 // defino variables de base de datos
+
 let categorias = db.Categoria.findAll()
 let servicios = db.Servicios.findAll()
 
@@ -44,4 +46,4 @@ const mainController = {
     }
 }
 
-module.exports = mainController; 
+module.exports = mainController;

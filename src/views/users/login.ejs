@@ -6,13 +6,23 @@
     <main>
     <div class="login-box">
         <h1>Login Here</h1>
-        <form>
-          <!-- USERNAME INPUT -->
-          <label for="username">Username</label>
-          <input type="text" placeholder="Enter Username">
+        <form class="create-form" name="login" method="POST" action="/users/login" >
+          <!-- EMAIL INPUT -->
+          <label for="email">Email</label>
+          <input type="email" id="email" name= "email" placeholder="Enter email">
+        <% if (locals.errors && errors.email) { %>
+            <div class="text-danger">
+                <%= errors.email.msg %>
+            </div>
+            <% } %>
           <!-- PASSWORD INPUT -->
           <label for="password">Password</label>
-          <input type="password" placeholder="Enter Password">
+          <input type="password" id="password" name="password" placeholder="Enter Password">
+          <div>
+<label for="form-checkbox">
+          <input type="checkbox" name="recordarUsuario" id="recordarUsuario"> Recordar mi usuario
+        </label>
+    </div>
           <input type="submit" value="Log In">
           <a href="#">Lost your Password?</a><br>
           <a href="register.html">Don't have An account?</a>

@@ -28,6 +28,29 @@
                 </a>
             </div>
 
+             <nav class="header-right-menu">
+                
+                <ul style="list-style:none;">
+                    <% if (locals.isLogged) { %>
+                    <li>
+                        <a class="dropdown" href="/users/profile" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/public/images/users/<%= locals.userLogged.foto %>">
+                        Hi <%= locals.userLogged.nombre %>
+                    </a>
+                    <ul class="dropdownMenu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/users/profile" >Mi perfil</a>
+                        <li><hr class="dropdown-divider"></li>
+                        <a class="dropdown-item" href="/users/logout">Logout</a>
+                    </ul>
+                </li>
+                
+                 
+               <% } else { %>  
+                    <li><a href="/users/login"> <i class="fa-regular fa-address-card  "></i>       Mi cuenta </a></li>
+                    <li> <a href="/users/register"> <i class="fa-solid fa-arrow-right-to-bracket "></i>     Registrarme</a></li>
+        <% } %>  
+                    <li> <a href="/carrito"> <i class="fa-solid fa-bag-shopping  "></i>     Ver carrito</a></li>
+
             <nav class="header-bottom-menu">
                 <ul style="list-style:none;">
                     <li><a href="/">Inicio</a></li>
@@ -45,8 +68,11 @@
                     <li><a href="/nosotros">Nosotros</a></li>
                     <li><a href="/contact">Contacto</a></li>
                     <li><a href="/portafolio">Portafolio</a></li>
+
                 </ul>
             </nav>
         </div>
+
     </div>
 </header>
+
