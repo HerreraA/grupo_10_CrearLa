@@ -95,7 +95,7 @@ async loginProcess(req, res) {
      res.clearCookie("emailUsuario")
       req.session.destroy();
       
-      return res.redirect('/login')
+      return res.redirect('login')
    },
    
    
@@ -127,8 +127,9 @@ async loginProcess(req, res) {
          }
 
          // Se redirige el cliente a login para que pueda ingresar
-         res.redirect("/users/login")
+         res.redirect("/users/login", {categorias: categorias})
       }
+      
    },
 }
 
