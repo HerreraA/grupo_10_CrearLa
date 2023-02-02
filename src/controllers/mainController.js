@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');  
 let db = require('../database/models');
 
-// Defino variable para base Json de Categorías
-//const categoryFilePath = path.join(__dirname, '../data/categories.json');
-//let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
+
+// defino variables de base de datos
+
 let categorias = db.Categoria.findAll()
 let servicios = db.Servicios.findAll()
 
@@ -16,24 +16,28 @@ const mainController = {
             })
         
     },
+
     contact: (req, res) => {
         categorias
             .then(function(categorias){
         res.render ('./contact/contact', {categorias})
     })
     },
+
     portfolio: (req, res) => {
         categorias
             .then(function(categorias){
         res.render ('./portfolio/portfolio', {categorias})
     })
     },
+
     carrito: (req, res) => {
         categorias
             .then(function(categorias){
         res.render('./carrito/carrito', {categorias})
     })
     },
+    
     nosotros: (req, res) => {
         categorias
             .then(function(categorias){

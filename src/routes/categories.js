@@ -6,15 +6,15 @@ const multer = require('multer')
 // ************ Configuración de multer ************
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-    cb(null, './public/img')
-},
-   filename: function (req, file, cb) {
-         cb(null, Date.now() + '-' + file.originalname)
+        cb(null, './public/img')
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + '-' + file.originalname)
     }
- })
+})
 
 const upload = multer({ storage });
-const uploadFile= require("../middlewares/multerMiddleware")
+const uploadFile = require("../middlewares/multerMiddleware")
 
 //* Muestra todas las categorías */
 router.get('/all', categoriesController.index);
@@ -28,5 +28,11 @@ router.get('/detail/:id/', categoriesController.detail);
 router.get('/categoryCreate', categoriesController.categoryCreate); //muestra el form que crea categorías//
 router.post('/detail', uploadFile.single("foto"), categoriesController.store); //guarda lo que cargan en el form//
 
+// Edita una categoria //
+router.get('/edit/:id', categoriesController.edit)
+router.put('/edit/:id', categoriesController.toUpdate)
+
+// Borrar una categoria //
+router.post('/delete/:id', categoriesController.delete)
 
 module.exports = router;

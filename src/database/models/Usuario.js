@@ -28,6 +28,7 @@ module.exports= (sequelize, dataTypes) => {
         }
 
     };
+    
     let config = {
         tableName: 'usuarios',
         timestamps: false

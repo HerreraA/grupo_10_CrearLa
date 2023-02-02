@@ -4,12 +4,14 @@ const router = express.Router();
 
 //* Controllers require */
 const userController = require('../controllers/usersController');
-
-
 const uploadFile = require('../middlewares/multerMiddleware');
+
 const validations= require("../middlewares/validateRegisterMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
+
+
+
 //* Formulario de Login */
 router.get('/login', guestMiddleware, userController.login);
 

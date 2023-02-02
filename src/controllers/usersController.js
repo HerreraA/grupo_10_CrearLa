@@ -5,46 +5,30 @@ const path = require('path');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 let db = require('../database/models');
+
 //const Usuario = require ('../database/models/Usuario.js')
-// Defino variable para base Json de Categorías
-//const categoryFilePath = path.join(__dirname, '../data/categories.json');
-//let categories = JSON.parse(fs.readFileSync(categoryFilePath, 'utf-8'));
+
+
+
+
+// Defino variable para base de datos
+let categorias = db.Categoria.findAll()
+
 
 //const usersFilePath = path.join(__dirname, "../data/users.json");
 //  let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 
 const usersController = {
-   login: async (req, res) => {
-      let categorias = await db.Categoria.findAll()
-      res.render('./users/login', { categorias: categorias })
-      // archivo de registro?//
-   },
 
-   /*loginProcess:  async (req, res) => {
-       const resultValidation = validationResult(req)
-       if (resultValidation.errors.length > 0) {
-          res.render('./users/login', {
-             errors: resultValidation.mapped(),
-             oldData: req.body
-          })
-       } else {
- 
-          const user = await db.Usuarios.findOne({
-             where: {
-                email: req.body.email
-             }
-          })
-          delete(user.dataValues.password)
-          req.session.userLogged = user.dataValues
- 
-          req.body.recordar ? res.cookie("userEmail", user.dataValues.email, { maxAge: 1000 * 60 * 5 }) : null // Cookie se guarda por 5 min
- 
-          res.redirect("/user/profile")
-       }
-    },
- */
-   async loginProcess(req, res) {
+  
+       login: (req, res) => {
+        categorias
+            .then(function(categorias){
+        return res.render('./users/login.ejs', {categorias})
+    })
+},
+async loginProcess(req, res) {
 
       let userALoguear = await db.Usuarios.findOne({ where: { email: req.body.email } });
       if (userALoguear) {
@@ -90,6 +74,16 @@ const usersController = {
       }
    },
 
+
+    register: (req, res) => {
+        categorias
+            .then(function(categorias){
+        res.render('./users/register', {categorias})
+    })
+
+    },
+      
+   
    profile: (req, res) => {
       
       return res.render('./users/profile', {
@@ -103,14 +97,9 @@ const usersController = {
       
       return res.redirect('/login')
    },
-   register: async (req, res) => {
-      let categorias = await db.Categoria.findAll()
-      res.render('./users/register', { categorias: categorias })
-      // archivo de registro?//
-   },
-
-   //* Se guarda el registro */
-   processRegister: async (req, res) => {
+   
+   
+    processRegister: async (req, res) => {
       const resultValidation = validationResult(req)
       if (resultValidation.errors.length > 0) {
          res.render('./users/register', {
@@ -141,8 +130,10 @@ const usersController = {
          res.redirect("/users/login")
       }
    },
-
 }
+
+
+    
 
 
 
