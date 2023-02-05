@@ -1250,72 +1250,105 @@ body404 {
     border-radius: 5px;
 }
 
-/* SECCION PORTFOLIO */
-.portfolio{
-    background-color: #E3E3D8;
-    color: #012E40;
-    padding: 50px 20px;
+/*----------------------------------------------- SECCION PORTFOLIO--------------------------------------------------*/
+body2{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #efefef;
 }
-.portfolio .contenido-seccion{
-    max-width: 1100px;
-    margin: auto;
+
+.slide-content{
+    margin: 0 40px;
+    overflow: hidden;
+    border-radius: 25px;
+    
 }
-.portfolio h2{
-    font-size: 48px;
-    font-family:'Roboto', sans-serif;
-    text-align: center;
-    padding: 20px 0;
-}
-.portfolio h4{
-    font-size: 25px;
-    font-family:'Roboto', sans-serif;
-    text-align: center;
-    padding: 20px 0;
-}
-.portfolio .galeria{
+.card-wrapper1{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    
+    justify-content: center;
 }
-.portfolio .galeria .proyecto{
-    position: relative;
-    width: 340px;
-    height: 272px;
-    margin: 10px;
-    cursor: pointer;
-    
+.card1{
+    border-radius: 25px;
+    background-color: #fff;
+    margin: 2%;
+    width: 40%;
 }
-.portfolio .galeria .proyecto img{
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: fill;
-}
-.portfolio .galeria .proyecto .overlay{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background: linear-gradient(rgba(12, 128, 156, 0.8), rgba(12, 128, 156, 0.8));
+.image-content, .card-content1{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    transition: 1s;
-    font-size: 18px;
-    letter-spacing: 3px;
-    opacity: 0;
+    align-items: center;
+    padding: 10px 14px;
 }
-.portfolio .galeria .proyecto .overlay h3{
-    margin-bottom: 20px;
-    transition: 1s;
+.image-content{
+    row-gap: 5px;
+    position: relative;
+    border-radius: 25px 0;
 }
-.portfolio .galeria .proyecto .overlay:hover{
-    opacity: 1;
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #012E40;
+    border-radius: 25px 25px 0 25px;
 }
-.portfolio .galeria .proyecto .overlay:hover h3{
-   margin-bottom: 0px; 
+.overlay::before, .overlay::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: #012E40;
+}
+.overlay::after{
+    border-radius: 0 25px 0 0;
+    background-color: #fff;
+}
+.card-image1{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    
+    padding: 3px;
+}
+.card-image1 .card-img1{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #3CA6A6;
+}
+.name{
+    font-size: 23px;
+    font-weight: 500;
+    color: #012E40;
+}
+.descripcion{
+    font-size: 20px;
+    color: #707070;
+    text-align: center;
+}
+.button{
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 8px 16px;
+    background-color: #012E40;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+a{
+    color: #fff;
+}
+button:hover{
+    background: #3CA6A6;
 }
 /*---------------------------------------NOSOTROS----------------------------------------------------*/
 body1 {
