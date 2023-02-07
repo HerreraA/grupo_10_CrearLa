@@ -23,13 +23,14 @@ const usersController = {
 
   
        login: (req, res) => {
-        categorias
+         let categorias = db.Categoria.findAll()
+
             .then(function(categorias){
-        return res.render('./users/login.ejs', {categorias})
+        return res.render('/users/login.ejs', {categorias})
     })
 },
 async loginProcess(req, res) {
-
+   let categorias = db.Categoria.findAll()
       let userALoguear = await db.Usuarios.findOne({ where: { email: req.body.email } });
       if (userALoguear) {
          let contraseñaCorrecta = bcryptjs.compareSync(req.body.password, userALoguear.password);
@@ -76,35 +77,39 @@ async loginProcess(req, res) {
 
 
     register: (req, res) => {
-        categorias
+      let categorias = db.Categoria.findAll()
             .then(function(categorias){
-        res.render('./users/register', {categorias})
+        res.render('/users/register', {categorias})
     })
 
     },
       
    
-   profile: (req, res) => {
-      
-      return res.render('./users/profile', {
-         user: req.session.userLogged
+    profile: (req, res) => {
+      let categorias = db.Categoria.findAll()
+      return res.render('/users/profile', {
+         user: req.session.userLogged, categorias
       })
 
    },
    logout: (req, res) => {
+      let categorias = db.Categoria.findAll()
      res.clearCookie("emailUsuario")
       req.session.destroy();
+      res.locals.isLogged = false
       
-      return res.redirect('login')
+      return res.redirect("..")
    },
    
    
     processRegister: async (req, res) => {
+      let categorias = db.Categoria.findAll()
       const resultValidation = validationResult(req)
       if (resultValidation.errors.length > 0) {
-         res.render('./users/register', {
+         res.render('/users/register', {
             errors: resultValidation.mapped(),
-            oldData: req.body
+            oldData: req.body,
+            categorias
          })
       } else {
          // Se crea el usuario nuevo
@@ -113,7 +118,7 @@ async loginProcess(req, res) {
          const newUser = {
             nombre: req.body.nombre,
             fechaDeNacimiento: req.body.fechaDeNacimiento,
-            direccion: req.body.direccion,
+            domicilio: req.body.domicilio,
             email: req.body.email,
             password: encrypted,
 
