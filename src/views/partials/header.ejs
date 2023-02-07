@@ -1,47 +1,70 @@
 <header>
-<div class="header">
-    <div class="header-container">
-        <div class="lineaUno">
-            <div class="header-logo">
-                <a href="/"><img src="/images/header-logo.png" alt="Crear.La"></a>
-            </div>
-            <div class="header-search">
-             <form action="/" method="get" class="header-search-form">
-                    <div class="header-search-input">
-                        <input type="text" placeholder="Busca tu desarrollo">
-                    </div>
-                    <div class="header-search-button">
-                        <button type="submit">Buscar</button>
-                    </div>
-               </form>
-            </div>
-             <nav class="header-right-menu">
+    <div class="header">
+        <div class="header-container">
+            <div class="lineaUno">
+                <div class="header-logo">
+                    <a href="/"><img src="/images/header-logo.png" alt="Crear.La"></a>
+                </div>
+                <div class="header-search">
+                    <form action="/" method="get" class="header-search-form">
+                        <div class="header-search-input">
+                            <input type="text" placeholder="Busca tu desarrollo">
+                        </div>
+                        <div class="header-search-button">
+                            <button type="submit">Buscar</button>
+                        </div>
+                    </form>
+                </div>
+                <nav class="header-right-menu">
+                    <ul style="list-style:none;">
+                        <% if (locals.isLogged) { %>
+
+                            <li>
+                                <a class="dropdown" href="/users/profile" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="/public/images/users/<%= locals.userLogged.foto %>">
+                                Hi <%= locals.userLogged.nombre %>
+                            </a>
+                            <ul class="dropdownMenu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/users/profile" >Mi perfil</a>
+                                <li><hr class="dropdown-divider"></li>
+                                <a class="dropdown-item" href="/users/logout">Logout</a>
+                            </ul>
+                        </li>
+ <% } else { %>  
+                        <li><a href="/users/login"> <i class="fa-regular fa-address-card  "></i> Mi cuenta </a></li>
+                        <li> <a href="/users/register"> <i class="fa-solid fa-arrow-right-to-bracket  "></i>
+                                Registrarme</a></li>
+                                <% } %>  
+                        <li> <a href="/carrito"> <i class="fa-solid fa-bag-shopping  "></i> Ver carrito</a></li>
+                    </ul>
+                </nav> 
+                <a href="#" class="menu-button">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div> 
+
+            <nav class="header-bottom-menu">
                 <ul style="list-style:none;">
-                    <li><a href="/user/login"> <i class="fa-regular fa-address-card  "></i>       Mi cuenta </a></li>
-                    <li> <a href="/user/register"> <i class="fa-solid fa-arrow-right-to-bracket  "></i>     Registrarme</a></li>
-                    <li> <a href="/carrito"> <i class="fa-solid fa-bag-shopping  "></i>     Ver carrito</a></li>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/categories/all">Servicios</a>
+                        <ul>
+                            <% for (let i=0 ; i < categorias.length; i++ ) { %>
+                                <li><a href="/categories/detail/<%= categorias[i].id %>">
+                                        <%= categorias[i].nombre %>
+                                    </a>
+
+                                </li>
+                                <% }%>
+                        </ul>
+                    </li>
+                    <li><a href="/nosotros">Nosotros</a></li>
+                    <li><a href="/contact">Contacto</a></li>
+                    <li><a href="/portafolio">Portafolio</a></li>
+
                 </ul>
-            </nav>    
-            <a href="#" class="menu-button">
-                <i class="fa-solid fa-bars"></i>
-            </a>
+            </nav>
         </div>
 
-        <nav class="header-bottom-menu">
-            <ul style="list-style:none;">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/categories/all">Servicios</a>
-                    <ul>
-                        <% categories.forEach(category => { %>
-                        <li><a href="/servicios/detailCategory/<%= category.id %>"><%= category.nombre %></a></li>
-                        <% }) %>
-                    </ul>
-                </li>
-                 <li><a href="/nosotros">Nosotros</a></li>
-                <li><a href="/contact">Contacto</a></li>
-                <li><a href="/portafolio">Portafolio</a></li>
-            </ul>
-        </nav>
     </div>
-</div>
 </header>
+

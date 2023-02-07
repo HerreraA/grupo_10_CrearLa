@@ -97,30 +97,30 @@ const validateServicioEditForm = [
 ];
 
 
-
-
 //* Controllers require */
 const userController = require('../controllers/usersController');
 const uploadFile = require('../middlewares/multerMiddleware');
+
+
 //* Formulario de Login */
-router.get('/login', userController.login);
+router.get('/login', guestMiddleware, userController.login);
 
-
-//********* VALIDACIONES NUEVO *********/
 //* Procesar el Login */
-router.post('/login', validateLoginForm , userController.login);
+router.post('/login', validateLoginForm , userController.loginProcess);
 
 
 
 //* Formulario de registro */
-router.get('/register', userController.register);
+router.get('/register', guestMiddleware, userController.register);
 
-
-
-//********* VALIDACIONES NUEVO *********/
 //* Procesa el registro */
 router.post('/register', uploadFile.single('foto') , validateUserCreateForm , userController.processRegister);
 
 
+//* perfil usuario */
+router.get("/profile", authMiddleware, userController.profile)
+
+
+router.get("/logout", userController.logout)
 
 module.exports = router
