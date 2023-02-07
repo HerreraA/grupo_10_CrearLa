@@ -1,22 +1,13 @@
-const fs = require('fs');
 const path = require('path');
-//const { use } = require('../routes/servicios');
-//const User = require('../models/userJson');
+const { use } = require('../routes/servicios');
+const User = require('../models/User');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 let db = require('../database/models');
-
-//const Usuario = require ('../database/models/Usuario.js')
-
-
-
+const Usuario = require ('../database/models/Usuario.js')
 
 // Defino variable para base de datos
 let categorias = db.Categoria.findAll()
-
-
-//const usersFilePath = path.join(__dirname, "../data/users.json");
-//  let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 
 const usersController = {
@@ -99,6 +90,7 @@ async loginProcess(req, res) {
    },
    
    
+    //************************************ INICIO DE CODIGO A VERIFICAR
     processRegister: async (req, res) => {
       const resultValidation = validationResult(req)
       if (resultValidation.errors.length > 0) {
@@ -115,8 +107,76 @@ async loginProcess(req, res) {
             fechaDeNacimiento: req.body.fechaDeNacimiento,
             direccion: req.body.direccion,
             email: req.body.email,
-            password: encrypted,
+            usuario: req.body.usuario,
+            password: req.body.password,
+            foto: req.file.foto
+        }
+        users.push(newRegister);
+        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+        res.redirect('/'); */
+        
+        //********* VALIDACIONES NUEVO *********/
+        let resultValidation = validationResult(req);
+        if(errors.isEmpty()) {
+            let user = req.body;
+            userId = usersModel.create(user);
+            res.redirect ('/users/' + userId);
+        } else {
+            res.render('users/create', {
+                errors: errors.array() 
+                old: req.body
+            });
+        }
+        
+        if(resultValidation.errors.length > 0) {
+            return res.render('userRegisterForm', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+        
+        let userInDB = User.findByField('email', req.body.email);
 
+        if(userInDB) {
+            return res.render('./users/register.ejs', {
+                errors: {
+                    email: {    
+                        msg: 'Este email ya está registrado'
+                    }
+                },
+                oldData: req.body
+            });
+        }
+
+        let userToCreate = {
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            imagen: req.file.filename
+        }
+
+        let userCreated = User.create(userToCreate);
+
+        return res.redirect('/users/login');
+    }, FIN DEL CODIGO A VERIFICAR ************************************/
+    
+    processRegister: async (req, res) => {
+      const resultValidation = validationResult(req)
+      if (resultValidation.errors.length > 0) {
+         res.render('./users/register', {
+            errors: resultValidation.mapped(),
+            oldData: req.body
+         })
+      } else {
+         // Se crea el usuario nuevo
+         const encrypted = bcryptjs.hashSync(req.body.password, 10)
+
+         const newUser = {
+            nombre: req.body.nombre,
+            fechaDeNacimiento: req.body.fechaDeNacimiento,
+            domicilio: req.body.domicilio,
+            email: req.body.email,
+            password: encrypted,
+            foto. req.body.foto
          }
          // Se incluye el usuario nuevo al array de usuarios y se reescribe el archivo JSON con nueva lista
          try {
@@ -131,10 +191,18 @@ async loginProcess(req, res) {
       }
       
    },
+    
+    login: (req, res) => {
+        categorias
+            .then(function(categorias){
+        return res.render('./users/login.ejs', {categorias})
+    })
+},
+    loginProcess: (req, res) => {
+        return res.send(req.body);
+    },
 }
 
-
-    
 
 
 

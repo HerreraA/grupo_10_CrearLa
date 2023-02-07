@@ -6,43 +6,54 @@
     <main class="main-register">
         <h1 class="titulo-form">Formulario de registro</h1>
         <div class="registro-form-img">
-       <div  class="formulario-registro">
+        <div  class="formulario-registro">
+
+
+        <% if(locals.errors) {
+            errors.forEach(error => { %>
+                <p class="feedback"> <%= error.msg %></p>
+            <% })
+            } %>
+
+        <form class="create-form" name="registro" method="POST" action="/user/register"  enctype="multipart/form-data">
         
-        <form class="create-form" name="registro" method="POST" action="/users/register" >
          <div class="control-form">
             <h2>Datos personales</h2> 
+            
             <label for="nombre"></label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" >
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" value="<%= locals.old && old.nombre ? old.nombre : ''%>">
          </div>
+         
          <div class="control-form">
             <label for="date"></label>
             <input type="date" id="date" name="fechaDeNacimiento" min="1950-01-01" max="" >
         </div>
+        
         <div class="control-form">
             <label for="domicilio"></label>
-            <input type="text" id="domicilio" name="domicilio" placeholder="Domicilio" >
+            <input type="text" id="domicilio" name="domicilio" placeholder="Domicilio" value="<%= locals.old && old.domicilio ? old.domicilio : ''%>">
         </div>
+        
          <div class="control-form">
             <label for="email"></label>
-            <input type="email" id="email" name="email" placeholder="E-mail" 
-            value="<%= locals.oldData ? oldData.email : null  %>"> >
+            <input type="email" id="email" name="email" placeholder="E-mail" value="<%= locals.old && old.email ? old.email : ''%>">
         </div> 
 
         <h2>Crear usuario</h2>
          <div class="control-form">
             <label for="usuario"></label>
-            <input type="usuario" id="usuario" name="usuario" placeholder="Nombre de usuario" >
+            <input type="usuario" id="usuario" name="usuario" placeholder="Nombre de usuario" value="<%= locals.old && old.usuario ? old.usuario : ''%>">
         </div> 
     
         <div class="control-form">
             <label for="password"></label>
             <input type="password" name="password" id="password" placeholder="Contraseña">
         </div>
+        
         <div class="control-form">
             <label for="confirmar-pass"></label>
             <input type="password" name="confirmar-pass" id="confirmar-pass"  placeholder="Confirmar contraseña">
         </div>
-        
         
         <h2>Seleccionar foto de usuario</h2>
             <div class="control-form">
@@ -59,7 +70,6 @@
      
         <i class="fa-solid fa-address-card" ></i>
         
-       
     </div>
      </div>
     </main>
