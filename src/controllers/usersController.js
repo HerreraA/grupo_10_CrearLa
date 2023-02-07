@@ -3,8 +3,13 @@ const path = require('path');
 const { use } = require('../routes/servicios');
 const User = require('../models/User');
 const bcryptjs = require ('bcryptjs');
-const { validationResult } = require('express-validator');
 let db = require('../database/models');
+
+//********* VALIDACIONES NUEVO *********/
+const { validationResult } = require('express-validator');
+
+
+
 
 // Defino variable para base Json de Categorías
 const categoryFilePath = path.join(__dirname, '../data/categories.json');
@@ -34,7 +39,21 @@ const usersController = {
         users.push(newRegister);
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
         res.redirect('/'); */
-        const resultValidation = validationResult(req);
+        
+        //********* VALIDACIONES NUEVO *********/
+        let resultValidation = validationResult(req);
+        if(errors.isEmpty()) {
+            let user = req.body;
+            userId = usersModel.create(user);
+            res.redirect ('/users/' + userId);
+        } else {
+            res.render('users/create', {
+                errors: errors.array() 
+                old: req.body
+            });
+        }
+
+
         
         if(resultValidation.errors.length > 0) {
             return res.render('userRegisterForm', {
@@ -48,7 +67,7 @@ const usersController = {
         if(userInDB) {
             return res.render('./users/register.ejs', {
                 errors: {
-                    email: {
+                    email: {    
                         msg: 'Este email ya está registrado'
                     }
                 },
