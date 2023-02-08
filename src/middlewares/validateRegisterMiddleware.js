@@ -11,8 +11,8 @@ module.exports = [
         .isEmail().withMessage('Debes escribir un formato de correo válido'),
     body('usuario').notEmpty().withMessage('Tienes que escribir un usuario'),
     body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
-    body('confirmar-pass').notEmpty().withMessage('Tienes que escribir nuevamente la contraseña'),
-    body('foto').custom((value, { req }) => {
+    body('confirmar-pass').notEmpty().withMessage('Tienes que escribir nuevamente la contraseña')
+    /*body('foto').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
 
@@ -25,5 +25,5 @@ module.exports = [
             }
         }
         return true;
-    })
+    })*/
 ]

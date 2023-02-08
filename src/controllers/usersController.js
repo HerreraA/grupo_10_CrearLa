@@ -87,10 +87,11 @@ async loginProcess(req, res) {
    profile: (req, res) => {
       
       return res.render('./users/profile', {
-         user: req.session.userLogged
+         user: req.session.userLogged, categorias
       })
 
    },
+
    logout: (req, res) => {
      res.clearCookie("emailUsuario")
       req.session.destroy();
@@ -104,8 +105,10 @@ async loginProcess(req, res) {
       if (resultValidation.errors.length > 0) {
          res.render('./users/register', {
             errors: resultValidation.mapped(),
-            oldData: req.body
-         })
+            oldData: req.body,
+            categorias,
+            
+         }),console.log(resultValidation);
       } else {
          // Se crea el usuario nuevo
          const encrypted = bcryptjs.hashSync(req.body.password, 10)
