@@ -4,22 +4,22 @@
 
     <body>
         <%- include('../partials/header') %>
-            <main>
+            <mainCategories>
                 <h1 class="servicios-h1">Categorías de servicios</h1>
                 
-                <% categorias.forEach(categoria=> { %>
-                    <bodyDetalle>
+                <% for (let i=0 ; i < categorias.length; i++ ) { %>
+                    <bodyDetalle0>
                         <div class="cardProducto">
                             <div class="imgDetalle">
-                                <img src="<%= categoria.imagen %>" alt="<%= categoria.nombre %>">
+                                <img src="<%= categorias[i].imagen %>" alt="<%= categorias[i].nombre %>">
                             </div>
                             <div class="detailsProducto">
                                 <div class="titleProducto">
                                 <h2>
-                                    <%= categorias.nombre %>
+                                    <%= categorias[i].nombre %>
                                 <br>
                                 <small>
-                                    <%= categorias.descripcion %>
+                                    <%= categorias[i].descripcion %>
                                 </small>
                                 </h2>
                             </div>
@@ -27,15 +27,15 @@
                                 <h4>Descripción</h4>
                                 <p>CrearLa brinda los mejores servicios tecnológicos para la industria laboral.</p>
                             </div>
-                                <button class="box-servicio-button">
-                                    <a href="/categories/detail/<%= categoria.id %>">VER DETALLES</a>
+                                <button class="box-servicio-button0">
+                                    <a href="/categories/detail/<%= categorias[i].id %>">VER DETALLES</a>
                                 </button>
                             </div>
                         </div>
-                       
+                        <bodyDetalle0>
                     </div>
-                    <% }) %>
-            </main>
+                    <% } %>
+            </mainCategories>
             <%- include('../partials/footer') %>
     </body>
 
