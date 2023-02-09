@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const serviciosController = require('../controllers/serviciosController');
 const multer = require('multer')
-
+const validateServicioCreateForm = require ("../middlewares/validateServicioCreateForm")
+const validateServicioEditForm = require ("../middlewares/validateServicioEditForm")
 // ************ Configuración de multer ************
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {

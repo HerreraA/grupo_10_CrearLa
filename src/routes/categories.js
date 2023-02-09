@@ -2,10 +2,16 @@ const express = require('express');
 const router = express.Router();
 const categoriesController = require('../controllers/categoriesController');
 const multer = require('multer')
+const validateCategoryCreateForm = require ("../middlewares/validateCategoryCreateForm")
+const validateCategoryEditForm = require ("../middlewares/validateCategoryEditForm")
 //********* VALIDACIONES NUEVO *********/
 const {check} = require('express-validator');
 const {body} = require('express-validator');
+
+
 // ************ Configuración de multer ************
+const upload = multer({ storage });
+const uploadFile = require("../middlewares/multerMiddleware")
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './public/img')
@@ -15,44 +21,9 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({ storage });
-const uploadFile = require("../middlewares/multerMiddleware")
 
-const validateCategoryCreateForm = [
-    body('nombre')
-        .notEmpty().withMessage('Debes ingresar el nombre de la categoría').bail()
-        .isLength({ min: 5 }).withMessage('El nombre de la categoría debe tener, al menos, 5 caracteres'),
-    body('description')
-        .notEmpty().withMessage('Debes ingresar la descripción de la categoría').bail()
-        .isLength({ min: 20 }).withMessage('La descripción de la categoría debe tener, al menos, 20 caracteres'),
-    body('foto')
-        .notEmpty().withMessage('Debes ingresar una imagen para la categoría')
-];
 
-const validateCategoryEditForm = [
-    body('nombre')
-        .notEmpty().withMessage('Debes ingresar el nombre de la categoría').bail()
-        .isLength({ min: 5 }).withMessage('El nombre de la categoría debe tener, al menos, 5 caracteres'),
-    body('description')
-        .notEmpty().withMessage('Debes ingresar la descripción de la categoría').bail()
-        .isLength({ min: 20 }).withMessage('La descripción de la categoría debe tener, al menos, 20 caracteres'),
-    body('foto').notEmpty().withMessage('Debes ingresar una imagen para la categoría')
 
-        .custom((value,{req}) =>{
-            let file = req.file
-            let acceptedExtensions = ['.jpg','.png','.jpeg','.gif']
-
-            if(!file){
-                throw new Error('El producto debe tener una imagen')
-            }else{
-                let fileExtension = path.extname(file.originalname)
-                if(!acceptedExtensions.includes(fileExtension)) {
-                    throw new Error (`Las extensiones permitidas son ${acceptedExtensions.join(', ')}`)
-                }
-            }
-            return true
-        }),
-];
 //* Muestra todas las categorías */
 router.get('/all', categoriesController.index);
 
