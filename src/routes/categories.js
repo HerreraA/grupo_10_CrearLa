@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const categoriesController = require('../controllers/categoriesController');
 const multer = require('multer')
-
+//********* VALIDACIONES NUEVO *********/
+const {check} = require('express-validator');
+const {body} = require('express-validator');
 // ************ Configuración de multer ************
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -16,6 +18,41 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 const uploadFile = require("../middlewares/multerMiddleware")
 
+const validateCategoryCreateForm = [
+    body('nombre')
+        .notEmpty().withMessage('Debes ingresar el nombre de la categoría').bail()
+        .isLength({ min: 5 }).withMessage('El nombre de la categoría debe tener, al menos, 5 caracteres'),
+    body('description')
+        .notEmpty().withMessage('Debes ingresar la descripción de la categoría').bail()
+        .isLength({ min: 20 }).withMessage('La descripción de la categoría debe tener, al menos, 20 caracteres'),
+    body('foto')
+        .notEmpty().withMessage('Debes ingresar una imagen para la categoría')
+];
+
+const validateCategoryEditForm = [
+    body('nombre')
+        .notEmpty().withMessage('Debes ingresar el nombre de la categoría').bail()
+        .isLength({ min: 5 }).withMessage('El nombre de la categoría debe tener, al menos, 5 caracteres'),
+    body('description')
+        .notEmpty().withMessage('Debes ingresar la descripción de la categoría').bail()
+        .isLength({ min: 20 }).withMessage('La descripción de la categoría debe tener, al menos, 20 caracteres'),
+    body('foto').notEmpty().withMessage('Debes ingresar una imagen para la categoría')
+
+        .custom((value,{req}) =>{
+            let file = req.file
+            let acceptedExtensions = ['.jpg','.png','.jpeg','.gif']
+
+            if(!file){
+                throw new Error('El producto debe tener una imagen')
+            }else{
+                let fileExtension = path.extname(file.originalname)
+                if(!acceptedExtensions.includes(fileExtension)) {
+                    throw new Error (`Las extensiones permitidas son ${acceptedExtensions.join(', ')}`)
+                }
+            }
+            return true
+        }),
+];
 //* Muestra todas las categorías */
 router.get('/all', categoriesController.index);
 
@@ -26,11 +63,11 @@ router.get('/detail/:id/', categoriesController.detail);
 
 // Crea una categoría //
 router.get('/categoryCreate', categoriesController.categoryCreate); //muestra el form que crea categorías//
-router.post('/detail', uploadFile.single("foto"), categoriesController.store); //guarda lo que cargan en el form//
+router.post('/detail', uploadFile.single("foto"), validateCategoryCreateForm, categoriesController.store); //guarda lo que cargan en el form//
 
 // Edita una categoria //
 router.get('/edit/:id', categoriesController.edit)
-router.put('/edit/:id', categoriesController.toUpdate)
+router.put('/edit/:id', uploadFile.single("foto"), validateCategoryEditForm, categoriesController.toUpdate)
 
 // Borrar una categoria //
 router.post('/delete/:id', categoriesController.delete)

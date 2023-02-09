@@ -55,25 +55,8 @@ const validateUserCreateForm = [
       //  .notEmpty().withMessage('Debes ingresar una imagen').bail()
         // Deberá ser un archivo válido (JPG, JPEG, PNG, GIF). //
 ];
-const validateCategoryCreateForm = [
-    body('nombre')
-        .notEmpty().withMessage('Debes ingresar el nombre de la categoría').bail()
-        .isLength({ min: 5 }).withMessage('El nombre de la categoría debe tener, al menos, 5 caracteres'),
-    body('description')
-        .notEmpty().withMessage('Debes ingresar la descripción de la categoría').bail()
-        .isLength({ min: 20 }).withMessage('La descripción de la categoría debe tener, al menos, 20 caracteres'),
-    body('foto')
-        .notEmpty().withMessage('Debes ingresar una imagen para la categoría')
-];
-const validateCategoryEditForm = [
-    body('nombre')
-        .notEmpty().withMessage('Debes ingresar el nombre de la categoría').bail()
-        .isLength({ min: 5 }).withMessage('El nombre de la categoría debe tener, al menos, 5 caracteres'),
-    body('description')
-        .notEmpty().withMessage('Debes ingresar la descripción de la categoría').bail()
-        .isLength({ min: 20 }).withMessage('La descripción de la categoría debe tener, al menos, 20 caracteres'),
-    body('foto').notEmpty().withMessage('Debes ingresar una imagen para la categoría')
-];
+
+
 const validateServicioCreateForm = [
     body('nombre')
         .notEmpty().withMessage('Debes ingresar el nombre del servicio').bail()
