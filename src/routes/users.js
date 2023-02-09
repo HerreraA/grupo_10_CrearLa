@@ -1,6 +1,14 @@
 //* Require */
 const express = require('express');
 const router = express.Router();
+//* Controllers require */
+
+const userController = require('../controllers/usersController');
+const uploadFile = require('../middlewares/multerMiddleware');
+
+const validations= require("../middlewares/validateRegisterMiddleware");
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 //********* VALIDACIONES NUEVO *********/
 const {check} = require('express-validator');
@@ -43,8 +51,8 @@ const validateUserCreateForm = [
         /* Deberá tener letras mayúsculas, minúsculas, un número y un carácter especial
         ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$
         */
-    body('foto')
-        .notEmpty().withMessage('Debes ingresar una imagen').bail()
+    //body('foto')
+      //  .notEmpty().withMessage('Debes ingresar una imagen').bail()
         // Deberá ser un archivo válido (JPG, JPEG, PNG, GIF). //
 ];
 const validateCategoryCreateForm = [
@@ -97,9 +105,6 @@ const validateServicioEditForm = [
 ];
 
 
-//* Controllers require */
-const userController = require('../controllers/usersController');
-const uploadFile = require('../middlewares/multerMiddleware');
 
 
 //* Formulario de Login */

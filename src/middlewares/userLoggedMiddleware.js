@@ -24,3 +24,4 @@ async function userLoggedMiddleware(req, res, next) {
     
     
 module.exports = userLoggedMiddleware
+
