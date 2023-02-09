@@ -6,33 +6,33 @@
         <%- include('../partials/header') %>
             <main>
                 <h1 class="servicios-h1">Categorías de servicios</h1>
-                <div class="servicios-p">
-                    <p>Omnis voluptate alias magni iste asperiores et nulla, modi molestiae aliquid perspiciatis eum vel
-                        similique doloribus, provident totam.</p>
-                </div>
+                
                 <% categorias.forEach(categoria=> { %>
-                    <div class="box-servicio">
-                        <div class="box-servicio-left">
-                            <div class="box-servicio-number">
-                                <%= categoria.id %>
+                    <bodyDetalle>
+                        <div class="cardProducto">
+                            <div class="imgDetalle">
+                                <img src="<%= categoria.imagen %>" alt="<%= categoria.nombre %>">
                             </div>
-                            <div class="box-servicio-txt">
+                            <div class="detailsProducto">
+                                <div class="titleProducto">
                                 <h2>
-                                    <%= categoria.nombre %>
+                                    <%= categorias.nombre %>
+                                <br>
+                                <small>
+                                    <%= categorias.descripcion %>
+                                </small>
                                 </h2>
-                                <p>
-                                    <%= categoria.descripcion %>
-                                </p>
                             </div>
-                            <div>
+                            <div class="descriptionProducto">
+                                <h4>Descripción</h4>
+                                <p>CrearLa brinda los mejores servicios tecnológicos para la industria laboral.</p>
+                            </div>
                                 <button class="box-servicio-button">
                                     <a href="/categories/detail/<%= categoria.id %>">VER DETALLES</a>
                                 </button>
                             </div>
                         </div>
-                        <div class="box-servicio-right">
-                            <img src="<%= categoria.imagen %>" alt="<%= categoria.nombre %>">
-                        </div>
+                       
                     </div>
                     <% }) %>
             </main>

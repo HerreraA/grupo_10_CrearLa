@@ -5,27 +5,28 @@
     <body>
         <%- include('../partials/header') %>
             <main>
-                <h1 class="servicios-h1">SERVICIOS</h1>
-                <div class="servicios-p">
-                    <p>Omnis voluptate alias magni iste asperiores et nulla, modi molestiae aliquid perspiciatis eum vel
-                        similique doloribus, provident totam.</p>
-                </div>
+
                 <% for (let i=0 ; i < categorias.length; i++ ) { %>
                     <% if(categoryId==categorias[i].id) { %>
-                        <div class="box-servicio">
-                            <div class="box-servicio-left">
-                                <div class="box-servicio-number">
-                                    <%= categorias[i].id %>
+                        <bodyDetalle>
+                            <div class="cardProducto">
+                                <div class="imgDetalle">
+                                    <img src="<%= categorias[i].imagen %>" alt="<%= categorias[i].nombre %>">
                                 </div>
-                                <div class="box-servicio-txt">
+                                <div class="detailsProducto">
+                                    <div class="titleProducto">
                                     <h2>
                                         <%= categorias[i].nombre %>
-                                    </h2>
-                                    <p>
+                                    <br>
+                                    <small>
                                         <%= categorias[i].descripcion %>
-                                    </p>
+                                    </small>
+                                    </h2>
                                 </div>
-                                <div>
+                                <div class="descriptionProducto">
+                                    <h4>Descripción</h4>
+                                    <p>CrearLa brinda los mejores servicios tecnológicos para la industria laboral.</p>
+                                </div>
                                     <button class="box-servicio-button">
                                         <a href="/carrito">AGREGAR AL CARRITO</A></a>
                                     </button>
@@ -41,9 +42,7 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="box-servicio-right">
-                                <img src="<%= categorias[i].imagen %>" alt="<%= categorias[i].nombre %>">
-                            </div>
+                            
                         </div>
                         <% }}%>
             </main>
