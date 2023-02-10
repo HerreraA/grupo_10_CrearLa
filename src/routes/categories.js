@@ -10,7 +10,7 @@ const {body} = require('express-validator');
 
 
 // ************ Configuración de multer ************
-const upload = multer({ storage });
+//const upload = multer({ storage });
 const uploadFile = require("../middlewares/multerMiddleware")
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
