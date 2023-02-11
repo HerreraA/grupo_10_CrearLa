@@ -32,9 +32,9 @@ const usersController = {
                res.cookie("userEmail", req.body.email, { maxAge: (1000 * 60) * 2 })
 
             }
-            res.redirect('users/profile');
+            res.redirect('/users/profile');
          } else {
-            return res.render('users/login', {
+            return res.render('/users/login', {
                errors:
                {email: {
                      msg: 'Las Credenciales son Invalidas'}
@@ -44,7 +44,7 @@ const usersController = {
          }
       } else {
          if (!req.body.email) {
-            return res.render('users/login', {
+            return res.render('/users/login', {
                errors:
                {
                   email: {
@@ -54,7 +54,7 @@ const usersController = {
                categorias
             })
          } else {
-            return res.render('users/login', {
+            return res.render('/users/login', {
                errors:
                {
                   email: {
@@ -66,7 +66,6 @@ const usersController = {
          }
       }
    },
-
    register: (req, res) => {
       let categorias = db.Categoria.findAll()
             .then(function(categorias){
@@ -86,10 +85,11 @@ const usersController = {
    },
    logout: (req, res) => {
       let categorias = db.Categoria.findAll()
-     res.clearCookie("emailUsuario")
+     res.clearCookie("userEmail")
       req.session.destroy();
       res.locals.isLogged = false
-      
+      res.locals.userLogged = undefined
+ 
       return res.redirect("..")
    },
    
