@@ -41,7 +41,7 @@ const categoriesRouter = require ("./routes/categories")
 const serviciosRouter = require ("./routes/servicios")
 const usersRouter = require ('./routes/users')
 const apiUsersRouter = require('./routes/apiUsersRouter');
-const apiProductsRouter = require('./routes/apiProductsRouter');
+const apiServiciossRouter = require('./routes/apiServiciossRouter');
 //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
 app.use(express.urlencoded({ extended: false }));
 
@@ -52,7 +52,7 @@ app.use ('/servicios', serviciosRouter);
 app.use ('/users', usersRouter);
 
 app.use('/api/users', apiUsersRouter)
-app.use('/api/products', apiProductsRouter)
+app.use('/api/servicios', apiServiciossRouter)
 
 
 // Página no encontrada
