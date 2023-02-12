@@ -16,7 +16,7 @@ module.exports = {
                 id: servicio.id,
                 nombre: servicio.nombre,
                 descripcion: servicio.descripcion,
-                foto: `http://localhost:3030${servicio.foto}`,
+                foto: `http://localhost:3500${servicio.foto}`,
                 asociations: [servicio.categorias.nombre],
                 detail: `/api/servicios/${servicio.id}`,
             }
@@ -30,7 +30,7 @@ module.exports = {
             id: servicio.id,
             nombre: servicio.nombre, 
             descripcion: servicio.descripcion,
-            foto: `http://localhost:3030${servicio.foto}`,
+            foto: `http://localhost:3500${servicio.foto}`,
             precio: servicio.precio,
             
             asociations: [servicio.categorias],
