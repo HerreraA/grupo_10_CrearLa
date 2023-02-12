@@ -40,7 +40,8 @@ const mainRouter = require ('./routes/main')
 const categoriesRouter = require ("./routes/categories")
 const serviciosRouter = require ("./routes/servicios")
 const usersRouter = require ('./routes/users')
-
+const apiUsersRouter = require('./routes/apiUsersRouter');
+const apiServiciossRouter = require('./routes/apiServiciossRouter');
 //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
 app.use(express.urlencoded({ extended: false }));
 
@@ -49,6 +50,10 @@ app.use ('/', mainRouter);
 app.use ('/categories', categoriesRouter);
 app.use ('/servicios', serviciosRouter);
 app.use ('/users', usersRouter);
+
+app.use('/api/users', apiUsersRouter)
+app.use('/api/servicios', apiServiciossRouter)
+
 
 // Página no encontrada
 app.use(async(req, res, next) => {

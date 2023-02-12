@@ -114,7 +114,7 @@ const usersController = {
             const newUser = {
                nombre: req.body.nombre,
                fechaDeNacimiento: req.body.fechaDeNacimiento,
-               direccion: req.body.direccion,
+               domicilio: req.body.domicilio,
                email: req.body.email,
                password: encrypted,
                foto: req.file?  req.file.foto:'/images/defaultFoto.png'
