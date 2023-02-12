@@ -1623,9 +1623,11 @@ body3{
     padding: 8% 16%;
 }
 .profile .left{
-    width: 50%;
+    width: 26%;
     text-align: center;
     color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 .profile .left h3{
     font-size: 140%;
