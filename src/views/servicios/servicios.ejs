@@ -10,7 +10,7 @@
                     <p>Omnis voluptate alias magni iste asperiores et nulla, modi molestiae aliquid perspiciatis eum vel
                         similique doloribus, provident totam.</p>
                 </div>
-                <% for(i = 0; i < servicios.length; i++) {%>
+                <% for(i=0; i < servicios.length; i++) {%>
                     <div class="box-servicio">
                         <div class="box-servicio-left">
                             <div class="box-servicio-number">
@@ -31,7 +31,7 @@
                                 <button class="box-servicio-button">
                                     <a href="/servicios/detail/<%=servicios[i].id%>">VER DETALLES</a>
                                 </button>
-                            </div>
+                            </div>  
                         </div>
                         <div class="box-servicio-right">
                             <img src="<%= servicios[i].foto %>" alt="<%= servicios[i].nombre %>">
