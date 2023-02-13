@@ -43,15 +43,23 @@ const serviciosController = {
 
     //* Guarda un servicio */
     store: (req, res) => {
-        db.Servicios.create({
-            nombre: req.body.nombre,
-            category_id: req.body.categoria,
-            descripcion: req.body.description,
-            precio: req.body.precio,
-            foto: req.body.foto
-        }).then(function(){
-            res.redirect('/servicios/all')
-        })
+
+        if (req.file){
+            db.Servicios.create({
+                nombre: req.body.nombre,
+                category_id: req.body.categoria,
+                descripcion: req.body.description,
+                precio: req.body.precio,
+                foto: req.file.filename
+            }).then(function(){
+                res.redirect('/servicios/all')
+            })
+        } else {
+            categorias.findAll()
+            .then(function (categorias) {
+                return res.render('./servicios/servicioCreate', { categorias: categorias })
+            })
+        }
     },
 
 
@@ -87,7 +95,7 @@ const serviciosController = {
             category_id: req.body.categoria,
             descripcion: req.body.description,
             precio: req.body.precio,
-            imagen: req.body.foto
+            imagen: req.file.filename
         }, {
             where:{
                 id: req.params.id

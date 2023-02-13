@@ -12,16 +12,17 @@ let db = require('../database/models');
 
 const usersController = {
 
-  
+
    login: (req, res) => {
       let categorias = db.Categoria.findAll()
-          .then(function(categorias){
-      return res.render('users/login', {categorias})
-  })
+         .then(function (categorias) {
+            return res.render('users/login', { categorias })
+         })
 
- },
- async loginProcess(req, res) {
-   let categorias = db.Categoria.findAll()
+   },
+
+    loginProcess: async(req, res) =>{
+      let categorias = db.Categoria.findAll()
       let userALoguear = await db.Usuarios.findOne({ where: { email: req.body.email } });
       if (userALoguear) {
          let contraseñaCorrecta = bcryptjs.compareSync(req.body.password, userALoguear.password);
@@ -36,8 +37,10 @@ const usersController = {
          } else {
             return res.render('/users/login', {
                errors:
-               {email: {
-                     msg: 'Las Credenciales son Invalidas'}
+               {
+                  email: {
+                     msg: 'Las Credenciales son Invalidas'
+                  }
                },
                categorias
             })
@@ -66,72 +69,71 @@ const usersController = {
          }
       }
    },
+
    register: (req, res) => {
       let categorias = db.Categoria.findAll()
-            .then(function(categorias){
-        return res.render('users/register', {categorias})
-    })
+         .then(function (categorias) {
+            return res.render('users/register', { categorias })
+         })
 
-    },
-      
-      
-   
-    profile: (req, res) => {
+   },
+
+
+
+   profile: (req, res) => {
       let categorias = db.Categoria.findAll()
       return res.render('users/profile', {
          user: req.session.userLogged, categorias
       })
 
    },
+
    logout: (req, res) => {
       let categorias = db.Categoria.findAll()
-     res.clearCookie("userEmail")
+      res.clearCookie("userEmail")
       req.session.destroy();
       res.locals.isLogged = false
       res.locals.userLogged = undefined
- 
+
       return res.redirect("..")
    },
-   
-   
-   
-   
-    //************************************ INICIO DE CODIGO A VERIFICAR
-    processRegister: async (req, res) => {
+
+   //******************** INICIO DE CODIGO A VERIFICAR
+   processRegister: async (req, res) => {
       let categorias = db.Categoria.findAll()
       const resultValidation = validationResult(req)
-         if (resultValidation.errors.length > 0) {
-            return res.render('users/register', {
-     
-               errors: resultValidation.mapped(),
-               oldData: req.body,
-               categorias
-            })
-         } else {
+      if (resultValidation.errors.length > 0) {
+         return res.render('users/register', {
+
+            errors: resultValidation.mapped(),
+            oldData: req.body,
             categorias
-            // Se crea el usuario nuevo
-            const encrypted = bcryptjs.hashSync(req.body.password, 10)
-            const newUser = {
-               nombre: req.body.nombre,
-               fechaDeNacimiento: req.body.fechaDeNacimiento,
-               direccion: req.body.direccion,
-               email: req.body.email,
-               password: encrypted,
-               foto: req.file?  req.file.foto:'/images/defaultFoto.png'
-            }
-            // Se incluye el usuario nuevo al array de usuarios y se reescribe el archivo JSON con nueva lista
-            try {
-               await db.Usuarios.create(newUser)
-            }
-            catch (error) {
-               console.error(error)
-            }
-   
-            // Se redirige el cliente a login para que pueda ingresar
-            res.redirect("/users/login")
-   
-   
-    }
+         })
+      } else {
+         categorias
+         // Se crea el usuario nuevo
+         const encrypted = bcryptjs.hashSync(req.body.password, 10)
+         const newUser = {
+            nombre: req.body.nombre,
+            fechaDeNacimiento: req.body.fechaDeNacimiento,
+            direccion: req.body.direccion,
+            email: req.body.email,
+            password: encrypted,
+            foto: req.file ? req.file.filename : '/images/defaultFoto.png'
+         }
+         // Se incluye el usuario nuevo al array de usuarios y se reescribe el archivo JSON con nueva lista
+         try {
+            await db.Usuarios.create(newUser)
+         }
+         catch (error) {
+            console.error(error)
+         }
+
+         // Se redirige el cliente a login para que pueda ingresar
+         res.redirect("/users/login")
+
+
+      }
    }
 
 }

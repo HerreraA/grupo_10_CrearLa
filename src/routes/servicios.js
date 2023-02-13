@@ -1,21 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const serviciosController = require('../controllers/serviciosController');
-const multer = require('multer')
-const validateServicioCreateForm = require ("../middlewares/validateServicioCreateForm")
-const validateServicioEditForm = require ("../middlewares/validateServicioEditForm")
-// ************ Configuración de multer ************
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './public/img')
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + '-' + file.originalname)
-    }
-})
+const multer = require('multer');
+const validateServicioCreateForm = require("../middlewares/validateServicioCreateForm")
+const validateServicioEditForm = require("../middlewares/validateServicioEditForm")
 
-const upload = multer({ storage });
-const uploadFile = require("../middlewares/multerMiddleware")
+// ************ Configuración de multer ************
+const uploadFile = require("../middlewares/servicesMulterMiddleware")
+
 
 //* Muestra todos los servicios */
 router.get('/all', serviciosController.all);
@@ -36,7 +28,7 @@ router.post('/detail', uploadFile.single("foto"), serviciosController.store); //
 
 // Edita un servicio //
 router.get('/edit/:id', serviciosController.edit);
-router.put('/update/:id', serviciosController.update);
+router.put('/update/:id', uploadFile.single("foto"), serviciosController.update);
 
 
 // Elimina un servicio //
