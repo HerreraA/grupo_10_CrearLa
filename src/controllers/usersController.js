@@ -11,17 +11,24 @@ let db = require('../database/models');
 
 
 const usersController = {
-
-  
    login: (req, res) => {
       let categorias = db.Categoria.findAll()
           .then(function(categorias){
       return res.render('users/login', {categorias})
   })
-
  },
+ 
  async loginProcess(req, res) {
    let categorias = db.Categoria.findAll()
+   const resultValidation = validationResult(req)
+
+      if (resultValidation.errors.length > 0) {
+         return res.render('users/login', {
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+            categorias
+         })
+      } else {
       let userALoguear = await db.Usuarios.findOne({ where: { email: req.body.email } });
       if (userALoguear) {
          let contraseñaCorrecta = bcryptjs.compareSync(req.body.password, userALoguear.password);
@@ -37,7 +44,7 @@ const usersController = {
             return res.render('/users/login', {
                errors:
                {email: {
-                     msg: 'Las Credenciales son Invalidas'}
+                     msg: 'Las Credenciales son Inválidas'}
                },
                categorias
             })
@@ -58,14 +65,14 @@ const usersController = {
                errors:
                {
                   email: {
-                     msg: 'No se encuentra este email en nuestra base de datos'
+                     msg: 'Este email no se encuentra registrado'
                   }
                },
                categorias
             })
          }
       }
-   },
+   }},
    register: (req, res) => {
       let categorias = db.Categoria.findAll()
             .then(function(categorias){
@@ -74,8 +81,6 @@ const usersController = {
 
     },
       
-      
-   
     profile: (req, res) => {
       let categorias = db.Categoria.findAll()
       return res.render('users/profile', {
@@ -93,21 +98,30 @@ const usersController = {
       return res.redirect("..")
    },
    
-   
-   
-   
-    //************************************ INICIO DE CODIGO A VERIFICAR
     processRegister: async (req, res) => {
       let categorias = db.Categoria.findAll()
       const resultValidation = validationResult(req)
+
          if (resultValidation.errors.length > 0) {
             return res.render('users/register', {
-     
                errors: resultValidation.mapped(),
                oldData: req.body,
                categorias
             })
-         } else {
+         }
+         else {
+            let user = await db.Usuarios.findOne({ where: { email: req.body.email } });
+            if (user) {
+               return res.render('users/register', {
+                  categorias,
+                  errors: {
+                      email: {
+                          msg: 'Este email ya se encuentra registrado'
+                      }
+                  },
+                  oldData: req.body
+              });
+            } else
             categorias
             // Se crea el usuario nuevo
             const encrypted = bcryptjs.hashSync(req.body.password, 10)
@@ -117,7 +131,7 @@ const usersController = {
                domicilio: req.body.domicilio,
                email: req.body.email,
                password: encrypted,
-               foto: req.file?  req.file.foto:'/images/users/defaultFoto.png'
+               foto: req.file.foto
             }
             // Se incluye el usuario nuevo al array de usuarios y se reescribe el archivo JSON con nueva lista
             try {
@@ -136,6 +150,4 @@ const usersController = {
 
 }
 
-
 module.exports = usersController;
-

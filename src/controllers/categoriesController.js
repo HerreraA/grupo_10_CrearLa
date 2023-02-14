@@ -15,18 +15,13 @@ let servicios = db.Servicios
 const categoriesController = {
     //* Enseña la cantidad de categorías disponibles */
     index: (req, res) => {
-
         categorias.findAll()
             .then(function (categorias) {
                 return res.render('./servicios/categories', { categorias: categorias })
             })
-
     },
 
-
     detail: (req, res) => {
-
-
         let categoryId = req.params.id
         let listadoCategorias =categorias.findAll()
         let listadoServicios = servicios.findByPk()
@@ -36,31 +31,33 @@ const categoriesController = {
             })
     },
 
-
     //* Formulario para crear una categoría */
     categoryCreate: (req, res) => {
-
         categorias.findAll()
             .then(function (categorias) {
                 res.render('./servicios/categoryCreate', { categorias: categorias })
             })
-
     },
-
 
     //* Guarda la categoría */    
-
-
     store: (req, res) => {
-        db.Categoria.create({
-            nombre: req.body.nombre,
-            descripcion: req.body.description,
-            foto: req.body.foto
-        }).then(function(){
-            res.redirect('/categories/all')
-        })
-    },
+        const resultValidation = validationResult(req)
 
+         if (resultValidation.errors.length > 0) {
+            return res.render('./servicios/categoryCreate', {
+               errors: resultValidation.mapped(),
+               oldData: req.body,
+               categorias
+            })
+         } else {
+            db.Categoria.create({
+                nombre: req.body.nombre,
+                descripcion: req.body.description,
+                foto: req.body.foto
+            }).then(function(){
+                res.redirect('/categories/all')
+        })
+    }},
 
     edit: (req, res) => {
         db.Categoria.findByPk(req.params.id)

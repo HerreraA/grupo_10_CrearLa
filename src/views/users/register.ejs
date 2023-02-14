@@ -71,7 +71,7 @@
     
         <div class="control-form">
             <label for="password"></label>
-            <input type="password" name="password" id="password" placeholder="Contraseña" value="<%= locals.oldData ? oldData.password: null  %>" >
+            <input type="password" name="password" id="password" placeholder="Contraseña">
             
             
             <% if (locals.errors && errors.password) { %>
@@ -82,12 +82,12 @@
         </div>
         <div class="control-form">
             <label for="confirmar-pass"></label>
-            <input type="password" name="confirmar-pass" id="confirmar-pass"  placeholder="Confirmar contraseña" value="<%= locals.oldData ? oldData.password: null  %>" >
+            <input type="password" name="confirmarPass" id="confirmarPass"  placeholder="Confirmar contraseña">
             
             
-            <% if (locals.errors && errors.password) { %>
+            <% if (locals.errors && errors.confirmarPass) { %>
                 <div class="text-danger">
-                    <%= errors.password.msg %>
+                    <%= errors.confirmarPass.msg %>
                 </div>
             <% } %>
         </div>
@@ -96,7 +96,7 @@
         <h2>Seleccionar foto de usuario</h2>
             <div class="control-form">
             <label for="foto"></label>
-            <input type="file" name="foto" id="foto" accept=".jpg, .png" value="<%= locals.oldData ? oldData.foto: null  %>" >
+            <input type="file" name="foto" id="foto" value="<%= locals.oldData ? oldData.foto: null  %>" accept=".jpg, .jpeg, .png, .gif, .bmp, .tiff">
             
             
             <% if (locals.errors && errors.foto) { %>

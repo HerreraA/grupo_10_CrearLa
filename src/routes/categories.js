@@ -1,22 +1,23 @@
+//* Require */
 const express = require('express');
 const router = express.Router();
+
+//* Controllers require */
+const categoriesController = require('../controllers/categoriesController');
+
+//* Middlewares require */
 const categoriesController = require('../controllers/categoriesController');
 const uploadFile = require ("../middlewares/multerMiddleware")
 const validateCategoryCreateForm = require ("../middlewares/validateCategoryCreateForm")
 const validateCategoryEditForm = require ("../middlewares/validateCategoryEditForm")
-//********* VALIDACIONES NUEVO *********/
-const {check} = require('express-validator');
+
 const {body} = require('express-validator');
-
-
 
 //* Muestra todas las categorías */
 router.get('/all', categoriesController.index);
 
-
 // * Muestra el detalle de una categoría *//
 router.get('/detail/:id/', categoriesController.detail);
-
 
 // Crea una categoría //
 router.get('/categoryCreate', categoriesController.categoryCreate); //muestra el form que crea categorías//

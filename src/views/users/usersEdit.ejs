@@ -96,7 +96,7 @@
         <h2>Seleccionar foto de usuario</h2>
             <div class="control-form">
             <label for="foto"></label>
-            <input type="file" name="foto" id="foto" accept=".jpg, .png" value="<%= locals.oldData ? oldData.foto: null  %>" >
+            <input type="file" name="foto" id="foto" accept=".jpg, .jpeg, .png, .gif, .bmp, .tiff" value="<%= locals.oldData ? oldData.foto: null  %>" >
             
             
             <% if (locals.errors && errors.foto) { %>
