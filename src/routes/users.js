@@ -11,7 +11,7 @@ const uploadFile = require('../middlewares/usersMulterMiddleware');
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const validateRegisterMiddleware = require('../middlewares/validateRegisterMiddleware');
-const validateLoginMiddleware = require('../middlewares/validateRegisterMiddleware');
+const validateLoginMiddleware = require('../middlewares/validateLoginMiddleware');
 
 
 //* Formulario de Login */
