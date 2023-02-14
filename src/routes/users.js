@@ -7,7 +7,7 @@ let db = require('../database/models');
 const userController = require('../controllers/usersController');
 
 //* Middlewares require */
-const uploadFile = require('../middlewares/multerMiddleware');
+const uploadFile = require('../middlewares/usersMulterMiddleware');
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const validateRegisterMiddleware = require('../middlewares/validateRegisterMiddleware');
