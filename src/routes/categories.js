@@ -6,10 +6,12 @@ const router = express.Router();
 const categoriesController = require('../controllers/categoriesController');
 
 //* Middlewares require */
-const validateCategoryCreateForm = require ("../middlewares/validateCategoryCreateForm");
-const validateCategoryEditForm = require ("../middlewares/validateCategoryEditForm");
-const uploadFile = require('../middlewares/multerMiddleware');
+const categoriesController = require('../controllers/categoriesController');
+const uploadFile = require ("../middlewares/multerMiddleware")
+const validateCategoryCreateForm = require ("../middlewares/validateCategoryCreateForm")
+const validateCategoryEditForm = require ("../middlewares/validateCategoryEditForm")
 
+const {body} = require('express-validator');
 
 //* Muestra todas las categorías */
 router.get('/all', categoriesController.index);
