@@ -20,7 +20,6 @@ const serviciosController = {
         })
     },
     
-
     detail: (req, res) => {
         let servicioId = req.params.id;
         let listadoCategorias = categorias.findAll()
@@ -31,7 +30,6 @@ const serviciosController = {
             })
     },
 
-
     //* Formulario para crear un servicio */    
     servicioCreate: (req, res) => {
         categorias.findAll()
@@ -40,9 +38,16 @@ const serviciosController = {
             })
     },
 
-
     //* Guarda un servicio */
     store: (req, res) => {
+        const resultValidation = validationResult(req)
+         if (resultValidation.errors.length > 0) {
+            return res.render('./servicios/servicioCreate', {
+               errors: resultValidation.mapped(),
+               oldData: req.body,
+               categorias
+            })
+         } else {
         db.Servicios.create({
             nombre: req.body.nombre,
             category_id: req.body.categoria,
@@ -52,8 +57,7 @@ const serviciosController = {
         }).then(function(){
             res.redirect('/servicios/all')
         })
-    },
-
+    }},
 
     detailCategory: (req, res) => {
          let categoriaId = categorias.findByPk(req.params.id, {

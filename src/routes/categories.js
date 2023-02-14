@@ -1,36 +1,21 @@
+//* Require */
 const express = require('express');
 const router = express.Router();
+
+//* Controllers require */
 const categoriesController = require('../controllers/categoriesController');
-const multer = require('multer')
-const validateCategoryCreateForm = require ("../middlewares/validateCategoryCreateForm")
-const validateCategoryEditForm = require ("../middlewares/validateCategoryEditForm")
-//********* VALIDACIONES NUEVO *********/
-const {check} = require('express-validator');
-const {body} = require('express-validator');
 
-
-// ************ Configuración de multer ************
-const upload = multer({ storage });
-const uploadFile = require("../middlewares/multerMiddleware")
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './public/img')
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + '-' + file.originalname)
-    }
-})
-
-
+//* Middlewares require */
+const validateCategoryCreateForm = require ("../middlewares/validateCategoryCreateForm");
+const validateCategoryEditForm = require ("../middlewares/validateCategoryEditForm");
+const uploadFile = require('../middlewares/multerMiddleware');
 
 
 //* Muestra todas las categorías */
 router.get('/all', categoriesController.index);
 
-
 // * Muestra el detalle de una categoría *//
 router.get('/detail/:id/', categoriesController.detail);
-
 
 // Crea una categoría //
 router.get('/categoryCreate', categoriesController.categoryCreate); //muestra el form que crea categorías//

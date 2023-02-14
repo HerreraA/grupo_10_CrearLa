@@ -7,10 +7,7 @@
             <main>
                 <div class="create-box">
                     <h1>Actualizar servicio</h1>
-                    <form action="/servicios/update/<%=servicios.id%>?_method=PUT" method="POST"
-                        >
-                        
-                            
+                    <form action="/servicios/update/<%=servicios.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                                 <h2>
                                     <%=servicios.nombre %>
                                 </h2>
@@ -23,7 +20,7 @@
                                 <select name="categoria" id="categoria" class="form-input">
                                     <% for(i=0; i < categorias.length; i++) { %>
                                         <% if(categorias[i].id==servicios.category_id) { %>
-                                            <option value="<%= categorias[i].id%>" selected>
+                                            <option value="<%= categorias[i].id%>">
                                                 <%= categorias[i].nombre%>
                                             </option>
                                             <% } else {%>
@@ -43,7 +40,12 @@
 
                                 <div class="control-form">Seleccionar fotos
                                     <label for="imagen"></label>
-                                    <input type="file" name="imagen" id="imagen" accept=".jpg, .png">
+                                    <input type="file" name="foto" id="foto" accept=".jpg, .jpeg, .png, .gif, .bmp, .tiff">
+                                    <% if (locals.errors && errors.foto) { %>
+                                        <div class="text-danger">
+                                            <%= errors.foto.msg %>
+                                        </div>
+                                    <% } %>
                                 </div>
                                 <div class="control-form">
                                     <label for="precio">Precio:</label>

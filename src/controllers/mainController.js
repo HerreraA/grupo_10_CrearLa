@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');  
 let db = require('../database/models');
-
+const { validationResult } = require('express-validator');
 
 // defino variables de base de datos
 
@@ -21,7 +21,21 @@ const mainController = {
         categorias
             .then(function(categorias){
         res.render ('./contact/contact', {categorias})
-    })
+        })
+    },
+
+    contactProcess: (req, res) => {
+        categorias
+        const resultValidation = validationResult(req)
+        if (resultValidation.errors.length > 0) {
+            return res.render ('./contact/contact', {
+               errors: resultValidation.mapped(),
+               oldData: req.body,
+               categorias
+            })
+        } else {
+            return res.render ('./contact/contactSend', { categorias })
+        }
     },
 
     portfolio: (req, res) => {

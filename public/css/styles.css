@@ -1648,4 +1648,7 @@ body3{
     flex-direction: column;
 }
 
+.text-danger {
+    color: red;
+}
 
