@@ -53,7 +53,7 @@ const serviciosController = {
             category_id: req.body.categoria,
             descripcion: req.body.description,
             precio: req.body.precio,
-            foto: req.body.foto
+            foto: req.file.filename
         }).then(function(){
             res.redirect('/servicios/all')
         })
@@ -96,7 +96,7 @@ const serviciosController = {
             category_id: req.body.categoria,
             descripcion: req.body.description,
             precio: req.body.precio,
-            imagen: req.body.foto
+            imagen: req.file.filename
         }, {
             where:{
                 id: req.params.id

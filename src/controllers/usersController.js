@@ -131,7 +131,7 @@ const usersController = {
                domicilio: req.body.domicilio,
                email: req.body.email,
                password: encrypted,
-               foto: req.file.foto
+               foto: req.file.filename
             }
             // Se incluye el usuario nuevo al array de usuarios y se reescribe el archivo JSON con nueva lista
             try {

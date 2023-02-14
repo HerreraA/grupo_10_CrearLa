@@ -53,7 +53,7 @@ const categoriesController = {
             db.Categoria.create({
                 nombre: req.body.nombre,
                 descripcion: req.body.description,
-                foto: req.body.foto
+                foto: req.file.filename
             }).then(function(){
                 res.redirect('/categories/all')
         })
@@ -80,7 +80,7 @@ const categoriesController = {
         db.Categoria.update({
             nombre: req.body.nombre,
             descripcion: req.body.description,
-            foto: req.body.foto
+            foto: req.file.filename
         }, {
             where: {
                 id: req.params.id

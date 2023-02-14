@@ -6,7 +6,7 @@ const router = express.Router();
 const categoriesController = require('../controllers/categoriesController');
 
 //* Middlewares require */
-const uploadFile = require ("../middlewares/multerMiddleware")
+const uploadFile = require("../middlewares/categoryMulterMiddleware")
 const validateCategoryCreateForm = require ("../middlewares/validateCategoryCreateForm")
 const validateCategoryEditForm = require ("../middlewares/validateCategoryEditForm")
 

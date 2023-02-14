@@ -9,7 +9,7 @@ const serviciosController = require('../controllers/serviciosController');
 //* Middlewares require */
 const validateServicioCreateForm = require ("../middlewares/validateServicioCreateForm");
 const validateServicioEditForm = require ("../middlewares/validateServicioEditForm");
-const uploadFile = require('../middlewares/multerMiddleware');
+const uploadFile = require("../middlewares/servicesMulterMiddleware");
 
 
 //* Muestra todos los servicios */
