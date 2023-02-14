@@ -5,13 +5,7 @@ const router = express.Router();
 // ******* Controller require: el que van a utilizar todas las ruta dentro de este archivo ********
 const mainController = require('../controllers/mainController')
 
-const validations= require("../middlewares/validateRegisterMiddleware");
-const guestMiddleware = require("../middlewares/guestMiddleware");
-const authMiddleware = require("../middlewares/authMiddleware");
-
-const {check} = require('express-validator');
 const {body} = require('express-validator');
-
 
 const validateUserContactForm = [
     body('nombre')

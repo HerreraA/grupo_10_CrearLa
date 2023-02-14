@@ -12,10 +12,7 @@ const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const validateRegisterMiddleware = require('../middlewares/validateRegisterMiddleware');
 const validateLoginMiddleware = require('../middlewares/validateRegisterMiddleware');
-const validateUserCreateForm = require ("../middlewares/validateUserCreateForm")
-const validateLoginForm = require ("../middlewares/validateLoginForm")
 
-const {body} = require('express-validator');
 
 //* Formulario de Login */
 router.get('/login', guestMiddleware, userController.login);

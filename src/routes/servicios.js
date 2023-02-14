@@ -1,26 +1,7 @@
 //* Require */
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
 const path = require ('path');
-
-//* Validaciones */
-const {check} = require('express-validator');
-const {body} = require('express-validator');
-
-
-// ************ Configuración de multer ************
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './public/images/users')
-    },
-    filename: function (req, file, cb) {
-        let filename = `${Date.now()}_img${path.extname(file.originalname)}`;
-        cb(null, filename);
-    }
-})
-const upload = multer({ storage });
-
 
 //* Controllers require */
 const serviciosController = require('../controllers/serviciosController');
