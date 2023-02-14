@@ -60,6 +60,7 @@ const categoriesController = {
     }},
 
     edit: (req, res) => {
+
         db.Categoria.findByPk(req.params.id)
             .then(function (categorias) {
                 res.render('./servicios/categoriesEdit', { categorias })
@@ -67,8 +68,15 @@ const categoriesController = {
     },
 
     toUpdate: (req, res) => {
-        console.log("id: " + req.params.id);
-        console.log(req.body);
+        const resultValidation = validationResult(req)
+
+         if (resultValidation.errors.length > 0) {
+            return res.render('./servicios/categoriesEdit', {
+               errors: resultValidation.mapped(),
+               oldData: req.body,
+               categorias
+            })
+         } else {
         db.Categoria.update({
             nombre: req.body.nombre,
             descripcion: req.body.description,
@@ -81,7 +89,7 @@ const categoriesController = {
             res.redirect("/categories/detail/" + req.params.id)
         })
 
-        
+    }
     },
 
     delete: (req, res) => {

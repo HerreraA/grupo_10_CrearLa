@@ -64,14 +64,11 @@ const serviciosController = {
             include: [{ association: "servicios" }]
         })
         let listadoServicios = servicios.findAll()
-
         Promise.all([categoriaId, listadoServicios])
             .then(function ([categorias, servicios]) {
                 res.render('./servicios/serviciosCategoria', { categorias, servicios })
             })
-        
     },
-
 
     edit:(req, res) => {
         let listadoCategorias = categorias.findAll( {
@@ -86,6 +83,14 @@ const serviciosController = {
 
 
    update: (req, res) => {
+    const resultValidation = validationResult(req)
+         if (resultValidation.errors.length > 0) {
+            return res.render('./servicios/servicioEdit', {
+               errors: resultValidation.mapped(),
+               oldData: req.body,
+               categorias
+            })
+         } else {
         db.Servicios.update({
             nombre: req.body.nombre,
             category_id: req.body.categoria,
@@ -99,6 +104,7 @@ const serviciosController = {
         }) .then( function(){
             res.redirect('/servicios/detail/' + req.params.id)
         })
+    }
     },
 
 
