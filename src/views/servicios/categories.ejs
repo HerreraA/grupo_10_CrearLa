@@ -4,14 +4,16 @@
 
     <body>
         <%- include('../partials/header') %>
+
             <mainCategories>
                 <h1 class="servicios-h1">Categorías de servicios</h1>
                 
                 <% for (let i=0 ; i < categorias.length; i++ ) { %>
+                    
                     <bodyDetalle0>
                         <div class="cardProducto">
                             <div class="imgDetalle">
-                                <img src="<%= categorias[i].imagen %>" alt="<%= categorias[i].nombre %>">
+                                <img src="/images/categorias/<%=categorias[i].foto %>" alt="<%=categorias[i].nombre %>"/>
                             </div>
                             <div class="detailsProducto">
                                 <div class="titleProducto">
@@ -34,7 +36,7 @@
                         </div>
                         <bodyDetalle0>
                     </div>
-                    <% } %>
+                    <% }%>
                     <div>
                         <button class="box-servicio-button0">
                             <a href="/categories/categoryCreate">CREAR CATEGORIA</a>    

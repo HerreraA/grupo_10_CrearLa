@@ -29,12 +29,12 @@
                             </div>
                             <div>
                                 <button class="box-servicio-button">
-                                    <a href="/servicios/detail/<%=servicios[i].id%>">VER DETALLES</a>
+                                    <a href="/servicios/detail/<%=servicios[i].id %>">VER DETALLES</a>
                                 </button>
                             </div>
                         </div>
                         <div class="box-servicio-right">
-                            <img src="<%= servicios[i].foto %>" alt="<%= servicios[i].nombre %>">
+                            <img src="/images/servicios/<%=servicios[i].foto %>" alt="<%=servicios[i].nombre %>"/>
                         </div>
                     </div>
                     <% } %>
