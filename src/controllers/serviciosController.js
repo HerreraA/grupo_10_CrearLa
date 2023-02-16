@@ -96,7 +96,7 @@ const serviciosController = {
             category_id: req.body.categoria,
             descripcion: req.body.description,
             precio: req.body.precio,
-            imagen: req.file.filename
+            foto: req.file.filename
         }, {
             where:{
                 id: req.params.id
