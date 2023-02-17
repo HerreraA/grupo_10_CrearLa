@@ -7,7 +7,7 @@
 body {
     font-size: 14px;
     margin: 0%;
-    background-color: #012E40;
+    background-color: #EBEBEB;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -344,6 +344,7 @@ main {
     padding: 0 10px;
 }
 
+
 /****************** FOOTER --> MEDIA QUERIES *****************/
 @media (min-width: 481px) {
     .main-footer {
@@ -439,6 +440,7 @@ main {
     background-image: url(/images/home-services-software.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    
 }.home-servicios-box-img2:hover {
     background-color: #012E40;
     background-image: url(/images/home-services-app.jpg);
@@ -575,6 +577,11 @@ main {
 
 @media(min-width:1200px) {}
 /*---------------------------SLIDER DEL HOME------------------------------------------------*/
+.swiper {
+    margin-top:5px;
+    background-color: white;
+}
+
 .swiper-nuevo img{
     height: 300px;
     width: 100%;
@@ -863,11 +870,6 @@ button {
     text-decoration: none;
     color: #979797;
 }
-
-.box-servicio-button a:hover {}
-
-
-
 
 .detalle-servicio {
     width: 100%;
