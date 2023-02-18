@@ -626,8 +626,9 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
-
     padding: 15px;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .main-carrito h1 {
@@ -732,6 +733,7 @@ button {
     display: flex;
     justify-content: center;
     border-top: #012E40 1px solid;
+    margin-bottom: 3%;
 }
 
 .valor-total h2 {
@@ -753,15 +755,15 @@ button {
     }
 
     .seleccion-buscador label {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .seleccion-buscador select {
-        font-size: 30px;
+        font-size: -3px;
     }
 
     .seleccion-check .selector {
-        font-size: 27px;
+        font-size: 20px;
     }
 
     button {
@@ -778,14 +780,14 @@ button {
     }
 
     .seleccion-buscador {
-        width: 80%;
+        width: 81%;
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-around;
     }
 
     .seleccion-buscador label {
-        width: 20%;
+        width: 43%;
         text-align: center;
         padding: 20px;
         margin: auto;
