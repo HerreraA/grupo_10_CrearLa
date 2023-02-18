@@ -1,45 +1,38 @@
-productos
-
-categorias
+Servicios y productos:
 
 1 Desarrollo de Apps
-    a. Android
-    b. IoS
-    c. Multiplataforma
-    d. apps nativas
-    e. progressive web app
-    f. internet de las cosas
-    g. realidad aumentada
-    h. inteligencia artificial
+a) Android: Android es el sistema operativo que utilizan algunos dispositivos móviles para poder funcionar. Es decir, se trata de todo aquello que puedes ver y con lo que puedes interactuar desde la pantalla de tu equipo.
+b) IoS: iOS (en inglés “iPhone Operating System”) es un sistema operativo propietario de la empresa Apple Inc utilizado en dispositivos como smartphones, tablets y otros dispositivos.
+c) Multiplataforma: En informática, se denomina multiplataforma a un atributo conferido a programas informáticos o métodos y conceptos de cómputo que son implementados, y operan internamente en múltiples plataformas informáticas.
+d) apps nativas: Una app nativa es aquella que ha sido desarrollada en el lenguaje de programación específico de un sistema operativo. Es decir, si hablamos de Android, la app nativa habrá sido desarrollada con el lenguaje de programación Kotlin o Java.
+e) progressive web app: Las aplicaciones web progresivas (mejor conocidas como PWAs por «Progressive Web Apps») son aplicaciones web que utilizan APIs y funciones emergentes del navegador web junto a una estrategia tradicional de mejora progresiva para ofrecer una aplicación nativa.
+f) internet de las cosas: El término IoT, o Internet de las cosas, se refiere a la red colectiva de dispositivos conectados y a la tecnología que facilita la comunicación entre los dispositivos y la nube, así como entre los propios dispositivos.
+g) realidad aumentada: La realidad aumentada es una versión mejorada e interactiva de un entorno del mundo real que se logra a través de elementos visuales digitales, sonidos y otros estímulos sensoriales mediante tecnología holográfica.
+h) inteligencia artificial: inteligencia artificial (IA) se refiere a sistemas o máquinas que imitan la inteligencia humana para realizar tareas y pueden mejorar iterativamente a partir de la información que recopilan.
 
 2 Diseño web
-    a. desarrollo wordpress
-    b. diseño web drupal
-    c. diseño web bootstrap
-    d. diseño UX UI
+a) desarrollo wordpress: WordPress es un Sistema de Gestión de contenidos (CMS) que permite organizar información para crear sitios web, blogs y hasta tiendas online.
+b) diseño web drupal: Drupal es un sistema de gestión de contenidos multipropósito, modular, libre y con una amplia capacidad de personalización. Te permite publicar archivos, imágenes, artículos, al igual que crear y administrar todo tipo de contenidos como votaciones, encuestas, foros, entre otros.
+c) diseño web bootstrap: Bootstrap es un framework front-end utilizado para desarrollar aplicaciones web y sitios mobile first, o sea, con un layout que se adapta a la pantalla del dispositivo utilizado por el usuario.
+d) diseño UX UI: El diseño de interfaz de usuario o ingeniería de la interfaz es el resultado de definir la forma, función, utilidad, ergonomía, imagen de marca y otros aspectos que afectan a la apariencia externa de las interfaces de usuario en sistemas de todo tipo.
    
-
 3 Desarrollo Web
-a) cakephp
-b) angular js
-c) vue js
-d) desarrollo php
-e) laravel
-f) codeigniter
-g) symfony2
-h) node js
-
-
+a) cakephp: CakePHP es un marco de desarrollo rápido para PHP, libre, de código abierto. Se trata de una estructura que sirve de base a los programadores para que éstos puedan crear aplicaciones Web.
+b) angular js: Angular es un framework de ingeniería de software de código abierto mantenido por Google, que sirve para desarrollar aplicaciones web de estilo Single Page Application (SPA) y Progressive Web App (PWA).
+c) vue js: Vue. js es un marco JavaScript progresivo de código abierto para crear interfaces de usuario (UI) y aplicaciones de una sola página.
+d) desarrollo php: PHP está enfocado principalmente a la programación de scripts del lado del servidor, por lo que se puede hacer cualquier cosa que pueda hacer otro programa CGI, como recopilar datos de formularios, generar páginas con contenidos dinámicos, o enviar y recibir cookies.
+e) laravel: Laravel es un framework PHP gratis y de código abierto que brinda un conjunto de herramientas y recursos para crear aplicaciones modernas.
+f) codeigniter: Es una framework PHP de código abierto, desarrollada por primera vez en 2006. Permite la creación de aplicaciones web más rápida en comparación con otras framework.
+g) symfony2: Symfony es un framework cuyo principal objetivo es simplificar el desarrollo de aplicaciones en PHP mediante la automatización de algunos de los patrones utilizados para resolver las tareas comunes.
+h) node js: Node. js es un entorno de ejecución JavaScript de código abierto y multiplataforma que se utiliza para desarrollar aplicaciones escalables del lado del servidor y de red.
 
 4 Tiendas Online (E-commerce)
-    a) Magento
-    b) Prestashop
-    c) Wordpress
-    d) Shopify
+a) Magento: Magento es una solución completa de comercio electrónico para empresas que están listas para sacar provecho de su canal online.
+b) Prestashop: PrestaShop es una plataforma CMS para crear y administrar ecommerces enfocada en las características y recursos esenciales para una tienda online.
+c) Wordpress: WordPress es un sistema de gestión de contenidos que sirve como un software libre que los usuarios pueden utilizar como herramienta para la creación de sitios web de forma básica o profesional.
+d) Shopify: Shopify es una plataforma de comercio electrónico que, con su tecnología y herramientas, ofrece a negocios y profesionales la posibilidad de montar una tienda online con extrema facilidad y en poco tiempo.
 
 5 Desarrollo de software
-    a) Desarrollo de aplicaciones
-    b) Infractustura en la Nube 
-    c) Servicios de Mantenimiento y soporte
-
-
+a) Desarrollo de aplicaciones: El desarrollo de aplicaciones conlleva un ciclo de vida con las siguientes fases: análisis, diseño, construcción, pruebas e implantación y soporte y mantenimiento. Para la realización de las mismas se cuenta con diferentes herramientas de apoyo.
+b) Infractustura en la Nube: La infraestructura informática de nube es la recopilación de elementos de hardware y software necesarios para hacer posible la informática de nube. Incluye capacidad de procesamiento, red y almacenamiento, así como una interfaz para que los usuarios accedan a sus recursos virtualizados.
+c) Servicios de Mantenimiento y soporte: El mantenimiento en sistemas electrónicos se enfoca en el funcionamiento y actualización del sistema, trabajando con el objetivo de adelantarse a posibles problemas para evitarlos. En cambio, el soporte técnico se focaliza en el usuario y en la ayuda que se pueda brindar para realizar un correcto uso del sistema.
