@@ -10,7 +10,7 @@
                 
                 <% for (let i=0 ; i < categorias.length; i++ ) { %>
                     
-                    <bodyDetalle0>
+                    <div class="bodyDetalle0">
                         <div class="cardProducto">
                             <div class="imgDetalle">
                                 <img src="/images/categorias/<%=categorias[i].foto %>" alt="<%=categorias[i].nombre %>"/>
@@ -25,28 +25,20 @@
                                 </small>
                                 </h2>
                             </div>
-                            <div class="descriptionProducto">
-                                <h4>Descripción</h4>
-                                <p>CrearLa brinda los mejores servicios tecnológicos para la industria laboral.</p>
-                            </div>
-                                <button class="box-servicio-button0">
-                                    <a href="/categories/detail/<%= categorias[i].id %>">VER DETALLES</a>
-                                </button>
-                            </div>
+                            <button class="box-servicio-button0">
+                                    <a href="/categories/detail/<%= categorias[i].id %>">Ver detalles</a>
+                            </button>
                         </div>
-                        <bodyDetalle0>
-                    </div>
-                    <% }%>
-                    <div>
-                        <button class="box-servicio-button0">
-                            <a href="/categories/categoryCreate">CREAR CATEGORIA</a>    
-                        </button>
-                        <button class="box-servicio-button0">
-                            <a href="/servicios/servicioCreate">CREAR SERVICIO</a>    
-                        </button>
-                    </div>
+                    </div>  
+                <% }%>
             </mainCategories>
-            <%- include('../partials/footer') %>
+                <button class="box-servicio-button0">
+                    <a href="/categories/categoryCreate">CREAR CATEGORIA</a>    
+                </button>
+                <button class="box-servicio-button0">
+                    <a href="/servicios/servicioCreate">CREAR SERVICIO</a>    
+                </button>
+            </div>
+        <%- include('../partials/footer') %>
     </body>
-
 </html>
