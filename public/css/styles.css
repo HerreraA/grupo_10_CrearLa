@@ -770,8 +770,8 @@ button {
 
 .servicios-h1 {
     text-align: center;
-    padding: 15px 0;
     font-size: 25px;
+    padding: 20px 0 10px 0;
 }
 
 .servicios-p {
@@ -820,23 +820,6 @@ button {
 
 .box-servicio-right img {
     width: 100%;
-}
-
-.box-servicio-button {
-    border: 4px solid #979797;
-    border-radius: 30px;
-    padding: 10px;
-    width: 100%;
-    font-size: 15px;
-    color: #979797;
-    text-align: center;
-    max-width: 200px;
-    background-color: #fff;
-}
-
-.box-servicio-button a {
-    text-decoration: none;
-    color: #979797;
 }
 
 .detalle-servicio {
@@ -1047,17 +1030,15 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     flex-direction: column;
+    margin-top:20px;
 }
 .bodyDetalle {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-   background: linear-gradient(180deg, #012E40, #012E40 50%,
-   #FFF 50%, #FFF 100%);
-   flex-direction: column;
+    background: linear-gradient(180deg, #012E40, #012E40 50%,#FFF 50%, #FFF 100%);
+    flex-direction: column;
    
 }
 .cardProducto {
@@ -1068,7 +1049,7 @@ h3 {
     background-color: #FFF;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25); 
     overflow: hidden;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border-radius: 10px;
     flex-direction: column;
 }
@@ -1097,10 +1078,13 @@ h3 {
 .titleProducto h2 {
     color: #012e40;
 }
+.titleProducto {
+    margin-bottom: 20px;
+}
 
 .cardProducto .detailsProducto .titleProducto small{
     font-weight: 400;
-    font-size: 0.8em;
+    font-size: 0.6em;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -1133,23 +1117,45 @@ h3 {
     text-decoration: none;
     color: #012E40;
 }
-.box-servicio-button0 {
+.box-servicio-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.box-servicio-button0  {
     border: 1px solid #012e40;
     border-radius: 8px;
     padding: 8px;
-    font-size: 14px;
-    color: #012e40;
+    font-size: 0.9em;
     text-align: center;
     max-width: 200px;
     background-color: #f2e3d5;
-    margin-top: 20px;
+    margin-top: 10px;
 }
-
-.box-servicio-button0 a {
+button.box-servicio-button0 a {
     color: #012e40;
     text-decoration: none;
 }
+button.box-servicio-button0Borrar a {
+    color: #012e40;
+    text-decoration: none;
+}
+.box-servicio-button0:hover {
+    background-color: #012e40;
+}
+.box-servicio-button0 a:hover {
+    color: white;
+}
+.box-servicio-button0Borrar {
+    min-width: 150px;
+    margin:auto;
+}
+
+
 @media(min-width:481px) {
+    .cardProducto .detailsProducto .titleProducto small{
+        font-size: 0.8em;
+    }
     .cardProducto{
         flex-direction: row;
     }
@@ -1157,61 +1163,41 @@ h3 {
         min-width:50%;
         padding:0;
     }
-    .imgDetalle img {
-        border: 10px solid black;
-    }
     .detailsProducto {
         min-width: 50%;
+    }
+    .box-servicio-button0 {
+       font-size: 1em;
     }
 }
 @media(min-width:769px) {
     .cardProducto {
-        max-width: 650px;
+        max-width: 700px;
     }
     .servicios-h1 {
-        padding: 35px 0 45px 0;
         font-size: 30px;
     }
-
     .servicios-p {
         margin: 25px auto;
         width: 50%;
     }
-
     .box-servicio {
         flex-wrap: nowrap;
         max-width: 900px;
         text-align: left;
     }
     .box-servicio-button0 {
-        font-size: 12px;
-        
-        width: 64%;
-        display: flex;
-        justify-content: center;
+        max-width:150px;
     }
-    .box-servicio-button {
-        font-size: 12px;
-        padding: 5%;
-        width: 64%;
-        display: flex;
-        justify-content: center;
-        
-    }
-
     .box-servicio-left {
         padding: 30px;
     }
-
     .box-servicio-right {
         padding: 20px;
     }
-
-
     .formulario-contacto-texto {
         display: flex;
     }
-
     .registro-form-img {
         display: flex;
         justify-content: space-evenly;
@@ -1219,15 +1205,12 @@ h3 {
         flex-direction: row;
         margin-bottom: 20px;
     }
-
     .formulario-registro {
         width: 50%;
     }
-
     .fa-solid.fa-address-card {
         display: contents;
     }
-
     .fa-solid.fa-image {
         display: none;
         font-weight: 100;
@@ -1235,7 +1218,6 @@ h3 {
         padding: 21px;
         margin: -14px;
     }
-
     .detalleDeServicio {
         display: flex;
         justify-content: flex-end;
@@ -1310,7 +1292,6 @@ h3 {
 
 .login-box input[type="submit"]:hover {
     cursor: pointer;
-    background: #3CA6A6;
     color: #000;
 }
 
@@ -1462,9 +1443,7 @@ body2{
 a{
     color: #fff;
 }
-button:hover{
-    background: #9adddd;
-}
+
 /*---------------------------------------NOSOTROS----------------------------------------------------*/
 body1 {
     display: flex;

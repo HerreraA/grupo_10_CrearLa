@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-
     <body>
         <%- include('../partials/header') %>
             <main>
-
                 <% for (let i=0 ; i < categorias.length; i++ ) { %>
                     <% if(categoryId==categorias[i].id) { %>
-                        <bodyDetalle>
+                        <div class="bodyDetalle0">
                             <div class="cardProducto">
                                 <div class="imgDetalle">
                                     <img src="/images/categorias/<%=categorias[i].foto %>" alt="<%=categorias[i].nombre %>"/>
@@ -23,27 +21,25 @@
                                     </small>
                                     </h2>
                                 </div>
-                                <div class="descriptionProducto">
-                                    
-                                </div>
-                                    <button class="box-servicio-button">
-                                        <a href="/carrito">AGREGAR AL CARRITO</A></a>
+                                <div class="box-servicio-buttons">
+                                    <button class="box-servicio-button0">
+                                        <a href="/carrito">Agregar al carrito</A></a>
                                     </button>
-                                    <button class="box-servicio-button">
-                                        <a href="/servicios/detailCategory/<%=categorias[i].id%>">LISTA DE SERVICIOS</A></a>
+                                    <button class="box-servicio-button0">
+                                        <a href="/servicios/detailCategory/<%=categorias[i].id%>">Lista de servicios</A></a>
                                     </button>
-                                    <button class="box-servicio-button">
-                                        <a href="/categories/edit/<%= categorias[i].id %>">EDITAR</A></a>
+                                    <button class="box-servicio-button0">
+                                        <a href="/categories/edit/<%= categorias[i].id %>">Editar</A></a>
                                     </button>
-                                    <form action="/categories/delete/<%= categorias[i].id %>" method="POST">
-                                        <button type="submit" class="box-servicio-button">BORRAR</button>
-                                    </form>
+                                    <div class="box-servicio-button0Borrar">
+                                        <form action="/categories/delete/<%= categorias[i].id %>" method="POST">
+                                         <button type="submit" class="box-servicio-button0">Borrar</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                            
                         </div>
                         <% }}%>
             </main>
             <%- include('../partials/footer') %>
     </body>
-
