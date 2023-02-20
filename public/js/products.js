@@ -26,7 +26,11 @@ async function ready(){
         }
     })
 
-displayProds(categorias.categorias)
+    displayProds(categorias.categorias)
+    let searchBar = document.querySelector('.searchBar')
+    searchBar.addEventListener("change", (e) =>{
+        filtrado(categorias.categorias, e.target.value)
+    })
 }
 
 function displayProds(categorias){
@@ -58,6 +62,34 @@ function displayProds(categorias){
             `    
         }
 }
+
+function filtrado(categorias, busqueda){
+    if(busqueda == '')displayProds(categorias)
+    else {
+        let arrFiltrado = categorias.filter(row => row.nombre.toLowerCase().includes(busqueda.toLowerCase()) || row.descripcion.toLowerCase().includes(busqueda.toLowerCase()) )
+        displayProds(arrFiltrado)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*<% for (let i=0 ; i < categorias.length; i++ ) { %>
