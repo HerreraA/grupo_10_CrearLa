@@ -42,6 +42,7 @@ const serviciosRouter = require ("./routes/servicios")
 const usersRouter = require ('./routes/users')
 const apiUsersRouter = require('./routes/apiUsersRouter');
 const apiServiciossRouter = require('./routes/apiServiciossRouter');
+const apiCarritoRputer = require('./routes/apiCarritoRouter');
 //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
 app.use(express.urlencoded({ extended: false }));
 
@@ -53,7 +54,7 @@ app.use ('/users', usersRouter);
 
 app.use('/api/users', apiUsersRouter)
 app.use('/api/servicios', apiServiciossRouter)
-
+app.use('/api/categorias',apiCarritoRputer)
 
 // Página no encontrada
 app.use(async(req, res, next) => {
