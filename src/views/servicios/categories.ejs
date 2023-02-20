@@ -5,29 +5,11 @@
         <%- include('../partials/header') %>
             <mainCategories>
                 <h1 class="servicios-h1">Categorías de servicios</h1>
-                <% for (let i=0 ; i < categorias.length; i++ ) { %>
-                    <div class="bodyDetalle0">
-                        <div class="cardProducto">
-                            <div class="imgDetalle">
-                                <img src="/images/categorias/<%=categorias[i].foto %>" alt="<%=categorias[i].nombre %>"/>
-                            </div>
-                            <div class="detailsProducto">
-                                <div class="titleProducto">
-                                <h2>
-                                    <%= categorias[i].nombre %>
-                                <br>
-                                <small>
-                                    <%= categorias[i].descripcion %>
-                                </small>
-                                </h2>
-                            </div>
-                            <button class="box-servicio-button0">
-                                    <a href="/categories/detail/<%= categorias[i].id %>">Ver detalles</a>
-                            </button>
-                        </div>
-                    </div>  
-                <% }%>
+                <div id="containerCat" class="row">
+                    <h2>CARGANDO...</h2>
+                </div>
             </mainCategories>
+            <div>
                 <button class="box-servicio-button0">
                     <a href="/categories/categoryCreate">CREAR CATEGORIA</a>    
                 </button>
@@ -36,5 +18,7 @@
                 </button>
             </div>
         <%- include('../partials/footer') %>
+
+        <%- include('../partials/scripts') %>
     </body>
 </html>
