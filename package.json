@@ -35,7 +35,8 @@
     "node": "19.1.0",
     "normalize": "0.3.1",
     "path": "0.12.7",
-    "sequelize": "6.28.0"
+    "sequelize": "6.28.0",
+    "sweetalert2": "^11.7.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

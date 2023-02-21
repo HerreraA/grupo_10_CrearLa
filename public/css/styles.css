@@ -126,7 +126,10 @@ header {
     margin: auto;
 }
 
-
+.fotoUsuario{
+    width: 20%;
+    border-radius: 50%;
+}
 
 /******************** HEADER --> MEDIA QUERIES *******************/
 @media (min-width: 769px) {

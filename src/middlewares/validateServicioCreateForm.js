@@ -4,7 +4,7 @@ const path = require('path')
 module.exports=[
     body('nombre')
     .notEmpty().withMessage('Debes ingresar el nombre del servicio').bail()
-    .isLength({ min: 5 }).withMessage('El nombre del servicio debe tener, al menos, 5 caracteres'),
+    .isLength({ min: 5 }).withMessage('El nombre del servicio debe tener, al menos, 5 caracteres'), 
 body('categoria')
     .notEmpty().withMessage('Debes seleccionar la categoría del servicio'),
 body('description')
