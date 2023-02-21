@@ -10,10 +10,11 @@
                     <p>Envianos tu consulta y te responderemos a la brevedad</p>
                 </div>
                 <form name="contact" method="POST" action="/contact" class="create-form-contact">
-    <h3>Datos de contacto</h3><i class="fa-regular fa-user"></i>
+    <div class="tituloIcon">
+        <label for="datos-contacto">Datos de contacto</label><i class="fa-regular fa-user"></i>
+    </div>
     <div class="formulario-contacto">
     <div class="control-form"> 
-        <label for="nombre"></label>
         <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" value="<%= locals.oldData ? oldData.nombre : null  %>">
         <% if (locals.errors && errors.nombre) { %>
             <div class="text-danger">
@@ -22,7 +23,6 @@
         <% } %>
      </div>
      <div class="control-form">
-        <label for="email"></label>
         <input type="email" id="email" name="email" placeholder="E-mail"  value="<%= locals.oldData ? oldData.email : null  %>">
         <% if (locals.errors && errors.email) { %>
             <div class="text-danger">
@@ -31,7 +31,6 @@
         <% } %>
     </div> 
     <div class="control-form">
-        <label for="telefono"></label>
         <input type="tel" id="tel" name="tel" placeholder="Telefono"  value="<%= locals.oldData ? oldData.tel : null  %>">
         <% if (locals.errors && errors.tel) { %>
             <div class="text-danger">
@@ -39,12 +38,14 @@
             </div>
         <% } %>
     </div>
-     <h3>Mensaje</h3> <i class="fa-regular fa-envelope"></i>
+    <div class="tituloIcon">
+        <label for="mensaje">Mensaje</label> <i class="fa-regular fa-envelope"></i>
+    </div>
    
     <div>
         
         <label for="mensaje"></label>
-        <textarea name="mensaje" id="mensaje" cols="35" rows="10" placeholder="Dejanos tu mensaje"  value="<%= locals.oldData ? oldData.mensaje : null  %>"></textarea>
+        <textarea class="contactMsj" name="mensaje" id="mensaje" placeholder="Dejanos tu mensaje"  value="<%= locals.oldData ? oldData.mensaje : null  %>"></textarea>
         <% if (locals.errors && errors.mensaje) { %>
             <div class="text-danger">
                 <%= errors.mensaje.msg %>

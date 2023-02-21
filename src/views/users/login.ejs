@@ -3,34 +3,39 @@
     <%- include('../partials/head') %>
     <body>
         <%- include('../partials/header') %> 
-    <main>
-    <div class="login-box">
-        <h1>Login Here</h1>
-        <form class="create-form" name="login" method="POST" action="/users/login">
-          <!-- EMAIL INPUT -->
-          <label for="email">Email</label>
-          <input type="email" id="email" name= "email" placeholder="Enter email" value="<%= locals.oldData ? oldData.email : null %>">
-          <% if (locals.errors && errors.email) { %>
-            <div class="text-danger">
-                <%= errors.email.msg %>
-            </div>
-        <% } %>
-          <!-- PASSWORD INPUT -->
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" placeholder="Enter Password">
-          <% if (locals.errors && errors.password) { %>
-            <div class="text-danger">
-                <%= errors.password.msg %>
-            </div>
-        <% } %>
+    <main class="main-login">
+    <div class="formulario-login">
+        <h1>Mi cuenta</h1>
+        <form class="formulario-login-box" name="login" method="POST" action="/users/login">
+          <div class="formulario-login-box-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name= "email" placeholder="Ingresá tu email" value="<%= locals.oldData ? oldData.email : null %>">
+            <% if (locals.errors && errors.email) { %>
+             <div class="text-danger">
+                  <%= errors.email.msg %>
+              </div>
+             <% } %>
+          </div>
+          <div class="formulario-login-box-field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Ingresá tu password">
+            <% if (locals.errors && errors.password) { %>
+              <div class="text-danger">
+                  <%= errors.password.msg %>
+              </div>
+            <% } %>
+          </div>
           <div>
-<label for="form-checkbox">
-          <input type="checkbox" name="recordarUsuario" id="recordarUsuario"> Recordar mi usuario
-        </label>
+          <div class="login-check">
+            <label for="form-checkbox">
+              <input type="checkbox" name="recordarUsuario" id="recordarUsuario"> Recordar mi usuario
+            </label>
+          </div>
     </div>
-          <input type="submit" value="Log In">
-          <a href="#">Lost your Password?</a><br>
-          <a href="users/register">Don't have An account?</a>
+        <div class="form-lostPass">
+          <a href="./register">¿No tienes cuenta? ¡Registrate!</a>
+        </div>
+        <button type="submit" class="button-form">Iniciar sesión</button>
     </main>
 
     <%- include('../partials/footer') %>

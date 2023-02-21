@@ -23,19 +23,19 @@
                                 </div>
                                 <div class="box-servicio-buttons">
                                     <button class="box-servicio-button0">
-                                        <a href="/carrito">Agregar al carrito</A></a>
+                                        <a href="/carrito">Agregar al carrito</a>
                                     </button>
                                     <button class="box-servicio-button0">
-                                        <a href="/servicios/detailCategory/<%=categorias[i].id%>">Lista de servicios</A></a>
+                                        <a href="/servicios/detailCategory/<%=categorias[i].id%>">Lista de servicios</a>
                                     </button>
                                     <button class="box-servicio-button0">
-                                        <a href="/categories/edit/<%= categorias[i].id %>">Editar</A></a>
+                                        <a href="/categories/edit/<%= categorias[i].id %>">Editar</a>
                                     </button>
-                                    <div class="box-servicio-button0Borrar">
-                                        <form action="/categories/delete/<%= categorias[i].id %>" method="POST">
-                                         <button type="submit" class="box-servicio-button0">Borrar</button>
+                                 
+                                        <form action="/categories/delete/<%= categorias[i].id %>" method="POST" class="box-servicio-button0Borrar">
+                                         <button type="submit" class="box-servicio-button0"><a>Borrar</a></button>
                                         </form>
-                                    </div>
+                                  
                                 </div>
                             </div>
                         </div>

@@ -86,6 +86,7 @@ header {
     margin-top: 15px;
     font-size: 14px;
     width: 100px;
+    color: white;
 }
 
 .header-right-menu {
@@ -445,17 +446,14 @@ main {
     font-weight: 'Roboto';
     margin-bottom: 5px;
 }
-.home-title .botonContacto {
+.botonContacto {
     display: block;
     padding: 10px 20px;
     background-color: #3ca6a6;
     border: none;
     border-radius: 20px;
-    margin-top: 35px;
+    margin: 35px auto;
     cursor: pointer;
-    -webkit-box-shadow: 1px 3px 11px -5px rgba(102,231,200,0.69);
-    -moz-box-shadow: 1px 3px 11px -5px rgba(102,231,200,0.69);
-    box-shadow: 1px 3px 11px -5px rgba(102,231,200,0.69);
   }
 .botonContacto:hover {
     background-color: #012E40;
@@ -473,7 +471,7 @@ main {
     justify-content: space-evenly;
 }
 .home-solutions-box {
-    width: 33%;
+    min-width: 100px;
     text-align: center;
     margin-bottom: 5%;
 }
@@ -688,7 +686,7 @@ main {
     text-align: end;
 }
 
-button {
+.buttonCarrito {
     background-color: #3ca6a6;
     width: 150px;
     padding: 5px;
@@ -844,25 +842,20 @@ button {
     margin: -14px;
 }
 
-.create-form-contact {
-    text-align: center;
-    width: 50%;
-    margin: auto
-}
-
 .control-form {
-    margin-bottom: 15px;
-
+    margin-top: 15px;
 }
 
 .control-form label {
     margin-bottom: 5px;
     display: block;
+    margin-left:55px;
 }
 
 .control-form input {
     width: 80%;
     padding: 8px;
+    max-width: 300px;
 }
 
 .control-form-interes {
@@ -873,7 +866,8 @@ button {
 .button-form {
     font-size: 15px;
     padding: 5px 10px;
-    width: 40%;
+    min-width: 100px;
+    max-width: 150px;
     color: #f2e3d5;
     background-color: #3ca6a6;
     border: hidden;
@@ -898,15 +892,6 @@ button {
 h3 {
     display: inline-block;
     padding: 10px;
-}
-
-.formulario-contacto-texto {
-    display: flex;
-}
-
-.tenes-duda {
-    align-self: center;
-    margin-left: 30px;
 }
 
 .main-servicio {
@@ -945,13 +930,15 @@ h3 {
 
 .create-form-contact {
     text-align: center;
-    width: 50%;
+    width: 100%;
     margin: auto
 }
-
 .control-form {
     margin-bottom: 15px;
-
+}
+.control-form input {
+    border-radius: 8px;
+    border: 1px solid #3ca6a6;
 }
 
 .control-form label {
@@ -960,27 +947,36 @@ h3 {
 }
 
 .control-form input {
-    width: 80%;
+    width: 90%;
     padding: 8px;
-
 }
-
+.contactMsj {
+    width: 90%;
+    max-width: 300px;
+    height: 150px;
+    border-radius: 8px;
+    border: 1px solid #3ca6a6;
+    padding: 8px;
+    margin-top: 15px;
+}
 .button-form {
     font-size: 15px;
     padding: 5px 10px;
     width: 40%;
     color: #f2e3d5;
-    background-color: #3ca6a6;
+    background-color: #012e40;
     border: hidden;
     border-radius: 7px;
     padding: 8px;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 
 .button-form:hover {
     background-color: #f2e3d5;
     color: #012e40;
+    cursor: pointer;
+    border: 1px solid #012E40;
 }
 
 .titulo-form {
@@ -998,23 +994,33 @@ h3 {
     margin-top: 20px;
 }
 
-.formulario-contacto-texto {
-    display: flex;
-}
-
 .tenes-duda {
     text-align: center;
-    margin-left: 30px;
+    margin-top:0;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 15px;
+}
+.formulario-contacto {
+    width: 100%;
+    margin:auto;
 }
 
 .formulario-contacto-texto {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
     display: block;
 }
-
+.formulario-contacto-texto h1 {
+    margin:auto;
+    text-align:center;
+}
+.formulario-contacto-texto h3 {
+    margin-top: 15px;
+    padding:0;
+}
+.formulario-contacto-texto p {
+    margin: 10px 0;
+}
 .main-register {
     background-color: #ebebeb;
     margin: 30px;
@@ -1022,7 +1028,7 @@ h3 {
 
 .main-contact {
     background-color: #ebebeb;
-    margin: 30px;
+    margin: 30px 10px;
 }
 /*-----------------------------------------------------CATEGORYSOLO-------------------------------------------------------*/
 .mainCategories{
@@ -1133,13 +1139,11 @@ h3 {
     text-align: center;
     max-width: 200px;
     background-color: #f2e3d5;
-    margin-top: 10px;
+    margin: 10px auto;
+    width: 150px;
+    cursor: pointer;
 }
 button.box-servicio-button0 a {
-    color: #012e40;
-    text-decoration: none;
-}
-button.box-servicio-button0Borrar a {
     color: #012e40;
     text-decoration: none;
 }
@@ -1148,6 +1152,12 @@ button.box-servicio-button0Borrar a {
 }
 .box-servicio-button0 a:hover {
     color: white;
+}
+
+
+button.box-servicio-button0Borrar a {
+    color: #012e40;
+    text-decoration: none;
 }
 .box-servicio-button0Borrar {
     min-width: 150px;
@@ -1200,6 +1210,8 @@ button.box-servicio-button0Borrar a {
     }
     .formulario-contacto-texto {
         display: flex;
+        width:650px;
+        margin:auto;
     }
     .registro-form-img {
         display: flex;
@@ -1238,76 +1250,62 @@ button.box-servicio-button0Borrar a {
 
 
 /*--------------------------------------------LOGIN---------------------------------------------------------*/
-
-
-.login-box {
-    margin: auto;
-    width: 40%;
-    padding: 5px;
-    background: white;
-    color: #fff;
-    box-sizing: border-box;
-    padding: 70px 30px;
+.main-login {
+    background-color: #ebebeb;
+    margin: 30px 10px;
 }
-
-.login-box h1 {
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 22px;
-    color: #012E40;
-}
-
-.login-box label {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    display: block;
-    color: #024959;
-}
-
-.login-box input {
-    width: 100%;
-    margin-bottom: 20px;
-    color: #012E40;
-}
-
-.login-box input[type="text"],
-.login-box input[type="password"] {
-    border: none;
-    border-bottom: 1px solid #012E40;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #024959;
-    font-size: 16px;
-}
-
-.login-box input[type="submit"] {
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #026773;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
-}
-
-.login-box input[type="submit"]:hover {
-    cursor: pointer;
-    color: #000;
-}
-
-.login-box a {
+.main-login a {
+    color: #012e40;
     text-decoration: none;
-    font-size: 12px;
-    line-height: 20px;
-    color: darkgrey;
+}
+.formulario-login {
+    display: block;
+}
+.formulario-login h1 {
+    margin:auto;
+    text-align:center;
+}
+.formulario-login-box {
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+    margin-top:30px;
+}
+.formulario-login-box-field {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.formulario-login-box-field label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+    color: #024959;
+    text-align: center;
+    width:100%;
+}
+.formulario-login-box-field input {
+    width: 90%;
+    padding: 8px;
+    max-width: 300px;
+    border-radius: 8px;
+    border: 1px solid #3ca6a6;
+}
+.form-lostPass {
+    margin: 25px 0;
 }
 
-.login-box a:hover {
-    color: #012E40;
+
+
+
+
+
+.tituloIcon {
+    display: flex;
+    margin:auto;
+    width: 135px;
+    
 }
+
 
 /*--------------------------------------------FOLDER--------------------------------------------------------*/
 .create-box {
