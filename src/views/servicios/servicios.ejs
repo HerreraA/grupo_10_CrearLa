@@ -13,9 +13,7 @@
                 <% for(i = 0; i < servicios.length; i++) {%>
                     <div class="box-servicio">
                         <div class="box-servicio-left">
-                            <div class="box-servicio-number">
-                                <%= servicios[i].id %>
-                            </div>
+                            
                             <div class="box-servicio-txt">
                                 <h2>
                                     <%= servicios[i].nombre %>
@@ -40,6 +38,11 @@
                  
                 </div>
                     <% } %>
+                    <div>
+                        <button class="box-servicio-button">
+                            <a href="/servicios/servicioCreate">CREAR SERVICIO</A></a>
+                        </button>
+                    </div>
             </main>
             <%- include('../partials/footer') %>
     </body>

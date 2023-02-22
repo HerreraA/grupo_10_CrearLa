@@ -16,7 +16,7 @@ module.exports = {
                 id: servicio.id,
                 nombre: servicio.nombre,
                 descripcion: servicio.descripcion,
-                foto: `http://localhost:3500${servicio.foto}`,
+                foto: `http://localhost:3500/servicios${servicio.foto}`,
                 asociations: [servicio.categorias.nombre],
                 detail: `/api/servicios/${servicio.id}`,
             }
@@ -30,13 +30,11 @@ module.exports = {
             id: servicio.id,
             nombre: servicio.nombre, 
             descripcion: servicio.descripcion,
-            foto: `http://localhost:3500${servicio.foto}`,
+            foto: `http://localhost:3500/${servicio.foto}`,
             precio: servicio.precio,
             
             asociations: [servicio.categorias],
-            create_time: servicio.create_time,
-            update_time: servicio.update_time,
-            delete_time: servicio.delete_time
+          
         }
         return res.json(response)
     }
