@@ -421,12 +421,26 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     
-}.home-servicios-box-img2:hover {
+}
+.home-servicios-box-img2:hover {
     background-color: #012E40;
     background-image: url(/images/home-services-app.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
+.home-servicios-box-img3:hover {
+    background-color: #012E40;
+    background-image: url(/images/home-services-uxui.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home-servicios-box-img4:hover {
+    background-color: #012E40;
+    background-image: url(/images/home-services-ecommerce.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .home-title {
     margin: 25px auto;
     width: 70%;
@@ -519,6 +533,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .home-servicios-box-img3:hover {
     background-color: #012E40;
     background-image: url(/images/home-services-uxui.jpg);
