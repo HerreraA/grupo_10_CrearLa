@@ -4,6 +4,13 @@
     <body>
         <%- include('../partials/header') %>
             <mainCategories>
+                <% if (!locals.isLogged) { %>
+                <h1 class="servicios-h1">Categorías de servicios</h1>
+                <div id="containerCat" class="row">
+                    <h2>CARGANDO...</h2>
+                </div>
+            </mainCategories>
+            <% } else { %>  
                 <h1 class="servicios-h1">Categorías de servicios</h1>
                 <div id="containerCat" class="row">
                     <h2>CARGANDO...</h2>
@@ -17,6 +24,7 @@
                     <a href="/servicios/servicioCreate">CREAR SERVICIO</a>    
                 </button>
             </div>
+            <% } %>  
         <%- include('../partials/footer') %>
 
         <%- include('../partials/scripts') %>
