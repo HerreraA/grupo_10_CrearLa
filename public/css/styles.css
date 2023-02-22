@@ -24,10 +24,11 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     margin: auto;
+    height: 280px;
 }
 
 .header-container {
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .lineaUno {
@@ -53,7 +54,7 @@ header {
 
 .header-search {
     margin: 0;
-    padding: 10px;
+    padding: 5px 0;
     width: 100%;
     text-align: center;
 }
@@ -61,7 +62,7 @@ header {
 .header-search-input {
     display: block;
     margin: auto;
-    max-width: 250px;
+    max-width: 300px;
 }
 
 .header-search input {
@@ -87,6 +88,7 @@ header {
     font-size: 14px;
     width: 100px;
     color: white;
+    padding: 6px 0;
 }
 
 .header-right-menu {
@@ -111,17 +113,6 @@ header {
     text-decoration: none;
 }
 
-.menu-button {
-    display: block;
-    color: white;
-    max-width: 50px;
-    padding: 15px 0;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 25px;
-    margin: auto;
-}
-
 .header-bottom-menu {
     display: none;
     margin: auto;
@@ -131,6 +122,66 @@ header {
     width: 20%;
     border-radius: 50%;
 }
+.respmenu a {
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    max-width: 200px;
+    background: #012e40;
+    color: white;
+    font-size: 15px;
+  }
+  .respmenu input[type="checkbox"], .respmenu .fa-bars, .respmenu .fa-times {
+    position: absolute;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .respmenu .fa-bars, .respmenu .fa-times {
+    font-size: 40px;
+    pointer-events: none;
+  }
+  
+  .respmenu input[type="checkbox"] {
+    opacity: 0;
+  }
+  
+  .respmenu {
+    color: white;
+    position: relative;
+    background: #012e40;
+    min-height: 25px;
+    margin: auto;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .respmenu nav {
+    display: none;
+  }
+  
+  .respmenu input:checked ~ nav {
+    display: block;
+    width: 200px;
+  }
+  
+  .respmenu input:checked ~ .fa-bars {
+    display: none;
+  }
+  
+  .respmenu input:not(:checked) ~ .fa-times {
+    display: none;
+  }
+  .respmenu-ul li {
+    list-style: none;
+  }
+  
 
 /******************** HEADER --> MEDIA QUERIES *******************/
 @media (min-width: 769px) {
@@ -138,7 +189,7 @@ header {
         height: 300px;
     }
 
-    .menu-button {
+    .respmenu {
         display: none;
     }
 
