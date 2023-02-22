@@ -398,6 +398,10 @@ main {
     margin-top: 25px;
     padding: 0 10px;
 }
+.ancla-footer{
+    color: white;
+    text-decoration: none;
+}
 
 
 /****************** FOOTER --> MEDIA QUERIES *****************/
@@ -472,12 +476,26 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     
-}.home-servicios-box-img2:hover {
+}
+.home-servicios-box-img2:hover {
     background-color: #012E40;
     background-image: url(/images/home-services-app.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
+.home-servicios-box-img3:hover {
+    background-color: #012E40;
+    background-image: url(/images/home-services-uxui.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home-servicios-box-img4:hover {
+    background-color: #012E40;
+    background-image: url(/images/home-services-ecommerce.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .home-title {
     margin: 25px auto;
     width: 70%;
@@ -570,6 +588,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .home-servicios-box-img3:hover {
     background-color: #012E40;
     background-image: url(/images/home-services-uxui.jpg);
@@ -951,6 +970,15 @@ h3 {
     padding: 20px;
 }
 
+.box-servicio-button{
+    color: black;
+    text-decoration: none;
+}
+.box-servicio-button-crear{
+    display: flex;
+    justify-content: center;
+  
+}
 /*aca va CSS de register y contact*/
 
 
@@ -1214,7 +1242,13 @@ button.box-servicio-button0Borrar a {
     min-width: 150px;
     margin:auto;
 }
-
+.buttons-create-edit{
+    text-align: center;
+}
+.box-servicio-button{
+    text-align: center;
+    margin-bottom: 10px;
+}
 
 @media(min-width:481px) {
     .cardProducto .detailsProducto .titleProducto small{
@@ -1492,8 +1526,8 @@ body2{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-a{
-    color: black;
+.button-portfolio{
+    color: white;
     text-decoration: none;
 }
 
@@ -1651,9 +1685,19 @@ body3{
     background: #012E40;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 30px;
 }
 
 .text-danger {
     color: red;
 }
 
+.userLogged{
+    color: #012e40;
+}
+
+.dropdown-item{
+    color: #012e40;
+    text-decoration: none;
+}

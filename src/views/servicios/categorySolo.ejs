@@ -6,6 +6,7 @@
             <main>
                 <% for (let i=0 ; i < categorias.length; i++ ) { %>
                     <% if(categoryId==categorias[i].id) { %>
+                        <% if (!locals.isLogged) { %>
                         <div class="bodyDetalle0">
                             <div class="cardProducto">
                                 <div class="imgDetalle">
@@ -28,6 +29,29 @@
                                     <button class="box-servicio-button0">
                                         <a href="/servicios/detailCategory/<%=categorias[i].id%>">Lista de servicios</a>
                                     </button>
+                                    <% } else { %>  
+                                        <div class="bodyDetalle0">
+                                            <div class="cardProducto">
+                                                <div class="imgDetalle">
+                                                    <img src="/images/categorias/<%=categorias[i].foto %>" alt="<%=categorias[i].nombre %>"/>
+                                                </div>
+                                                <div class="detailsProducto">
+                                                    <div class="titleProducto">
+                                                    <h2>
+                                                        <%= categorias[i].nombre %>
+                                                    <br>
+                                                    <small>
+                                                        <%= categorias[i].descripcion %>
+                                                    </small>
+                                                    </h2>
+                                                </div>
+                                                <div class="box-servicio-buttons">
+                                                    <button class="box-servicio-button0">
+                                                        <a href="/carrito">Agregar al carrito</a>
+                                                    </button>
+                                                    <button class="box-servicio-button0">
+                                                        <a href="/servicios/detailCategory/<%=categorias[i].id%>">Lista de servicios</a>
+                                                    </button>
                                     <button class="box-servicio-button0">
                                         <a href="/categories/edit/<%= categorias[i].id %>">Editar</a>
                                     </button>
@@ -35,7 +59,7 @@
                                         <form action="/categories/delete/<%= categorias[i].id %>" method="POST" class="box-servicio-button0Borrar">
                                          <button type="submit" class="box-servicio-button0"><a>Borrar</a></button>
                                         </form>
-                                  
+                                        <% } %>  
                                 </div>
                             </div>
                         </div>
