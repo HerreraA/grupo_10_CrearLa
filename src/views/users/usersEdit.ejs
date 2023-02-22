@@ -4,16 +4,17 @@
     <body>
         <%- include('../partials/header') %> 
     <main class="main-register">
-        <h1 class="titulo-form">Editar registro</h1>
+        <h1 class="titulo-form">Editar registro <%= locals.userLogged.nombre %></h1>
         <div class="registro-form-img">
        <div  class="formulario-registro">
         
-        <form class="create-form" name="registro" method="POST" action="/users/register" enctype="multipart/form-data" >
+        <form action="/users/update/<%=locals.userLogged.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+            
          <div class="control-form">
             <h2>Datos personales</h2> 
 
             <label for="nombre"></label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" value="<%= locals.oldData ? oldData.nombre : null  %>" >
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" value="<%=locals.userLogged.nombre%>" >
             
             
             <% if (locals.errors && errors.nombre) { %>
@@ -24,7 +25,7 @@
          </div>
          <div class="control-form">
             <label for="date"></label>
-            <input type="date" id="date" name="fechaDeNacimiento" min="1950-01-01" max="" value="<%= locals.oldData ? oldData.fechaDeNacimiento : null  %>" >
+            <input type="date" id="date" name="fechaDeNacimiento" min="1950-01-01" max="" value="<%=locals.userLogged.fechaDeNacimiento %>" >
             
             
             <% if (locals.errors && errors.fechaDeNacimiento) { %>
@@ -35,7 +36,7 @@
         </div>
         <div class="control-form">
             <label for="domicilio"></label>
-            <input type="text" id="domicilio" name="domicilio" placeholder="Domicilio"  value="<%= locals.oldData ? oldData.domicilio : null  %>" >
+            <input type="text" id="domicilio" name="domicilio" placeholder="Domicilio"  value="<%=locals.userLogged.domicilio%>" >
             
             
             <% if (locals.errors && errors.domicilio) { %>
@@ -47,7 +48,7 @@
          <div class="control-form">
             <label for="email"></label>
             <input type="email" id="email" name="email" placeholder="E-mail" 
-            value="<%= locals.oldData ? oldData.email : null  %>" >
+            value="<%=locals.userLogged.email %>" >
             
             <% if (locals.errors && errors.email) { %>
                 <div class="text-danger">
@@ -59,7 +60,7 @@
         <h2>Crear usuario</h2>
          <div class="control-form">
             <label for="usuario"></label>
-            <input type="usuario" id="usuario" name="usuario" placeholder="Nombre de usuario" value="<%= locals.oldData ? oldData.usuario : null  %>" >
+            <input type="usuario" id="usuario" name="usuario" placeholder="Nombre de usuario" value="<%=locals.userLogged.usuario %>" >
             
             
             <% if (locals.errors && errors.usuario) { %>
@@ -96,7 +97,7 @@
         <h2>Seleccionar foto de usuario</h2>
             <div class="control-form">
             <label for="foto"></label>
-            <input type="file" name="foto" id="foto" accept=".jpg, .jpeg, .png, .gif, .bmp, .tiff" value="<%= locals.oldData ? oldData.foto: null  %>" >
+            <input type="file" name="foto" id="foto" accept=".jpg, .jpeg, .png, .gif, .bmp, .tiff" value="<%= locals.userLogged.foto  %>" >
             
             
             <% if (locals.errors && errors.foto) { %>

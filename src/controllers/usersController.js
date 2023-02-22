@@ -146,8 +146,40 @@ const usersController = {
    
    
     }
+   },
+   edit: (req, res) => {
+      let categorias = db.Categoria.findAll()
+          .then(function(categorias){
+      return res.render('users/usersEdit', {categorias})
+  })
+ },
+ update: (req,res) =>{
+   let categorias = db.Categoria.findAll()
+   const resultValidation = validationResult(req)
+   if (resultValidation.errors.length > 0) {
+      return res.render('./users/usersEdit', {
+         errors: resultValidation.mapped(),
+         oldData: req.body,
+         categorias
+      })
+   } else {
+     db.Usuarios.update({
+                   nombre : req.body.nombre,
+                   fechaDeNacimiento: req.body.fechaDeNacimiento,
+                   domicilio: req.body.domicilio,
+                password: bcryptjs.hashSync(req.body.password,10),
+                foto: req.file.filename},
+                   {
+                   where : {
+                           id : req.params.id
+                           }
+                   })
+     .then(function(){
+ 
+       res.redirect(`/users/profile`);
+     })
    }
 
 }
-
+}
 module.exports = usersController;

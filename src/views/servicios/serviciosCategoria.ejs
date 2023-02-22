@@ -5,6 +5,7 @@
     <body>
         <%- include('../partials/header') %>
             <main>
+                <% if (!locals.isLogged) { %>
                 <h1 class="servicios-h1">
                     <%= categorias.nombre %>
                 </h1>
@@ -14,6 +15,7 @@
                 <% for(i = 0; i < servicios.length; i++) {%>
 
                     <% if(servicios[i].category_id==categorias.id) { %>
+                        
                 <div class="box-servicio">
                     <div class="box-servicio-left">
                         
@@ -41,11 +43,53 @@
                 </div>
                
                 <%}}%>
-                <div class="box-servicio-button">
+
+                <% } else { %> 
+
+                    <h1 class="servicios-h1">
+                        <%= categorias.nombre %>
+                    </h1>
+                    <div class="servicios-p">
+                        <p></p>
+                    </div>
+                    <% for(i = 0; i < servicios.length; i++) {%>
+    
+                        <% if(servicios[i].category_id==categorias.id) { %>
+                            
+                    <div class="box-servicio">
+                        <div class="box-servicio-left">
+                            
+                         
+                            <div class="box-servicio-txt">
+                                <h2>
+                                    <%= servicios[i].nombre %>
+                                </h2>
+                                <p>
+                                    <%= servicios[i].descripcion %>
+                                </p>
+                                <p class="price">
+                                    <%= servicios[i].precio %>
+                                </p>
+                            </div>
+                            <div>
+                                <button >
+                                    <a href="/servicios/detail/<%= servicios[i].id %>" class="box-servicio-button">VER DETALLES</a>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box-servicio-right">
+                            <img src="/images/servicios/<%=servicios[i].foto %>" alt="<%= servicios[i].nombre %>">
+                        </div>
+                    </div>
+                   
+                    <%}}%>
+    
+                <div class= "buttons-create-edit">
                     <button>
-                        <a href="/servicios/servicioCreate">CREAR SERVICIO</A></a>
+                        <a href="/servicios/servicioCreate" class="box-servicio-button">CREAR SERVICIO</A></a>
                     </button>
                 </div>
+                <%}%>
             </main>
             <%- include('../partials/footer') %>
     </body>

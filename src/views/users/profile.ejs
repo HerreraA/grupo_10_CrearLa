@@ -14,8 +14,12 @@
                 <h3 class="userLogged"> <%= locals.userLogged.nombre %></h3>
             </div>
             <div class="right">
-        <button> <a class="dropdown-item" href="/users/logout">Logout</a></button>
-        <button> <a class="dropdown-item" href="/users/usersEdit">Editar</a></button>
+                
+        <button> <a  href="/users/logout" class="dropdown-item">Logout</a></button>
+
+        <button> <a href="/users/edit/<%=locals.userLogged.id%>" class="dropdown-item">Editar</a></button>
+        
+
         </div>
         </div>
 

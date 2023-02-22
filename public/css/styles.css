@@ -970,6 +970,15 @@ h3 {
     padding: 20px;
 }
 
+.box-servicio-button{
+    color: black;
+    text-decoration: none;
+}
+.box-servicio-button-crear{
+    display: flex;
+    justify-content: center;
+  
+}
 /*aca va CSS de register y contact*/
 
 
@@ -1517,8 +1526,8 @@ body2{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-a{
-    color: black;
+.button-portfolio{
+    color: white;
     text-decoration: none;
 }
 
@@ -1686,4 +1695,9 @@ body3{
 
 .userLogged{
     color: #012e40;
+}
+
+.dropdown-item{
+    color: #012e40;
+    text-decoration: none;
 }
